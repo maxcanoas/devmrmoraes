@@ -1133,7 +1133,11 @@ details[open] .faq-pergunta::after {
 
 
   .nav-links { display: none; }
-  .nav-menu-toggle { display: flex; }
+  .nav-menu-toggle {
+    display: flex;
+    z-index: 1000;
+    position: relative;
+  }
 
   .nav-links.aberto {
     display: flex;

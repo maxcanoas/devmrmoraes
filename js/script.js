@@ -62,6 +62,8 @@ function alternarMenu() {
   const estaAberto = linksNav.classList.contains('aberto');
   document.body.style.overflow = estaAberto ? 'hidden' : '';
 
+  botaoMenu.setAttribute('aria-expanded', estaAberto);
+
   /* Animar linhas do hamburger */
   const linhas = botaoMenu.querySelectorAll('span');
   if (estaAberto) {
@@ -328,6 +330,20 @@ function inicializar() {
   document.addEventListener('mousemove', moverParallax);
   botaoMenu.addEventListener('click', alternarMenu);
   fecharMenuAoClicar();
+
+  /* Fechar menu ao clicar no fundo do overlay */
+  linksNav.addEventListener('click', (e) => {
+    if (e.target === linksNav) {
+      alternarMenu();
+    }
+  });
+
+  /* Fechar menu com tecla Escape */
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && linksNav.classList.contains('aberto')) {
+      alternarMenu();
+    }
+  });
 }
 
 /* ─── Aguardar DOM carregado ─── */
