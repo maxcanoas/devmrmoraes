@@ -230,7 +230,7 @@ function configurarFormulario() {
     );
 
     /* TODO: Trocar pelo número real de WhatsApp */
-    const urlWhatsApp = `https://wa.me/5551999999999?text=${textoWhatsApp}`;
+    const urlWhatsApp = `https://wa.me/5551999608608?text=${textoWhatsApp}`;
     window.open(urlWhatsApp, '_blank');
   });
 }
@@ -247,7 +247,7 @@ function mostrarErroCampo(campo, mensagem) {
 /* ─── Botão WhatsApp flutuante ─── */
 function criarBotaoWhatsApp() {
   const botaoWpp = document.createElement('a');
-  botaoWpp.href = 'https://wa.me/5551999999999?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento.';
+  botaoWpp.href = 'https://wa.me/5551999608608?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento.';
   botaoWpp.target = '_blank';
   botaoWpp.rel = 'noopener noreferrer';
   botaoWpp.className = 'botao-whatsapp-flutuante';
