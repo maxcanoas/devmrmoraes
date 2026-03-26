@@ -1,0 +1,21 @@
+{
+  "name": "DevMrmoraes — Desenvolvedor Freelancer",
+  "short_name": "DevMrmoraes",
+  "description": "Desenvolvedor freelancer no Brasil — sites profissionais, sistemas personalizados, apps mobile, chatbots com IA e automação de processos para empresas.",
+  "start_url": "/devmrmoraes/",
+  "scope": "/devmrmoraes/",
+  "display": "browser",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "categories": ["business", "productivity"],
+  "icons": [
+    {
+      "src": "img/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
