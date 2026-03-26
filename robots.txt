@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://maxcanoas.github.io/devmrmoraes/sitemap.xml
+Sitemap: https://www.devmrmoraes.com.br/sitemap.xml
