@@ -1778,3 +1778,225 @@ details[open] .faq-pergunta::after {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.4; }
 }
+
+/* ─── Páginas de Serviço Individual ─── */
+.servico-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--cor-texto-muted);
+  margin-bottom: 1.5rem;
+}
+
+.servico-breadcrumb a {
+  color: var(--cor-texto-muted);
+  transition: color 0.3s ease;
+}
+
+.servico-breadcrumb a:hover {
+  color: var(--cor-dourado);
+}
+
+.servico-breadcrumb .breadcrumb-sep {
+  opacity: 0.4;
+}
+
+.servico-hero {
+  padding: 10rem 5vw 4rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.servico-hero-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 0.92;
+  color: var(--cor-branco);
+  margin-bottom: 1.2rem;
+}
+
+.servico-hero-titulo em {
+  font-family: var(--fonte-serif);
+  font-style: italic;
+  color: var(--cor-dourado);
+}
+
+.servico-hero-sub {
+  font-size: 1.05rem;
+  color: var(--cor-texto-suave);
+  max-width: 580px;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+.servico-conteudo {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 5vw 5rem;
+}
+
+.servico-detalhe {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  padding: 5rem 0;
+  border-top: 1px solid var(--cor-borda);
+}
+
+.servico-detalhe-texto h2 {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  color: var(--cor-branco);
+  margin-bottom: 1.2rem;
+}
+
+.servico-detalhe-texto p {
+  font-size: 0.95rem;
+  color: var(--cor-texto-suave);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.servico-entregas {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.servico-entregas li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.92rem;
+  color: var(--cor-texto-suave);
+  line-height: 1.6;
+}
+
+.servico-entregas li::before {
+  content: '→';
+  color: var(--cor-dourado);
+  flex-shrink: 0;
+  margin-top: 0.1em;
+}
+
+.servico-beneficios {
+  padding: 5rem 0;
+  border-top: 1px solid var(--cor-borda);
+}
+
+.servico-beneficios h2 {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  color: var(--cor-branco);
+  margin-bottom: 3rem;
+}
+
+.servico-beneficios-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5px;
+  background: var(--cor-borda);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-card);
+  overflow: hidden;
+}
+
+.servico-beneficio-card {
+  background: var(--cor-fundo-card);
+  padding: 2.2rem;
+  transition: var(--transicao-suave);
+}
+
+.servico-beneficio-card:hover {
+  background: #181818;
+}
+
+.servico-beneficio-card h3 {
+  font-family: var(--fonte-titulo);
+  font-size: 1.15rem;
+  letter-spacing: 0.03em;
+  color: var(--cor-branco);
+  margin-bottom: 0.6rem;
+}
+
+.servico-beneficio-card p {
+  font-size: 0.85rem;
+  color: var(--cor-texto-suave);
+  line-height: 1.7;
+}
+
+.servico-relacionados {
+  padding: 5rem 0;
+  border-top: 1px solid var(--cor-borda);
+}
+
+.servico-relacionados h2 {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  color: var(--cor-branco);
+  margin-bottom: 2rem;
+}
+
+.servico-relacionados-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.servico-relacionado-card {
+  background: var(--cor-fundo-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-card);
+  padding: 2rem;
+  transition: var(--transicao-suave);
+  display: block;
+}
+
+.servico-relacionado-card:hover {
+  border-color: rgba(201,168,76,0.3);
+  background: #181818;
+}
+
+.servico-relacionado-card h3 {
+  font-family: var(--fonte-titulo);
+  font-size: 1.15rem;
+  color: var(--cor-branco);
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.servico-relacionado-card:hover h3 {
+  color: var(--cor-dourado);
+}
+
+.servico-relacionado-card p {
+  font-size: 0.82rem;
+  color: var(--cor-texto-muted);
+  line-height: 1.6;
+}
+
+/* Servico link stretcher (cards clicáveis no index) */
+.card-servico:has(.servico-link) {
+  cursor: pointer;
+}
+
+.servico-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.servico-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+/* Responsividade: páginas de serviço */
+@media (max-width: 768px) {
+  .servico-hero { padding-top: 7rem; }
+  .servico-detalhe { grid-template-columns: 1fr; gap: 2.5rem; }
+  .servico-beneficios-grid { grid-template-columns: 1fr; }
+  .servico-relacionados-grid { grid-template-columns: 1fr; }
+}
