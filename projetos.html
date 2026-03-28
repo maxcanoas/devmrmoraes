@@ -126,9 +126,9 @@
 
       <ul class="nav-links" role="list">
         <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="projetos.html" style="color:var(--cor-dourado)">Projetos</a></li>
         <li><a href="index.html#servicos">Serviços</a></li>
         <li><a href="index.html#processo">Processo</a></li>
-        <li><a href="projetos.html" style="color:var(--cor-dourado)">Projetos</a></li>
         <li><a href="index.html#faq">FAQ</a></li>
         <li><a href="index.html#contato" class="nav-botao-contato">Orçamento</a></li>
       </ul>
@@ -166,7 +166,9 @@
         <button class="filtro-botao" data-filtro="pratica" type="button">Projetos de Prática</button>
       </div>
 
-      <!-- Lista de projetos -->
+      <!-- ─── Projetos Entregues para Clientes ─── -->
+      <h3 class="projetos-secao-label animar-entrada" style="font-family:var(--fonte-titulo);font-size:1.3rem;color:var(--cor-dourado);margin-bottom:1.5rem;letter-spacing:0.5px;">Projetos entregues para clientes</h3>
+
       <div class="projetos-lista" id="lista-projetos">
 
         <!-- Projeto 01 — Brucker Printers -->
@@ -238,8 +240,15 @@
           <span class="projeto-linha-arrow" aria-hidden="true">→</span>
         </article>
 
+      </div>
+
+      <!-- ─── Projetos de Estudo ─── -->
+      <h3 class="projetos-secao-label animar-entrada" style="font-family:var(--fonte-titulo);font-size:1.1rem;color:var(--cor-texto-muted);margin-top:4rem;margin-bottom:1.5rem;letter-spacing:0.5px;">Projetos de estudo e prática</h3>
+
+      <div class="projetos-lista" id="lista-projetos-pratica">
+
         <!-- Projeto 04 — Vital Acesso -->
-        <article class="projeto-linha animar-entrada atraso-3 projeto-linha-clicavel" data-categoria="pratica" tabindex="0" role="article"
+        <article class="projeto-linha animar-entrada projeto-linha-clicavel" data-categoria="pratica" tabindex="0" role="article"
           data-url="https://maxcanoas.github.io/vitalacesso/"
           data-tem-url="true"
           data-descricao="Site institucional focado em serviços de trabalho em altura, destacando segurança e credibilidade. Design responsivo para todos os dispositivos. Projeto desenvolvido para prática de HTML5, CSS3 e JavaScript."
@@ -263,7 +272,7 @@
         </article>
 
         <!-- Projeto 05 — Consultório Odontológico -->
-        <article class="projeto-linha animar-entrada atraso-4 projeto-linha-clicavel" data-categoria="pratica" tabindex="0" role="article"
+        <article class="projeto-linha animar-entrada atraso-1 projeto-linha-clicavel" data-categoria="pratica" tabindex="0" role="article"
           data-url="https://maxcanoas.github.io/consultorio-odonto/"
           data-tem-url="true"
           data-descricao="Site single-page para consultório odontológico, apresentando todos os serviços oferecidos e integrando mapa de localização. Projeto de prática com foco em layout limpo e responsivo."
@@ -286,7 +295,7 @@
         </article>
 
         <!-- Projeto 06 — Projeto Android -->
-        <article class="projeto-linha animar-entrada atraso-5 projeto-linha-clicavel" data-categoria="pratica" tabindex="0" role="article"
+        <article class="projeto-linha animar-entrada atraso-2 projeto-linha-clicavel" data-categoria="pratica" tabindex="0" role="article"
           data-url="https://maxcanoas.github.io/projeto-android/"
           data-tem-url="true"
           data-descricao="Site sobre a história do sistema operacional Android, criado como projeto de prática com ênfase em responsividade CSS e integração de vídeo."
@@ -309,7 +318,7 @@
         </article>
 
         <!-- Projeto 07 — Run Coach PRO -->
-        <article class="projeto-linha animar-entrada atraso-6 projeto-linha-clicavel" data-categoria="pratica" tabindex="0" role="article"
+        <article class="projeto-linha animar-entrada atraso-3 projeto-linha-clicavel" data-categoria="pratica" tabindex="0" role="article"
           data-url="https://maxcanoas.github.io/assessoria-um/index.html"
           data-tem-url="true"
           data-descricao="Site para assessoria de corrida, apresentando planos, resultados da equipe e seção de perguntas frequentes. Projeto de prática com HTML5, CSS3 e JavaScript."
@@ -333,7 +342,7 @@
         </article>
 
         <!-- Projeto 08 — Run Elite -->
-        <article class="projeto-linha animar-entrada atraso-7 projeto-linha-clicavel" data-categoria="pratica" tabindex="0" role="article"
+        <article class="projeto-linha animar-entrada atraso-4 projeto-linha-clicavel" data-categoria="pratica" tabindex="0" role="article"
           data-url="https://maxcanoas.github.io/assessoria-dois/index.html"
           data-tem-url="true"
           data-descricao="Site para equipe de corrida, apresentando a história da equipe, patrocinadores, staff e formulário de contato via WhatsApp. Projeto de prática com HTML5, CSS3 e JavaScript."
@@ -429,7 +438,10 @@
 
       function inicializarFiltrosProjetos() {
         const botoes = document.querySelectorAll('.projetos-filtros-barra .filtro-botao');
-        const projetos = document.querySelectorAll('.projeto-linha');
+        const projetos = document.querySelectorAll('#lista-projetos .projeto-linha, #lista-projetos-pratica .projeto-linha');
+        const labelClientes = document.querySelector('.projetos-secao-label');
+        const labelPratica = document.querySelectorAll('.projetos-secao-label')[1];
+        const listaPratica = document.getElementById('lista-projetos-pratica');
         const estadoVazio = document.getElementById('estado-vazio');
 
         botoes.forEach(botao => {
@@ -446,6 +458,23 @@
               projeto.style.display = mostrar ? '' : 'none';
               if (mostrar) visiveis++;
             });
+
+            // Mostrar/esconder labels de seção conforme filtro
+            if (labelClientes && labelPratica && listaPratica) {
+              if (filtro === 'todos') {
+                labelClientes.style.display = '';
+                labelPratica.style.display = '';
+                listaPratica.style.display = '';
+              } else if (filtro === 'pratica') {
+                labelClientes.style.display = 'none';
+                labelPratica.style.display = '';
+                listaPratica.style.display = '';
+              } else {
+                labelClientes.style.display = '';
+                labelPratica.style.display = 'none';
+                listaPratica.style.display = 'none';
+              }
+            }
 
             estadoVazio.style.display = visiveis === 0 ? 'block' : 'none';
           });
