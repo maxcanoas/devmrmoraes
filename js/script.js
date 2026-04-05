@@ -136,7 +136,10 @@ function configurarAnimacoesEntrada() {
   }, opcoesObserver);
 
   const elementosParaAnimar = document.querySelectorAll('.animar-entrada');
-  elementosParaAnimar.forEach(el => observador.observe(el));
+  elementosParaAnimar.forEach(el => {
+    el.classList.add('animar-preparado');
+    observador.observe(el);
+  });
 }
 
 /* ─── Animações do hero ─── */
