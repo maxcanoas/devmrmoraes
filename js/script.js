@@ -235,7 +235,8 @@ function configurarFormulario() {
       `Olá! Meu nome é ${nome}${empresa ? ` da empresa ${empresa}` : ''}.${tipoTexto ? ` Tipo de projeto: ${tipoTexto}.` : ''} ${mensagem}`
     );
 
-    /* TODO: Trocar pelo número real de WhatsApp */
+    registrarConversaWhatsApp('formulario');
+
     const urlWhatsApp = `https://wa.me/5551999608608?text=${textoWhatsApp}`;
     window.open(urlWhatsApp, '_blank');
   });
@@ -250,6 +251,27 @@ function mostrarErroCampo(campo, mensagem) {
   if (!document.querySelector('.campo-erro:first-of-type')) campo.focus();
 }
 
+/* ─── Medição de conversa no WhatsApp ───
+   Sem isto não dá para saber qual página e qual botão geram conversa.
+   Só dispara evento; não altera a configuração do GA4. */
+function registrarConversaWhatsApp(origem) {
+  if (typeof gtag !== 'function') return;
+
+  gtag('event', 'contato_whatsapp', {
+    origem: origem,
+    pagina: window.location.pathname
+  });
+}
+
+function configurarMedicaoWhatsApp() {
+  /* Cada ponto de saída para o WhatsApp se identifica pelo data-origem.
+     O botão flutuante e o formulário se registram no próprio código. */
+  document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+    const origem = link.dataset.origem || 'nao_identificado';
+    link.addEventListener('click', () => registrarConversaWhatsApp(origem));
+  });
+}
+
 /* ─── Botão WhatsApp flutuante ─── */
 function criarBotaoWhatsApp() {
   const botaoWpp = document.createElement('a');
@@ -257,6 +279,7 @@ function criarBotaoWhatsApp() {
   botaoWpp.target = '_blank';
   botaoWpp.rel = 'noopener noreferrer';
   botaoWpp.className = 'botao-whatsapp-flutuante';
+  botaoWpp.dataset.origem = 'botao_flutuante';
   botaoWpp.setAttribute('aria-label', 'Conversar no WhatsApp');
   botaoWpp.innerHTML = `
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="26" height="26">
@@ -265,37 +288,6 @@ function criarBotaoWhatsApp() {
   `;
 
   document.body.appendChild(botaoWpp);
-}
-
-/* ─── Animação de contagem dos números ─── */
-function animarContadores() {
-  const contadores = document.querySelectorAll('.stat-numero[data-meta]');
-
-  const observadorContador = new IntersectionObserver((entradas) => {
-    entradas.forEach(entrada => {
-      if (!entrada.isIntersecting) return;
-
-      const elemento = entrada.target;
-      const meta = parseInt(elemento.dataset.meta);
-      const sufixo = elemento.dataset.sufixo || '';
-      let atual = 0;
-      const duracao = 1800;
-      const passos = 60;
-      const incremento = meta / passos;
-      const intervalo = duracao / passos;
-
-      const timer = setInterval(() => {
-        atual = Math.min(atual + incremento, meta);
-        elemento.querySelector('.numero-valor').textContent = Math.floor(atual) + sufixo;
-
-        if (atual >= meta) clearInterval(timer);
-      }, intervalo);
-
-      observadorContador.unobserve(elemento);
-    });
-  }, { threshold: 0.5 });
-
-  contadores.forEach(el => observadorContador.observe(el));
 }
 
 /* ─── Scroll suave para âncoras ─── */
@@ -325,7 +317,8 @@ function inicializar() {
   configurarFormulario();
   configurarScrollSuave();
   criarBotaoWhatsApp();
-  animarContadores();
+  /* Depois de criar o botão flutuante, para ele também ser medido */
+  configurarMedicaoWhatsApp();
 
   /* Eventos de scroll e mouse */
   window.addEventListener('scroll', controlarNavegacao, { passive: true });
