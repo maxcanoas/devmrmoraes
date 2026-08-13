@@ -257,58 +257,8 @@ ul { list-style: none; }
 .faixa-dourada {
   height: 3px;
   background: linear-gradient(90deg, transparent, var(--cor-dourado-escuro), var(--cor-dourado), var(--cor-dourado-claro), var(--cor-dourado), var(--cor-dourado-escuro), transparent);
-  background-size: 200% 100%;
-  animation: brilho-faixa 3s linear infinite;
   position: relative;
   z-index: 2;
-}
-
-@keyframes brilho-faixa {
-  0% { background-position: 200% center; }
-  100% { background-position: -200% center; }
-}
-
-/* ─── Marquee ─── */
-.marquee-container {
-  overflow: hidden;
-  background: rgba(201, 168, 76, 0.05);
-  border-top: 1px solid rgba(201, 168, 76, 0.15);
-  border-bottom: 1px solid rgba(201, 168, 76, 0.15);
-  padding: 0.75rem 0;
-  position: relative;
-  z-index: 2;
-}
-
-.marquee-faixa {
-  display: flex;
-  gap: 0;
-  width: max-content;
-  animation: marquee-rolagem 30s linear infinite;
-}
-
-.marquee-faixa:hover { animation-play-state: paused; }
-
-.marquee-item {
-  font-family: var(--fonte-titulo);
-  font-size: 0.85rem;
-  letter-spacing: 0.2em;
-  color: var(--cor-dourado);
-  padding: 0 2.5rem;
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  gap: 2.5rem;
-}
-
-.marquee-item::after {
-  content: '◆';
-  font-size: 0.5rem;
-  opacity: 0.5;
-}
-
-@keyframes marquee-rolagem {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
 }
 
 /* ─── HERO ─── */
@@ -1212,9 +1162,7 @@ footer {
     transform: none !important;
   }
 
-  /* Faixa dourada e marquee ficam parados em vez de rodar em loop */
-  .faixa-dourada,
-  .marquee-faixa,
+  /* Pontinho do selo "LIVE" fica parado em vez de piscar em loop */
   .badge-live {
     animation: none !important;
   }

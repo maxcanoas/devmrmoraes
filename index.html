@@ -238,6 +238,10 @@
 
   <!-- ─── Estilos ─── -->
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- JavaScript principal: baixa junto com o CSS e roda antes do primeiro
+       paint, para o conteúdo não aparecer e apagar em conexão lenta -->
+  <script src="js/script.js" defer></script>
 </head>
 
 <body>
@@ -293,34 +297,8 @@
     ════════════════════════════════════════ -->
     <section id="hero" aria-label="Apresentação principal">
 
-      <!-- Faixa dourada animada -->
+      <!-- Faixa dourada do topo -->
       <div class="faixa-dourada" aria-hidden="true"></div>
-
-      <!-- Marquee de serviços -->
-      <div class="marquee-container" aria-hidden="true">
-        <div class="marquee-faixa">
-          <!-- Duplicado para loop contínuo -->
-          <span class="marquee-item">Criação de Sites</span>
-          <span class="marquee-item">Otimização SEO</span>
-          <span class="marquee-item">Sistemas Personalizados</span>
-          <span class="marquee-item">Manutenção de Sites</span>
-          <span class="marquee-item">Aplicações Desktop</span>
-          <span class="marquee-item">Aplicativos Mobile</span>
-          <span class="marquee-item">Consultoria Técnica</span>
-          <span class="marquee-item">Chatbots com IA</span>
-          <span class="marquee-item">Suporte Contínuo</span>
-          <!-- Cópia para loop -->
-          <span class="marquee-item">Criação de Sites</span>
-          <span class="marquee-item">Otimização SEO</span>
-          <span class="marquee-item">Sistemas Personalizados</span>
-          <span class="marquee-item">Manutenção de Sites</span>
-          <span class="marquee-item">Aplicações Desktop</span>
-          <span class="marquee-item">Aplicativos Mobile</span>
-          <span class="marquee-item">Consultoria Técnica</span>
-          <span class="marquee-item">Chatbots com IA</span>
-          <span class="marquee-item">Suporte Contínuo</span>
-        </div>
-      </div>
 
       <!-- Texto fantasma parallax -->
       <p class="hero-texto-fantasma" aria-hidden="true">MAX</p>
@@ -363,21 +341,21 @@
         <!-- Conteúdo -->
         <div class="sobre-conteudo">
           <p class="secao-rotulo">Sobre mim</p>
-          <h2 id="titulo-sobre" class="secao-titulo animar-entrada">
+          <h2 id="titulo-sobre" class="secao-titulo">
             Desenvolvedor que entende<br><em>de negócio, não só de código.</em>
           </h2>
 
-          <p class="sobre-paragrafo animar-entrada atraso-1">
+          <p class="sobre-paragrafo">
             Meu nome é <strong style="color:var(--cor-texto)">Maxwell Rigo Moraes</strong>, mas pode me chamar de Max. Sou desenvolvedor e moro em <strong style="color:var(--cor-texto)">Canoas, RS</strong>. Trabalho com <strong style="color:var(--cor-texto)">criação de sites, sistemas, aplicativos mobile e automações</strong>. Em Canoas, Porto Alegre e Região Metropolitana eu atendo pessoalmente. O resto do Brasil é remoto, por WhatsApp e chamada de vídeo.
           </p>
-          <p class="sobre-paragrafo animar-entrada atraso-2">
+          <p class="sobre-paragrafo">
             Já fiz site institucional do zero, SEO em site que não aparecia no Google, sistema desktop para tirar uma empresa da planilha de Excel e chatbot para atendimento. Cada projeto começa com um escopo escrito, que você lê e aprova antes de eu abrir o editor.
           </p>
-          <p class="sobre-paragrafo animar-entrada atraso-3">
+          <p class="sobre-paragrafo">
             Site invisível no Google, site que ainda não existe, app parado na ideia, processo que roda no papel. Se for um desses, me chama. Se for algo que eu não faço, eu digo logo na primeira conversa.
           </p>
 
-          <div style="margin-top:2.5rem;" class="animar-entrada atraso-5">
+          <div style="margin-top:2.5rem;">
             <a href="https://www.linkedin.com/in/DEVMRMORAES" target="_blank" rel="noopener noreferrer" class="botao-secundario">
               Ver LinkedIn →
             </a>
@@ -390,7 +368,7 @@
          PORTFÓLIO — PROJETOS REAIS
     ════════════════════════════════════════ -->
     <section id="portfolio" class="secao" aria-labelledby="titulo-portfolio">
-      <div class="portfolio-teaser-header animar-entrada">
+      <div class="portfolio-teaser-header">
         <div>
           <p class="secao-rotulo">Trabalhos realizados</p>
           <h2 id="titulo-portfolio" class="secao-titulo">
@@ -610,10 +588,10 @@
 
       </div>
 
-      <p class="secao-descricao animar-entrada" style="margin-top:2.5rem;text-align:center;max-width:100%;">
+      <p class="secao-descricao" style="margin-top:2.5rem;text-align:center;max-width:100%;">
         Esses são quatro dos projetos. O resto está na página de projetos.
       </p>
-      <div class="portfolio-teaser-cta animar-entrada" style="margin-top:1.2rem;">
+      <div class="portfolio-teaser-cta" style="margin-top:1.2rem;">
         <a href="projetos.html" class="botao-primario">
           <span>Ver todos os 9 projetos</span>
           <span aria-hidden="true">→</span>
@@ -655,7 +633,7 @@
       <div class="servicos-grid">
 
         <!-- Serviço 1 — Criação de Sites -->
-        <article class="card-servico animar-entrada">
+        <article class="card-servico">
           <p class="servico-numero">01</p>
           <!-- Ícone: janela de browser com cursor de design -->
           <span class="servico-icone" aria-hidden="true">
@@ -692,7 +670,7 @@
         </article>
 
         <!-- Serviço 2 — SEO e Manutenção -->
-        <article class="card-servico animar-entrada atraso-1">
+        <article class="card-servico">
           <p class="servico-numero">02</p>
           <!-- Ícone: lupa sobre uma barra de busca / ranking -->
           <span class="servico-icone" aria-hidden="true">
@@ -724,7 +702,7 @@
         </article>
 
         <!-- Serviço 3 — Sistemas Personalizados -->
-        <article class="card-servico animar-entrada atraso-2">
+        <article class="card-servico">
           <p class="servico-numero">03</p>
           <!-- Ícone: dashboard com nós conectados representando um sistema -->
           <span class="servico-icone" aria-hidden="true">
@@ -764,7 +742,7 @@
         </article>
 
         <!-- Serviço 4 — Automação -->
-        <article class="card-servico animar-entrada atraso-3">
+        <article class="card-servico">
           <p class="servico-numero">04</p>
           <!-- Ícone: ciclo de automação com engrenagem mínima e seta circular -->
           <span class="servico-icone" aria-hidden="true">
@@ -795,7 +773,7 @@
         </article>
 
         <!-- Serviço 5 — Aplicativos Mobile -->
-        <article class="card-servico animar-entrada atraso-4">
+        <article class="card-servico">
           <p class="servico-numero">05</p>
           <!-- Ícone: smartphone com app -->
           <span class="servico-icone" aria-hidden="true">
@@ -825,7 +803,7 @@
         </article>
 
         <!-- Serviço 6 — Consultoria e Diagnóstico Técnico -->
-        <article class="card-servico animar-entrada atraso-5">
+        <article class="card-servico">
           <p class="servico-numero">06</p>
           <!-- Ícone: prancheta com checklist e lupa -->
           <span class="servico-icone" aria-hidden="true">
@@ -857,7 +835,7 @@
         </article>
 
         <!-- Serviço 7 — Chatbots e Assistentes com IA -->
-        <article class="card-servico animar-entrada atraso-6">
+        <article class="card-servico">
           <p class="servico-numero">07</p>
           <!-- Ícone: balão de chat com cérebro/IA -->
           <span class="servico-icone" aria-hidden="true">
@@ -889,7 +867,7 @@
         </article>
 
         <!-- Serviço 8 — Suporte e Evolução Contínua -->
-        <article class="card-servico animar-entrada atraso-7">
+        <article class="card-servico">
           <p class="servico-numero">08</p>
           <!-- Ícone: escudo com seta circular de atualização -->
           <span class="servico-icone" aria-hidden="true">
@@ -919,7 +897,7 @@
     ════════════════════════════════════════ -->
     <section id="processo" aria-labelledby="titulo-processo">
       <div class="processo-inner">
-        <div class="processo-header animar-entrada">
+        <div class="processo-header">
           <p class="secao-rotulo">Transparência</p>
           <h2 id="titulo-processo" class="secao-titulo">
             Do primeiro contato ao<br><em>sistema em produção.</em>
@@ -931,7 +909,7 @@
 
         <div class="processo-steps">
 
-          <div class="step-item animar-entrada">
+          <div class="step-item">
             <div class="step-numero-container">
               <span class="step-numero">01</span>
             </div>
@@ -939,7 +917,7 @@
             <p class="step-descricao">Sem precisar saber nada de tecnologia. Me conta como funciona o processo hoje e onde ele trava.</p>
           </div>
 
-          <div class="step-item animar-entrada atraso-1">
+          <div class="step-item">
             <div class="step-numero-container">
               <span class="step-numero">02</span>
             </div>
@@ -947,7 +925,7 @@
             <p class="step-descricao">Mapeio o fluxo, identifico os gargalos e defino qual solução resolve com o menor custo e complexidade.</p>
           </div>
 
-          <div class="step-item animar-entrada atraso-2">
+          <div class="step-item">
             <div class="step-numero-container">
               <span class="step-numero">03</span>
             </div>
@@ -955,7 +933,7 @@
             <p class="step-descricao">Tudo que será entregue está escrito e acordado antes de começar. Sem funcionalidade fantasma nem surpresa no final.</p>
           </div>
 
-          <div class="step-item animar-entrada atraso-3">
+          <div class="step-item">
             <div class="step-numero-container">
               <span class="step-numero">04</span>
             </div>
@@ -963,7 +941,7 @@
             <p class="step-descricao">Você recebe uma proposta com prazo realista e valor fixo. Nada de "depende" ou cobranças extras no meio do caminho.</p>
           </div>
 
-          <div class="step-item animar-entrada atraso-4">
+          <div class="step-item">
             <div class="step-numero-container">
               <span class="step-numero">05</span>
             </div>
@@ -973,7 +951,7 @@
 
         </div>
 
-        <div style="text-align:center;margin-top:4rem;" class="animar-entrada">
+        <div style="text-align:center;margin-top:4rem;">
           <a href="#contato" class="botao-primario">
             <span>Iniciar meu projeto</span>
             <span aria-hidden="true">→</span>
@@ -985,7 +963,7 @@
     <!-- ═══════════════════════════════════════
          CTA CENTRAL
     ════════════════════════════════════════ -->
-    <div class="cta-secao animar-entrada">
+    <div class="cta-secao">
       <h2 class="cta-titulo">
         Quanto custa manter<br>um processo manual<br><em>por mais um ano?</em>
       </h2>
@@ -1017,10 +995,10 @@
         <!-- Informações de contato -->
         <div class="contato-info">
           <p class="secao-rotulo">Contato</p>
-          <h2 id="titulo-contato" class="secao-titulo animar-entrada">
+          <h2 id="titulo-contato" class="secao-titulo">
             Me conta o problema.<br>Eu digo se <em>consigo resolver.</em>
           </h2>
-          <p class="secao-descricao animar-entrada atraso-1" style="margin-top:1rem;">
+          <p class="secao-descricao" style="margin-top:1rem;">
             Sem pitch de vendas. Você me conta o que precisa e eu respondo se faz sentido fazer, o que dá trabalho e quanto deve custar. Às vezes a resposta é que não vale a pena.
           </p>
 
@@ -1031,7 +1009,7 @@
               href="https://wa.me/5551999608608?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento."
               target="_blank"
               rel="noopener noreferrer"
-              class="canal-item animar-entrada atraso-1"
+              class="canal-item"
               aria-label="Conversar no WhatsApp"
             >
               <div class="canal-icone" aria-hidden="true">
@@ -1051,7 +1029,7 @@
               href="https://www.linkedin.com/in/DEVMRMORAES"
               target="_blank"
               rel="noopener noreferrer"
-              class="canal-item animar-entrada atraso-2"
+              class="canal-item"
               aria-label="Perfil no LinkedIn"
             >
               <div class="canal-icone" aria-hidden="true">
@@ -1071,7 +1049,7 @@
               href="https://www.instagram.com/DEVMRMORAES"
               target="_blank"
               rel="noopener noreferrer"
-              class="canal-item animar-entrada atraso-3"
+              class="canal-item"
               aria-label="Perfil no Instagram"
             >
               <div class="canal-icone" aria-hidden="true">
@@ -1090,7 +1068,7 @@
         </div>
 
         <!-- Formulário -->
-        <div class="animar-entrada atraso-2">
+        <div>
           <form
             id="formulario-contato"
             class="formulario-contato"
@@ -1163,7 +1141,7 @@
          PERGUNTAS FREQUENTES (FAQ)
     ════════════════════════════════════════ -->
     <section id="faq" class="secao" aria-labelledby="titulo-faq">
-      <div class="faq-header animar-entrada">
+      <div class="faq-header">
         <p class="secao-rotulo">Dúvidas</p>
         <h2 id="titulo-faq" class="secao-titulo">
           Perguntas<br><em>frequentes.</em>
@@ -1172,42 +1150,42 @@
 
       <div class="faq-lista">
 
-        <details class="faq-item animar-entrada">
+        <details class="faq-item">
           <summary class="faq-pergunta">Quanto custa desenvolver um site ou sistema?</summary>
           <div class="faq-resposta">
             <p>Não tenho tabela de preço, porque dois sites do mesmo tamanho podem dar trabalho bem diferente. O que faz o valor subir é quantidade de páginas, integração com um sistema que você já usa, cadastro de usuário e prazo apertado. Eu monto o escopo, mando o valor fechado e você decide. Orçar não custa nada.</p>
           </div>
         </details>
 
-        <details class="faq-item animar-entrada atraso-1">
+        <details class="faq-item">
           <summary class="faq-pergunta">Você atende empresas de todo o Brasil?</summary>
           <div class="faq-resposta">
             <p>Sim. Fora de Canoas e Porto Alegre eu atendo remoto, por WhatsApp, chamada de vídeo e e-mail. Na prática a maior parte da conversa acontece no WhatsApp mesmo, e você acompanha o projeto conforme ele anda.</p>
           </div>
         </details>
 
-        <details class="faq-item animar-entrada atraso-2">
+        <details class="faq-item">
           <summary class="faq-pergunta">Qual o prazo de entrega de um site ou sistema?</summary>
           <div class="faq-resposta">
             <p>Depende da complexidade do projeto. Um site institucional leva em média de 1 a 3 semanas. Sistemas mais complexos podem levar de 4 a 12 semanas. O prazo exato é definido na proposta, antes de iniciar o desenvolvimento.</p>
           </div>
         </details>
 
-        <details class="faq-item animar-entrada atraso-3">
+        <details class="faq-item">
           <summary class="faq-pergunta">Você oferece suporte após a entrega do projeto?</summary>
           <div class="faq-resposta">
             <p>Sim. Todo projeto sai com 30 dias de suporte incluso: nesse período, erro no que eu entreguei eu corrijo sem cobrar. Depois disso existe plano mensal de manutenção, que cobre atualização, ajuste e funcionalidade nova. O plano é opcional.</p>
           </div>
         </details>
 
-        <details class="faq-item animar-entrada atraso-4">
+        <details class="faq-item">
           <summary class="faq-pergunta">Meu site não aparece no Google. O que pode ser?</summary>
           <div class="faq-resposta">
             <p>Quase sempre é uma causa técnica, não falta de sorte: bloqueio de indexação, conteúdo que só existe depois do JavaScript, estrutura de títulos quebrada, ausência de ancoragem geográfica ou canonical apontando para o lugar errado. Escrevi um artigo detalhando <a href="artigos/meu-site-nao-aparece-no-google/" style="color:var(--cor-dourado)">as 7 causas técnicas mais comuns e como identificar cada uma</a> por conta própria. Se preferir, faço o <a href="seo-para-sites/" style="color:var(--cor-dourado)">diagnóstico de SEO</a> sem custo.</p>
           </div>
         </details>
 
-        <details class="faq-item animar-entrada atraso-5">
+        <details class="faq-item">
           <summary class="faq-pergunta">Quais tecnologias você utiliza?</summary>
           <div class="faq-resposta">
             <p>C# e .NET nos sistemas desktop e web. HTML, CSS e JavaScript nos sites. React Native nos aplicativos Android e iOS. Nos chatbots eu uso as APIs dos modelos de IA, ligadas ao WhatsApp ou ao próprio site.</p>
@@ -1289,9 +1267,6 @@
 
   <!-- Ano dinâmico -->
   <script>document.getElementById('ano-atual').textContent = new Date().getFullYear();</script>
-
-  <!-- JavaScript principal -->
-  <script src="js/script.js"></script>
 
   <script>
   (function () {
