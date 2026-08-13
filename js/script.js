@@ -238,8 +238,36 @@ function configurarFormulario() {
     registrarConversaWhatsApp('formulario');
 
     const urlWhatsApp = `https://wa.me/5551999608608?text=${textoWhatsApp}`;
-    window.open(urlWhatsApp, '_blank');
+    const janela = window.open(urlWhatsApp, '_blank');
+
+    /* Navegador que bloqueia janela nova devolve null. Sem isto o visitante
+       preenche o formulário inteiro, toca em enviar e não acontece nada. */
+    if (!janela) mostrarSaidaManual(formulario, urlWhatsApp);
   });
+}
+
+function mostrarSaidaManual(formulario, url) {
+  let saida = formulario.querySelector('.formulario-saida-manual');
+
+  if (!saida) {
+    saida = document.createElement('p');
+    saida.className = 'formulario-saida-manual';
+    saida.setAttribute('role', 'status');
+    formulario.appendChild(saida);
+  }
+
+  saida.innerHTML = '';
+
+  const link = document.createElement('a');
+  link.href = url;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  link.dataset.origem = 'formulario_saida_manual';
+  link.textContent = 'O navegador bloqueou a abertura. Toque aqui para abrir o WhatsApp →';
+  link.addEventListener('click', () => registrarConversaWhatsApp('formulario_saida_manual'));
+
+  saida.appendChild(link);
+  link.focus();
 }
 
 function mostrarErroCampo(campo, mensagem) {
@@ -275,7 +303,8 @@ function configurarMedicaoWhatsApp() {
 /* ─── Botão WhatsApp flutuante ─── */
 function criarBotaoWhatsApp() {
   const botaoWpp = document.createElement('a');
-  botaoWpp.href = 'https://wa.me/5551999608608?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento.';
+  botaoWpp.href = 'https://wa.me/5551999608608?text=' +
+    encodeURIComponent('Olá! Gostaria de solicitar um orçamento.');
   botaoWpp.target = '_blank';
   botaoWpp.rel = 'noopener noreferrer';
   botaoWpp.className = 'botao-whatsapp-flutuante';

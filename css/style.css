@@ -2025,6 +2025,21 @@ details[open] .faq-pergunta::after {
   margin-top: 0.25rem;
 }
 
+/* Saída manual quando o navegador bloqueia a janela do WhatsApp */
+.formulario-saida-manual a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--cor-dourado);
+  border-radius: var(--raio-botao);
+  color: var(--cor-dourado);
+  font-size: 0.82rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
 .campo-input.campo-valido,
 .campo-textarea.campo-valido {
   border-color: var(--cor-dourado);
