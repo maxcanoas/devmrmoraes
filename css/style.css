@@ -533,6 +533,31 @@ ul { list-style: none; }
   overflow: hidden;
 }
 
+/* Oito cards de peso idêntico não têm hierarquia nenhuma. O carro-chefe
+   ocupa a linha inteira e tem mais peso; o último fecha o grid sem sobra. */
+.servicos-grid .card-servico:first-child,
+.servicos-grid .card-servico:last-child {
+  grid-column: span 2;
+}
+
+.servicos-grid .card-servico:first-child {
+  padding: 3.5rem;
+}
+
+.servicos-grid .card-servico:first-child .servico-titulo {
+  font-size: 2.2rem;
+}
+
+.servicos-grid .card-servico:first-child .servico-descricao {
+  font-size: 1rem;
+  max-width: 60ch;
+}
+
+.servicos-grid .card-servico:first-child .servico-icone svg {
+  width: 56px;
+  height: 56px;
+}
+
 .card-servico::before {
   content: '';
   position: absolute;
@@ -1343,8 +1368,22 @@ details[open] .faq-pergunta::after {
   .nav-submenu-separador { margin: 0.8rem auto; width: 60px; }
 
   .sobre-grid { grid-template-columns: 1fr; }
-  
+
   .servicos-grid { grid-template-columns: 1fr; }
+
+  /* Em coluna única não há o que destacar por largura */
+  .servicos-grid .card-servico:first-child,
+  .servicos-grid .card-servico:last-child {
+    grid-column: span 1;
+  }
+
+  .servicos-grid .card-servico:first-child {
+    padding: 2.5rem;
+  }
+
+  .servicos-grid .card-servico:first-child .servico-titulo {
+    font-size: 1.8rem;
+  }
   .portfolio-grid { grid-template-columns: 1fr; }
   .portfolio-grid .card-projeto:first-child { grid-column: span 1; }
   .processo-steps { grid-template-columns: 1fr 1fr; }
