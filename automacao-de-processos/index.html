@@ -48,12 +48,52 @@
     "@graph": [
       {
         "@type": "Service",
+        "serviceType": "Automação de Processos",
         "name": "Automação de Processos Empresariais",
-        "description": "Automação de tarefas repetitivas: geração de relatórios, envio de e-mails, leitura de planilhas e integração entre sistemas.",
+        "description": "Automação de tarefas repetitivas executadas manualmente pela equipe, como geração de relatórios, leitura e consolidação de planilhas, envio de e-mails e integração entre sistemas.",
         "url": "https://www.devmrmoraes.com.br/automacao-de-processos/",
         "provider": { "@id": "https://www.devmrmoraes.com.br/#business" },
-        "areaServed": { "@type": "Country", "name": "Brasil" },
-        "serviceType": "Automação de Processos"
+        "areaServed": [
+          { "@type": "City", "name": "Canoas" },
+          { "@type": "City", "name": "Porto Alegre" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Vou precisar demitir alguém depois de automatizar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não é esse o objetivo, e não é o que costuma acontecer. As tarefas que valem automatizar são as repetitivas e chatas, aquelas nas quais o erro humano é mais provável. O ganho é a mesma equipe atendendo mais volume sem precisar crescer na mesma proporção."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "A automação funciona com o sistema que eu já uso?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Na maioria dos casos, sim. Se o sistema tem API, a integração é direta. Se não tem, dá para trabalhar com os arquivos que ele exporta — CSV, Excel, PDF — ou com o banco de dados, quando há acesso."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "E se a automação falhar sem ninguém perceber?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Toda rotina que eu entrego registra o que executou e avisa quando falha, por e-mail ou pelo canal que você preferir. Silêncio nunca é interpretado como sucesso: se a automação não rodou, alguém fica sabendo no mesmo dia."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Preciso deixar um computador ligado?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Depende de onde a rotina precisa rodar. Automação que só mexe em arquivos e serviços online pode rodar em servidor. Automação que interage com sistema instalado localmente precisa de um computador disponível nos horários de execução."
+            }
+          }
+        ]
       },
       {
         "@type": "BreadcrumbList",
@@ -144,14 +184,45 @@
     </section>
 
     <div class="servico-conteudo">
+
+      <!-- ─── Para quem é ─── -->
+      <section class="servico-bloco animar-entrada">
+        <h2>Para quem é</h2>
+        <p class="servico-bloco-intro">
+          A conta que importa aqui é simples: quantas horas por mês a tarefa consome, multiplicado pelo custo dessas horas. Se der um número relevante, vale automatizar. Alguns exemplos concretos:
+        </p>
+        <div class="servico-cenarios">
+          <article class="servico-cenario">
+            <h3>O relatório de toda semana</h3>
+            <p>Alguém exporta dados de dois ou três lugares, cola numa planilha modelo, formata, confere e envia. Toda semana, sempre igual, sempre pela mesma pessoa.</p>
+          </article>
+          <article class="servico-cenario">
+            <h3>Copiar de um sistema para outro</h3>
+            <p>Um pedido chega num lugar e precisa ser digitado de novo em outro, porque os dois sistemas nunca conversaram. Cada digitação é uma chance de errar um número.</p>
+          </article>
+          <article class="servico-cenario">
+            <h3>Planilhas que viram uma só</h3>
+            <p>Cada filial, vendedor ou fornecedor manda a sua planilha, no seu formato. Consolidar tudo num arquivo único consome um dia de trabalho por mês.</p>
+          </article>
+          <article class="servico-cenario">
+            <h3>Avisos enviados na mão</h3>
+            <p>Cobrança de vencimento, aviso de agendamento, confirmação de entrega. Uma pessoa abre a lista e envia um a um, e quando ela falta ninguém envia.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ─── O que está incluído ─── -->
       <div class="servico-detalhe animar-entrada">
         <div class="servico-detalhe-texto">
-          <h2>O que está incluso</h2>
+          <h2>O que está incluído</h2>
           <p>
             Identifico os processos manuais que consomem mais tempo da sua equipe e crio automações que os executam sem intervenção humana. Desde a geração automática de relatórios até a integração entre sistemas que hoje não conversam entre si.
           </p>
           <p>
             O resultado é uma operação mais rápida, com menos erros e com a equipe focada em atividades que realmente geram valor.
+          </p>
+          <p>
+            Automação não é substituir pessoa: é tirar da pessoa a parte que uma máquina faz melhor. Ninguém foi contratado para copiar célula de planilha, e essa é justamente a tarefa em que o ser humano erra mais e o computador não erra nunca.
           </p>
         </div>
         <ul class="servico-entregas">
@@ -164,6 +235,60 @@
           <li>Documentação e treinamento para a equipe acompanhar os fluxos</li>
         </ul>
       </div>
+
+      <!-- ─── Como funciona ─── -->
+      <section class="servico-bloco animar-entrada">
+        <h2>Como funciona</h2>
+        <p class="servico-bloco-intro">
+          Automação boa começa medindo, não codificando. Sem saber quanto tempo a tarefa custa hoje, não há como saber se valeu.
+        </p>
+        <div class="servico-etapas">
+          <div class="servico-etapa">
+            <div>
+              <h3>Cronometrar o processo</h3>
+              <p>Vejo a tarefa sendo executada e anoto os passos e o tempo de cada um. Duas coisas costumam aparecer aqui: etapas que ninguém sabia que existiam, e etapas que não precisam existir nem depois da automação.</p>
+            </div>
+          </div>
+          <div class="servico-etapa">
+            <div>
+              <h3>Decidir o que automatizar</h3>
+              <p>Nem tudo compensa. Tarefa que roda uma vez por ano em vinte minutos não paga o desenvolvimento. Faço a conta com você e digo com franqueza quando não vale a pena.</p>
+            </div>
+          </div>
+          <div class="servico-etapa">
+            <div>
+              <h3>Construir a rotina</h3>
+              <p>Desenvolvo a automação, sempre com registro de execução e tratamento de erro. Rotina que falha em silêncio é pior que tarefa manual — pelo menos a manual alguém percebe que não foi feita.</p>
+            </div>
+          </div>
+          <div class="servico-etapa">
+            <div>
+              <h3>Rodar em paralelo</h3>
+              <p>Por um período, a automação roda junto com o processo manual e comparamos os dois resultados. Só quando os números batem é que o manual é desligado.</p>
+            </div>
+          </div>
+          <div class="servico-etapa">
+            <div>
+              <h3>Entregar com a documentação</h3>
+              <p>A equipe recebe o passo a passo do que a rotina faz, onde ficam os registros e o que conferir quando algo parecer estranho. Automação que só uma pessoa entende é risco novo, não ganho.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── Prazo e investimento ─── -->
+      <section class="servico-bloco animar-entrada">
+        <h2>Prazo e investimento</h2>
+        <p>
+          A maior parte das automações é rápida de construir. Uma rotina isolada — consolidar planilhas, gerar um relatório, disparar um lote de e-mails — costuma sair em poucos dias. O que estica o prazo é integração com sistema de terceiro: se houver API documentada, é tranquilo; se não houver, o caminho é mais longo e eu digo isso antes de orçar.
+        </p>
+        <p>
+          Cada automação é orçada com escopo fechado: o que vai ser automatizado, o que fica de fora, prazo e valor definidos antes de começar. E, diferente de outros serviços, aqui existe um número concreto para comparar — o tempo que a tarefa consome hoje. Esse é o parâmetro que diz se o investimento se paga.
+        </p>
+        <p>
+          Quando o levantamento mostra que o problema não é uma tarefa isolada, e sim a falta de um lugar único para os dados, o caminho certo deixa de ser automação e passa a ser um <a href="../sistemas-personalizados/">sistema personalizado</a>. Automatizar o vaivém entre cinco planilhas é remendar um problema que o sistema resolveria na raiz.
+        </p>
+      </section>
 
       <div class="servico-beneficios animar-entrada">
         <h2>Por que automatizar processos</h2>
@@ -195,6 +320,37 @@
         </div>
       </div>
 
+      <!-- ─── Perguntas frequentes ─── -->
+      <section class="servico-bloco animar-entrada">
+        <h2>Perguntas frequentes</h2>
+        <div class="faq-lista">
+          <details class="faq-item">
+            <summary class="faq-pergunta">Vou precisar demitir alguém?</summary>
+            <div class="faq-resposta">
+              <p>Não é esse o objetivo, e não é o que costuma acontecer. As tarefas que valem automatizar são as repetitivas e chatas, aquelas que ninguém gosta de fazer e nas quais o erro humano é mais provável. O ganho é a mesma equipe atendendo mais volume sem precisar crescer na mesma proporção.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-pergunta">Funciona com o sistema que eu já uso?</summary>
+            <div class="faq-resposta">
+              <p>Na maioria dos casos, sim. Se o sistema tem API, a integração é direta. Se não tem, dá para trabalhar com os arquivos que ele exporta — CSV, Excel, PDF — ou com o banco de dados, quando há acesso. Levanto isso antes de orçar, porque é o fator que mais muda o prazo.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-pergunta">E se a automação falhar sem ninguém perceber?</summary>
+            <div class="faq-resposta">
+              <p>Essa é a preocupação certa. Toda rotina que eu entrego registra o que executou e avisa quando falha, por e-mail ou pelo canal que você preferir. Silêncio nunca é interpretado como sucesso — se a automação não rodou, alguém fica sabendo no mesmo dia.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-pergunta">Preciso deixar um computador ligado?</summary>
+            <div class="faq-resposta">
+              <p>Depende de onde a rotina precisa rodar. Automação que só mexe em arquivos e serviços online pode rodar em servidor, sem depender de máquina na empresa. Automação que interage com sistema instalado localmente precisa de um computador disponível nos horários de execução. Definimos isso no levantamento.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
       <div class="servico-relacionados animar-entrada">
         <h2>Serviços relacionados</h2>
         <div class="servico-relacionados-grid">
@@ -221,10 +377,15 @@
       <p class="cta-subtitulo">
         Solicite um orçamento e descubra quais processos podem ser automatizados na sua empresa.
       </p>
-      <a href="../index.html#contato" class="botao-primario">
-        <span>Quero automatizar meus processos</span>
-        <span aria-hidden="true">→</span>
-      </a>
+      <div class="cta-botoes">
+        <a href="../index.html#contato" class="botao-primario">
+          <span>Quero automatizar meus processos</span>
+          <span aria-hidden="true">→</span>
+        </a>
+        <a href="https://wa.me/5551999608608?text=Ol%C3%A1!%20Tenho%20uma%20tarefa%20repetitiva%20que%20gostaria%20de%20automatizar." target="_blank" rel="noopener noreferrer" class="botao-secundario">
+          Falar no WhatsApp
+        </a>
+      </div>
     </div>
 
   </main>

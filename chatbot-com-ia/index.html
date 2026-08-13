@@ -48,12 +48,60 @@
     "@graph": [
       {
         "@type": "Service",
+        "serviceType": "Chatbot com Inteligência Artificial",
         "name": "Chatbots e Assistentes com Inteligência Artificial",
-        "description": "Chatbots e assistentes inteligentes para WhatsApp e site. Atendimento 24h com IA, integrados ao seu sistema.",
+        "description": "Desenvolvimento de chatbots e assistentes com inteligência artificial para WhatsApp e sites, com respostas em linguagem natural e integração aos sistemas da empresa.",
         "url": "https://www.devmrmoraes.com.br/chatbot-com-ia/",
         "provider": { "@id": "https://www.devmrmoraes.com.br/#business" },
-        "areaServed": { "@type": "Country", "name": "Brasil" },
-        "serviceType": "Chatbots e Assistentes com IA"
+        "areaServed": [
+          { "@type": "City", "name": "Canoas" },
+          { "@type": "City", "name": "Porto Alegre" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "O cliente vai perceber que está falando com um robô?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Vai, e deve mesmo. O assistente se identifica logo na primeira mensagem. O que faz diferença não é esconder o robô, é ele resolver o problema rápido e passar para uma pessoa sem enrolação quando não conseguir."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "E se a IA inventar uma resposta errada?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "O assistente responde a partir da base de conhecimento da sua empresa, não do conhecimento geral do modelo. Assuntos sensíveis — preço fora de tabela, prazo de entrega, condição contratual — ficam bloqueados e vão direto para um atendente."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Preciso do WhatsApp Business API?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Para chatbot em WhatsApp, sim. A versão comum do aplicativo não permite automação oficial, e soluções que contornam isso correm risco de bloqueio do número. A API oficial tem custo por conversa e exige verificação da empresa."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Isso substitui minha equipe de atendimento?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não. O assistente absorve o volume repetitivo e entrega para a equipe as conversas que exigem julgamento, negociação ou empatia. Na prática, quem atende passa a lidar com menos mensagem e com mensagem melhor."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Meus dados vão para uma empresa de fora?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Quando o assistente usa um modelo de IA hospedado por terceiro, as mensagens passam por esse serviço. Definimos no início do projeto que dados podem trafegar e quais precisam ficar de fora, e a política de privacidade da empresa precisa refletir isso."
+            }
+          }
+        ]
       },
       {
         "@type": "BreadcrumbList",
@@ -144,14 +192,45 @@
     </section>
 
     <div class="servico-conteudo">
+
+      <!-- ─── Para quem é ─── -->
+      <section class="servico-bloco animar-entrada">
+        <h2>Para quem é</h2>
+        <p class="servico-bloco-intro">
+          Chatbot compensa quando existe volume e repetição. Se a empresa recebe cinco mensagens por dia, um assistente com IA é solução procurando problema. Os casos em que faz diferença são estes:
+        </p>
+        <div class="servico-cenarios">
+          <article class="servico-cenario">
+            <h3>As mesmas perguntas o dia inteiro</h3>
+            <p>Horário de funcionamento, se atende determinado bairro, quanto custa, se tem em estoque. Alguém responde isso dezenas de vezes por dia, sempre igual.</p>
+          </article>
+          <article class="servico-cenario">
+            <h3>Mensagem fora do horário se perde</h3>
+            <p>Chega pedido de orçamento às onze da noite e às sete da manhã já esfriou. Quem respondeu primeiro levou o cliente, e não foi você.</p>
+          </article>
+          <article class="servico-cenario">
+            <h3>A resposta está no sistema</h3>
+            <p>Status do pedido, segunda via de boleto, data de agendamento. A informação existe, mas depende de alguém abrir o sistema e consultar para o cliente.</p>
+          </article>
+          <article class="servico-cenario">
+            <h3>O volume dispara em época de pico</h3>
+            <p>Em certos períodos o atendimento triplica. Contratar temporário custa caro e tem curva de aprendizado; no resto do ano sobra gente.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ─── O que está incluído ─── -->
       <div class="servico-detalhe animar-entrada">
         <div class="servico-detalhe-texto">
-          <h2>O que está incluso</h2>
+          <h2>O que está incluído</h2>
           <p>
             Desenvolvo chatbots que vão além de respostas pré-programadas. Usando inteligência artificial, o assistente entende o contexto da conversa, responde de forma natural e pode executar ações reais — consultar status de pedidos, agendar serviços, gerar orçamentos.
           </p>
           <p>
             O chatbot é treinado com a base de conhecimento da sua empresa e integrado aos seus sistemas existentes, funcionando como uma extensão real da sua equipe.
+          </p>
+          <p>
+            A diferença entre um assistente com IA e o menu de opções numeradas é que o cliente não precisa adivinhar a categoria da própria dúvida. Ele escreve como falaria com uma pessoa, e o assistente entende. Quando não entende, ele diz que não entendeu e passa para alguém — que é bem melhor do que inventar uma resposta.
           </p>
         </div>
         <ul class="servico-entregas">
@@ -164,6 +243,60 @@
           <li>Atualizações e ajustes contínuos na base de conhecimento</li>
         </ul>
       </div>
+
+      <!-- ─── Como funciona ─── -->
+      <section class="servico-bloco animar-entrada">
+        <h2>Como funciona</h2>
+        <p class="servico-bloco-intro">
+          O material de partida não é uma ideia: são as conversas que a sua empresa já teve. É delas que sai tudo o que o assistente precisa saber.
+        </p>
+        <div class="servico-etapas">
+          <div class="servico-etapa">
+            <div>
+              <h3>Ler o histórico de atendimento</h3>
+              <p>Analisamos as conversas reais dos últimos meses e separamos o que mais se repete. Costuma aparecer que um punhado pequeno de perguntas responde pela maior parte do volume — e é por elas que se começa.</p>
+            </div>
+          </div>
+          <div class="servico-etapa">
+            <div>
+              <h3>Montar a base de conhecimento</h3>
+              <p>Escrevemos as respostas oficiais, com o tom da empresa, e definimos os limites: o que o assistente pode afirmar, o que ele nunca deve responder sozinho e quando precisa chamar uma pessoa.</p>
+            </div>
+          </div>
+          <div class="servico-etapa">
+            <div>
+              <h3>Conectar aos sistemas</h3>
+              <p>Para consultar pedido, agenda ou cadastro, o assistente conversa com o sistema da empresa. É a etapa que separa o robô que informa do robô que resolve, e onde entra a mesma lógica de <a href="../automacao-de-processos/">automação de processos</a>.</p>
+            </div>
+          </div>
+          <div class="servico-etapa">
+            <div>
+              <h3>Testar com gente de dentro</h3>
+              <p>Antes de o assistente falar com cliente, quem já atende testa e tenta confundi-lo de propósito. Cada erro encontrado nessa fase é um erro que o cliente não vai ver.</p>
+            </div>
+          </div>
+          <div class="servico-etapa">
+            <div>
+              <h3>Colocar no ar e acompanhar</h3>
+              <p>Assistente no ar precisa ser lido nas primeiras semanas. Reviso as conversas, ajusto o que soou estranho e acrescento o que ficou de fora. É trabalho contínuo, não entrega de uma vez.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── Prazo e investimento ─── -->
+      <section class="servico-bloco animar-entrada">
+        <h2>Prazo e investimento</h2>
+        <p>
+          Um assistente que responde dúvidas frequentes fica pronto em algumas semanas. Se ele precisar consultar sistema para responder — status de pedido, agenda, cadastro —, o prazo depende de como esse sistema expõe os dados, e essa é a variável que mais pesa no cronograma.
+        </p>
+        <p>
+          O desenvolvimento é orçado com escopo fechado, como os demais serviços. Mas aqui existe um custo recorrente que não existe nos outros: os modelos de IA são cobrados por uso, e o WhatsApp Business também cobra por conversa. Esse custo é seu, vai direto para o provedor, e varia com o volume de atendimento. Faço essa estimativa junto com a proposta, para você não ser surpreendido pela primeira fatura.
+        </p>
+        <p>
+          Depois de no ar, o assistente precisa de acompanhamento — pergunta nova aparece, produto muda, política muda. Isso pode ser contratado dentro do <a href="../suporte-e-manutencao/">plano de suporte mensal</a> ou por demanda.
+        </p>
+      </section>
 
       <div class="servico-beneficios animar-entrada">
         <h2>Por que investir em um chatbot com IA</h2>
@@ -195,6 +328,43 @@
         </div>
       </div>
 
+      <!-- ─── Perguntas frequentes ─── -->
+      <section class="servico-bloco animar-entrada">
+        <h2>Perguntas frequentes</h2>
+        <div class="faq-lista">
+          <details class="faq-item">
+            <summary class="faq-pergunta">O cliente vai perceber que está falando com um robô?</summary>
+            <div class="faq-resposta">
+              <p>Vai, e deve mesmo. O assistente se identifica logo na primeira mensagem. Fingir ser humano gera desconfiança quando a pessoa descobre — e ela sempre descobre. O que faz diferença não é esconder o robô, é ele resolver o problema rápido e passar para uma pessoa sem enrolação quando não conseguir.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-pergunta">E se a IA inventar uma resposta errada?</summary>
+            <div class="faq-resposta">
+              <p>É o risco real dessa tecnologia, e é tratado por projeto. O assistente responde a partir da base de conhecimento da sua empresa, não do conhecimento geral do modelo. Assuntos sensíveis — preço fora de tabela, prazo de entrega, condição contratual — ficam bloqueados e vão direto para um atendente. Prefiro um assistente que diz "vou chamar alguém" a um que arrisca.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-pergunta">Preciso do WhatsApp Business API?</summary>
+            <div class="faq-resposta">
+              <p>Para chatbot em WhatsApp, sim — a versão comum do aplicativo não permite automação oficial, e soluções que contornam isso correm risco de bloqueio do número. A API oficial tem custo por conversa e exige verificação da empresa. Cuido do processo de habilitação junto com o projeto.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-pergunta">Isso substitui minha equipe de atendimento?</summary>
+            <div class="faq-resposta">
+              <p>Não, e não é o objetivo. O assistente absorve o volume repetitivo — que costuma ser a maior parte das mensagens e a menos interessante de responder — e entrega para a equipe as conversas que exigem julgamento, negociação ou empatia. Na prática, quem atende passa a lidar com menos mensagem e com mensagem melhor.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-pergunta">Meus dados vão para uma empresa de fora?</summary>
+            <div class="faq-resposta">
+              <p>Quando o assistente usa um modelo de IA hospedado por terceiro, as mensagens passam por esse serviço — é importante saber disso. Definimos juntos, no início do projeto, que dados podem trafegar e quais precisam ficar de fora, e a política de privacidade da empresa precisa refletir isso.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
       <div class="servico-relacionados animar-entrada">
         <h2>Serviços relacionados</h2>
         <div class="servico-relacionados-grid">
@@ -221,10 +391,15 @@
       <p class="cta-subtitulo">
         Solicite um orçamento e descubra como um chatbot com IA pode transformar o atendimento da sua empresa.
       </p>
-      <a href="../index.html#contato" class="botao-primario">
-        <span>Quero meu chatbot</span>
-        <span aria-hidden="true">→</span>
-      </a>
+      <div class="cta-botoes">
+        <a href="../index.html#contato" class="botao-primario">
+          <span>Quero meu chatbot</span>
+          <span aria-hidden="true">→</span>
+        </a>
+        <a href="https://wa.me/5551999608608?text=Ol%C3%A1!%20Quero%20conversar%20sobre%20um%20chatbot%20com%20IA%20para%20a%20minha%20empresa." target="_blank" rel="noopener noreferrer" class="botao-secundario">
+          Falar no WhatsApp
+        </a>
+      </div>
     </div>
 
   </main>

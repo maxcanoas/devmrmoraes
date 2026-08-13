@@ -48,12 +48,60 @@
     "@graph": [
       {
         "@type": "Service",
+        "serviceType": "Desenvolvimento de Aplicativos Mobile",
         "name": "Desenvolvimento de Aplicativos Mobile",
-        "description": "Desenvolvimento de aplicativos para Android e iOS. Apps internos para equipe e soluções voltadas ao cliente final.",
+        "description": "Desenvolvimento de aplicativos para Android e iOS, tanto para uso interno de equipes quanto voltados ao cliente final, com integração aos sistemas já utilizados pela empresa.",
         "url": "https://www.devmrmoraes.com.br/aplicativos-mobile/",
         "provider": { "@id": "https://www.devmrmoraes.com.br/#business" },
-        "areaServed": { "@type": "Country", "name": "Brasil" },
-        "serviceType": "Aplicativos Mobile"
+        "areaServed": [
+          { "@type": "City", "name": "Canoas" },
+          { "@type": "City", "name": "Porto Alegre" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Eu preciso mesmo de um app, ou um site resolve?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Na maior parte das vezes, um site resolve. Se o objetivo é apresentar a empresa, mostrar catálogo ou receber contato, um site que funciona bem no celular entrega o mesmo por uma fração do custo, sem depender de loja e sem exigir instalação."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Precisa ser para Android e iOS ao mesmo tempo?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não. Para app interno, olhe os aparelhos que a sua equipe usa: se são todos Android, começar só por Android economiza tempo e dinheiro. Para app voltado ao cliente final, normalmente as duas plataformas se justificam."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "O app funciona sem internet?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Funciona, quando o projeto prevê isso desde o começo. Os dados ficam guardados no aparelho e sobem quando a conexão volta. É decisão de arquitetura, não recurso que se acrescenta depois."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quem publica o aplicativo na loja?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Eu faço a publicação, mas usando contas de desenvolvedor no nome da sua empresa. A conta é dona do app, então com ela no seu nome você mantém o controle da publicação independentemente de quem faça a manutenção no futuro."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "E se a loja recusar o app?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Acontece, principalmente na App Store, e quase sempre por detalhe de política: política de privacidade ausente, permissão pedida sem justificativa, descrição incompleta. Ajusto e reenvio, e isso faz parte do projeto."
+            }
+          }
+        ]
       },
       {
         "@type": "BreadcrumbList",
@@ -144,14 +192,45 @@
     </section>
 
     <div class="servico-conteudo">
+
+      <!-- ─── Para quem é ─── -->
+      <section class="servico-bloco animar-entrada">
+        <h2>Para quem é</h2>
+        <p class="servico-bloco-intro">
+          A primeira pergunta que faço é se realmente precisa ser um app. Muita coisa se resolve com um site que funciona bem no celular, e sai bem mais barato. App se justifica quando existe algo que o navegador não entrega:
+        </p>
+        <div class="servico-cenarios">
+          <article class="servico-cenario">
+            <h3>Equipe que trabalha na rua</h3>
+            <p>Técnico, entregador, vendedor externo, equipe de vistoria. Precisam registrar dados, tirar foto e coletar assinatura no local — muitas vezes sem sinal decente.</p>
+          </article>
+          <article class="servico-cenario">
+            <h3>Uso preso ao recurso do aparelho</h3>
+            <p>Câmera para ler código de barras, GPS para registrar onde a visita aconteceu, notificação que chega mesmo com o app fechado. É aqui que o navegador não dá conta.</p>
+          </article>
+          <article class="servico-cenario">
+            <h3>Cliente que volta com frequência</h3>
+            <p>Quando o cliente usa o serviço toda semana, o ícone na tela inicial vale muito. Para quem entra duas vezes por ano, um site responsivo resolve melhor.</p>
+          </article>
+          <article class="servico-cenario">
+            <h3>O sistema precisa sair do escritório</h3>
+            <p>Já existe um sistema rodando na empresa, e parte da operação precisa consultar ou lançar informação estando fora dela.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ─── O que está incluído ─── -->
       <div class="servico-detalhe animar-entrada">
         <div class="servico-detalhe-texto">
-          <h2>O que está incluso</h2>
+          <h2>O que está incluído</h2>
           <p>
             Desenvolvo aplicativos nativos e multiplataforma pensados para resolver problemas reais do seu negócio. Seja um app interno para a equipe de campo, um catálogo digital para clientes ou uma ferramenta de gestão mobile — cada projeto é construído do zero para o seu cenário.
           </p>
           <p>
             O foco é entregar um app que as pessoas realmente usam: rápido, intuitivo e que funciona mesmo com conexão instável.
+          </p>
+          <p>
+            Quando o app precisa existir nas duas plataformas, o caminho padrão é código compartilhado entre Android e iOS. Isso reduz custo e mantém as duas versões iguais, sem aquele descompasso de a novidade sair primeiro num sistema e no outro só meses depois.
           </p>
         </div>
         <ul class="servico-entregas">
@@ -164,6 +243,61 @@
           <li>Testes em dispositivos reais antes da entrega</li>
         </ul>
       </div>
+
+      <!-- ─── Como funciona ─── -->
+      <section class="servico-bloco animar-entrada">
+        <h2>Como funciona</h2>
+        <p class="servico-bloco-intro">
+          App tem uma etapa que os outros serviços não têm: a publicação nas lojas, que depende de aprovação de terceiros e entra no cálculo do prazo.
+        </p>
+        <div class="servico-etapas">
+          <div class="servico-etapa">
+            <div>
+              <h3>Definir o essencial</h3>
+              <p>Listamos tudo o que o app poderia fazer e cortamos para o que ele precisa fazer na primeira versão. App enxuto no ar em dois meses vale mais que app completo prometido para daqui a um ano.</p>
+            </div>
+          </div>
+          <div class="servico-etapa">
+            <div>
+              <h3>Desenhar as telas</h3>
+              <p>Antes de programar, monto o fluxo de telas para você navegar e opinar. Mudar a ordem de dois campos nessa etapa é conversa de cinco minutos; depois do app pronto, é retrabalho.</p>
+            </div>
+          </div>
+          <div class="servico-etapa">
+            <div>
+              <h3>Desenvolvimento e integração</h3>
+              <p>Construo o app e conecto ao que a empresa já usa. É comum o app ser a ponta visível de um <a href="../sistemas-personalizados/">sistema personalizado</a> que roda por trás, e nesse caso os dois são pensados juntos.</p>
+            </div>
+          </div>
+          <div class="servico-etapa">
+            <div>
+              <h3>Teste em aparelho de verdade</h3>
+              <p>Emulador engana. O app é instalado em celulares reais, incluindo modelos mais antigos e com internet ruim, que é a condição em que a equipe de campo costuma trabalhar.</p>
+            </div>
+          </div>
+          <div class="servico-etapa">
+            <div>
+              <h3>Publicação nas lojas</h3>
+              <p>Cuido do envio para a Google Play e a App Store, com os textos, capturas de tela e política de privacidade que elas exigem. As contas de desenvolvedor ficam no nome da sua empresa, não no meu.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── Prazo e investimento ─── -->
+      <section class="servico-bloco animar-entrada">
+        <h2>Prazo e investimento</h2>
+        <p>
+          App é o serviço de ciclo mais longo aqui. Uma primeira versão enxuta, com poucas telas e uma integração, leva algumas semanas de desenvolvimento. Some a isso o tempo de revisão das lojas: a Google Play costuma responder em poucos dias, a App Store pode levar mais, e nenhuma das duas está sob meu controle.
+        </p>
+        <p>
+          O escopo é fechado como nos demais serviços: proposta com telas, funcionalidades, prazo e valor, aprovada antes de começar. Versões seguintes são orçadas à parte, o que também é a razão de começar pelo essencial — a primeira versão em uso real mostra o que os usuários de fato pedem, e isso raramente é o que se imaginou na reunião inicial.
+        </p>
+        <p>
+          Vale contar o custo que continua depois da entrega: a conta de desenvolvedor da Apple é anual e a do Google é única, ambas pagas pela sua empresa. Além disso, Android e iOS lançam versões novas todo ano, e app parado eventualmente para de funcionar. Manter isso em dia é o que o <a href="../suporte-e-manutencao/">plano de suporte e manutenção</a> cobre.
+        </p>
+        <!-- TODO: confirmar com o cliente a faixa de valor de uma primeira versao de app -->
+      </section>
 
       <div class="servico-beneficios animar-entrada">
         <h2>Por que investir em um app mobile</h2>
@@ -195,6 +329,43 @@
         </div>
       </div>
 
+      <!-- ─── Perguntas frequentes ─── -->
+      <section class="servico-bloco animar-entrada">
+        <h2>Perguntas frequentes</h2>
+        <div class="faq-lista">
+          <details class="faq-item">
+            <summary class="faq-pergunta">Eu preciso mesmo de um app, ou um site resolve?</summary>
+            <div class="faq-resposta">
+              <p>Pergunta certa, e a resposta é não na maior parte das vezes. Se o objetivo é apresentar a empresa, mostrar catálogo ou receber contato, um site que funciona bem no celular entrega o mesmo por uma fração do custo, sem depender de loja e sem exigir que ninguém instale nada. Se eu achar que o seu caso é esse, vou te dizer.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-pergunta">Precisa ser para Android e iOS ao mesmo tempo?</summary>
+            <div class="faq-resposta">
+              <p>Não. Para app interno, olhe os aparelhos que a sua equipe usa: se são todos Android, começar só por Android economiza tempo e dinheiro. Para app voltado ao cliente final, normalmente as duas plataformas se justificam, e o código compartilhado torna isso viável.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-pergunta">O app funciona sem internet?</summary>
+            <div class="faq-resposta">
+              <p>Funciona, quando o projeto prevê isso desde o começo. Os dados ficam guardados no aparelho e sobem quando a conexão volta. É requisito comum para equipe de campo — e é decisão de arquitetura, não recurso que se acrescenta depois.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-pergunta">Quem publica na loja, você ou eu?</summary>
+            <div class="faq-resposta">
+              <p>Eu faço a publicação, mas usando contas de desenvolvedor no nome da sua empresa. É importante que seja assim: a conta é dona do app. Com ela no seu nome, você mantém o controle da publicação independentemente de quem faça a manutenção no futuro.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-pergunta">E se a loja recusar o app?</summary>
+            <div class="faq-resposta">
+              <p>Acontece, principalmente na App Store, e quase sempre por detalhe de política — política de privacidade ausente, permissão pedida sem justificativa, descrição incompleta. Ajusto e reenvio, e isso faz parte do projeto, não é serviço extra.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
       <div class="servico-relacionados animar-entrada">
         <h2>Serviços relacionados</h2>
         <div class="servico-relacionados-grid">
@@ -221,10 +392,15 @@
       <p class="cta-subtitulo">
         Solicite um orçamento e receba uma proposta com escopo, prazo e valor definidos para o aplicativo que seu negócio precisa.
       </p>
-      <a href="../index.html#contato" class="botao-primario">
-        <span>Quero meu orçamento</span>
-        <span aria-hidden="true">→</span>
-      </a>
+      <div class="cta-botoes">
+        <a href="../index.html#contato" class="botao-primario">
+          <span>Quero meu orçamento</span>
+          <span aria-hidden="true">→</span>
+        </a>
+        <a href="https://wa.me/5551999608608?text=Ol%C3%A1!%20Quero%20conversar%20sobre%20um%20aplicativo%20para%20a%20minha%20empresa." target="_blank" rel="noopener noreferrer" class="botao-secundario">
+          Falar no WhatsApp
+        </a>
+      </div>
     </div>
 
   </main>

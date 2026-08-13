@@ -48,12 +48,52 @@
     "@graph": [
       {
         "@type": "Service",
+        "serviceType": "Consultoria Técnica",
         "name": "Consultoria e Diagnóstico Técnico",
-        "description": "Análise técnica completa de sites e sistemas: performance, segurança, arquitetura e plano de ação claro.",
+        "description": "Análise técnica de sites e sistemas existentes, cobrindo performance, segurança e arquitetura, com entrega de relatório de diagnóstico e plano de ação priorizado.",
         "url": "https://www.devmrmoraes.com.br/consultoria-tecnica/",
         "provider": { "@id": "https://www.devmrmoraes.com.br/#business" },
-        "areaServed": { "@type": "Country", "name": "Brasil" },
-        "serviceType": "Consultoria Técnica"
+        "areaServed": [
+          { "@type": "City", "name": "Canoas" },
+          { "@type": "City", "name": "Porto Alegre" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Você vai dizer que precisa refazer tudo?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Só se for verdade, e na maioria das vezes não é. Refazer do zero é a recomendação mais cara e mais fácil de dar. Sistema que funciona com problemas geralmente vale ser corrigido; refazer só compensa quando o custo de manter passa o custo de recomeçar."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Preciso avisar quem fez o sistema?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não precisa avisar ninguém, e faço a análise sem contato com o fornecedor atual, se você preferir. Também não é meu papel apontar culpados: o relatório descreve o estado técnico do que existe hoje, não julga quem escreveu."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "E se eu não tiver acesso ao código?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Performance, segurança visível de fora, SEO técnico e comportamento do site são todos analisáveis sem o código-fonte. O que fica de fora é qualidade interna e arquitetura, e isso é dito com clareza antes de começar."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "A consultoria já corrige os problemas?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não. A entrega é o diagnóstico e o plano de ação. Separar quem analisa de quem executa evita o conflito de interesse de o analista encontrar justamente os problemas que ele sabe consertar. A execução pode ser contratada depois."
+            }
+          }
+        ]
       },
       {
         "@type": "BreadcrumbList",
@@ -144,14 +184,45 @@
     </section>
 
     <div class="servico-conteudo">
+
+      <!-- ─── Para quem é ─── -->
+      <section class="servico-bloco animar-entrada">
+        <h2>Para quem é</h2>
+        <p class="servico-bloco-intro">
+          Consultoria serve para quando existe uma decisão a tomar e falta informação técnica para tomá-la. Situações típicas:
+        </p>
+        <div class="servico-cenarios">
+          <article class="servico-cenario">
+            <h3>Você recebeu um orçamento alto</h3>
+            <p>Alguém disse que precisa refazer tudo, e o número assustou. Antes de assinar, vale uma segunda opinião de quem não vai executar a obra.</p>
+          </article>
+          <article class="servico-cenario">
+            <h3>O sistema cai e ninguém sabe por quê</h3>
+            <p>Trava toda semana, sempre num horário parecido, e a explicação que você recebe é "é o servidor". Você quer saber o que realmente está acontecendo.</p>
+          </article>
+          <article class="servico-cenario">
+            <h3>Você vai herdar um projeto</h3>
+            <p>Vai assumir um site ou sistema feito por outra pessoa e precisa saber em que estado ele está antes de se comprometer com prazos.</p>
+          </article>
+          <article class="servico-cenario">
+            <h3>Não há ninguém técnico para consultar</h3>
+            <p>A empresa não tem alguém de tecnologia e todas as opiniões disponíveis vêm de quem está vendendo alguma coisa.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ─── O que está incluído ─── -->
       <div class="servico-detalhe animar-entrada">
         <div class="servico-detalhe-texto">
-          <h2>O que está incluso</h2>
+          <h2>O que está incluído</h2>
           <p>
             A consultoria técnica é ideal para quem já tem um site ou sistema rodando mas percebe problemas — lentidão, falhas, dificuldade de manutenção ou simplesmente a sensação de que "algo está errado". Faço uma análise profunda e entrego um relatório claro com diagnóstico e recomendações.
           </p>
           <p>
             Se necessário, posso executar as correções ou orientar sua equipe técnica sobre os próximos passos.
+          </p>
+          <p>
+            O relatório é escrito para você entender, não para impressionar. Cada achado vem com o problema em linguagem comum, a consequência prática de deixar como está e uma estimativa de esforço para corrigir. Você pode levar esse documento para qualquer desenvolvedor executar — inclusive um que não seja eu.
           </p>
         </div>
         <ul class="servico-entregas">
@@ -164,6 +235,61 @@
           <li>Opção de execução das correções identificadas</li>
         </ul>
       </div>
+
+      <!-- ─── Como funciona ─── -->
+      <section class="servico-bloco animar-entrada">
+        <h2>Como funciona</h2>
+        <p class="servico-bloco-intro">
+          Consultoria é o serviço mais curto que ofereço, e de propósito: o objetivo é te dar clareza para decidir, não me instalar no projeto.
+        </p>
+        <div class="servico-etapas">
+          <div class="servico-etapa">
+            <div>
+              <h3>Entender a pergunta</h3>
+              <p>Toda consultoria começa com uma pergunta concreta: vale refazer ou dá para consertar? Por que está lento? Esse orçamento faz sentido? Sem a pergunta definida, a análise vira passeio.</p>
+            </div>
+          </div>
+          <div class="servico-etapa">
+            <div>
+              <h3>Acesso ao que existe</h3>
+              <p>Preciso ver o que estiver disponível: código, banco, painel de hospedagem, logs de erro. Quando o acesso é limitado, digo antes o que consigo avaliar e o que ficará como hipótese.</p>
+            </div>
+          </div>
+          <div class="servico-etapa">
+            <div>
+              <h3>Análise</h3>
+              <p>Meço performance com dados, não com impressão. Reviso segurança, dependências desatualizadas, estrutura do código e do banco, configuração de servidor e a parte de <a href="../seo-para-sites/">SEO técnico</a>, quando o projeto é um site.</p>
+            </div>
+          </div>
+          <div class="servico-etapa">
+            <div>
+              <h3>Relatório priorizado</h3>
+              <p>Os achados vêm separados em crítico, importante e desejável, cada um com esforço estimado. Assim você enxerga onde está o retorno rápido e o que pode esperar.</p>
+            </div>
+          </div>
+          <div class="servico-etapa">
+            <div>
+              <h3>Reunião de apresentação</h3>
+              <p>Passamos o relatório junto, você pergunta o que não ficou claro e decide o caminho. Em Canoas e Porto Alegre essa conversa pode ser presencial; no resto do Brasil, por videochamada.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── Prazo e investimento ─── -->
+      <section class="servico-bloco animar-entrada">
+        <h2>Prazo e investimento</h2>
+        <p>
+          Um diagnóstico de site fica pronto em poucos dias úteis. Sistema com código, banco e integrações leva mais, porque exige ler o que já existe antes de opinar. O prazo é definido junto com o escopo, depois que eu souber o tamanho do que vou analisar.
+        </p>
+        <p>
+          A consultoria é cobrada como entrega fechada — o relatório e a reunião de apresentação —, não como hora de trabalho. Você sabe o valor antes de começar e sabe exatamente o que recebe no final.
+        </p>
+        <p>
+          Se você decidir que eu execute as correções, isso vira um projeto à parte, orçado com o próprio escopo. E se decidir que outra pessoa execute, o relatório funciona igual: ele foi escrito para ser lido por qualquer desenvolvedor. Consultoria que só serve para contratar quem a fez não é diagnóstico, é proposta comercial disfarçada.
+        </p>
+        <!-- TODO: confirmar com o cliente a faixa de valor do diagnostico -->
+      </section>
 
       <div class="servico-beneficios animar-entrada">
         <h2>Por que investir em um diagnóstico técnico</h2>
@@ -195,6 +321,37 @@
         </div>
       </div>
 
+      <!-- ─── Perguntas frequentes ─── -->
+      <section class="servico-bloco animar-entrada">
+        <h2>Perguntas frequentes</h2>
+        <div class="faq-lista">
+          <details class="faq-item">
+            <summary class="faq-pergunta">Você vai dizer que precisa refazer tudo?</summary>
+            <div class="faq-resposta">
+              <p>Só se for verdade, e na maioria das vezes não é. Refazer do zero é a recomendação mais cara e mais fácil de dar, e por isso mesmo é a que aparece com mais frequência de quem quer o trabalho. Sistema que funciona com problemas geralmente vale ser corrigido; refazer só compensa quando o custo de manter passa o custo de recomeçar.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-pergunta">Preciso dar acesso ao código para quem fez o sistema saber?</summary>
+            <div class="faq-resposta">
+              <p>Não precisa avisar ninguém, e faço a análise sem contato com o fornecedor atual, se você preferir assim. Também não é meu papel apontar culpados: o relatório descreve o estado técnico do que existe hoje, não julga quem escreveu.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-pergunta">E se eu não tiver acesso ao código?</summary>
+            <div class="faq-resposta">
+              <p>Ainda dá para fazer bastante coisa. Performance, segurança visível de fora, SEO técnico e comportamento do site são todos analisáveis sem o código-fonte. O que fica de fora é qualidade interna e arquitetura. Digo com clareza, antes de começar, o que a análise vai cobrir nessas condições.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-pergunta">A consultoria já corrige os problemas?</summary>
+            <div class="faq-resposta">
+              <p>Não. A entrega é o diagnóstico e o plano de ação. Isso é proposital: separar quem analisa de quem executa evita o conflito de interesse de o analista encontrar justamente os problemas que ele sabe consertar. A execução pode ser contratada depois, comigo ou com quem você preferir.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
       <div class="servico-relacionados animar-entrada">
         <h2>Serviços relacionados</h2>
         <div class="servico-relacionados-grid">
@@ -221,10 +378,15 @@
       <p class="cta-subtitulo">
         Solicite um diagnóstico técnico e receba um relatório claro com o que precisa ser corrigido.
       </p>
-      <a href="../index.html#contato" class="botao-primario">
-        <span>Quero meu diagnóstico</span>
-        <span aria-hidden="true">→</span>
-      </a>
+      <div class="cta-botoes">
+        <a href="../index.html#contato" class="botao-primario">
+          <span>Quero meu diagnóstico</span>
+          <span aria-hidden="true">→</span>
+        </a>
+        <a href="https://wa.me/5551999608608?text=Ol%C3%A1!%20Preciso%20de%20um%20diagn%C3%B3stico%20t%C3%A9cnico%20do%20meu%20site%20ou%20sistema." target="_blank" rel="noopener noreferrer" class="botao-secundario">
+          Falar no WhatsApp
+        </a>
+      </div>
     </div>
 
   </main>

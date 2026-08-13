@@ -52,12 +52,60 @@
     "@graph": [
       {
         "@type": "Service",
+        "serviceType": "Criação de Sites",
         "name": "Criação de Sites Profissionais",
-        "description": "Desenvolvimento de sites modernos, rápidos e otimizados para SEO. Landing pages, sites institucionais e corporativos com painel de conteúdo.",
+        "description": "Criação de sites institucionais e landing pages para empresas, com foco em velocidade de carregamento, SEO técnico e conversão de visitantes em contatos comerciais. Escopo e prazo definidos antes do início do projeto.",
         "url": "https://www.devmrmoraes.com.br/criacao-de-sites/",
         "provider": { "@id": "https://www.devmrmoraes.com.br/#business" },
-        "areaServed": { "@type": "Country", "name": "Brasil" },
-        "serviceType": "Criação de Sites"
+        "areaServed": [
+          { "@type": "City", "name": "Canoas" },
+          { "@type": "City", "name": "Porto Alegre" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Preciso ter os textos e as fotos prontos para começar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ajuda bastante, mas não é obrigatório para iniciar. Consigo montar a estrutura da página e indicar o que precisa entrar em cada bloco. Na prática, textos finais e imagens de qualidade são o que mais atrasa projeto de site — quanto antes você tiver isso resolvido, mais cedo a página vai ao ar."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Consigo editar o site depois, sozinho?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sim. Entrego um painel para os textos e imagens que mudam com frequência, e mostro como usar. Mudanças estruturais — página nova, alteração de layout, funcionalidade nova — continuam comigo, porque envolvem código."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "O site já vem preparado para aparecer no Google?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Vem com a base técnica pronta: títulos e descrições corretos, hierarquia de headings sem saltos, dados estruturados, sitemap, canonical e velocidade de carregamento. É isso que permite ao Google entender e indexar a página. Posicionar bem em termos disputados é um trabalho contínuo depois disso."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "O domínio e a hospedagem ficam no meu nome?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sim, e recomendo fortemente que fiquem. Registro e configuro tudo para você, mas as contas são da sua empresa. Você não fica dependente de mim nem de ninguém para manter o site no ar ou para levá-lo para outro lugar um dia."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Você atende presencialmente?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Em Canoas, Porto Alegre e cidades da Região Metropolitana, sim — a reunião inicial e a entrega podem ser na sua empresa. Para o resto do Brasil o trabalho é remoto, por videochamada e WhatsApp, e funciona igual: o que muda é o meio da conversa, não o processo."
+            }
+          }
+        ]
       },
       {
         "@type": "BreadcrumbList",
@@ -160,16 +208,46 @@
       </a>
     </section>
 
-    <!-- ─── Detalhes do serviço ─── -->
     <div class="servico-conteudo">
+
+      <!-- ─── Para quem é ─── -->
+      <section class="servico-bloco animar-entrada">
+        <h2>Para quem é</h2>
+        <p class="servico-bloco-intro">
+          Nem toda empresa chega aqui pelo mesmo motivo. Estes são os quatro cenários em que costumo ser chamado:
+        </p>
+        <div class="servico-cenarios">
+          <article class="servico-cenario">
+            <h3>Você ainda não tem site</h3>
+            <p>O negócio funciona por indicação e WhatsApp, mas quem procura pela sua empresa no Google não encontra nada. Quem aparece no seu lugar é o concorrente que tem site.</p>
+          </article>
+          <article class="servico-cenario">
+            <h3>O site atual envergonha</h3>
+            <p>Existe alguma coisa no ar, feita anos atrás, que não abre direito no celular e exibe um telefone que você nem usa mais. Hoje ele atrapalha mais do que ajuda.</p>
+          </article>
+          <article class="servico-cenario">
+            <h3>Você anuncia, mas não tem para onde mandar</h3>
+            <p>Já investe em anúncio ou publica no Instagram, e todo mundo cai no perfil. Falta a página que explica o serviço com calma e recolhe o contato de quem se interessou.</p>
+          </article>
+          <article class="servico-cenario">
+            <h3>O site está preso num construtor</h3>
+            <p>Foi montado num editor de arrastar e soltar e ninguém consegue mexer sem quebrar alguma coisa. Cada ajuste pequeno vira uma negociação com o suporte da plataforma.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ─── O que está incluído ─── -->
       <div class="servico-detalhe animar-entrada">
         <div class="servico-detalhe-texto">
-          <h2>O que está incluso</h2>
+          <h2>O que está incluído</h2>
           <p>
             Cada site que entrego é pensado para funcionar como ferramenta de vendas — não apenas um cartão de visitas digital. A estrutura é feita para que os buscadores entendam o conteúdo e para que o visitante encontre o que precisa sem atrito.
           </p>
           <p>
             Trabalho com HTML5, CSS3 e JavaScript moderno, garantindo performance máxima e independência de plataformas pesadas que travam e ficam obsoletas.
+          </p>
+          <p>
+            Nada de tema comprado com vinte plugins por cima. O código é escrito para o seu caso, o que mantém o site leve e evita que uma atualização de plataforma derrube a página no meio do expediente.
           </p>
         </div>
         <ul class="servico-entregas">
@@ -182,6 +260,60 @@
           <li>Integração com Google Analytics para acompanhar visitas e conversões</li>
         </ul>
       </div>
+
+      <!-- ─── Como funciona ─── -->
+      <section class="servico-bloco animar-entrada">
+        <h2>Como funciona</h2>
+        <p class="servico-bloco-intro">
+          Cinco etapas, na ordem. Você sabe em qual delas o projeto está a qualquer momento.
+        </p>
+        <div class="servico-etapas">
+          <div class="servico-etapa">
+            <div>
+              <h3>Conversa inicial</h3>
+              <p>Você me conta o que a empresa faz, quem é o cliente e o que precisa acontecer quando alguém chega no site — ligar, preencher um formulário, chamar no WhatsApp. Se você é de Canoas, de Porto Alegre ou da Região Metropolitana, essa conversa pode ser presencial.</p>
+            </div>
+          </div>
+          <div class="servico-etapa">
+            <div>
+              <h3>Escopo e proposta</h3>
+              <p>Escrevo o que será entregue: quantas páginas, quais funcionalidades, o que fica de fora, prazo e valor. Você aprova esse documento antes de eu escrever a primeira linha de código.</p>
+            </div>
+          </div>
+          <div class="servico-etapa">
+            <div>
+              <h3>Estrutura e conteúdo</h3>
+              <p>Definimos as seções, a hierarquia de títulos e os textos de cada bloco. É aqui que o trabalho de SEO começa de verdade — depois que a página está pronta, mexer na estrutura custa caro.</p>
+            </div>
+          </div>
+          <div class="servico-etapa">
+            <div>
+              <h3>Desenvolvimento</h3>
+              <p>Codifico e publico num endereço de teste que você acessa quando quiser. Nada de sumir por três semanas e reaparecer com um site pronto que não é o que você imaginava.</p>
+            </div>
+          </div>
+          <div class="servico-etapa">
+            <div>
+              <h3>Publicação e acompanhamento</h3>
+              <p>Configuro domínio, certificado HTTPS, Google Analytics e Search Console, e envio o sitemap. Depois de no ar, fico disponível para os ajustes que sempre aparecem nas primeiras semanas.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── Prazo e investimento ─── -->
+      <section class="servico-bloco animar-entrada">
+        <h2>Prazo e investimento</h2>
+        <p>
+          Um site institucional leva em média de uma a três semanas, contadas a partir do momento em que textos e imagens estão em mãos. Landing page única costuma sair mais rápido. Site com muitas seções e painel de conteúdo leva mais.
+        </p>
+        <p>
+          Sobre o valor: trabalho com escopo fechado. Você recebe uma proposta com o que está incluído, o prazo e o preço antes de começar, e esse preço não muda no meio do caminho. Se durante o projeto aparecer algo fora do combinado, eu aviso, orço à parte, e você decide se entra agora ou depois.
+        </p>
+        <p>
+          Não cobro mensalidade obrigatória para manter o site no ar — o domínio e a hospedagem ficam no seu nome. Se quiser acompanhamento contínuo depois da entrega, existe o plano de <a href="../suporte-e-manutencao/">suporte e manutenção mensal</a>, mas é opcional.
+        </p>
+      </section>
 
       <!-- ─── Benefícios ─── -->
       <div class="servico-beneficios animar-entrada">
@@ -214,6 +346,43 @@
         </div>
       </div>
 
+      <!-- ─── Perguntas frequentes ─── -->
+      <section class="servico-bloco animar-entrada">
+        <h2>Perguntas frequentes</h2>
+        <div class="faq-lista">
+          <details class="faq-item">
+            <summary class="faq-pergunta">Preciso ter os textos e as fotos prontos para começar?</summary>
+            <div class="faq-resposta">
+              <p>Ajuda bastante, mas não é obrigatório para iniciar. Consigo montar a estrutura da página e indicar o que precisa entrar em cada bloco. Na prática, textos finais e imagens de qualidade são o que mais atrasa projeto de site — quanto antes você tiver isso resolvido, mais cedo a página vai ao ar.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-pergunta">Consigo editar o site depois, sozinho?</summary>
+            <div class="faq-resposta">
+              <p>Sim. Entrego um painel para os textos e imagens que mudam com frequência, e mostro como usar. Mudanças estruturais — página nova, alteração de layout, funcionalidade nova — continuam comigo, porque envolvem código.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-pergunta">O site já vem preparado para aparecer no Google?</summary>
+            <div class="faq-resposta">
+              <p>Vem com a base técnica pronta: títulos e descrições corretos, hierarquia de headings sem saltos, dados estruturados, sitemap, canonical e velocidade de carregamento. É isso que permite ao Google entender e indexar a página. Posicionar bem em termos disputados é um trabalho contínuo depois disso, e é o que faço em <a href="../seo-para-sites/">SEO e manutenção de sites</a>.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-pergunta">O domínio e a hospedagem ficam no meu nome?</summary>
+            <div class="faq-resposta">
+              <p>Sim, e recomendo fortemente que fiquem. Registro e configuro tudo para você, mas as contas são da sua empresa. Você não fica dependente de mim nem de ninguém para manter o site no ar ou para levá-lo para outro lugar um dia.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-pergunta">Você atende presencialmente?</summary>
+            <div class="faq-resposta">
+              <p>Em Canoas, Porto Alegre e cidades da Região Metropolitana, sim — a reunião inicial e a entrega podem ser na sua empresa. Para o resto do Brasil o trabalho é remoto, por videochamada e WhatsApp, e funciona igual: o que muda é o meio da conversa, não o processo.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
       <!-- ─── Serviços relacionados ─── -->
       <div class="servico-relacionados animar-entrada">
         <h2>Serviços relacionados</h2>
@@ -242,10 +411,15 @@
       <p class="cta-subtitulo">
         Solicite uma análise gratuita e receba uma proposta com escopo, prazo e valor definidos — sem surpresas.
       </p>
-      <a href="../index.html#contato" class="botao-primario">
-        <span>Quero meu orçamento</span>
-        <span aria-hidden="true">→</span>
-      </a>
+      <div class="cta-botoes">
+        <a href="../index.html#contato" class="botao-primario">
+          <span>Quero meu orçamento</span>
+          <span aria-hidden="true">→</span>
+        </a>
+        <a href="https://wa.me/5551999608608?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20de%20cria%C3%A7%C3%A3o%20de%20site." target="_blank" rel="noopener noreferrer" class="botao-secundario">
+          Falar no WhatsApp
+        </a>
+      </div>
     </div>
 
   </main>

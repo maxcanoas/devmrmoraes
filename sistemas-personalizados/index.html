@@ -48,12 +48,60 @@
     "@graph": [
       {
         "@type": "Service",
+        "serviceType": "Desenvolvimento de Sistemas",
         "name": "Sistemas Personalizados para Empresas",
-        "description": "Desenvolvimento de sistemas web e desktop sob medida. Controle de estoque, CRM, ordens de serviço e automação de processos internos.",
+        "description": "Desenvolvimento de sistemas web e desktop sob medida para gestão empresarial, incluindo controle de estoque, cadastro de clientes, ordens de serviço e geração de relatórios, construídos conforme o fluxo real da operação.",
         "url": "https://www.devmrmoraes.com.br/sistemas-personalizados/",
         "provider": { "@id": "https://www.devmrmoraes.com.br/#business" },
-        "areaServed": { "@type": "Country", "name": "Brasil" },
-        "serviceType": "Desenvolvimento de Sistemas"
+        "areaServed": [
+          { "@type": "City", "name": "Canoas" },
+          { "@type": "City", "name": "Porto Alegre" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Não sai mais barato comprar um sistema pronto?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Muitas vezes sim, e quando é o caso eu falo. Software de prateleira tem custo inicial menor porque o desenvolvimento foi diluído entre milhares de clientes. A conta vira quando o produto pronto não cobre o seu processo: aí a empresa paga a licença e ainda mantém as planilhas paralelas para o que o sistema não faz."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Os dados que já existem se perdem?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não. Migração faz parte do projeto. Planilha, banco antigo, exportação de sistema anterior — o que estiver em formato legível eu importo. O que costuma dar trabalho é a inconsistência dos dados antigos, e isso é tratado antes de importar."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "E se eu precisar de uma funcionalidade nova depois?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Funcionalidade nova é orçada como um módulo pequeno, com escopo e prazo próprios, ou entra dentro do plano de suporte mensal. Você não fica refém de roadmap de fornecedor."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "O código-fonte fica comigo?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Fica. Você recebe o código e a documentação técnica junto com a entrega. Se um dia quiser levar a manutenção para outra pessoa ou para uma equipe interna, tem tudo em mãos."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Minha equipe é resistente a mudança. Isso funciona?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "É a maior causa de sistema abandonado, e por isso a equipe entra no processo desde o levantamento. Quem opera participa de definir como as telas funcionam, e recebe cada módulo para usar antes do sistema estar completo."
+            }
+          }
+        ]
       },
       {
         "@type": "BreadcrumbList",
@@ -144,14 +192,45 @@
     </section>
 
     <div class="servico-conteudo">
+
+      <!-- ─── Para quem é ─── -->
+      <section class="servico-bloco animar-entrada">
+        <h2>Para quem é</h2>
+        <p class="servico-bloco-intro">
+          Sistema sob medida não é para toda empresa. Quando existe um software de prateleira que resolve, eu digo isso — sai mais barato para você. Vale construir quando o processo é específico o bastante para não caber em produto genérico:
+        </p>
+        <div class="servico-cenarios">
+          <article class="servico-cenario">
+            <h3>A operação roda em planilhas</h3>
+            <p>Existe uma planilha central que só uma pessoa entende, que quebra quando duas pessoas mexem ao mesmo tempo e que ninguém tem coragem de reorganizar.</p>
+          </article>
+          <article class="servico-cenario">
+            <h3>O sistema atual não serve mais</h3>
+            <p>Foi comprado há anos, faz metade do que a empresa precisa, e a outra metade é resolvida à mão em anexos e mensagens de WhatsApp.</p>
+          </article>
+          <article class="servico-cenario">
+            <h3>Ninguém sabe o número exato</h3>
+            <p>Quantas ordens estão abertas, qual o estoque real hoje, quanto cada cliente consumiu no mês. A resposta existe, mas exige alguém parar meia hora para somar.</p>
+          </article>
+          <article class="servico-cenario">
+            <h3>O processo é seu, não do mercado</h3>
+            <p>A empresa faz alguma coisa de um jeito próprio que dá certo. Adaptar esse jeito a um software genérico significaria piorar o que funciona.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ─── O que está incluído ─── -->
       <div class="servico-detalhe animar-entrada">
         <div class="servico-detalhe-texto">
-          <h2>O que está incluso</h2>
+          <h2>O que está incluído</h2>
           <p>
             Cada sistema é construído sob medida para o fluxo real da sua empresa. Nada de adaptar seu negócio a um software genérico — o sistema se adapta a você. Trabalho com C#/.NET para aplicações robustas e tecnologias web modernas para interfaces acessíveis de qualquer lugar.
           </p>
           <p>
             O resultado é um sistema que sua equipe realmente usa, porque foi feito com base no que ela precisa no dia a dia.
+          </p>
+          <p>
+            A escolha entre desktop e web depende de onde o trabalho acontece. Desktop faz sentido quando a operação é toda dentro da empresa e precisa conversar com equipamento local — impressora fiscal, leitor, balança. Web faz sentido quando as pessoas acessam de casa, do cliente ou do celular. Essa decisão é tomada no levantamento, não antes.
           </p>
         </div>
         <ul class="servico-entregas">
@@ -164,6 +243,61 @@
           <li>Documentação técnica e manual de uso para a equipe</li>
         </ul>
       </div>
+
+      <!-- ─── Como funciona ─── -->
+      <section class="servico-bloco animar-entrada">
+        <h2>Como funciona</h2>
+        <p class="servico-bloco-intro">
+          Sistema é projeto mais longo que site, então o método importa mais. A regra é entregar em partes utilizáveis, não sumir por meses e voltar com tudo pronto.
+        </p>
+        <div class="servico-etapas">
+          <div class="servico-etapa">
+            <div>
+              <h3>Acompanhar o processo real</h3>
+              <p>Antes de desenhar tela, eu vejo como o trabalho é feito hoje — inclusive os contornos que a equipe inventou para driblar as limitações atuais. Em Canoas e na Região Metropolitana isso costuma ser presencial, porque ver a operação funcionando vale mais do que ouvir a descrição dela.</p>
+            </div>
+          </div>
+          <div class="servico-etapa">
+            <div>
+              <h3>Escopo em módulos</h3>
+              <p>O sistema é dividido em partes com valor próprio: cadastros, depois lançamentos, depois relatórios. Cada módulo tem escopo, prazo e valor definidos, e você aprova antes.</p>
+            </div>
+          </div>
+          <div class="servico-etapa">
+            <div>
+              <h3>Modelagem de dados</h3>
+              <p>Estruturo o banco pensando em cinco anos, não em cinco meses. Errar aqui é o tipo de erro que só aparece quando já há dados demais para consertar barato.</p>
+            </div>
+          </div>
+          <div class="servico-etapa">
+            <div>
+              <h3>Entrega por módulo</h3>
+              <p>Cada módulo pronto vai para a sua mão para uso real. É assim que aparecem os detalhes que ninguém lembrou na reunião — e é muito mais barato ajustar nesse momento do que no final.</p>
+            </div>
+          </div>
+          <div class="servico-etapa">
+            <div>
+              <h3>Implantação e treinamento</h3>
+              <p>Migração dos dados que já existem, instalação, e treinamento com a equipe que vai usar. Junto vai a documentação, para o conhecimento não ficar preso em quem participou do projeto.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── Prazo e investimento ─── -->
+      <section class="servico-bloco animar-entrada">
+        <h2>Prazo e investimento</h2>
+        <p>
+          Sistema é o tipo de projeto com maior variação de prazo aqui. Um módulo isolado — um cadastro com relatório, por exemplo — sai em poucas semanas. Um sistema de gestão completo, com vários módulos e migração de dados antigos, leva de um a três meses, às vezes mais.
+        </p>
+        <p>
+          A entrega em módulos existe justamente por causa disso. Em vez de fechar um contrato grande de uma vez, começamos pelo módulo que resolve a dor mais urgente. Você usa, mede se valeu, e decide se continua. Cada módulo tem seu próprio escopo fechado, com prazo e valor definidos antes de começar.
+        </p>
+        <p>
+          Sistema também não é obra que acaba: processo muda, lei muda, a empresa cresce. Depois da entrega, a evolução pode seguir por demanda ou por <a href="../suporte-e-manutencao/">plano mensal de suporte e manutenção</a>. Se a equipe precisar acessar o sistema fora do escritório, o caminho costuma ser um <a href="../aplicativos-mobile/">aplicativo mobile</a> ligado à mesma base de dados.
+        </p>
+        <!-- TODO: confirmar com o cliente a faixa de valor por modulo -->
+      </section>
 
       <div class="servico-beneficios animar-entrada">
         <h2>Por que investir em um sistema sob medida</h2>
@@ -195,6 +329,43 @@
         </div>
       </div>
 
+      <!-- ─── Perguntas frequentes ─── -->
+      <section class="servico-bloco animar-entrada">
+        <h2>Perguntas frequentes</h2>
+        <div class="faq-lista">
+          <details class="faq-item">
+            <summary class="faq-pergunta">Não sai mais barato comprar um sistema pronto?</summary>
+            <div class="faq-resposta">
+              <p>Muitas vezes sim, e quando é o caso eu falo. Software de prateleira tem custo inicial menor porque o desenvolvimento foi diluído entre milhares de clientes. A conta vira quando o produto pronto não cobre o seu processo: aí a empresa paga a licença e ainda mantém as planilhas paralelas para o que o sistema não faz. É nesse ponto que o sob medida compensa.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-pergunta">Os dados que já existem se perdem?</summary>
+            <div class="faq-resposta">
+              <p>Não. Migração faz parte do projeto. Planilha, banco antigo, exportação de sistema anterior — o que estiver em formato legível eu importo. O que costuma dar trabalho não é a migração em si, é a inconsistência dos dados antigos: mesmo cliente cadastrado de três formas diferentes, campos preenchidos à mão sem padrão. Isso é tratado antes de importar.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-pergunta">E se eu precisar de uma funcionalidade nova depois?</summary>
+            <div class="faq-resposta">
+              <p>Normal, e é para isso que o sistema é seu. Funcionalidade nova é orçada como um módulo pequeno, com escopo e prazo próprios, ou entra dentro do plano de suporte mensal se você tiver um. Você não fica refém de roadmap de fornecedor nem esperando que uma empresa lá fora decida priorizar o seu pedido.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-pergunta">O código-fonte fica comigo?</summary>
+            <div class="faq-resposta">
+              <p>Fica. Você recebe o código e a documentação técnica junto com a entrega. Se um dia quiser levar a manutenção para outra pessoa ou para uma equipe interna, tem tudo em mãos. Não trabalho com sistema que só eu consigo abrir.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-pergunta">Minha equipe é resistente a mudança. Isso funciona?</summary>
+            <div class="faq-resposta">
+              <p>É a maior causa de sistema abandonado, e por isso a equipe entra no processo desde o levantamento. Quem opera participa de definir como as telas funcionam, e recebe cada módulo para usar antes do sistema estar completo. Sistema que aparece pronto e imposto de cima costuma virar mais uma janela aberta que ninguém usa.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
       <div class="servico-relacionados animar-entrada">
         <h2>Serviços relacionados</h2>
         <div class="servico-relacionados-grid">
@@ -221,10 +392,15 @@
       <p class="cta-subtitulo">
         Solicite um orçamento e receba uma proposta com escopo, prazo e valor definidos para o sistema que sua empresa precisa.
       </p>
-      <a href="../index.html#contato" class="botao-primario">
-        <span>Quero meu orçamento</span>
-        <span aria-hidden="true">→</span>
-      </a>
+      <div class="cta-botoes">
+        <a href="../index.html#contato" class="botao-primario">
+          <span>Quero meu orçamento</span>
+          <span aria-hidden="true">→</span>
+        </a>
+        <a href="https://wa.me/5551999608608?text=Ol%C3%A1!%20Quero%20conversar%20sobre%20um%20sistema%20sob%20medida%20para%20a%20minha%20empresa." target="_blank" rel="noopener noreferrer" class="botao-secundario">
+          Falar no WhatsApp
+        </a>
+      </div>
     </div>
 
   </main>

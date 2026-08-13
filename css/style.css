@@ -893,6 +893,16 @@ ul { list-style: none; }
   overflow: hidden;
 }
 
+/* Par de botões do CTA (formulário + WhatsApp) */
+.cta-botoes {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
 .cta-secao::before {
   content: '';
   position: absolute;
@@ -2080,6 +2090,117 @@ details[open] .faq-pergunta::after {
   color: var(--cor-dourado);
   flex-shrink: 0;
   margin-top: 0.1em;
+}
+
+/* ─── Blocos de conteúdo das páginas de serviço ─── */
+.servico-bloco {
+  padding: 5rem 0;
+  border-top: 1px solid var(--cor-borda);
+}
+
+.servico-bloco > h2 {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  color: var(--cor-branco);
+  margin-bottom: 1.4rem;
+}
+
+.servico-bloco > p,
+.servico-bloco > .servico-bloco-intro {
+  font-size: 0.95rem;
+  color: var(--cor-texto-suave);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  max-width: 780px;
+}
+
+.servico-bloco a:not(.botao-primario):not(.botao-secundario) {
+  color: var(--cor-dourado);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+  transition: border-color 0.3s ease;
+}
+
+.servico-bloco a:not(.botao-primario):not(.botao-secundario):hover {
+  border-bottom-color: var(--cor-dourado);
+}
+
+/* "Para quem é" — cenários concretos */
+.servico-cenarios {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.2rem;
+}
+
+.servico-cenario {
+  background: var(--cor-fundo-card);
+  border: 1px solid var(--cor-borda);
+  border-left: 2px solid var(--cor-dourado-escuro);
+  border-radius: var(--raio-card);
+  padding: 1.6rem 1.8rem;
+}
+
+.servico-cenario h3 {
+  font-family: var(--fonte-titulo);
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+  color: var(--cor-branco);
+  margin-bottom: 0.5rem;
+}
+
+.servico-cenario p {
+  font-size: 0.87rem;
+  color: var(--cor-texto-suave);
+  line-height: 1.7;
+}
+
+/* "Como funciona" — etapas numeradas */
+.servico-etapas {
+  counter-reset: etapa;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  margin-top: 2.2rem;
+  max-width: 820px;
+}
+
+.servico-etapa {
+  counter-increment: etapa;
+  display: grid;
+  grid-template-columns: 2.6rem 1fr;
+  gap: 1.2rem;
+  align-items: start;
+}
+
+.servico-etapa::before {
+  content: counter(etapa, decimal-leading-zero);
+  font-family: var(--fonte-titulo);
+  font-size: 1.5rem;
+  line-height: 1.1;
+  color: var(--cor-dourado);
+}
+
+.servico-etapa h3 {
+  font-family: var(--fonte-titulo);
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+  color: var(--cor-branco);
+  margin-bottom: 0.4rem;
+}
+
+.servico-etapa p {
+  font-size: 0.9rem;
+  color: var(--cor-texto-suave);
+  line-height: 1.75;
+}
+
+/* FAQ da página de serviço reaproveita as classes .faq-* da home */
+.servico-bloco .faq-lista {
+  margin: 2.2rem 0 0;
+}
+
+@media (max-width: 768px) {
+  .servico-cenarios { grid-template-columns: 1fr; }
 }
 
 .servico-beneficios {

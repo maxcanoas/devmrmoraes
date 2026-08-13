@@ -48,12 +48,60 @@
     "@graph": [
       {
         "@type": "Service",
+        "serviceType": "Suporte e Manutenção de Software",
         "name": "Suporte e Evolução Contínua de Software",
-        "description": "Planos de suporte mensal com manutenção preventiva, correções, melhorias e novas funcionalidades para sites e sistemas.",
+        "description": "Planos mensais de suporte e manutenção de sites e sistemas, com manutenção preventiva, correção de falhas, atualizações e implementação de novas funcionalidades.",
         "url": "https://www.devmrmoraes.com.br/suporte-e-manutencao/",
         "provider": { "@id": "https://www.devmrmoraes.com.br/#business" },
-        "areaServed": { "@type": "Country", "name": "Brasil" },
-        "serviceType": "Suporte e Manutenção de Software"
+        "areaServed": [
+          { "@type": "City", "name": "Canoas" },
+          { "@type": "City", "name": "Porto Alegre" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Você assume um projeto que outra pessoa fez?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Assumo, e é bem comum. O que peço antes é um diagnóstico técnico, para eu saber o estado real do que vou manter. Às vezes o projeto está bem cuidado e é só continuar; às vezes existe uma dívida acumulada que precisa ser resolvida antes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Preciso contratar plano para todo projeto entregue?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não. Nenhum projeto depende de plano mensal para continuar funcionando — o domínio, a hospedagem e o código são seus. O plano existe para quem quer alguém disponível, não como pedágio para manter o que já foi pago."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "O que acontece se eu não usar as horas do mês?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A rotina preventiva roda de qualquer forma, então o mês nunca é vazio. As horas de evolução não usadas não viram crédito acumulado indefinidamente — essa regra é combinada na proposta."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Site fora do ar de madrugada, você atende?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Depende do que foi combinado. Não vendo plantão 24 horas por padrão, porque seria desonesto prometer isso trabalhando sozinho. Para operações que não podem parar fora do horário comercial, converso sobre uma condição específica."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "A manutenção inclui melhorar o posicionamento no Google?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A manutenção mantém a saúde técnica que o SEO precisa: velocidade, links funcionando, estrutura íntegra. Trabalho ativo de posicionamento é um serviço separado, que pode ser combinado dentro do mesmo plano mensal."
+            }
+          }
+        ]
       },
       {
         "@type": "BreadcrumbList",
@@ -144,14 +192,45 @@
     </section>
 
     <div class="servico-conteudo">
+
+      <!-- ─── Para quem é ─── -->
+      <section class="servico-bloco animar-entrada">
+        <h2>Para quem é</h2>
+        <p class="servico-bloco-intro">
+          O plano mensal não é obrigatório em nenhum projeto que eu entrego. Ele existe para quem se reconhece em alguma destas situações:
+        </p>
+        <div class="servico-cenarios">
+          <article class="servico-cenario">
+            <h3>Quem fez sumiu</h3>
+            <p>O site ou sistema está no ar, funcionando, mas quem construiu não responde mais mensagem. Enquanto nada quebra, tudo bem; quando quebrar, não há para quem ligar.</p>
+          </article>
+          <article class="servico-cenario">
+            <h3>Cada pedido vira uma negociação</h3>
+            <p>Toda alteração pequena exige pedir orçamento, esperar resposta, aprovar e agendar. Trocar um telefone no rodapé leva duas semanas de ida e volta.</p>
+          </article>
+          <article class="servico-cenario">
+            <h3>O sistema não pode parar</h3>
+            <p>Se ficar fora do ar por meio dia, a operação para junto. Você precisa de alguém que já conheça o projeto e possa agir na mesma hora, sem tempo de estudo.</p>
+          </article>
+          <article class="servico-cenario">
+            <h3>Ninguém cuida do que é invisível</h3>
+            <p>Certificado que vence, backup que ninguém testou, biblioteca desatualizada com falha de segurança conhecida. Nada disso dá sinal — até dar problema.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ─── O que está incluído ─── -->
       <div class="servico-detalhe animar-entrada">
         <div class="servico-detalhe-texto">
-          <h2>O que está incluso</h2>
+          <h2>O que está incluído</h2>
           <p>
             Tecnologia precisa de manutenção contínua. Navegadores atualizam, requisitos mudam, usuários pedem novas funcionalidades. Com um plano de suporte, seu site ou sistema está sempre atualizado, seguro e evoluindo.
           </p>
           <p>
             Funciona como ter um programador de confiança disponível para quando você precisar — sem a complexidade e o custo de manter um profissional interno.
+          </p>
+          <p>
+            Atendo tanto projetos que eu mesmo construí quanto sistemas feitos por outras pessoas. No segundo caso, começo por um <a href="../consultoria-tecnica/">diagnóstico técnico</a> para saber o que estou assumindo — não faz sentido garantir prazo de resposta sobre um código que eu nunca abri.
           </p>
         </div>
         <ul class="servico-entregas">
@@ -164,6 +243,61 @@
           <li>Canal de atendimento prioritário para situações urgentes</li>
         </ul>
       </div>
+
+      <!-- ─── Como funciona ─── -->
+      <section class="servico-bloco animar-entrada">
+        <h2>Como funciona</h2>
+        <p class="servico-bloco-intro">
+          O plano tem duas partes: o que acontece sem você pedir e o que acontece quando você pede.
+        </p>
+        <div class="servico-etapas">
+          <div class="servico-etapa">
+            <div>
+              <h3>Levantamento inicial</h3>
+              <p>Antes de assinar qualquer plano, eu olho o projeto: onde está hospedado, o que usa, o que está desatualizado, se existe backup e se esse backup já foi testado alguma vez. Você recebe esse retrato mesmo que decida não seguir.</p>
+            </div>
+          </div>
+          <div class="servico-etapa">
+            <div>
+              <h3>Rotina preventiva</h3>
+              <p>Todo mês, sem você precisar pedir: atualização de dependências, verificação de segurança, conferência de backup, olhada nos logs de erro e nos indicadores de velocidade. É a parte que evita o problema em vez de remediá-lo.</p>
+            </div>
+          </div>
+          <div class="servico-etapa">
+            <div>
+              <h3>Canal direto para chamados</h3>
+              <p>Deu problema ou precisa de um ajuste, você me chama direto — sem abrir ticket, sem pedir orçamento para trocar um texto. Chamados entram em ordem de urgência, e o que derruba a operação passa na frente.</p>
+            </div>
+          </div>
+          <div class="servico-etapa">
+            <div>
+              <h3>Horas de evolução</h3>
+              <p>Além das correções, o plano inclui um tempo mensal para melhorias — a funcionalidade que ficou de fora do projeto, o relatório novo, o ajuste que a equipe pediu. Você escolhe onde usar.</p>
+            </div>
+          </div>
+          <div class="servico-etapa">
+            <div>
+              <h3>Relatório do mês</h3>
+              <p>No fim de cada mês, o que foi feito: chamados atendidos, atualizações aplicadas, melhorias entregues e o que está na fila. Você paga por algo contínuo, então precisa enxergar o que aconteceu.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── Prazo e investimento ─── -->
+      <section class="servico-bloco animar-entrada">
+        <h2>Prazo e investimento</h2>
+        <p>
+          Aqui não há prazo de entrega, porque não é projeto com fim — é acompanhamento mensal. O que existe é prazo de resposta, e ele varia com a gravidade: site ou sistema fora do ar é tratado no mesmo dia; erro que atrapalha mas não impede o trabalho entra na fila da semana; melhoria planejada entra no tempo mensal de evolução.
+        </p>
+        <p>
+          O valor é mensal e definido a partir de dois fatores: o tamanho do que está sob manutenção e quantas horas de evolução você quer ter reservadas por mês. Um site institucional custa bem menos que um sistema com vários módulos e integrações, e a proposta deixa isso explícito antes de começar.
+        </p>
+        <p>
+          Sem fidelidade e sem multa. Se em três meses você achar que não está usando, cancela. Prefiro cliente que renova porque o plano faz falta a cliente preso por contrato — e, sinceramente, se o plano não estiver sendo usado, eu mesmo vou sugerir que você cancele.
+        </p>
+        <!-- TODO: confirmar com o cliente as faixas de valor mensal e as horas de evolucao incluidas em cada plano -->
+      </section>
 
       <div class="servico-beneficios animar-entrada">
         <h2>Por que investir em suporte contínuo</h2>
@@ -195,6 +329,43 @@
         </div>
       </div>
 
+      <!-- ─── Perguntas frequentes ─── -->
+      <section class="servico-bloco animar-entrada">
+        <h2>Perguntas frequentes</h2>
+        <div class="faq-lista">
+          <details class="faq-item">
+            <summary class="faq-pergunta">Você assume um projeto que outra pessoa fez?</summary>
+            <div class="faq-resposta">
+              <p>Assumo, e é bem comum. O que peço antes é um diagnóstico técnico, para eu saber o estado real do que vou manter. Às vezes o projeto está bem cuidado e é só continuar; às vezes existe uma dívida acumulada que precisa ser resolvida antes de qualquer promessa de prazo de resposta.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-pergunta">Preciso contratar plano para todo projeto que você entrega?</summary>
+            <div class="faq-resposta">
+              <p>Não. Nenhum projeto meu depende de plano mensal para continuar funcionando — o domínio, a hospedagem e o código são seus. O plano existe para quem quer alguém disponível, não como pedágio para manter o que já foi pago.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-pergunta">O que acontece se eu não usar as horas do mês?</summary>
+            <div class="faq-resposta">
+              <p>A rotina preventiva roda de qualquer forma, então o mês nunca é vazio. As horas de evolução não usadas não viram crédito acumulado indefinidamente — combinamos essa regra na proposta. E se a sobra virar padrão por vários meses, eu levanto a conversa de reduzir o plano.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-pergunta">Site fora do ar de madrugada, você atende?</summary>
+            <div class="faq-resposta">
+              <p>Depende do que foi combinado. Não vendo plantão 24 horas por padrão, porque seria desonesto prometer isso trabalhando sozinho. Para operações que realmente não podem parar fora do horário comercial, converso sobre uma condição específica — e digo com clareza o que consigo garantir e o que não consigo.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-pergunta">Manutenção inclui melhorar o posicionamento no Google?</summary>
+            <div class="faq-resposta">
+              <p>A manutenção mantém a saúde técnica que o SEO precisa: velocidade, links funcionando, estrutura íntegra. Trabalho ativo de posicionamento — pesquisa de termos, conteúdo novo, correção de estrutura — é o que faço em <a href="../seo-para-sites/">SEO e manutenção de sites</a>, e pode ser combinado dentro do mesmo plano mensal.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
       <div class="servico-relacionados animar-entrada">
         <h2>Serviços relacionados</h2>
         <div class="servico-relacionados-grid">
@@ -221,10 +392,15 @@
       <p class="cta-subtitulo">
         Conheça os planos de suporte mensal e mantenha seu site ou sistema sempre atualizado e seguro.
       </p>
-      <a href="../index.html#contato" class="botao-primario">
-        <span>Quero conhecer os planos</span>
-        <span aria-hidden="true">→</span>
-      </a>
+      <div class="cta-botoes">
+        <a href="../index.html#contato" class="botao-primario">
+          <span>Quero conhecer os planos</span>
+          <span aria-hidden="true">→</span>
+        </a>
+        <a href="https://wa.me/5551999608608?text=Ol%C3%A1!%20Quero%20saber%20sobre%20os%20planos%20de%20suporte%20e%20manuten%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="botao-secundario">
+          Falar no WhatsApp
+        </a>
+      </div>
     </div>
 
   </main>
