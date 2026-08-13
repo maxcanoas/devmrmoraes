@@ -1463,7 +1463,7 @@ details[open] .faq-pergunta::after {
 
 .case-item {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: start;
   gap: 2.5rem;
   background: var(--cor-fundo-card);
@@ -1477,9 +1477,25 @@ details[open] .faq-pergunta::after {
   background: #181818;
 }
 
-.case-item:hover .case-arrow {
-  color: var(--cor-dourado);
-  transform: translate(3px, -3px);
+/* Print real do projeto, no lugar onde havia uma seta decorativa.
+   Quem não tem print fica sem a coluna, que colapsa sozinha. */
+.case-thumb {
+  width: 300px;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--cor-fundo);
+  transition: border-color 0.3s ease;
+}
+
+.case-thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.case-item:hover .case-thumb {
+  border-color: rgba(201, 168, 76, 0.35);
 }
 
 .case-numero-col {
@@ -1607,13 +1623,6 @@ details[open] .faq-pergunta::after {
   color: var(--cor-dourado);
 }
 
-.case-arrow {
-  color: var(--cor-texto-muted);
-  transition: all 0.3s ease;
-  margin-top: 0.3rem;
-  flex-shrink: 0;
-}
-
 @media (max-width: 1024px) {
   .case-item {
     padding: 2rem;
@@ -1623,6 +1632,7 @@ details[open] .faq-pergunta::after {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
+  .case-thumb { width: 220px; }
 }
 
 @media (max-width: 768px) {
@@ -1636,15 +1646,17 @@ details[open] .faq-pergunta::after {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    order: 1;
   }
   .case-numero {
     font-size: 2rem;
   }
-  .case-arrow {
-    position: absolute;
-    top: 1.8rem;
-    right: 1.5rem;
+  /* No celular a prova vem antes do texto */
+  .case-thumb {
+    width: 100%;
+    order: 2;
   }
+  .case-conteudo { order: 3; }
   .case-titulo { font-size: 1.3rem; }
   .case-rodape {
     flex-direction: column;
