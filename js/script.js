@@ -54,6 +54,86 @@ function fecharMenuAoClicar() {
   });
 }
 
+/* ─── Dropdown de serviços na navegação ─── */
+function configurarDropdownServicos() {
+  const item = document.querySelector('.nav-item-dropdown');
+  if (!item) return;
+
+  const botao = item.querySelector('.nav-dropdown-toggle');
+  const submenu = item.querySelector('.nav-submenu');
+  const itensSubmenu = Array.from(submenu.querySelectorAll('a'));
+
+  const estaAberto = () => submenu.classList.contains('aberto');
+
+  function abrir() {
+    submenu.classList.add('aberto');
+    botao.setAttribute('aria-expanded', 'true');
+  }
+
+  function fechar(devolverFoco) {
+    submenu.classList.remove('aberto');
+    botao.setAttribute('aria-expanded', 'false');
+    if (devolverFoco) botao.focus();
+  }
+
+  botao.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (estaAberto()) fechar(false); else abrir();
+  });
+
+  /* Seta para baixo no botão abre e leva o foco ao primeiro serviço */
+  botao.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      abrir();
+      if (itensSubmenu[0]) itensSubmenu[0].focus();
+    }
+  });
+
+  /* Setas percorrem os serviços do submenu */
+  submenu.addEventListener('keydown', (e) => {
+    const indice = itensSubmenu.indexOf(document.activeElement);
+    if (indice === -1) return;
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      itensSubmenu[(indice + 1) % itensSubmenu.length].focus();
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (indice === 0) botao.focus();
+      else itensSubmenu[indice - 1].focus();
+    } else if (e.key === 'Home') {
+      e.preventDefault();
+      itensSubmenu[0].focus();
+    } else if (e.key === 'End') {
+      e.preventDefault();
+      itensSubmenu[itensSubmenu.length - 1].focus();
+    }
+  });
+
+  /* Escape fecha e devolve o foco ao botão, sem fechar o menu mobile junto */
+  item.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && estaAberto()) {
+      e.preventDefault();
+      e.stopPropagation();
+      fechar(true);
+    }
+  });
+
+  /* Clique fora fecha */
+  document.addEventListener('click', (e) => {
+    if (estaAberto() && !item.contains(e.target)) fechar(false);
+  });
+
+  /* Foco saiu do componente inteiro: fecha */
+  item.addEventListener('focusout', () => {
+    setTimeout(() => {
+      if (!item.contains(document.activeElement)) fechar(false);
+    }, 0);
+  });
+}
+
 /* ─── Parallax texto fantasma MAX ─── */
 const textoFantasma = document.querySelector('.hero-texto-fantasma');
 let offsetParallaxX = 0, offsetParallaxY = 0;
@@ -241,6 +321,7 @@ function configurarScrollSuave() {
 /* ─── Inicialização geral ─── */
 function inicializar() {
   configurarAnimacoesEntrada();
+  configurarDropdownServicos();
   configurarFormulario();
   configurarScrollSuave();
   criarBotaoWhatsApp();

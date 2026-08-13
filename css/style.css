@@ -126,6 +126,115 @@ ul { list-style: none; }
 
 .nav-botao-contato::after { display: none !important; }
 
+/* ─── Dropdown de serviços na navegação ─── */
+.nav-item-dropdown {
+  position: relative;
+}
+
+/* O gatilho é um <button>, mas precisa parecer um item de menu */
+.nav-dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cor-texto-suave);
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-dropdown-toggle::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0; height: 1px;
+  background: var(--cor-dourado);
+  transition: width 0.3s ease;
+}
+
+.nav-dropdown-toggle:hover,
+.nav-dropdown-toggle[aria-expanded="true"] { color: var(--cor-branco); }
+
+.nav-dropdown-toggle:hover::after,
+.nav-dropdown-toggle[aria-expanded="true"]::after { width: 100%; }
+
+.nav-dropdown-seta {
+  font-size: 0.6rem;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+.nav-dropdown-toggle[aria-expanded="true"] .nav-dropdown-seta {
+  transform: rotate(180deg);
+}
+
+.nav-submenu {
+  position: absolute;
+  top: calc(100% + 1rem);
+  left: -1.2rem;
+  min-width: 250px;
+  padding: 0.7rem 0;
+  background: rgba(15, 15, 15, 0.98);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-card);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+}
+
+.nav-item-dropdown:hover .nav-submenu,
+.nav-item-dropdown:focus-within .nav-submenu,
+.nav-submenu.aberto {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Ponte invisível para o mouse não perder o submenu no caminho */
+.nav-submenu::before {
+  content: '';
+  position: absolute;
+  top: -1rem; left: 0; right: 0;
+  height: 1rem;
+}
+
+.nav-links .nav-submenu a {
+  display: block;
+  padding: 0.6rem 1.4rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: none;
+  color: var(--cor-texto-suave);
+}
+
+.nav-links .nav-submenu a::after { display: none; }
+
+.nav-links .nav-submenu a:hover {
+  color: var(--cor-dourado);
+  background: rgba(201, 168, 76, 0.07);
+}
+
+.nav-submenu-separador {
+  height: 1px;
+  margin: 0.5rem 1.4rem;
+  background: var(--cor-borda);
+}
+
+.nav-links .nav-submenu .nav-submenu-todos {
+  color: var(--cor-texto-muted);
+  font-size: 0.72rem;
+}
+
 /* Menu mobile */
 .nav-menu-toggle {
   display: none;
@@ -979,6 +1088,28 @@ footer {
 
 .footer-nap a:hover { color: var(--cor-dourado); }
 
+.footer-coluna-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  color: var(--cor-texto);
+  margin-bottom: 0.9rem;
+}
+
+.footer-coluna ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.footer-coluna a {
+  font-size: 0.78rem;
+  color: var(--cor-texto-muted);
+  transition: color 0.3s ease;
+}
+
+.footer-coluna a:hover { color: var(--cor-dourado); }
+
 @media (max-width: 900px) {
   .footer-topo {
     grid-template-columns: 1fr 1fr;
@@ -1177,6 +1308,54 @@ details[open] .faq-pergunta::after {
   .nav-links.aberto a {
     font-size: 1.2rem;
   }
+
+  /* Dropdown vira submenu recolhível dentro do menu hambúrguer */
+  .nav-item-dropdown {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    width: 100%;
+  }
+
+  .nav-dropdown-toggle { font-size: 1.2rem; }
+
+  .nav-submenu,
+  .nav-item-dropdown:hover .nav-submenu,
+  .nav-item-dropdown:focus-within .nav-submenu {
+    position: static;
+    min-width: 0;
+    width: 100%;
+    padding: 0;
+    background: none;
+    backdrop-filter: none;
+    border: none;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  .nav-submenu.aberto,
+  .nav-item-dropdown:hover .nav-submenu.aberto,
+  .nav-item-dropdown:focus-within .nav-submenu.aberto {
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+
+  .nav-submenu::before { display: none; }
+
+  .nav-links.aberto .nav-submenu a {
+    text-align: center;
+    padding: 0.5rem 0;
+    font-size: 0.95rem;
+  }
+
+  .nav-submenu-separador { margin: 0.8rem auto; width: 60px; }
 
   .sobre-grid { grid-template-columns: 1fr; }
   

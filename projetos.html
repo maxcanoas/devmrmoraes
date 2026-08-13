@@ -113,7 +113,24 @@
       <ul class="nav-links" role="list">
         <li><a href="index.html#sobre">Sobre</a></li>
         <li><a href="projetos.html" style="color:var(--cor-dourado)">Projetos</a></li>
-        <li><a href="index.html#servicos">Serviços</a></li>
+        <li class="nav-item-dropdown">
+          <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="submenu-servicos">
+            Serviços
+            <span class="nav-dropdown-seta" aria-hidden="true">▾</span>
+          </button>
+          <ul id="submenu-servicos" class="nav-submenu" role="list">
+            <li><a href="criacao-de-sites/">Criação de Sites</a></li>
+            <li><a href="seo-para-sites/">SEO e Manutenção de Sites</a></li>
+            <li><a href="sistemas-personalizados/">Sistemas Personalizados</a></li>
+            <li><a href="automacao-de-processos/">Automação de Processos</a></li>
+            <li><a href="aplicativos-mobile/">Aplicativos Mobile</a></li>
+            <li><a href="consultoria-tecnica/">Consultoria e Diagnóstico Técnico</a></li>
+            <li><a href="chatbot-com-ia/">Chatbots e Assistentes com IA</a></li>
+            <li><a href="suporte-e-manutencao/">Suporte e Evolução Contínua</a></li>
+            <li class="nav-submenu-separador" role="presentation"></li>
+            <li><a href="index.html#servicos" class="nav-submenu-todos">Ver todos os serviços</a></li>
+          </ul>
+        </li>
         <li><a href="index.html#processo">Processo</a></li>
         <li><a href="index.html#faq">FAQ</a></li>
         <li><a href="index.html#contato" class="nav-botao-contato">Orçamento</a></li>
@@ -131,12 +148,18 @@
 
     <!-- ─── Hero da página ─── -->
     <section class="projetos-hero">
+      <nav class="servico-breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Início</a>
+        <span class="breadcrumb-sep" aria-hidden="true">/</span>
+        <span>Projetos</span>
+      </nav>
+
       <p class="secao-rotulo">Portfólio</p>
       <h1 class="projetos-hero-titulo">
         Sites, sistemas e automações<br><em>já entregues.</em>
       </h1>
       <p class="projetos-hero-sub">
-        Projetos reais para clientes reais em todo o Brasil. Criação de sites do zero, manutenção e SEO de sites existentes, sistemas personalizados e automações que eliminaram processos manuais.
+        Projetos reais para clientes reais. Criação de sites do zero, manutenção e SEO de sites existentes, sistemas personalizados e automações que eliminaram processos manuais — para empresas de Canoas, Porto Alegre e de todo o Brasil.
       </p>
     </section>
 
@@ -419,6 +442,32 @@
         Projetos remotos para todo o Brasil<br />
         <a href="https://wa.me/5551999608608">(51) 99960-8608</a>
       </address>
+
+      <nav class="footer-coluna" aria-label="Serviços">
+        <p class="footer-coluna-titulo">Serviços</p>
+        <ul role="list">
+          <li><a href="criacao-de-sites/">Criação de Sites</a></li>
+          <li><a href="seo-para-sites/">SEO e Manutenção de Sites</a></li>
+          <li><a href="sistemas-personalizados/">Sistemas Personalizados</a></li>
+          <li><a href="automacao-de-processos/">Automação de Processos</a></li>
+          <li><a href="aplicativos-mobile/">Aplicativos Mobile</a></li>
+          <li><a href="consultoria-tecnica/">Consultoria e Diagnóstico Técnico</a></li>
+          <li><a href="chatbot-com-ia/">Chatbots e Assistentes com IA</a></li>
+          <li><a href="suporte-e-manutencao/">Suporte e Evolução Contínua</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-coluna" aria-label="Institucional">
+        <p class="footer-coluna-titulo">Institucional</p>
+        <ul role="list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="index.html#sobre">Sobre</a></li>
+          <li><a href="index.html#processo">Processo</a></li>
+          <li><a href="index.html#faq">Perguntas frequentes</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+      </nav>
     </div>
 
     <div class="footer-inner">
