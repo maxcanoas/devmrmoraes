@@ -2498,6 +2498,47 @@ details[open] .faq-pergunta::after {
   margin-top: 1.6rem;
 }
 
+/* Print do trabalho nas páginas de case. A largura acompanha a da coluna
+   de texto, então a imagem é exibida no tamanho real e não borra. */
+.case-figura {
+  max-width: 780px;
+  margin: 0 0 2.5rem;
+}
+
+.case-figura img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-card);
+  background: var(--cor-fundo);
+}
+
+.case-figura figcaption {
+  margin-top: 0.7rem;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--cor-texto-muted);
+}
+
+/* Duas telas lado a lado quando o case tem mais de um print */
+.case-figuras-par {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  max-width: 780px;
+  margin: 0 0 2.5rem;
+}
+
+.case-figuras-par .case-figura {
+  max-width: none;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .case-figuras-par { grid-template-columns: 1fr; gap: 2rem; }
+}
+
 .case-resultado-destaque {
   max-width: 780px;
   margin-top: 1.6rem;
