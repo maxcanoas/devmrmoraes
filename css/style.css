@@ -78,6 +78,9 @@ ul { list-style: none; }
   font-size: 1.5rem;
   letter-spacing: 0.06em;
   color: var(--cor-branco);
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
 }
 
 .nav-logo span { color: var(--cor-dourado); }
@@ -1115,6 +1118,24 @@ footer {
   .footer-topo { grid-template-columns: 1fr; }
 }
 
+/* No celular os links do rodapé são alvo de dedo, não de mouse: cada um
+   vira uma faixa de 44px e o gap sai, porque o padding já separa */
+@media (max-width: 768px) {
+  .footer-coluna ul { gap: 0; }
+
+  .footer-coluna a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .footer-nap a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
+
 .footer-inner {
   max-width: 1300px;
   margin: 0 auto;
@@ -1630,6 +1651,13 @@ details[open] .faq-pergunta::after {
     align-items: flex-start;
     gap: 1rem;
   }
+  /* Sem espaço para o nowrap: a pílula de resultado precisa de até 320px e
+     o card só tem 270px em 360px de tela, então o texto vinha cortado */
+  .case-resultado {
+    white-space: normal;
+    line-height: 1.4;
+  }
+  .case-link-completo { margin-left: 0; }
 }
 
 /* ─── Página Projetos ─── */
