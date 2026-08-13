@@ -1004,6 +1004,49 @@ footer {
   padding: 2.5rem 5vw;
 }
 
+/* Faixa superior do rodapé: NAP + colunas de links */
+.footer-topo {
+  max-width: 1300px;
+  margin: 0 auto 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--cor-borda);
+  display: grid;
+  grid-template-columns: minmax(260px, 1.5fr) repeat(2, minmax(150px, 1fr));
+  gap: 2.5rem;
+}
+
+.footer-nap {
+  font-style: normal;
+  font-size: 0.78rem;
+  line-height: 1.9;
+  color: var(--cor-texto-muted);
+  max-width: 420px;
+}
+
+.footer-nap strong {
+  color: var(--cor-texto);
+  letter-spacing: 0.04em;
+}
+
+.footer-nap a {
+  color: var(--cor-texto-muted);
+  transition: color 0.3s ease;
+}
+
+.footer-nap a:hover { color: var(--cor-dourado); }
+
+@media (max-width: 900px) {
+  .footer-topo {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .footer-nap { grid-column: 1 / -1; }
+}
+
+@media (max-width: 520px) {
+  .footer-topo { grid-template-columns: 1fr; }
+}
+
 .footer-inner {
   max-width: 1300px;
   margin: 0 auto;
