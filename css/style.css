@@ -1811,15 +1811,46 @@ details[open] .faq-pergunta::after {
   .projeto-linha-arrow { display: none; }
   .projetos-hero { padding-top: 7rem; }
 }
-/* ─── Sobre — layout texto puro (sem imagem) ─── */
+/* ─── Sobre — retrato ao lado do texto ─── */
 .sobre-grid {
   max-width: 1300px;
   margin: 0 auto;
   padding: 7rem 5vw;
 }
 
+.sobre-grid-texto {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 3.5rem;
+  align-items: start;
+}
+
 .sobre-grid-texto .sobre-conteudo {
   max-width: 760px;
+}
+
+.sobre-foto {
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-card);
+  overflow: hidden;
+  background: var(--cor-fundo-card);
+}
+
+.sobre-foto img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Empilha antes do breakpoint geral: com a foto de lado o texto aperta cedo.
+   No celular a foto fica menor e encostada à esquerda, não centralizada. */
+@media (max-width: 900px) {
+  .sobre-grid-texto {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .sobre-foto { width: 170px; }
 }
 
 .sobre-grid-texto .secao-titulo {
