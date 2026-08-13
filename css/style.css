@@ -1494,6 +1494,29 @@ details[open] .faq-pergunta::after {
   line-height: 1.15;
 }
 
+/* O título é um link real para a página do case */
+.case-titulo a {
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.case-titulo a:hover { color: var(--cor-dourado); }
+
+/* Link "ver o case completo" no rodapé do card */
+.case-link-completo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-left: auto;
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  color: var(--cor-texto-muted);
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.case-link-completo:hover { color: var(--cor-dourado); }
+
 .case-narrativa {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -2201,6 +2224,70 @@ details[open] .faq-pergunta::after {
 
 @media (max-width: 768px) {
   .servico-cenarios { grid-template-columns: 1fr; }
+}
+
+/* ─── Páginas de case de projeto ─── */
+.case-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 2rem;
+  margin-bottom: 2rem;
+  font-size: 0.78rem;
+  color: var(--cor-texto-muted);
+}
+
+.case-meta strong {
+  color: var(--cor-texto);
+  letter-spacing: 0.03em;
+}
+
+/* Aviso de projeto fictício — precisa ser impossível de não ver */
+.case-aviso {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  max-width: 780px;
+  margin-bottom: 2.2rem;
+  padding: 1.1rem 1.4rem;
+  background: rgba(201, 168, 76, 0.08);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  border-left: 3px solid var(--cor-dourado);
+  border-radius: var(--raio-card);
+  font-size: 0.87rem;
+  line-height: 1.7;
+  color: var(--cor-texto-suave);
+}
+
+.case-aviso strong {
+  color: var(--cor-dourado);
+  letter-spacing: 0.03em;
+}
+
+.case-aviso-icone {
+  flex-shrink: 0;
+  font-size: 1.05rem;
+  line-height: 1.4;
+  color: var(--cor-dourado);
+}
+
+.case-tecnologias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.6rem;
+}
+
+.case-resultado-destaque {
+  max-width: 780px;
+  margin-top: 1.6rem;
+  padding: 1.3rem 1.6rem;
+  background: var(--cor-fundo-card);
+  border: 1px solid var(--cor-borda);
+  border-left: 2px solid var(--cor-dourado);
+  border-radius: var(--raio-card);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--cor-texto);
 }
 
 .servico-beneficios {
