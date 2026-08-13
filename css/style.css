@@ -1015,6 +1015,9 @@ ul { list-style: none; }
 footer {
   border-top: 1px solid var(--cor-borda);
   padding: 2.5rem 5vw;
+  /* Espaço para o botão flutuante não cobrir os links do rodapé no fim da
+     rolagem: 56px do botão + 1.5rem de margem + folga */
+  padding-bottom: calc(2.5rem + 80px);
 }
 
 /* Faixa superior do rodapé: NAP + colunas de links */
@@ -1887,28 +1890,30 @@ details[open] .faq-pergunta::after {
   align-items: center;
 }
 
-/* ─── Botão WhatsApp flutuante ─── */
+/* ─── Botão WhatsApp flutuante ───
+   Dourado da marca, não o verde do WhatsApp: é o único elemento fixo na
+   tela e não pode ser a cor que mais briga com a paleta da página. */
 .botao-whatsapp-flutuante {
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
+  bottom: 1.5rem;
+  right: 1.5rem;
   width: 56px;
   height: 56px;
-  background: #25D366;
+  background: var(--cor-dourado);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #000;
   z-index: 500;
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
-  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
 
 .botao-whatsapp-flutuante:hover {
-  transform: scale(1.1) translateY(-2px);
-  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.45);
+  background: var(--cor-dourado-claro);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.55);
 }
 
 /* ─── Validação visual do formulário ─── */
