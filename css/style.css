@@ -54,73 +54,6 @@ img { max-width: 100%; display: block; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 
-
-/* ─── Loader ─── */
-#loader {
-  position: fixed;
-  inset: 0;
-  background: #050505;
-  z-index: 10000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  transition: opacity 0.8s ease, visibility 0.8s ease;
-}
-
-#loader.oculto {
-  opacity: 0;
-  visibility: hidden;
-}
-
-html:not(.js) #loader {
-  display: none;
-}
-
-.loader-logo {
-  font-family: var(--fonte-titulo);
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-  letter-spacing: 0.08em;
-  color: var(--cor-branco);
-}
-
-.loader-logo span {
-  color: var(--cor-dourado);
-}
-
-.loader-barra-container {
-  width: min(340px, 80vw);
-  height: 2px;
-  background: rgba(255,255,255,0.08);
-  border-radius: 2px;
-  overflow: hidden;
-}
-
-.loader-barra-progresso {
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(90deg, var(--cor-dourado-escuro), var(--cor-dourado), var(--cor-dourado-claro));
-  border-radius: 2px;
-  transition: width 0.1s linear;
-  box-shadow: 0 0 12px var(--cor-dourado);
-}
-
-.loader-percentual {
-  font-family: var(--fonte-titulo);
-  font-size: 1rem;
-  letter-spacing: 0.2em;
-  color: var(--cor-dourado);
-}
-
-.loader-subtitulo {
-  font-size: 0.75rem;
-  letter-spacing: 0.3em;
-  color: var(--cor-texto-muted);
-  text-transform: uppercase;
-  margin-top: -1.2rem;
-}
-
 /* ─── Navegação ─── */
 #navegacao {
   position: fixed;
@@ -336,6 +269,17 @@ html:not(.js) #loader {
 
 .hero-titulo {
   font-family: var(--fonte-titulo);
+  font-size: clamp(1.5rem, 2.6vw, 2.3rem);
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  color: var(--cor-texto);
+  margin-bottom: 0.9rem;
+  max-width: 820px;
+}
+
+/* Frase de impacto do hero — carrega o peso tipográfico que o H1 tinha antes */
+.hero-frase-forca {
+  font-family: var(--fonte-titulo);
   font-size: clamp(3.2rem, 7vw, 7.5rem);
   line-height: 0.92;
   letter-spacing: -0.01em;
@@ -344,7 +288,7 @@ html:not(.js) #loader {
   max-width: 820px;
 }
 
-.hero-titulo .destaque-dourado {
+.hero-frase-forca .destaque-dourado {
   color: var(--cor-dourado);
   font-family: var(--fonte-serif);
   font-style: italic;
@@ -1106,6 +1050,34 @@ footer {
 .atraso-5 { transition-delay: 0.5s; }
 .atraso-6 { transition-delay: 0.6s; }
 .atraso-7 { transition-delay: 0.7s; }
+
+/* ─── Respeita quem pediu menos movimento no sistema ─── */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Conteúdo revelado por JS precisa aparecer sem depender da transição */
+  .animar-preparado {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Faixa dourada e marquee ficam parados em vez de rodar em loop */
+  .faixa-dourada,
+  .marquee-faixa,
+  .badge-live {
+    animation: none !important;
+  }
+}
 
 /* ─── FAQ ─── */
 .faq-header {

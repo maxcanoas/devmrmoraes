@@ -5,43 +5,6 @@
 
 'use strict';
 
-/* ─── Loader ─── */
-const loader = document.getElementById('loader');
-const barraProgresso = document.querySelector('.loader-barra-progresso');
-const textoPercentual = document.querySelector('.loader-percentual');
-
-let progresso = 0;
-let intervaloLoader;
-
-function iniciarLoader() {
-  intervaloLoader = setInterval(() => {
-    const incremento = progresso < 50 ? Math.random() * 18 + 8 :
-                       progresso < 80 ? Math.random() * 12 + 5 :
-                       Math.random() * 6 + 3;
-
-    progresso = Math.min(progresso + incremento, 98);
-    barraProgresso.style.width = progresso + '%';
-    textoPercentual.textContent = Math.floor(progresso) + '%';
-
-    if (progresso >= 98) {
-      clearInterval(intervaloLoader);
-      setTimeout(concluirLoader, 150);
-    }
-  }, 35);
-}
-
-function concluirLoader() {
-  barraProgresso.style.width = '100%';
-  textoPercentual.textContent = '100%';
-
-  setTimeout(() => {
-    loader.classList.add('oculto');
-    document.body.style.overflow = 'auto';
-    ativarAnimacoesHero();
-  }, 250);
-}
-
-
 /* ─── Navegação com scroll ─── */
 const navegacao = document.getElementById('navegacao');
 
@@ -139,46 +102,6 @@ function configurarAnimacoesEntrada() {
   elementosParaAnimar.forEach(el => {
     el.classList.add('animar-preparado');
     observador.observe(el);
-  });
-}
-
-/* ─── Animações do hero ─── */
-function ativarAnimacoesHero() {
-  const elementosHero = document.querySelectorAll('#hero .animar-entrada');
-  elementosHero.forEach((el, indice) => {
-    setTimeout(() => {
-      el.classList.add('visivel');
-    }, indice * 120);
-  });
-}
-
-/* ─── Filtros do portfólio ─── */
-function configurarFiltros() {
-  const botoesFiltro = document.querySelectorAll('.filtro-botao');
-  const cardsPortfolio = document.querySelectorAll('.card-projeto');
-
-  botoesFiltro.forEach(botao => {
-    botao.addEventListener('click', () => {
-      const categoriaFiltro = botao.dataset.filtro;
-
-      /* Atualizar estado ativo */
-      botoesFiltro.forEach(b => b.classList.remove('ativo'));
-      botao.classList.add('ativo');
-
-      /* Filtrar projetos */
-      cardsPortfolio.forEach(card => {
-        const categoriaCard = card.dataset.categoria;
-
-        if (categoriaFiltro === 'todos' || categoriaCard === categoriaFiltro) {
-          card.style.opacity = '1';
-          card.style.transform = 'scale(1)';
-          card.style.display = 'block';
-        } else {
-          card.style.opacity = '0.2';
-          card.style.transform = 'scale(0.97)';
-        }
-      });
-    });
   });
 }
 
@@ -317,12 +240,7 @@ function configurarScrollSuave() {
 
 /* ─── Inicialização geral ─── */
 function inicializar() {
-  /* Bloquear scroll durante loader */
-  document.body.style.overflow = 'hidden';
-
-  iniciarLoader();
   configurarAnimacoesEntrada();
-  configurarFiltros();
   configurarFormulario();
   configurarScrollSuave();
   criarBotaoWhatsApp();
