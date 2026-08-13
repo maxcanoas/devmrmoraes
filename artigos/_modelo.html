@@ -1,4 +1,60 @@
 <!DOCTYPE html>
+<!--
+  ══════════════════════════════════════════════════════════════════════
+  MODELO DE ARTIGO — DEVMRMORAES
+  ══════════════════════════════════════════════════════════════════════
+
+  COMO USAR
+  ─────────
+  1. Copie este arquivo para  artigos/<slug-do-artigo>/index.html
+     O slug é a URL: curto, sem acento, palavras separadas por hífen.
+     Exemplo: artigos/quanto-custa-um-site/index.html
+
+  2. Troque tudo que está em MAIÚSCULAS neste arquivo. Os pontos são:
+     - <title> ......................... até 60 caracteres
+     - <meta name="description"> ....... até 155 caracteres
+     - <link rel="canonical"> .......... URL completa, com www e barra final
+     - og:title / og:description / og:url / og:image:alt
+     - twitter:title / twitter:description / twitter:image:alt
+     - JSON-LD: headline, description, url, datePublished, dateModified,
+       @id, articleSection, keywords e os itens do BreadcrumbList
+     - <h1>, a data visível, o tempo de leitura e o texto do artigo
+
+  3. Troque  <meta name="robots" content="noindex, nofollow">  por
+     <meta name="robots" content="index, follow, max-snippet:-1,
+     max-image-preview:large, max-video-preview:-1">
+     Este modelo é noindex de propósito, para não ser indexado enquanto
+     estiver como template. Publicar sem trocar essa linha = artigo invisível.
+
+  4. Acrescente o artigo em DOIS lugares:
+     - artigos/index.html ....... um novo <a class="artigo-card"> na listagem,
+       e um item em "blogPost" dentro do JSON-LD daquela página
+     - sitemap.xml .............. nova <url> com lastmod da data de publicação
+                                  e priority 0.6
+
+  5. Se o artigo responder a uma pergunta do FAQ da home ou de alguma página
+     de serviço, linke de lá para cá. Link contextual vale mais que link solto.
+
+  REGRAS DE CONTEÚDO
+  ──────────────────
+  - Um único <h1>. Seções em <h2>, subseções em <h3>. Sem pular nível.
+  - 900 a 1.200 palavras é a faixa que costuma funcionar. Menos que isso
+    dificilmente compete; muito mais, ninguém lê até o fim.
+  - Tom do site: segunda pessoa, direto, foco no problema do leitor.
+    Sem jargão de agência e sem promessa que não dá para cumprir.
+  - Nenhum número inventado. Se não tiver o dado, escreva sem ele.
+  - Datas em datePublished/dateModified no formato AAAA-MM-DD.
+    Ao editar um artigo já publicado, atualize dateModified — e só ele.
+
+  CAMINHOS
+  ────────
+  Os caminhos deste arquivo usam ../../ porque o artigo mora dois níveis
+  abaixo da raiz (artigos/<slug>/index.html). Mantidos assim de propósito:
+  ao copiar para a pasta certa, tudo já aponta para o lugar certo.
+  Enquanto o arquivo estiver aqui em artigos/, os links ficam quebrados —
+  isso é esperado e é mais um motivo para ele ser noindex.
+  ══════════════════════════════════════════════════════════════════════
+-->
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
@@ -6,11 +62,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
   <!-- ─── SEO ─── -->
-  <title>Case Fictício: Site Portfólio de Fotografia | DEVMRMORAES</title>
-  <meta name="description" content="Projeto fictício, criado para prática: site portfólio para uma fotógrafa que não existe, com galeria, seção sobre e suporte multilíngue." />
+  <title>TITULO DO ARTIGO (ate 60 caracteres) | DEVMRMORAES</title>
+  <meta name="description" content="RESUMO DO ARTIGO EM ATE 155 CARACTERES. Diga o que o leitor ganha ao ler." />
   <meta name="author" content="DEVMRMORAES" />
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-  <link rel="canonical" href="https://www.devmrmoraes.com.br/projetos/camila-duarte-fotografia/" />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href="https://www.devmrmoraes.com.br/artigos/SLUG-DO-ARTIGO/" />
   <meta name="geo.region" content="BR-RS" />
   <meta name="geo.placename" content="Canoas, Rio Grande do Sul" />
 
@@ -27,23 +83,23 @@
   <!-- ─── Open Graph ─── -->
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="DEVMRMORAES" />
-  <meta property="og:title" content="Case Fictício: Site Portfólio de Fotografia | DEVMRMORAES" />
-  <meta property="og:description" content="Projeto fictício de prática: site portfólio para fotógrafa, com galeria de trabalhos, storytelling visual e suporte multilíngue." />
-  <meta property="og:url" content="https://www.devmrmoraes.com.br/projetos/camila-duarte-fotografia/" />
+  <meta property="og:title" content="TITULO DO ARTIGO | DEVMRMORAES" />
+  <meta property="og:description" content="RESUMO PARA REDES SOCIAIS, ate cerca de 160 caracteres." />
+  <meta property="og:url" content="https://www.devmrmoraes.com.br/artigos/SLUG-DO-ARTIGO/" />
   <meta property="og:image" content="https://www.devmrmoraes.com.br/img/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="DEVMRMORAES — Case fictício, site portfólio de fotografia" />
+  <meta property="og:image:alt" content="DEVMRMORAES — TITULO DO ARTIGO" />
   <meta property="og:locale" content="pt_BR" />
 
   <!-- ─── Twitter Card ─── -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@devmrmoraes" />
   <meta name="twitter:creator" content="@devmrmoraes" />
-  <meta name="twitter:title" content="Case Fictício: Site Portfólio de Fotografia | DEVMRMORAES" />
-  <meta name="twitter:description" content="Projeto fictício de prática: site portfólio para fotógrafa, com galeria e suporte multilíngue." />
+  <meta name="twitter:title" content="TITULO DO ARTIGO | DEVMRMORAES" />
+  <meta name="twitter:description" content="RESUMO PARA REDES SOCIAIS." />
   <meta name="twitter:image" content="https://www.devmrmoraes.com.br/img/og-image.png" />
-  <meta name="twitter:image:alt" content="DEVMRMORAES — Case fictício, site portfólio de fotografia" />
+  <meta name="twitter:image:alt" content="DEVMRMORAES — TITULO DO ARTIGO" />
 
   <!-- ─── Schema.org JSON-LD ─── -->
   <script type="application/ld+json">
@@ -51,30 +107,29 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "CreativeWork",
-        "@id": "https://www.devmrmoraes.com.br/projetos/camila-duarte-fotografia/#case",
-        "name": "Camila Duarte Fotografia — projeto fictício de prática",
-        "description": "Projeto fictício, sem cliente real, criado como exercício de prática. Site portfólio para fotografia autoral, com galeria de trabalhos, seção sobre, serviços, contato, suporte multilíngue e integração com redes sociais.",
-        "url": "https://www.devmrmoraes.com.br/projetos/camila-duarte-fotografia/",
-        "creator": { "@id": "https://www.devmrmoraes.com.br/#person" },
-        "provider": { "@id": "https://www.devmrmoraes.com.br/#business" },
+        "@type": "Article",
+        "@id": "https://www.devmrmoraes.com.br/artigos/SLUG-DO-ARTIGO/#article",
+        "headline": "TITULO COMPLETO DO ARTIGO — pode ser mais longo que o <title>",
+        "description": "RESUMO DO ARTIGO. Costuma ser o mesmo texto da meta description.",
+        "url": "https://www.devmrmoraes.com.br/artigos/SLUG-DO-ARTIGO/",
+        "datePublished": "AAAA-MM-DD",
+        "dateModified": "AAAA-MM-DD",
         "inLanguage": "pt-BR",
-        "genre": "Criação de Sites",
-        "keywords": ["HTML5", "CSS3", "JavaScript", "Design responsivo", "Projeto fictício"]
+        "author": { "@id": "https://www.devmrmoraes.com.br/#person" },
+        "publisher": { "@id": "https://www.devmrmoraes.com.br/#business" },
+        "image": "https://www.devmrmoraes.com.br/img/og-image.png",
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.devmrmoraes.com.br/artigos/SLUG-DO-ARTIGO/" },
+        "articleSection": "CATEGORIA — ex.: SEO técnico, Sistemas, Automação",
+        "keywords": ["PALAVRA 1", "PALAVRA 2", "PALAVRA 3"],
+        "isPartOf": { "@id": "https://www.devmrmoraes.com.br/artigos/#blog" }
       },
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://www.devmrmoraes.com.br/" },
-          { "@type": "ListItem", "position": 2, "name": "Projetos", "item": "https://www.devmrmoraes.com.br/projetos.html" },
-          { "@type": "ListItem", "position": 3, "name": "Camila Duarte Fotografia — projeto fictício de prática", "item": "https://www.devmrmoraes.com.br/projetos/camila-duarte-fotografia/" }
+          { "@type": "ListItem", "position": 2, "name": "Artigos", "item": "https://www.devmrmoraes.com.br/artigos/" },
+          { "@type": "ListItem", "position": 3, "name": "TITULO CURTO DO ARTIGO", "item": "https://www.devmrmoraes.com.br/artigos/SLUG-DO-ARTIGO/" }
         ]
-      },
-      {
-        "@type": "WebPage",
-        "name": "Case Fictício: Site Portfólio de Fotografia |",
-        "url": "https://www.devmrmoraes.com.br/projetos/camila-duarte-fotografia/",
-        "isPartOf": { "@id": "https://www.devmrmoraes.com.br/#website" }
       }
     ]
   }
@@ -97,7 +152,6 @@
 
 <body>
 
-  <!-- ─── Navegação ─── -->
   <header>
     <nav id="navegacao" aria-label="Navegação principal">
       <a href="../../index.html" class="nav-logo" aria-label="DEVMRMORAES — voltar ao início">
@@ -106,8 +160,8 @@
 
       <ul class="nav-links" role="list">
         <li><a href="../../index.html#sobre">Sobre</a></li>
-        <li><a href="../../projetos.html" style="color:var(--cor-dourado)">Projetos</a></li>
-        <li><a href="../../artigos/">Artigos</a></li>
+        <li><a href="../../projetos.html">Projetos</a></li>
+        <li><a href="../../artigos/" style="color:var(--cor-dourado)">Artigos</a></li>
         <li class="nav-item-dropdown">
           <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="submenu-servicos">
             Serviços
@@ -141,137 +195,103 @@
 
   <main>
 
-    <!-- ─── Hero ─── -->
-    <section class="servico-hero">
-      <nav class="servico-breadcrumb" aria-label="Breadcrumb">
-        <a href="../../index.html">Início</a>
-        <span class="breadcrumb-sep" aria-hidden="true">/</span>
-        <a href="../../projetos.html">Projetos</a>
-        <span class="breadcrumb-sep" aria-hidden="true">/</span>
-        <span>Camila Duarte (fictício)</span>
-      </nav>
+    <article>
 
-      <h1 class="servico-hero-titulo">
-        Camila Duarte Fotografia:<br><em>site portfólio (fictício)</em>
-      </h1>
+      <!-- ─── Cabeçalho do artigo ─── -->
+      <section class="servico-hero">
+        <nav class="servico-breadcrumb" aria-label="Breadcrumb">
+          <a href="../../index.html">Início</a>
+          <span class="breadcrumb-sep" aria-hidden="true">/</span>
+          <a href="../index.html">Artigos</a>
+          <span class="breadcrumb-sep" aria-hidden="true">/</span>
+          <span>TITULO CURTO DO ARTIGO</span>
+        </nav>
 
-      <div class="case-aviso" role="note">
-        <span class="case-aviso-icone" aria-hidden="true">▲</span>
-        <span><strong>Este é um projeto fictício.</strong> Camila Duarte não é uma pessoa real e não existe cliente por trás deste trabalho. O site foi criado do zero como exercício de prática, a partir de um briefing inventado por mim. Está no portfólio porque o código e as decisões de projeto são reais — mas nenhum resultado comercial aqui aconteceu de verdade.</span>
-      </div>
+        <!-- H1: um único por página. O <em> vira serifa dourada em itálico. -->
+        <h1 class="servico-hero-titulo">
+          PRIMEIRA PARTE DO TITULO:<br><em>SEGUNDA PARTE EM DESTAQUE</em>
+        </h1>
 
-      <div class="case-meta">
-        <span><strong>Cliente:</strong> Nenhum — persona fictícia</span>
-        <span><strong>Tipo:</strong> Projeto de prática</span>
-        <span><strong>Serviço:</strong> <a href="../../criacao-de-sites/">Criação de sites</a></span>
-      </div>
-
-      <p class="servico-hero-sub">
-        Um exercício com um objetivo específico: praticar um tipo de site em que a imagem é o produto e o texto entra em segundo plano — o oposto do site institucional que costumo construir.
-      </p>
-      <a href="https://maxcanoas.github.io/fotografia/index.html" target="_blank" rel="noopener noreferrer" class="botao-primario">
-        <span>Ver o projeto no ar</span>
-        <span aria-hidden="true">↗</span>
-      </a>
-    </section>
-
-    <div class="servico-conteudo">
-
-      <!-- ─── Contexto ─── -->
-      <section class="servico-bloco animar-entrada">
-        <h2>Contexto</h2>
-        <p>
-          Sites de portfólio criativo funcionam por regras diferentes das de um site institucional. Ali a hierarquia é invertida: a imagem carrega a mensagem, o texto apoia, e o layout precisa sumir para não competir com o trabalho exposto.
-        </p>
-        <p>
-          Como não havia cliente, escrevi o briefing: uma fotógrafa autoral com anos de estrada, atuando em casamentos, retratos, maternidade e família, precisando de um lugar próprio para mostrar o trabalho e receber contato. Persona inventada, mas com as restrições que um projeto real teria.
-        </p>
-      </section>
-
-      <!-- ─── Problema ─── -->
-      <section class="servico-bloco animar-entrada">
-        <h2>Problema</h2>
-        <p>
-          O desafio central de um portfólio visual é o equilíbrio entre peso e velocidade. Fotografia exige imagem grande e de qualidade, e imagem grande é exatamente o que derruba o tempo de carregamento de uma página.
-        </p>
-        <p>
-          Há também o problema de navegação: galeria com muitas categorias — casamento, retrato, maternidade, família — precisa deixar o visitante achar o que procura sem transformar a home num menu longo.
-        </p>
-        <p>
-          E, no fim, o site precisa converter. Portfólio bonito que não deixa claro como contratar o serviço cumpriu metade da função.
-        </p>
-      </section>
-
-      <!-- ─── Solução ─── -->
-      <section class="servico-bloco animar-entrada">
-        <h2>Solução</h2>
-        <p>
-          O layout ficou minimalista de propósito: pouca interface, muito espaço em branco, tipografia discreta. Tudo que não é a fotografia recua.
-        </p>
-        <p>
-          A navegação foi organizada em torno das categorias de trabalho, com seções separadas para a apresentação da fotógrafa, os serviços oferecidos e o contato — cada uma alcançável sem rolar a página inteira.
-        </p>
-        <p>
-          Acrescentei suporte multilíngue, que era parte do briefing que escrevi, e integração com redes sociais e WhatsApp, porque no mercado de fotografia o primeiro contato costuma acontecer por esses canais e não por formulário.
-        </p>
-      </section>
-
-      <!-- ─── Tecnologias ─── -->
-      <section class="servico-bloco animar-entrada">
-        <h2>Tecnologias</h2>
-        <p>
-          HTML, CSS e JavaScript diretos, sem framework — a mesma abordagem que uso em projeto real, o que faz do exercício uma prática de verdade e não uma demonstração descartável.
-        </p>
-        <div class="case-tecnologias">
-          <span class="tech-tag">HTML5</span><span class="tech-tag">CSS3</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Design responsivo</span><span class="tech-tag">Multilíngue</span>
+        <div class="artigo-meta">
+          <span>Por <strong>Maxwell Rigo Moraes</strong></span>
+          <!-- datetime em AAAA-MM-DD; o texto visível em português por extenso -->
+          <span>Publicado em <time datetime="AAAA-MM-DD">DIA de MÊS de ANO</time></span>
+          <span>Leitura de N minutos</span>
         </div>
-      </section>
 
-      <!-- ─── Resultado ─── -->
-      <section class="servico-bloco animar-entrada">
-        <h2>Resultado</h2>
-        <p>
-          O resultado é um site portfólio completo e navegável, que cumpre o que o briefing fictício pedia: apresentar o trabalho com destaque, contar quem é a profissional e abrir um caminho curto para o contato.
-        </p>
-        <p>
-          Não há métrica de negócio para mostrar aqui, e não haveria como haver — não existe cliente, não existe operação, não existe cliente convertido. O que este projeto demonstra é decisão de layout, organização de galeria e código responsivo. Nada além disso.
+        <!-- Abertura: por que o leitor deve continuar lendo. 2 a 3 linhas. -->
+        <p class="servico-hero-sub">
+          PARAGRAFO DE ABERTURA. Diga o problema do leitor e o que ele vai levar deste texto.
         </p>
       </section>
 
-      <!-- ─── Serviços relacionados ─── -->
-      <div class="servico-relacionados animar-entrada">
-        <h2>Serviços usados neste projeto</h2>
-        <div class="servico-relacionados-grid">
-          <a href="../../criacao-de-sites/" class="servico-relacionado-card">
-            <h3>Criação de Sites</h3>
-            <p>O mesmo tipo de trabalho aplicado a projetos reais, com escopo, prazo e valor fechados.</p>
-          </a>
-          <a href="../brucker-printers-site/" class="servico-relacionado-card">
-            <h3>Case: Brucker Printers — site</h3>
-            <p>Um projeto de cliente real, com problema de negócio concreto por trás.</p>
-          </a>
-          <a href="../braskit-seo/" class="servico-relacionado-card">
-            <h3>Case: Braskit — SEO técnico</h3>
-            <p>Diagnóstico e correção de SEO num site que já existia e não era encontrado.</p>
-          </a>
-        </div>
+      <div class="artigo-corpo">
+
+        <!--
+          CORPO DO ARTIGO
+          ───────────────
+          Tags disponíveis, todas já estilizadas em css/style.css:
+
+            <p>              parágrafo
+            <h2>             seção
+            <h3>             subseção (dourado, menor)
+            <ul> / <ol>      listas
+            <strong>         destaque de texto
+            <code>           trecho de código ou nome de arquivo
+            <blockquote>     citação em caixa com barra dourada
+            <a href="...">   link — sempre com texto âncora descritivo,
+                             nunca "clique aqui" ou "saiba mais"
+
+          Caminhos a partir daqui:
+            ../../                     raiz do site
+            ../../seo-para-sites/      página de serviço
+            ../../projetos/SLUG/       case de projeto
+            ../                        listagem de artigos
+        -->
+
+        <p>
+          PARAGRAFO DE CONTEXTO. Prepare o terreno antes da primeira seção.
+        </p>
+
+        <h2>PRIMEIRA SEÇÃO</h2>
+        <p>
+          TEXTO DA SEÇÃO.
+        </p>
+
+        <h3>SUBSEÇÃO, SE FIZER SENTIDO</h3>
+        <p>
+          TEXTO DA SUBSEÇÃO.
+        </p>
+
+        <h2>SEGUNDA SEÇÃO</h2>
+        <p>
+          TEXTO DA SEÇÃO.
+        </p>
+
+        <h2>FECHAMENTO</h2>
+        <p>
+          Resuma o que o leitor deve fazer a seguir e linke para a página de
+          serviço correspondente, com texto âncora descritivo. Exemplo:
+          <a href="../../seo-para-sites/">SEO e manutenção de sites</a>.
+        </p>
+
       </div>
-    </div>
+    </article>
 
     <!-- ─── CTA ─── -->
     <div class="cta-secao animar-entrada">
       <h2 class="cta-titulo">
-        Precisa de um site<br><em>que mostre o seu trabalho?</em>
+        Quer saber o que está<br><em>travando o seu site?</em>
       </h2>
       <p class="cta-subtitulo">
-        Portfólio, estúdio, ateliê ou consultório: se o seu serviço se vende pelo que você mostra, o site precisa ser construído em torno disso.
+        Me manda o endereço. Rodo o diagnóstico e te devolvo a lista do que encontrei, sem compromisso.
       </p>
       <div class="cta-botoes">
         <a href="../../index.html#contato" class="botao-primario">
-          <span>Quero meu orçamento</span>
+          <span>Quero meu diagnóstico</span>
           <span aria-hidden="true">→</span>
         </a>
-        <a href="https://wa.me/5551999608608?text=Ol%C3%A1!%20Quero%20um%20site%20portf%C3%B3lio%20para%20mostrar%20o%20meu%20trabalho." target="_blank" rel="noopener noreferrer" class="botao-secundario">
+        <a href="https://wa.me/5551999608608?text=Ol%C3%A1!%20Li%20o%20artigo%20sobre%20site%20que%20n%C3%A3o%20aparece%20no%20Google%20e%20quero%20um%20diagn%C3%B3stico." target="_blank" rel="noopener noreferrer" class="botao-secundario">
           Falar no WhatsApp
         </a>
       </div>

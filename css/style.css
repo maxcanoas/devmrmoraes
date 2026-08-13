@@ -2226,6 +2226,150 @@ details[open] .faq-pergunta::after {
   .servico-cenarios { grid-template-columns: 1fr; }
 }
 
+/* ─── Artigos: listagem ─── */
+.artigos-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.artigo-card {
+  display: block;
+  background: var(--cor-fundo-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-card);
+  padding: 2.2rem;
+  transition: var(--transicao-suave);
+}
+
+.artigo-card:hover {
+  border-color: rgba(201, 168, 76, 0.3);
+  background: #181818;
+}
+
+.artigo-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.2rem;
+  margin-bottom: 0.7rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cor-dourado);
+}
+
+.artigo-card h2 {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  color: var(--cor-branco);
+  margin-bottom: 0.8rem;
+}
+
+.artigo-card p {
+  font-size: 0.92rem;
+  color: var(--cor-texto-suave);
+  line-height: 1.75;
+  max-width: 760px;
+}
+
+.artigo-card-leia {
+  display: inline-block;
+  margin-top: 1.1rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--cor-dourado);
+}
+
+/* ─── Artigos: corpo do texto ─── */
+.artigo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.8rem;
+  margin-bottom: 2rem;
+  font-size: 0.78rem;
+  color: var(--cor-texto-muted);
+}
+
+.artigo-corpo {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 3rem 5vw 5rem;
+}
+
+.artigo-corpo > h2 {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  line-height: 1.1;
+  color: var(--cor-branco);
+  margin: 3rem 0 1.1rem;
+}
+
+.artigo-corpo > h2:first-child { margin-top: 0; }
+
+.artigo-corpo h3 {
+  font-family: var(--fonte-titulo);
+  font-size: 1.15rem;
+  letter-spacing: 0.03em;
+  color: var(--cor-dourado);
+  margin: 2rem 0 0.7rem;
+}
+
+.artigo-corpo p {
+  font-size: 1rem;
+  color: var(--cor-texto-suave);
+  line-height: 1.85;
+  margin-bottom: 1.2rem;
+}
+
+.artigo-corpo ul,
+.artigo-corpo ol {
+  margin: 0 0 1.4rem 0;
+  padding-left: 1.4rem;
+  list-style: disc;
+}
+
+.artigo-corpo ol { list-style: decimal; }
+
+.artigo-corpo li {
+  font-size: 1rem;
+  color: var(--cor-texto-suave);
+  line-height: 1.8;
+  margin-bottom: 0.6rem;
+}
+
+.artigo-corpo a {
+  color: var(--cor-dourado);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+  transition: border-color 0.3s ease;
+}
+
+.artigo-corpo a:hover { border-bottom-color: var(--cor-dourado); }
+
+.artigo-corpo strong { color: var(--cor-texto); }
+
+.artigo-corpo code {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 0.86em;
+  padding: 0.1rem 0.4rem;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid var(--cor-borda);
+  border-radius: 4px;
+  color: var(--cor-texto);
+}
+
+.artigo-corpo blockquote {
+  margin: 1.8rem 0;
+  padding: 1.2rem 1.6rem;
+  background: var(--cor-fundo-card);
+  border-left: 2px solid var(--cor-dourado);
+  border-radius: var(--raio-card);
+}
+
+.artigo-corpo blockquote p { margin: 0; }
+
 /* ─── Páginas de case de projeto ─── */
 .case-meta {
   display: flex;
