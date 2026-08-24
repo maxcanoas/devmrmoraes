@@ -468,6 +468,12 @@ section h2 { max-width: 26ch; margin-bottom: var(--e-4); }
 
 .etapas p { color: var(--tinta-2); }
 
+/* Dialogo como transcricao, e nao como app de chat: quem fala em mono na margem,
+   a fala ao lado. Sem balao, sem avatar, sem canto arredondado. */
+.conversa dt { border-top: 1px solid var(--linha); padding-top: var(--e-3); color: var(--tinta-2); }
+
+.conversa dd { margin: 0; padding-bottom: var(--e-3); }
+
 .lista-perguntas details:last-child { border-bottom: 1px solid var(--linha); }
 
 summary { font-size: var(--t-1); font-weight: 500; }
