@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
   <title>Desenvolvimento de Aplicativos Mobile | Canoas, RS</title>
   <meta name="description" content="Desenvolvimento de aplicativos Android e iOS em React Native para empresas de Canoas, Porto Alegre e região, integrados ao sistema que você já usa." />
@@ -12,17 +11,6 @@
   <link rel="canonical" href="https://www.devmrmoraes.com.br/aplicativos-mobile/" />
   <meta name="geo.region" content="BR-RS" />
   <meta name="geo.placename" content="Canoas, Rio Grande do Sul" />
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-19XH630KZE"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-19XH630KZE');
-  </script>
-  <noscript><style>.animar-preparado{opacity:1!important;transform:none!important}</style></noscript>
-
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="DEVMRMORAES" />
   <meta property="og:title" content="Desenvolvimento de Aplicativos Mobile | Canoas, RS" />
@@ -33,7 +21,6 @@
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="DEVMRMORAES: Desenvolvimento de Aplicativos Mobile" />
   <meta property="og:locale" content="pt_BR" />
-
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@devmrmoraes" />
   <meta name="twitter:creator" content="@devmrmoraes" />
@@ -41,7 +28,6 @@
   <meta name="twitter:description" content="Aplicativos Android e iOS para empresas de Canoas, Porto Alegre e região." />
   <meta name="twitter:image" content="https://www.devmrmoraes.com.br/img/og-image.png" />
   <meta name="twitter:image:alt" content="DEVMRMORAES: Aplicativos Mobile" />
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -52,10 +38,18 @@
         "name": "Desenvolvimento de Aplicativos Mobile",
         "description": "Desenvolvimento de aplicativos para Android e iOS em React Native, tanto para uso interno de equipes quanto voltados ao cliente final, com integração aos sistemas já utilizados pela empresa.",
         "url": "https://www.devmrmoraes.com.br/aplicativos-mobile/",
-        "provider": { "@id": "https://www.devmrmoraes.com.br/#business" },
+        "provider": {
+          "@id": "https://www.devmrmoraes.com.br/#business"
+        },
         "areaServed": [
-          { "@type": "City", "name": "Canoas" },
-          { "@type": "City", "name": "Porto Alegre" }
+          {
+            "@type": "City",
+            "name": "Canoas"
+          },
+          {
+            "@type": "City",
+            "name": "Porto Alegre"
+          }
         ]
       },
       {
@@ -66,7 +60,7 @@
             "name": "Eu preciso mesmo de um app, ou um site resolve?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Na maior parte das vezes, um site resolve. Se o objetivo é apresentar a empresa, mostrar catálogo ou receber contato, um site que funciona bem no celular entrega o mesmo por uma fração do custo, sem depender de loja e sem exigir instalação."
+              "text": "Se você não precisa de recurso do aparelho, nem de funcionamento sem internet, nem de notificação, e a pessoa usa aquilo de vez em quando, um site que funciona bem no celular resolve, e sai mais barato. Eu digo isso na primeira conversa, mesmo quando a conversa começou pedindo um app."
             }
           },
           {
@@ -74,7 +68,7 @@
             "name": "Precisa ser para Android e iOS ao mesmo tempo?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Não. Para app interno, olhe os aparelhos que a sua equipe usa: se são todos Android, começar só por Android economiza tempo e dinheiro. Para app voltado ao cliente final, normalmente as duas plataformas se justificam."
+              "text": "Não. Dá para começar por um só, e para app interno costuma ser Android, que é o que a equipe tem. Como o código é o mesmo para os dois, acrescentar o segundo depois custa bem menos que fazer outro app."
             }
           },
           {
@@ -82,15 +76,15 @@
             "name": "O app funciona sem internet?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Funciona, quando o projeto prevê isso desde o começo. Os dados ficam guardados no aparelho e sobem quando a conexão volta. É decisão de arquitetura, não recurso que se acrescenta depois."
+              "text": "Pode funcionar, e para equipe de campo isso costuma ser requisito. O app guarda o que foi registrado no aparelho e sincroniza quando o sinal volta. Isso precisa ser decidido no começo, porque muda como os dados são organizados."
             }
           },
           {
             "@type": "Question",
-            "name": "Quem publica o aplicativo na loja?",
+            "name": "Quem publica na loja, você ou eu?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Eu faço a publicação, mas usando contas de desenvolvedor no nome da sua empresa. A conta é dona do app, então com ela no seu nome você mantém o controle da publicação independentemente de quem faça a manutenção no futuro."
+              "text": "Eu faço o envio, com as contas no nome da sua empresa. Você não precisa entender do processo, mas a titularidade tem que ser sua, e isso não é negociável da minha parte: é o que impede você de ficar refém de qualquer desenvolvedor, inclusive de mim."
             }
           },
           {
@@ -98,7 +92,7 @@
             "name": "E se a loja recusar o app?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Acontece, principalmente na App Store, e quase sempre por detalhe de política: política de privacidade ausente, permissão pedida sem justificativa, descrição incompleta. Ajusto e reenvio, e isso faz parte do projeto."
+              "text": "Acontece, principalmente na Apple. A loja diz o motivo, eu ajusto e reenvio, sem cobrar por isso. Os motivos mais comuns são política de privacidade ausente e permissão pedida sem explicação, e os dois eu já preparo antes do primeiro envio."
             }
           }
         ]
@@ -106,359 +100,268 @@
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://www.devmrmoraes.com.br/" },
-          { "@type": "ListItem", "position": 2, "name": "Serviços", "item": "https://www.devmrmoraes.com.br/#servicos" },
-          { "@type": "ListItem", "position": 3, "name": "Aplicativos Mobile", "item": "https://www.devmrmoraes.com.br/aplicativos-mobile/" }
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Início",
+            "item": "https://www.devmrmoraes.com.br/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Serviços",
+            "item": "https://www.devmrmoraes.com.br/#servicos"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Aplicativos Mobile",
+            "item": "https://www.devmrmoraes.com.br/aplicativos-mobile/"
+          }
         ]
       },
       {
         "@type": "WebPage",
         "name": "Desenvolvimento de Aplicativos Mobile",
         "url": "https://www.devmrmoraes.com.br/aplicativos-mobile/",
-        "isPartOf": { "@id": "https://www.devmrmoraes.com.br/#website" }
+        "isPartOf": {
+          "@id": "https://www.devmrmoraes.com.br/#website"
+        }
       }
     ]
   }
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;500;600&family=DM+Serif+Display:ital@1&display=swap" />
+  <!-- #assets -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-19XH630KZE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-19XH630KZE');
+  </script>
+
+  <link rel="preload" as="font" type="font/woff2" href="../fonts/schibsted-grotesk-latin.woff2" crossorigin />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="../js/script.js" defer></script>
+
   <link rel="icon" href="../img/favicon.svg" type="image/svg+xml" />
   <link rel="manifest" href="../manifest.json" />
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#F5F2ED" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="DEVMRMORAES" />
-  <link rel="stylesheet" href="../css/style.css" />
-
-  <!-- JavaScript principal: baixa junto com o CSS e roda antes do primeiro
-       paint, para o conteúdo não aparecer e apagar em conexão lenta -->
-  <script src="../js/script.js" defer></script>
+  <!-- /#assets -->
 </head>
 
 <body>
+  <!-- #header -->
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 
   <header>
-    <nav id="navegacao" aria-label="Navegação principal">
-      <a href="../index.html" class="nav-logo" aria-label="DEVMRMORAES, voltar ao início">Dev<span>Mr</span>moraes</a>
-      <ul class="nav-links" role="list">
-        <li><a href="../index.html#sobre">Sobre</a></li>
-        <li><a href="../projetos.html">Projetos</a></li>
+    <nav aria-label="Navegação principal">
+      <a class="logo" href="../" aria-label="DEVMRMORAES, página inicial">DEV<span>MR</span>MORAES</a>
+
+      <ul role="list">
+        <li><a href="../projetos.html">Trabalho</a></li>
+        <li><a href="../#servicos" aria-current="true">Serviços</a></li>
         <li><a href="../artigos/">Artigos</a></li>
-        <li class="nav-item-dropdown">
-          <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="submenu-servicos">
-            Serviços
-            <span class="nav-dropdown-seta" aria-hidden="true">▾</span>
-          </button>
-          <ul id="submenu-servicos" class="nav-submenu" role="list">
-            <li><a href="../criacao-de-sites/">Criação de Sites</a></li>
-            <li><a href="../seo-para-sites/">SEO e Manutenção de Sites</a></li>
-            <li><a href="../sistemas-personalizados/">Sistemas Personalizados</a></li>
-            <li><a href="../automacao-de-processos/">Automação de Processos</a></li>
-            <li><a href="../aplicativos-mobile/">Aplicativos Mobile</a></li>
-            <li><a href="../consultoria-tecnica/">Consultoria e Diagnóstico Técnico</a></li>
-            <li><a href="../chatbot-com-ia/">Chatbots e Assistentes com IA</a></li>
-            <li><a href="../suporte-e-manutencao/">Suporte e Evolução Contínua</a></li>
-            <li class="nav-submenu-separador" role="presentation"></li>
-            <li><a href="../index.html#servicos" class="nav-submenu-todos">Ver todos os serviços</a></li>
-          </ul>
-        </li>
-        <li><a href="../index.html#processo">Processo</a></li>
-        <li><a href="../index.html#faq">FAQ</a></li>
-        <li><a href="../index.html#contato" class="nav-botao-contato">Orçamento</a></li>
       </ul>
-      <button class="nav-menu-toggle" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+
+      <a class="botao botao-compacto" href="../#contato">Falar comigo</a>
     </nav>
   </header>
+  <!-- /#header -->
 
-  <main>
-
-    <section class="servico-hero">
-      <nav class="servico-breadcrumb" aria-label="Breadcrumb">
-        <a href="../index.html">Início</a>
-        <span class="breadcrumb-sep" aria-hidden="true">/</span>
-        <a href="../index.html#servicos">Serviços</a>
-        <span class="breadcrumb-sep" aria-hidden="true">/</span>
-        <span>Aplicativos Mobile</span>
-      </nav>
-
-      <h1 class="servico-hero-titulo">
-        Aplicativos mobile<br><em>para Android e iOS</em>
-      </h1>
-      <p class="servico-hero-sub">
-        Sua equipe precisa registrar dados em campo, ou o seu cliente precisa de um app com a sua marca? Desenvolvo para Android e iOS, integrado aos sistemas que a empresa já usa. Atendo Canoas, Porto Alegre e Região Metropolitana presencialmente, e todo o Brasil de forma remota.
-      </p>
-      <a href="../index.html#contato" class="botao-primario">
-        <span>Solicitar orçamento</span>
-        <span aria-hidden="true">→</span>
-      </a>
+  <main id="conteudo">
+    <section class="capa">
+      <div class="container">
+        <nav class="trilha mono" aria-label="Trilha de navegação">
+          <a href="../">Início</a> <span aria-hidden="true">/</span> <a href="../#servicos">Serviços</a> <span aria-hidden="true">/</span> <span aria-current="page">Aplicativos mobile</span>
+        </nav>
+        <h1>Aplicativos para Android e iOS, quando o app é mesmo a resposta.</h1>
+        <p class="capa-linha">App interno para a equipe em campo ou app para o seu cliente final, com um código só para as duas lojas.</p>
+        <p><a class="botao" href="#contato">Pedir orçamento</a></p>
+      </div>
     </section>
 
-    <div class="servico-conteudo">
-
-      <!-- ─── Para quem é ─── -->
-      <section class="servico-bloco">
-        <h2>Para quem é</h2>
-        <p class="servico-bloco-intro">
-          A primeira pergunta que faço é se realmente precisa ser um app. Muita coisa se resolve com um site que funciona bem no celular, e sai bem mais barato. App se justifica quando existe algo que o navegador não entrega:
-        </p>
-        <div class="servico-cenarios">
-          <article class="servico-cenario">
-            <h3>Equipe que trabalha na rua</h3>
-            <p>Técnico, entregador, vendedor externo, equipe de vistoria. Precisam registrar dados, tirar foto e coletar assinatura no local, muitas vezes sem sinal decente.</p>
-          </article>
-          <article class="servico-cenario">
-            <h3>Uso preso ao recurso do aparelho</h3>
-            <p>Câmera para ler código de barras, GPS para registrar onde a visita aconteceu, notificação que chega mesmo com o app fechado. É aqui que o navegador não dá conta.</p>
-          </article>
-          <article class="servico-cenario">
-            <h3>Cliente que volta com frequência</h3>
-            <p>Quando o cliente usa o serviço toda semana, o ícone na tela inicial vale muito. Para quem entra duas vezes por ano, um site responsivo resolve melhor.</p>
-          </article>
-          <article class="servico-cenario">
-            <h3>O sistema precisa sair do escritório</h3>
-            <p>Já existe um sistema rodando na empresa, e parte da operação precisa consultar ou lançar informação estando fora dela.</p>
-          </article>
+    <section>
+      <div class="container grade">
+        <div class="col-5">
+          <h2>Antes de tudo: você precisa mesmo de um app?</h2>
         </div>
-      </section>
-
-      <!-- ─── O que está incluído ─── -->
-      <div class="servico-detalhe">
-        <div class="servico-detalhe-texto">
-          <h2>O que está incluído</h2>
-          <p>
-            Desenvolvo aplicativos mobile em React Native, do zero, para o cenário que você tem. Pode ser o app da equipe de campo, o catálogo que o cliente abre no celular ou a versão mobile de um sistema que já roda na empresa.
-          </p>
-          <p>
-            App que ninguém abre depois da primeira semana é o desfecho mais comum quando o aplicativo existe só porque a concorrência tem um. Antes de orçar, eu pergunto o que a pessoa vai fazer ali toda semana.
-          </p>
-          <p>
-            React Native compartilha o mesmo código entre Android e iOS. Isso reduz o custo e mantém as duas versões iguais, sem aquele descompasso de a novidade sair primeiro num sistema e no outro só meses depois.
-          </p>
+        <div class="col-6 inicio-7 fluxo">
+          <p>Pergunto isso em toda primeira conversa, porque a resposta é não com alguma frequência. Um site que funciona bem no celular resolve o mesmo problema em muitos casos, custa bem menos e não depende de ninguém instalar nada.</p>
+          <p>App faz sentido quando você precisa de câmera, GPS, leitor de código de barras ou notificação que chega mesmo com o aplicativo fechado. Faz sentido quando a pessoa vai usar aquilo várias vezes por semana, e o ícone na tela inicial economiza o caminho. E faz sentido quando o trabalho acontece onde não há sinal.</p>
+          <p>Se o seu caso não é nenhum desses, eu vou dizer, e o orçamento que eu mandar vai ser o do site.</p>
         </div>
-        <ul class="servico-entregas">
-          <li>Telas desenhadas para dedo, não para mouse</li>
-          <li>Android e iOS a partir do mesmo código, em React Native</li>
-          <li>Integração com as APIs e o banco que a empresa já tem</li>
-          <li>Notificação push, quando faz sentido incomodar o usuário</li>
-          <li>Modo offline, para funcionar onde não pega sinal</li>
-          <li>Publicação na Google Play e na App Store</li>
-          <li>Teste em aparelho de verdade antes de entregar</li>
-        </ul>
       </div>
+    </section>
 
-      <!-- ─── Como funciona ─── -->
-      <section class="servico-bloco">
-        <h2>Como funciona</h2>
-        <p class="servico-bloco-intro">
-          App tem uma etapa que os outros serviços não têm: a publicação nas lojas, que depende de aprovação de terceiros e entra no cálculo do prazo.
-        </p>
-        <div class="servico-etapas">
-          <div class="servico-etapa">
+    <section>
+      <div class="container">
+        <h2>Quando o app se paga.</h2>
+        <div class="cenarios">
+          <article>
+            <h3>Equipe que trabalha na rua</h3>
+            <p>Técnico, entregador, vendedor externo. Gente que precisa registrar o que fez na hora em que fez, e não à noite, de memória.</p>
+          </article>
+          <article>
+            <h3>O aparelho faz parte do trabalho</h3>
+            <p>Foto de comprovante, leitura de código de barras, localização da visita, assinatura do cliente na tela.</p>
+          </article>
+          <article>
+            <h3>O cliente volta com frequência</h3>
+            <p>Quando alguém usa o seu serviço toda semana, o app deixa de ser um obstáculo e vira um atalho.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>Como funciona.</h2>
+        <ol class="etapas" role="list">
+          <li>
+            <span class="mono">01</span>
             <div>
               <h3>Definir o essencial</h3>
-              <p>Listamos tudo o que o app poderia fazer e cortamos para o que ele precisa fazer na primeira versão. App enxuto no ar em dois meses vale mais que app completo prometido para daqui a um ano.</p>
+              <p>A primeira versão faz poucas coisas e faz bem. App que tenta fazer tudo na estreia demora a sair e chega errado.</p>
             </div>
-          </div>
-          <div class="servico-etapa">
+          </li>
+          <li>
+            <span class="mono">02</span>
             <div>
               <h3>Desenhar as telas</h3>
-              <p>Antes de programar, monto o fluxo de telas para você navegar e opinar. Mudar a ordem de dois campos nessa etapa é conversa de cinco minutos; depois do app pronto, é retrabalho.</p>
+              <p>Você vê o desenho antes de existir código, e é bem mais barato mudar de ideia aqui.</p>
             </div>
-          </div>
-          <div class="servico-etapa">
+          </li>
+          <li>
+            <span class="mono">03</span>
             <div>
               <h3>Desenvolvimento e integração</h3>
-              <p>Construo o app e conecto ao que a empresa já usa. É comum o app ser a ponta visível de um <a href="../sistemas-personalizados/">sistema personalizado</a> que roda por trás, e nesse caso os dois são pensados juntos.</p>
+              <p>Um código só, em React Native, que vira app de Android e de iOS. É o que faz o projeto caber no orçamento de uma empresa pequena.</p>
             </div>
-          </div>
-          <div class="servico-etapa">
+          </li>
+          <li>
+            <span class="mono">04</span>
             <div>
               <h3>Teste em aparelho de verdade</h3>
-              <p>Emulador engana. O app é instalado em celulares reais, incluindo modelos mais antigos e com internet ruim, que é a condição em que a equipe de campo costuma trabalhar.</p>
+              <p>Celular antigo, tela pequena, internet ruim. É o cenário do seu usuário, e não o do emulador na minha máquina.</p>
             </div>
-          </div>
-          <div class="servico-etapa">
+          </li>
+          <li>
+            <span class="mono">05</span>
             <div>
-              <h3>Publicação nas lojas</h3>
-              <p>Cuido do envio para a Google Play e a App Store, com os textos, capturas de tela e política de privacidade que elas exigem. As contas de desenvolvedor ficam no nome da sua empresa, não no meu.</p>
+              <h3>Publicação</h3>
+              <p>Subo nas duas lojas, com as contas no nome da sua empresa. Detalhe importante o suficiente para ter bloco próprio, logo abaixo.</p>
             </div>
-          </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <div class="container grade">
+        <div class="col-5">
+          <h2>Publicação nas lojas.</h2>
         </div>
-      </section>
-
-      <!-- ─── Prazo e investimento ─── -->
-      <section class="servico-bloco">
-        <h2>Prazo e investimento</h2>
-        <p>
-          App é o serviço de ciclo mais longo aqui. Uma primeira versão enxuta, com poucas telas e uma integração, leva algumas semanas de desenvolvimento. Some a isso o tempo de revisão das lojas: a Google Play costuma responder em poucos dias, a App Store pode levar mais, e nenhuma das duas está sob meu controle.
-        </p>
-        <p>
-          O escopo é fechado como nos demais serviços: proposta com telas, funcionalidades, prazo e valor, aprovada antes de começar. Versões seguintes são orçadas à parte, o que também é a razão de começar pelo essencial. A primeira versão em uso real mostra o que os usuários de fato pedem, e isso raramente é o que se imaginou na reunião inicial.
-        </p>
-        <p>
-          Vale contar o custo que continua depois da entrega: a conta de desenvolvedor da Apple é anual e a do Google é única, ambas pagas pela sua empresa. Além disso, Android e iOS lançam versões novas todo ano, e app parado eventualmente para de funcionar. Manter isso em dia é o que o <a href="../suporte-e-manutencao/">plano de suporte e manutenção</a> cobre.
-        </p>
-        <!-- TODO: confirmar com o cliente a faixa de valor de uma primeira versao de app -->
-      </section>
-
-      <div class="servico-beneficios">
-        <h2>Por que investir em um app mobile</h2>
-        <div class="servico-beneficios-grid">
-          <div class="servico-beneficio-card">
-            <h3>O ícone fica na tela inicial</h3>
-            <p>Diferente do site, o app não depende da pessoa lembrar de um endereço. Ele está ali, ao lado do WhatsApp.</p>
-          </div>
-          <div class="servico-beneficio-card">
-            <h3>Usa câmera e GPS</h3>
-            <p>Foto da ocorrência, leitura de código de barras, localização do atendimento. Coisas que o navegador faz mal ou não faz.</p>
-          </div>
-          <div class="servico-beneficio-card">
-            <h3>Funciona sem sinal</h3>
-            <p>A equipe preenche no subsolo ou na estrada, e o aparelho sincroniza quando a internet volta.</p>
-          </div>
-          <div class="servico-beneficio-card">
-            <h3>Notificação que chega</h3>
-            <p>Push aparece na tela travada. Só vale para aviso que a pessoa quer receber, senão o app é desinstalado.</p>
-          </div>
-          <div class="servico-beneficio-card">
-            <h3>Um código, duas lojas</h3>
-            <p>React Native mantém Android e iOS na mesma versão, sem pagar dois desenvolvimentos.</p>
-          </div>
-          <div class="servico-beneficio-card">
-            <h3>Talvez você não precise de um</h3>
-            <p>Se o uso for esporádico, um site que abre bem no celular resolve e custa bem menos. Eu digo isso na primeira conversa.</p>
-          </div>
+        <div class="col-6 inicio-7 fluxo">
+          <p>As contas de desenvolvedor ficam no nome da sua empresa, não no meu. A do Google cobra uma taxa única; a da Apple, uma anual. Eu configuro as duas com você e faço o envio, mas a titularidade é sua desde o primeiro dia: se um dia você trocar de desenvolvedor, o app continua onde está.</p>
+          <p>As lojas revisam antes de publicar. O Google costuma levar horas; a Apple, dias, e é mais exigente. Recusa acontece, quase sempre por política de privacidade ausente, permissão pedida sem justificativa ou funcionalidade que a Apple entende como incompleta.</p>
+          <p>Quando acontece, eu ajusto e reenvio sem cobrar por isso: faz parte do trabalho de publicar, e não é um extra.</p>
         </div>
       </div>
+    </section>
 
-      <!-- ─── Perguntas frequentes ─── -->
-      <section class="servico-bloco">
-        <h2>Perguntas frequentes</h2>
-        <div class="faq-lista">
-          <details class="faq-item">
-            <summary class="faq-pergunta">Eu preciso mesmo de um app, ou um site resolve?</summary>
-            <div class="faq-resposta">
-              <p>Pergunta certa, e a resposta é não na maior parte das vezes. Se o objetivo é apresentar a empresa, mostrar catálogo ou receber contato, um site que funciona bem no celular entrega o mesmo por uma fração do custo, sem depender de loja e sem exigir que ninguém instale nada. Se eu achar que o seu caso é esse, vou te dizer.</p>
-            </div>
+    <section>
+      <div class="container">
+        <h2>Perguntas frequentes.</h2>
+        <div class="lista-perguntas">
+          <details>
+            <summary>Eu preciso mesmo de um app, ou um site resolve?</summary>
+            <div><p>Se você não precisa de recurso do aparelho, nem de funcionamento sem internet, nem de notificação, e a pessoa usa aquilo de vez em quando, um site que funciona bem no celular resolve, e sai mais barato. Eu digo isso na primeira conversa, mesmo quando a conversa começou pedindo um app.</p></div>
           </details>
-          <details class="faq-item">
-            <summary class="faq-pergunta">Precisa ser para Android e iOS ao mesmo tempo?</summary>
-            <div class="faq-resposta">
-              <p>Não. Para app interno, olhe os aparelhos que a sua equipe usa: se são todos Android, começar só por Android economiza tempo e dinheiro. Para app voltado ao cliente final, normalmente as duas plataformas se justificam, e o código compartilhado torna isso viável.</p>
-            </div>
+          <details>
+            <summary>Precisa ser para Android e iOS ao mesmo tempo?</summary>
+            <div><p>Não. Dá para começar por um só, e para app interno costuma ser Android, que é o que a equipe tem. Como o código é o mesmo para os dois, acrescentar o segundo depois custa bem menos que fazer outro app.</p></div>
           </details>
-          <details class="faq-item">
-            <summary class="faq-pergunta">O app funciona sem internet?</summary>
-            <div class="faq-resposta">
-              <p>Funciona, quando o projeto prevê isso desde o começo. Os dados ficam guardados no aparelho e sobem quando a conexão volta. É requisito comum para equipe de campo, e é decisão de arquitetura, não recurso que se acrescenta depois.</p>
-            </div>
+          <details>
+            <summary>O app funciona sem internet?</summary>
+            <div><p>Pode funcionar, e para equipe de campo isso costuma ser requisito. O app guarda o que foi registrado no aparelho e sincroniza quando o sinal volta. Isso precisa ser decidido no começo, porque muda como os dados são organizados.</p></div>
           </details>
-          <details class="faq-item">
-            <summary class="faq-pergunta">Quem publica na loja, você ou eu?</summary>
-            <div class="faq-resposta">
-              <p>Eu faço a publicação, mas usando contas de desenvolvedor no nome da sua empresa. É importante que seja assim: a conta é dona do app. Com ela no seu nome, você mantém o controle da publicação independentemente de quem faça a manutenção no futuro.</p>
-            </div>
+          <details>
+            <summary>Quem publica na loja, você ou eu?</summary>
+            <div><p>Eu faço o envio, com as contas no nome da sua empresa. Você não precisa entender do processo, mas a titularidade tem que ser sua, e isso não é negociável da minha parte: é o que impede você de ficar refém de qualquer desenvolvedor, inclusive de mim.</p></div>
           </details>
-          <details class="faq-item">
-            <summary class="faq-pergunta">E se a loja recusar o app?</summary>
-            <div class="faq-resposta">
-              <p>Acontece, principalmente na App Store, e quase sempre por detalhe de política: política de privacidade ausente, permissão pedida sem justificativa, descrição incompleta. Ajusto e reenvio, e isso faz parte do projeto, não é serviço extra.</p>
-            </div>
+          <details>
+            <summary>E se a loja recusar o app?</summary>
+            <div><p>Acontece, principalmente na Apple. A loja diz o motivo, eu ajusto e reenvio, sem cobrar por isso. Os motivos mais comuns são política de privacidade ausente e permissão pedida sem explicação, e os dois eu já preparo antes do primeiro envio.</p></div>
           </details>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <div class="servico-relacionados">
-        <h2>Serviços relacionados</h2>
-        <div class="servico-relacionados-grid">
-          <a href="../sistemas-personalizados/" class="servico-relacionado-card">
-            <h3>Sistemas Personalizados</h3>
-            <p>O sistema onde o dado do app entra e de onde saem os relatórios.</p>
-          </a>
-          <a href="../criacao-de-sites/" class="servico-relacionado-card">
-            <h3>Criação de Sites</h3>
-            <p>Quando o uso é ocasional e um site que abre bem no celular já resolve.</p>
-          </a>
-          <a href="../suporte-e-manutencao/" class="servico-relacionado-card">
-            <h3>Suporte e Evolução Contínua</h3>
-            <p>Android e iOS lançam versão nova todo ano. App parado uma hora para de abrir.</p>
-          </a>
+    <section id="contato" class="fechamento">
+      <div class="container grade">
+        <div class="col-6 fechamento-canal fluxo">
+          <h2>Me conta o que o app precisaria fazer.</h2>
+          <p><a class="telefone mono" href="https://wa.me/5551999608608?text=Ol%C3%A1%21%20Quero%20conversar%20sobre%20um%20aplicativo%20para%20a%20minha%20empresa." target="_blank" rel="noopener noreferrer" data-origem="servico_apps">(51) 99960-8608</a></p>
+          <p>Quem vai usar, com que frequência e em que situação. Com isso eu digo se app é o caminho ou se um site no celular resolve mais barato.</p>
+          <p class="mono">Canoas RS · presencial em Porto Alegre e Região Metropolitana · remoto no resto do Brasil</p>
+        </div>
+        <div class="col-5 inicio-8 fluxo">
+          <p class="mono">Talvez seja outra coisa</p>
+          <p><a class="link-forte" href="../criacao-de-sites/">Se um site que funciona bem no celular resolver</a></p>
+          <p><a class="link-forte" href="../sistemas-personalizados/">Se o app precisaria de um sistema por trás que ainda não existe</a></p>
         </div>
       </div>
-    </div>
-
-    <div class="cta-secao">
-      <h2 class="cta-titulo">
-        Sua empresa precisa<br><em>de um app?</em>
-      </h2>
-      <p class="cta-subtitulo">
-        Me conta o que a pessoa vai fazer no app. Eu volto com escopo, prazo e valor, ou com o motivo de não valer a pena.
-      </p>
-      <div class="cta-botoes">
-        <a href="../index.html#contato" class="botao-primario">
-          <span>Quero meu orçamento</span>
-          <span aria-hidden="true">→</span>
-        </a>
-        <a href="https://wa.me/5551999608608?text=Ol%C3%A1!%20Quero%20conversar%20sobre%20um%20aplicativo%20para%20a%20minha%20empresa." data-origem="cta_central" target="_blank" rel="noopener noreferrer" class="botao-secundario">
-          Falar no WhatsApp
-        </a>
-      </div>
-    </div>
-
+    </section>
   </main>
 
+  <!-- #footer -->
   <footer>
-    <div class="footer-topo">
-      <address class="footer-nap">
+    <div class="rodape-topo container">
+      <address>
         <strong>DEVMRMORAES</strong> · Maxwell Rigo Moraes<br />
-        Canoas, Rio Grande do Sul. Atendimento presencial em Canoas, Porto Alegre e Região Metropolitana<br />
-        Projetos remotos para todo o Brasil<br />
-        <a href="https://wa.me/5551999608608" target="_blank" rel="noopener noreferrer" data-origem="rodape_telefone">(51) 99960-8608</a>
+        Canoas, Rio Grande do Sul. Atendimento presencial em Canoas, Porto Alegre e Região Metropolitana.<br />
+        Projetos remotos para todo o Brasil.<br />
+        <a class="mono" href="https://wa.me/5551999608608" target="_blank" rel="noopener noreferrer" data-origem="rodape_telefone">(51) 99960-8608</a>
       </address>
 
-      <nav class="footer-coluna" aria-label="Serviços">
-        <p class="footer-coluna-titulo">Serviços</p>
+      <nav aria-label="Serviços">
+        <p class="mono">Serviços</p>
         <ul role="list">
-          <li><a href="../criacao-de-sites/">Criação de Sites</a></li>
-          <li><a href="../seo-para-sites/">SEO e Manutenção de Sites</a></li>
-          <li><a href="../sistemas-personalizados/">Sistemas Personalizados</a></li>
-          <li><a href="../automacao-de-processos/">Automação de Processos</a></li>
-          <li><a href="../aplicativos-mobile/">Aplicativos Mobile</a></li>
-          <li><a href="../consultoria-tecnica/">Consultoria e Diagnóstico Técnico</a></li>
-          <li><a href="../chatbot-com-ia/">Chatbots e Assistentes com IA</a></li>
-          <li><a href="../suporte-e-manutencao/">Suporte e Evolução Contínua</a></li>
-        </ul>
-      </nav>
-
-      <nav class="footer-coluna" aria-label="Institucional">
-        <p class="footer-coluna-titulo">Institucional</p>
-        <ul role="list">
-          <li><a href="../index.html">Início</a></li>
-          <li><a href="../projetos.html">Projetos</a></li>
-          <li><a href="../artigos/">Artigos</a></li>
-          <li><a href="../index.html#sobre">Sobre</a></li>
-          <li><a href="../index.html#processo">Processo</a></li>
-          <li><a href="../index.html#faq">Perguntas frequentes</a></li>
-          <li><a href="../index.html#contato">Contato</a></li>
+          <li><a href="../criacao-de-sites/">Criação de sites</a></li>
+          <li><a href="../seo-para-sites/">SEO e manutenção de sites</a></li>
+          <li><a href="../sistemas-personalizados/">Sistemas personalizados</a></li>
+          <li><a href="../automacao-de-processos/">Automação de processos</a></li>
+          <li><a href="../aplicativos-mobile/" aria-current="page">Aplicativos mobile</a></li>
+          <li><a href="../consultoria-tecnica/">Consultoria e diagnóstico técnico</a></li>
+          <li><a href="../chatbot-com-ia/">Chatbots e assistentes com IA</a></li>
+          <li><a href="../suporte-e-manutencao/">Suporte e evolução contínua</a></li>
         </ul>
       </nav>
     </div>
 
-    <div class="footer-inner">
-      <p class="footer-logo">Dev<span>Mr</span>moraes</p>
-      <p class="footer-copy">© <span id="ano-atual"></span> DEVMRMORAES · Todos os direitos reservados</p>
-      <nav class="footer-links" aria-label="Links do rodapé">
-        <a href="https://www.linkedin.com/in/DEVMRMORAES" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-        <a href="https://www.instagram.com/DEVMRMORAES" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
-        <a href="../index.html#contato">Contato</a>
+    <div class="rodape-base container">
+      <p class="mono">© <span data-ano></span> DEVMRMORAES</p>
+      <nav aria-label="Redes sociais">
+        <a href="https://www.linkedin.com/in/DEVMRMORAES" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/DEVMRMORAES" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
       </nav>
+    </div>
+
+    <div class="barra-acao">
+      <a href="https://wa.me/5551999608608?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer" data-origem="barra_movel">WhatsApp</a>
+      <a href="tel:+5551999608608">Ligar <span class="mono">(51) 99960-8608</span></a>
     </div>
   </footer>
-
-  <script>document.getElementById('ano-atual').textContent = new Date().getFullYear();</script>
-
+  <!-- /#footer -->
 </body>
 </html>
