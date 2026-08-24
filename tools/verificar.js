@@ -59,8 +59,9 @@ for (const [rel, html] of fonte) {
     const [caminho, frag] = alvo.split('#');
     let arquivoAlvo = rel;
     if (caminho) {
-      let p = path.posix.normalize(path.posix.join(dir, caminho));
-      if (p.endsWith('/')) p += 'index.html';
+      let p = path.posix.normalize(path.posix.join(dir, caminho)).replace(/^\.\//, '');
+      if (p === '' || p === '.' || p === '/') p = 'index.html';
+      else if (p.endsWith('/')) p += 'index.html';
       else if (!path.extname(p)) p += '/index.html';
       if (!fs.existsSync(path.join(RAIZ, p))) { reprova(rel + ': ' + alvo + ' -> ' + p + ' nao existe'); continue; }
       arquivoAlvo = p;
