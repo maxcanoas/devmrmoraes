@@ -340,9 +340,9 @@ section + section { border-top: 1px solid var(--linha); }
 
 section h2 { max-width: 26ch; margin-bottom: var(--e-4); }
 
-.ficha { padding-block: var(--e-4) var(--e-5); }
+.ficha { padding-block: var(--e-3) var(--e-4); }
 
-.ficha h1 { margin-bottom: var(--e-4); max-width: 26ch; }
+.ficha h1 { margin-bottom: var(--e-3); max-width: 26ch; }
 
 .ficha-promessa {
   font-size: var(--t-1);
@@ -672,6 +672,16 @@ body { padding-bottom: 3.25rem; }
   }
 
   .lista-servicos p { padding-block: var(--e-3); }
+
+  /* No celular 13rem ja e metade da largura da tela; a foto so cresce quando ha
+     coluna sobrando para ela. */
+  /* No celular o espaco e curto e 13rem ja e metade da largura da tela. A foto so
+     cresce, e a Ficha so respira, quando ha coluna sobrando para isso. */
+  .ficha { padding-block: var(--e-4) var(--e-5); }
+
+  .ficha h1 { margin-bottom: var(--e-4); }
+
+  .ficha-pessoa img { max-width: 16rem; }
 
   .trabalho,
   .fechamento { padding-block: var(--e-6); }
