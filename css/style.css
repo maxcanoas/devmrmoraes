@@ -190,7 +190,8 @@ th, td {
 
 th { font-weight: 500; }
 
-td { font-family: var(--fonte-mono); font-size: var(--t--1); }
+/* URL de dominio nao tem espaco onde quebrar, e estica a tabela alem da tela. */
+td { font-family: var(--fonte-mono); font-size: var(--t--1); overflow-wrap: anywhere; }
 
 /* Header e fixo: sem isto toda ancora do site aterrissa por baixo dele. */
 [id] { scroll-margin-top: var(--e-6); }
@@ -273,7 +274,7 @@ header.rolado { border-bottom-color: var(--linha); }
 header nav {
   display: flex;
   align-items: center;
-  gap: var(--e-4);
+  gap: var(--e-2);
   width: 100%;
   max-width: 1200px;
   margin-inline: auto;
@@ -649,6 +650,7 @@ body { padding-bottom: 3.25rem; }
   body { padding-bottom: 0; }
   .barra-acao { display: none; }
 
+  header nav { gap: var(--e-4); }
   header .botao { display: inline-block; }
   header ul { gap: var(--e-4); font-size: var(--t-0); }
 

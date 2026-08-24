@@ -9,7 +9,7 @@ const path = require('path');
 
 const RAIZ = path.resolve(__dirname, '..');
 const IGNORAR = new Set(['.git', 'node_modules', 'tools', 'partials', 'img', 'css', 'js', 'fonts']);
-const EXCLUIR = new Set(['laboratorio.html']);
+const EXCLUIR = new Set();
 
 function listar(dir, base = '') {
   const saida = [];

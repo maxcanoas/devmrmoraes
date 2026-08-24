@@ -9,8 +9,7 @@ const RAIZ = path.resolve(__dirname, '..');
 const BLOCOS = { assets: 'head-assets.html', header: 'header.html', footer: 'footer.html' };
 const IGNORAR = new Set(['.git', 'node_modules', 'tools', 'partials', 'img', 'css', 'js', 'fonts']);
 
-/* Superficie de teste da fundacao: noindex, fora do sitemap, apagada na ultima fase. */
-const EXCLUIR = new Set(['laboratorio.html']);
+const EXCLUIR = new Set();
 
 /* _modelo.html mora em artigos/ mas e copiado para artigos/<slug>/index.html.
    Os caminhos que ele carrega sao os do destino, nao os da posicao atual no disco. */

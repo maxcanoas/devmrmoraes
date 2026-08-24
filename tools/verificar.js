@@ -8,8 +8,7 @@ const RAIZ = path.resolve(__dirname, '..');
 const SITE = 'https://www.devmrmoraes.com.br';
 const IGNORAR = new Set(['.git', 'node_modules', 'tools', 'partials', 'img', 'css', 'js', 'fonts']);
 
-/* Superficie de teste da fundacao: noindex, fora do sitemap, apagada na ultima fase. */
-const EXCLUIR = new Set(['laboratorio.html']);
+const EXCLUIR = new Set();
 
 const falhas = [];
 const avisos = [];
