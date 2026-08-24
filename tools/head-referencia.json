@@ -1,0 +1,1724 @@
+{
+ "aplicativos-mobile/index.html": {
+  "title": "Desenvolvimento de Aplicativos Mobile | Canoas, RS",
+  "description": "Desenvolvimento de aplicativos Android e iOS em React Native para empresas de Canoas, Porto Alegre e região, integrados ao sistema que você já usa.",
+  "canonical": "https://www.devmrmoraes.com.br/aplicativos-mobile/",
+  "og:title": "Desenvolvimento de Aplicativos Mobile | Canoas, RS",
+  "og:description": "Aplicativos Android e iOS em React Native para empresas de Canoas, Porto Alegre e região, integrados ao sistema que você já usa.",
+  "og:url": "https://www.devmrmoraes.com.br/aplicativos-mobile/",
+  "og:image": "https://www.devmrmoraes.com.br/img/og-image.png",
+  "og:type": "website",
+  "twitter:title": "Desenvolvimento de Aplicativos Mobile | Canoas, RS",
+  "twitter:description": "Aplicativos Android e iOS para empresas de Canoas, Porto Alegre e região.",
+  "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+  "geo.region": "BR-RS",
+  "geo.placename": "Canoas, Rio Grande do Sul",
+  "jsonLd": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Service",
+      "serviceType": "Desenvolvimento de Aplicativos Mobile",
+      "name": "Desenvolvimento de Aplicativos Mobile",
+      "description": "Desenvolvimento de aplicativos para Android e iOS em React Native, tanto para uso interno de equipes quanto voltados ao cliente final, com integração aos sistemas já utilizados pela empresa.",
+      "url": "https://www.devmrmoraes.com.br/aplicativos-mobile/",
+      "provider": {
+       "@id": "https://www.devmrmoraes.com.br/#business"
+      },
+      "areaServed": [
+       {
+        "@type": "City",
+        "name": "Canoas"
+       },
+       {
+        "@type": "City",
+        "name": "Porto Alegre"
+       }
+      ]
+     },
+     {
+      "@type": "FAQPage",
+      "mainEntity": [
+       {
+        "@type": "Question",
+        "name": "Eu preciso mesmo de um app, ou um site resolve?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Na maior parte das vezes, um site resolve. Se o objetivo é apresentar a empresa, mostrar catálogo ou receber contato, um site que funciona bem no celular entrega o mesmo por uma fração do custo, sem depender de loja e sem exigir instalação."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Precisa ser para Android e iOS ao mesmo tempo?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Não. Para app interno, olhe os aparelhos que a sua equipe usa: se são todos Android, começar só por Android economiza tempo e dinheiro. Para app voltado ao cliente final, normalmente as duas plataformas se justificam."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "O app funciona sem internet?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Funciona, quando o projeto prevê isso desde o começo. Os dados ficam guardados no aparelho e sobem quando a conexão volta. É decisão de arquitetura, não recurso que se acrescenta depois."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Quem publica o aplicativo na loja?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Eu faço a publicação, mas usando contas de desenvolvedor no nome da sua empresa. A conta é dona do app, então com ela no seu nome você mantém o controle da publicação independentemente de quem faça a manutenção no futuro."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "E se a loja recusar o app?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Acontece, principalmente na App Store, e quase sempre por detalhe de política: política de privacidade ausente, permissão pedida sem justificativa, descrição incompleta. Ajusto e reenvio, e isso faz parte do projeto."
+        }
+       }
+      ]
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Início",
+        "item": "https://www.devmrmoraes.com.br/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Serviços",
+        "item": "https://www.devmrmoraes.com.br/#servicos"
+       },
+       {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Aplicativos Mobile",
+        "item": "https://www.devmrmoraes.com.br/aplicativos-mobile/"
+       }
+      ]
+     },
+     {
+      "@type": "WebPage",
+      "name": "Desenvolvimento de Aplicativos Mobile",
+      "url": "https://www.devmrmoraes.com.br/aplicativos-mobile/",
+      "isPartOf": {
+       "@id": "https://www.devmrmoraes.com.br/#website"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "artigos/_modelo.html": {
+  "title": "TITULO DO ARTIGO (ate 60 caracteres) | DEVMRMORAES",
+  "description": "RESUMO DO ARTIGO EM ATE 155 CARACTERES. Diga o que o leitor ganha ao ler.",
+  "canonical": "https://www.devmrmoraes.com.br/artigos/SLUG-DO-ARTIGO/",
+  "og:title": "TITULO DO ARTIGO | DEVMRMORAES",
+  "og:description": "RESUMO PARA REDES SOCIAIS, ate cerca de 160 caracteres.",
+  "og:url": "https://www.devmrmoraes.com.br/artigos/SLUG-DO-ARTIGO/",
+  "og:image": "https://www.devmrmoraes.com.br/img/og-image.png",
+  "og:type": "article",
+  "twitter:title": "TITULO DO ARTIGO | DEVMRMORAES",
+  "twitter:description": "RESUMO PARA REDES SOCIAIS.",
+  "robots": "noindex, nofollow",
+  "geo.region": "BR-RS",
+  "geo.placename": "Canoas, Rio Grande do Sul",
+  "jsonLd": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Article",
+      "@id": "https://www.devmrmoraes.com.br/artigos/SLUG-DO-ARTIGO/#article",
+      "headline": "TITULO COMPLETO DO ARTIGO — pode ser mais longo que o <title>",
+      "description": "RESUMO DO ARTIGO. Costuma ser o mesmo texto da meta description.",
+      "url": "https://www.devmrmoraes.com.br/artigos/SLUG-DO-ARTIGO/",
+      "datePublished": "AAAA-MM-DD",
+      "dateModified": "AAAA-MM-DD",
+      "inLanguage": "pt-BR",
+      "author": {
+       "@id": "https://www.devmrmoraes.com.br/#person"
+      },
+      "publisher": {
+       "@id": "https://www.devmrmoraes.com.br/#business"
+      },
+      "image": "https://www.devmrmoraes.com.br/img/og-image.png",
+      "mainEntityOfPage": {
+       "@type": "WebPage",
+       "@id": "https://www.devmrmoraes.com.br/artigos/SLUG-DO-ARTIGO/"
+      },
+      "articleSection": "CATEGORIA — ex.: SEO técnico, Sistemas, Automação",
+      "keywords": [
+       "PALAVRA 1",
+       "PALAVRA 2",
+       "PALAVRA 3"
+      ],
+      "isPartOf": {
+       "@id": "https://www.devmrmoraes.com.br/artigos/#blog"
+      }
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Início",
+        "item": "https://www.devmrmoraes.com.br/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Artigos",
+        "item": "https://www.devmrmoraes.com.br/artigos/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "TITULO CURTO DO ARTIGO",
+        "item": "https://www.devmrmoraes.com.br/artigos/SLUG-DO-ARTIGO/"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "artigos/index.html": {
+  "title": "Artigos sobre SEO, Sites e Sistemas | DEVMRMORAES",
+  "description": "Artigos sobre SEO técnico, criação de sites, sistemas e automação, escritos a partir de problemas que encontrei em projetos reais. Sem receita pronta.",
+  "canonical": "https://www.devmrmoraes.com.br/artigos/",
+  "og:title": "Artigos sobre SEO, Sites e Sistemas | DEVMRMORAES",
+  "og:description": "Artigos sobre SEO técnico, criação de sites e automação, escritos a partir de projetos reais.",
+  "og:url": "https://www.devmrmoraes.com.br/artigos/",
+  "og:image": "https://www.devmrmoraes.com.br/img/og-image.png",
+  "og:type": "website",
+  "twitter:title": "Artigos sobre SEO, Sites e Sistemas | DEVMRMORAES",
+  "twitter:description": "Artigos sobre SEO técnico, criação de sites e automação, a partir de projetos reais.",
+  "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+  "geo.region": "BR-RS",
+  "geo.placename": "Canoas, Rio Grande do Sul",
+  "jsonLd": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Blog",
+      "@id": "https://www.devmrmoraes.com.br/artigos/#blog",
+      "name": "Artigos DEVMRMORAES",
+      "description": "Artigos sobre SEO técnico, criação de sites, sistemas e automação, escritos a partir de projetos reais.",
+      "url": "https://www.devmrmoraes.com.br/artigos/",
+      "inLanguage": "pt-BR",
+      "publisher": {
+       "@id": "https://www.devmrmoraes.com.br/#business"
+      },
+      "author": {
+       "@id": "https://www.devmrmoraes.com.br/#person"
+      },
+      "blogPost": [
+       {
+        "@type": "BlogPosting",
+        "headline": "Meu site não aparece no Google: 7 causas técnicas e como identificar cada uma",
+        "url": "https://www.devmrmoraes.com.br/artigos/meu-site-nao-aparece-no-google/",
+        "datePublished": "2026-08-13",
+        "author": {
+         "@id": "https://www.devmrmoraes.com.br/#person"
+        }
+       }
+      ]
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Início",
+        "item": "https://www.devmrmoraes.com.br/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Artigos",
+        "item": "https://www.devmrmoraes.com.br/artigos/"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "artigos/meu-site-nao-aparece-no-google/index.html": {
+  "title": "Site não aparece no Google: 7 causas técnicas | DEVMRMORAES",
+  "description": "Estar indexado e ser exibido são coisas diferentes. Sete causas técnicas para um site não aparecer no Google, cada uma com verificação e correção.",
+  "canonical": "https://www.devmrmoraes.com.br/artigos/meu-site-nao-aparece-no-google/",
+  "og:title": "Site não aparece no Google: 7 causas técnicas | DEVMRMORAES",
+  "og:description": "Sete causas técnicas para um site não aparecer no Google, cada uma com o sintoma, como verificar por conta própria e como corrigir.",
+  "og:url": "https://www.devmrmoraes.com.br/artigos/meu-site-nao-aparece-no-google/",
+  "og:image": "https://www.devmrmoraes.com.br/img/og-image.png",
+  "og:type": "article",
+  "twitter:title": "Site não aparece no Google: 7 causas técnicas | DEVMRMORAES",
+  "twitter:description": "Sete causas técnicas para um site não aparecer no Google, com sintoma, verificação e correção.",
+  "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+  "geo.region": "BR-RS",
+  "geo.placename": "Canoas, Rio Grande do Sul",
+  "jsonLd": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Article",
+      "@id": "https://www.devmrmoraes.com.br/artigos/meu-site-nao-aparece-no-google/#article",
+      "headline": "Meu site não aparece no Google: 7 causas técnicas e como identificar cada uma",
+      "description": "Estar indexado e ser exibido são coisas diferentes. Sete causas técnicas concretas para um site não aparecer no Google, cada uma com o sintoma, como verificar e como corrigir.",
+      "url": "https://www.devmrmoraes.com.br/artigos/meu-site-nao-aparece-no-google/",
+      "datePublished": "2026-08-13",
+      "dateModified": "2026-08-13",
+      "inLanguage": "pt-BR",
+      "author": {
+       "@id": "https://www.devmrmoraes.com.br/#person"
+      },
+      "publisher": {
+       "@id": "https://www.devmrmoraes.com.br/#business"
+      },
+      "image": "https://www.devmrmoraes.com.br/img/og-image.png",
+      "mainEntityOfPage": {
+       "@type": "WebPage",
+       "@id": "https://www.devmrmoraes.com.br/artigos/meu-site-nao-aparece-no-google/"
+      },
+      "articleSection": "SEO técnico",
+      "keywords": [
+       "SEO técnico",
+       "indexação",
+       "Google Search Console",
+       "Core Web Vitals",
+       "robots.txt"
+      ],
+      "isPartOf": {
+       "@id": "https://www.devmrmoraes.com.br/artigos/#blog"
+      }
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Início",
+        "item": "https://www.devmrmoraes.com.br/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Artigos",
+        "item": "https://www.devmrmoraes.com.br/artigos/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Meu site não aparece no Google",
+        "item": "https://www.devmrmoraes.com.br/artigos/meu-site-nao-aparece-no-google/"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "automacao-de-processos/index.html": {
+  "title": "Automação de Processos para Empresas | Canoas, RS",
+  "description": "Automação de tarefas repetitivas para empresas de Canoas, Porto Alegre e região: relatórios, planilhas, e-mails e integração entre sistemas.",
+  "canonical": "https://www.devmrmoraes.com.br/automacao-de-processos/",
+  "og:title": "Automação de Processos para Empresas | Canoas, RS",
+  "og:description": "Automação de tarefas repetitivas para empresas de Canoas, Porto Alegre e região: relatórios, planilhas e e-mails.",
+  "og:url": "https://www.devmrmoraes.com.br/automacao-de-processos/",
+  "og:image": "https://www.devmrmoraes.com.br/img/og-image.png",
+  "og:type": "website",
+  "twitter:title": "Automação de Processos para Empresas | Canoas, RS",
+  "twitter:description": "Automação de tarefas repetitivas para empresas de Canoas, Porto Alegre e região.",
+  "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+  "geo.region": "BR-RS",
+  "geo.placename": "Canoas, Rio Grande do Sul",
+  "jsonLd": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Service",
+      "serviceType": "Automação de Processos",
+      "name": "Automação de Processos Empresariais",
+      "description": "Automação de tarefas repetitivas executadas manualmente pela equipe, como geração de relatórios, leitura e consolidação de planilhas, envio de e-mails e integração entre sistemas.",
+      "url": "https://www.devmrmoraes.com.br/automacao-de-processos/",
+      "provider": {
+       "@id": "https://www.devmrmoraes.com.br/#business"
+      },
+      "areaServed": [
+       {
+        "@type": "City",
+        "name": "Canoas"
+       },
+       {
+        "@type": "City",
+        "name": "Porto Alegre"
+       }
+      ]
+     },
+     {
+      "@type": "FAQPage",
+      "mainEntity": [
+       {
+        "@type": "Question",
+        "name": "Vou precisar demitir alguém depois de automatizar?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Não é esse o objetivo, e não é o que costuma acontecer. As tarefas que valem automatizar são as repetitivas e chatas, aquelas nas quais o erro humano é mais provável. O ganho é a mesma equipe atendendo mais volume sem precisar crescer na mesma proporção."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "A automação funciona com o sistema que eu já uso?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Na maioria dos casos, sim. Se o sistema tem API, a integração é direta. Se não tem, dá para trabalhar com os arquivos que ele exporta (CSV, Excel, PDF) ou com o banco de dados, quando há acesso."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "E se a automação falhar sem ninguém perceber?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Toda rotina que eu entrego registra o que executou e avisa quando falha, por e-mail ou pelo canal que você preferir. Silêncio nunca é interpretado como sucesso: se a automação não rodou, alguém fica sabendo no mesmo dia."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Preciso deixar um computador ligado?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Depende de onde a rotina precisa rodar. Automação que só mexe em arquivos e serviços online pode rodar em servidor. Automação que interage com sistema instalado localmente precisa de um computador disponível nos horários de execução."
+        }
+       }
+      ]
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Início",
+        "item": "https://www.devmrmoraes.com.br/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Serviços",
+        "item": "https://www.devmrmoraes.com.br/#servicos"
+       },
+       {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Automação de Processos",
+        "item": "https://www.devmrmoraes.com.br/automacao-de-processos/"
+       }
+      ]
+     },
+     {
+      "@type": "WebPage",
+      "name": "Automação de Processos Empresariais",
+      "url": "https://www.devmrmoraes.com.br/automacao-de-processos/",
+      "isPartOf": {
+       "@id": "https://www.devmrmoraes.com.br/#website"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "chatbot-com-ia/index.html": {
+  "title": "Chatbot com IA para WhatsApp e Site | Canoas, RS",
+  "description": "Chatbots com inteligência artificial para WhatsApp e site, integrados ao seu sistema. Para empresas de Canoas, Porto Alegre e todo o Brasil.",
+  "canonical": "https://www.devmrmoraes.com.br/chatbot-com-ia/",
+  "og:title": "Chatbot com IA para WhatsApp e Site | Canoas, RS",
+  "og:description": "Chatbots com IA para WhatsApp e site, integrados ao seu sistema. Para empresas de Canoas, Porto Alegre e todo o Brasil.",
+  "og:url": "https://www.devmrmoraes.com.br/chatbot-com-ia/",
+  "og:image": "https://www.devmrmoraes.com.br/img/og-image.png",
+  "og:type": "website",
+  "twitter:title": "Chatbot com IA para WhatsApp e Site | Canoas, RS",
+  "twitter:description": "Chatbots com IA para WhatsApp e site em empresas de Canoas, Porto Alegre e todo o Brasil.",
+  "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+  "geo.region": "BR-RS",
+  "geo.placename": "Canoas, Rio Grande do Sul",
+  "jsonLd": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Service",
+      "serviceType": "Chatbot com Inteligência Artificial",
+      "name": "Chatbots e Assistentes com Inteligência Artificial",
+      "description": "Desenvolvimento de chatbots e assistentes com inteligência artificial para WhatsApp e sites, com respostas em linguagem natural e integração aos sistemas da empresa.",
+      "url": "https://www.devmrmoraes.com.br/chatbot-com-ia/",
+      "provider": {
+       "@id": "https://www.devmrmoraes.com.br/#business"
+      },
+      "areaServed": [
+       {
+        "@type": "City",
+        "name": "Canoas"
+       },
+       {
+        "@type": "City",
+        "name": "Porto Alegre"
+       }
+      ]
+     },
+     {
+      "@type": "FAQPage",
+      "mainEntity": [
+       {
+        "@type": "Question",
+        "name": "O cliente vai perceber que está falando com um robô?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Vai, e deve mesmo. O assistente se identifica logo na primeira mensagem. O que faz diferença não é esconder o robô, é ele resolver o problema rápido e passar para uma pessoa sem enrolação quando não conseguir."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "E se a IA inventar uma resposta errada?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "O assistente responde a partir da base de conhecimento da sua empresa, não do conhecimento geral do modelo. Assuntos sensíveis, como preço fora de tabela, prazo de entrega e condição contratual, ficam bloqueados e vão direto para um atendente."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Preciso do WhatsApp Business API?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Para chatbot em WhatsApp, sim. A versão comum do aplicativo não permite automação oficial, e soluções que contornam isso correm risco de bloqueio do número. A API oficial tem custo por conversa e exige verificação da empresa."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Isso substitui minha equipe de atendimento?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Não. O assistente absorve o volume repetitivo e entrega para a equipe as conversas que exigem julgamento, negociação ou empatia. Na prática, quem atende passa a lidar com menos mensagem e com mensagem melhor."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Meus dados vão para uma empresa de fora?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Quando o assistente usa um modelo de IA hospedado por terceiro, as mensagens passam por esse serviço. Definimos no início do projeto que dados podem trafegar e quais precisam ficar de fora, e a política de privacidade da empresa precisa refletir isso."
+        }
+       }
+      ]
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Início",
+        "item": "https://www.devmrmoraes.com.br/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Serviços",
+        "item": "https://www.devmrmoraes.com.br/#servicos"
+       },
+       {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Chatbot com IA",
+        "item": "https://www.devmrmoraes.com.br/chatbot-com-ia/"
+       }
+      ]
+     },
+     {
+      "@type": "WebPage",
+      "name": "Chatbot com Inteligência Artificial para Empresas",
+      "url": "https://www.devmrmoraes.com.br/chatbot-com-ia/",
+      "isPartOf": {
+       "@id": "https://www.devmrmoraes.com.br/#website"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "consultoria-tecnica/index.html": {
+  "title": "Consultoria e Diagnóstico Técnico de Sites | Canoas",
+  "description": "Diagnóstico técnico de sites e sistemas para empresas de Canoas e Porto Alegre. Você recebe um relatório com o que está errado e em que ordem resolver.",
+  "canonical": "https://www.devmrmoraes.com.br/consultoria-tecnica/",
+  "og:title": "Consultoria e Diagnóstico Técnico de Sites | Canoas",
+  "og:description": "Diagnóstico técnico de sites e sistemas para empresas de Canoas e Porto Alegre: performance, segurança e plano de ação.",
+  "og:url": "https://www.devmrmoraes.com.br/consultoria-tecnica/",
+  "og:image": "https://www.devmrmoraes.com.br/img/og-image.png",
+  "og:type": "website",
+  "twitter:title": "Consultoria e Diagnóstico Técnico de Sites | Canoas",
+  "twitter:description": "Diagnóstico técnico de sites e sistemas para empresas de Canoas e Porto Alegre.",
+  "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+  "geo.region": "BR-RS",
+  "geo.placename": "Canoas, Rio Grande do Sul",
+  "jsonLd": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Service",
+      "serviceType": "Consultoria Técnica",
+      "name": "Consultoria e Diagnóstico Técnico",
+      "description": "Análise técnica de sites e sistemas existentes, cobrindo performance, segurança e arquitetura, com entrega de relatório de diagnóstico e plano de ação priorizado.",
+      "url": "https://www.devmrmoraes.com.br/consultoria-tecnica/",
+      "provider": {
+       "@id": "https://www.devmrmoraes.com.br/#business"
+      },
+      "areaServed": [
+       {
+        "@type": "City",
+        "name": "Canoas"
+       },
+       {
+        "@type": "City",
+        "name": "Porto Alegre"
+       }
+      ]
+     },
+     {
+      "@type": "FAQPage",
+      "mainEntity": [
+       {
+        "@type": "Question",
+        "name": "Você vai dizer que precisa refazer tudo?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Só se for verdade, e na maioria das vezes não é. Refazer do zero é a recomendação mais cara e mais fácil de dar. Sistema que funciona com problemas geralmente vale ser corrigido; refazer só compensa quando o custo de manter passa o custo de recomeçar."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Preciso avisar quem fez o sistema?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Não precisa avisar ninguém, e faço a análise sem contato com o fornecedor atual, se você preferir. Também não é meu papel apontar culpados: o relatório descreve o estado técnico do que existe hoje, não julga quem escreveu."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "E se eu não tiver acesso ao código?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Performance, segurança visível de fora, SEO técnico e comportamento do site são todos analisáveis sem o código-fonte. O que fica de fora é qualidade interna e arquitetura, e isso é dito com clareza antes de começar."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "A consultoria já corrige os problemas?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Não. A entrega é o diagnóstico e o plano de ação. Separar quem analisa de quem executa evita o conflito de interesse de o analista encontrar justamente os problemas que ele sabe consertar. A execução pode ser contratada depois."
+        }
+       }
+      ]
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Início",
+        "item": "https://www.devmrmoraes.com.br/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Serviços",
+        "item": "https://www.devmrmoraes.com.br/#servicos"
+       },
+       {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Consultoria Técnica",
+        "item": "https://www.devmrmoraes.com.br/consultoria-tecnica/"
+       }
+      ]
+     },
+     {
+      "@type": "WebPage",
+      "name": "Consultoria e Diagnóstico Técnico de Software",
+      "url": "https://www.devmrmoraes.com.br/consultoria-tecnica/",
+      "isPartOf": {
+       "@id": "https://www.devmrmoraes.com.br/#website"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "criacao-de-sites/index.html": {
+  "title": "Criação de Sites para Empresas | Canoas e Porto Alegre",
+  "description": "Criação de sites institucionais e landing pages para empresas de Canoas, Porto Alegre e região. Escopo, prazo e valor definidos antes de começar.",
+  "canonical": "https://www.devmrmoraes.com.br/criacao-de-sites/",
+  "og:title": "Criação de Sites para Empresas | Canoas e Porto Alegre",
+  "og:description": "Sites institucionais e landing pages para empresas de Canoas, Porto Alegre e região. Escopo, prazo e valor definidos antes de começar.",
+  "og:url": "https://www.devmrmoraes.com.br/criacao-de-sites/",
+  "og:image": "https://www.devmrmoraes.com.br/img/og-image.png",
+  "og:type": "website",
+  "twitter:title": "Criação de Sites para Empresas | Canoas e Porto Alegre",
+  "twitter:description": "Sites institucionais e landing pages para empresas de Canoas, Porto Alegre e região. Escopo e prazo fechados.",
+  "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+  "geo.region": "BR-RS",
+  "geo.placename": "Canoas, Rio Grande do Sul",
+  "jsonLd": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Service",
+      "serviceType": "Criação de Sites",
+      "name": "Criação de Sites Profissionais",
+      "description": "Criação de sites institucionais e landing pages para empresas, com foco em velocidade de carregamento, SEO técnico e conversão de visitantes em contatos comerciais. Escopo e prazo definidos antes do início do projeto.",
+      "url": "https://www.devmrmoraes.com.br/criacao-de-sites/",
+      "provider": {
+       "@id": "https://www.devmrmoraes.com.br/#business"
+      },
+      "areaServed": [
+       {
+        "@type": "City",
+        "name": "Canoas"
+       },
+       {
+        "@type": "City",
+        "name": "Porto Alegre"
+       }
+      ]
+     },
+     {
+      "@type": "FAQPage",
+      "mainEntity": [
+       {
+        "@type": "Question",
+        "name": "Preciso ter os textos e as fotos prontos para começar?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Ajuda bastante, mas não é obrigatório para iniciar. Consigo montar a estrutura da página e indicar o que precisa entrar em cada bloco. Na prática, textos finais e imagens de qualidade são o que mais atrasa projeto de site. Quanto antes você tiver isso resolvido, mais cedo a página vai ao ar."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Consigo editar o site depois, sozinho?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Sim. Entrego um painel para os textos e imagens que mudam com frequência, e mostro como usar. Mudanças estruturais, como página nova, troca de layout ou funcionalidade nova, continuam comigo, porque envolvem código."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "O site já vem preparado para aparecer no Google?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Vem com a base técnica pronta: títulos e descrições corretos, hierarquia de headings sem saltos, dados estruturados, sitemap, canonical e velocidade de carregamento. É isso que permite ao Google entender e indexar a página. Posicionar bem em termos disputados é um trabalho contínuo depois disso."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "O domínio e a hospedagem ficam no meu nome?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Sim, e recomendo fortemente que fiquem. Registro e configuro tudo para você, mas as contas são da sua empresa. Você não fica dependente de mim nem de ninguém para manter o site no ar ou para levá-lo para outro lugar um dia."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Você atende presencialmente?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Em Canoas, Porto Alegre e cidades da Região Metropolitana, sim. A reunião inicial e a entrega podem ser na sua empresa. Para o resto do Brasil o trabalho é remoto, por videochamada e WhatsApp, e funciona igual: o que muda é o meio da conversa, não o processo."
+        }
+       }
+      ]
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Início",
+        "item": "https://www.devmrmoraes.com.br/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Serviços",
+        "item": "https://www.devmrmoraes.com.br/#servicos"
+       },
+       {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Criação de Sites",
+        "item": "https://www.devmrmoraes.com.br/criacao-de-sites/"
+       }
+      ]
+     },
+     {
+      "@type": "WebPage",
+      "name": "Criação de Sites Profissionais para Empresas",
+      "url": "https://www.devmrmoraes.com.br/criacao-de-sites/",
+      "isPartOf": {
+       "@id": "https://www.devmrmoraes.com.br/#website"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "index.html": {
+  "title": "Criação de Sites em Canoas e Porto Alegre | DEVMRMORAES",
+  "description": "Criação de sites, sistemas e aplicativos para empresas de Canoas, Porto Alegre e região. Você aprova escopo e valor por escrito antes de eu começar.",
+  "canonical": "https://www.devmrmoraes.com.br/",
+  "og:title": "Criação de Sites em Canoas e Porto Alegre | DEVMRMORAES",
+  "og:description": "Criação de sites, sistemas e aplicativos para empresas de Canoas, Porto Alegre e região. Você aprova escopo e valor por escrito antes de eu começar.",
+  "og:url": "https://www.devmrmoraes.com.br/",
+  "og:image": "https://www.devmrmoraes.com.br/img/og-image.png",
+  "og:type": "website",
+  "twitter:title": "Criação de Sites em Canoas e Porto Alegre | DEVMRMORAES",
+  "twitter:description": "Sites, sistemas e aplicativos para empresas de Canoas, Porto Alegre e região. Você aprova escopo e valor por escrito antes de eu começar.",
+  "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+  "geo.region": "BR-RS",
+  "geo.placename": "Canoas, Rio Grande do Sul",
+  "jsonLd": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "WebSite",
+      "@id": "https://www.devmrmoraes.com.br/#website",
+      "name": "DEVMRMORAES",
+      "url": "https://www.devmrmoraes.com.br",
+      "description": "Criação de sites, sistemas, aplicativos mobile e automações para empresas de Canoas, Porto Alegre e todo o Brasil",
+      "inLanguage": "pt-BR"
+     },
+     {
+      "@type": "ProfessionalService",
+      "@id": "https://www.devmrmoraes.com.br/#business",
+      "name": "DEVMRMORAES: Desenvolvimento Web e Sistemas",
+      "description": "Criação de sites, sistemas personalizados, aplicativos mobile, chatbots com IA e automação de processos para empresas de Canoas, Porto Alegre e região. Atendimento remoto em todo o Brasil.",
+      "url": "https://www.devmrmoraes.com.br",
+      "image": "https://www.devmrmoraes.com.br/img/og-image.png",
+      "priceRange": "$$",
+      "telephone": "+55-51-999608608",
+      "founder": {
+       "@id": "https://www.devmrmoraes.com.br/#person"
+      },
+      "address": {
+       "@type": "PostalAddress",
+       "addressLocality": "Canoas",
+       "addressRegion": "RS",
+       "addressCountry": "BR"
+      },
+      "sameAs": [
+       "https://www.linkedin.com/in/DEVMRMORAES",
+       "https://www.instagram.com/DEVMRMORAES",
+       "https://www.google.com/search?kgmid=/g/11z43t27sz"
+      ],
+      "serviceType": [
+       "Criação de Sites",
+       "Desenvolvimento de Sistemas",
+       "Aplicativos Mobile",
+       "SEO e Otimização de Sites",
+       "Automação de Processos",
+       "Consultoria Técnica",
+       "Chatbots e Assistentes com IA",
+       "Suporte e Manutenção de Software"
+      ],
+      "areaServed": [
+       {
+        "@type": "City",
+        "name": "Canoas"
+       },
+       {
+        "@type": "City",
+        "name": "Porto Alegre"
+       },
+       {
+        "@type": "AdministrativeArea",
+        "name": "Região Metropolitana de Porto Alegre"
+       },
+       {
+        "@type": "Country",
+        "name": "Brasil"
+       }
+      ],
+      "knowsLanguage": "pt-BR",
+      "hasOfferCatalog": {
+       "@type": "OfferCatalog",
+       "name": "Serviços de Desenvolvimento",
+       "itemListElement": [
+        {
+         "@type": "Offer",
+         "itemOffered": {
+          "@type": "Service",
+          "name": "Criação de Sites Profissionais",
+          "description": "Criação de sites do zero, com SEO técnico. Landing page de uma página ou site corporativo com painel de conteúdo."
+         }
+        },
+        {
+         "@type": "Offer",
+         "itemOffered": {
+          "@type": "Service",
+          "name": "Sistemas Personalizados",
+          "description": "Sistemas web e desktop no formato que a equipe já usa: controle de estoque, cadastro de cliente, ordem de serviço."
+         }
+        },
+        {
+         "@type": "Offer",
+         "itemOffered": {
+          "@type": "Service",
+          "name": "Aplicativos Mobile",
+          "description": "Aplicativos mobile em React Native para Android e iOS: app interno para a equipe ou app para o cliente final."
+         }
+        },
+        {
+         "@type": "Offer",
+         "itemOffered": {
+          "@type": "Service",
+          "name": "Chatbots e Assistentes com IA",
+          "description": "Chatbots inteligentes para WhatsApp e sites com integração a sistemas empresariais."
+         }
+        },
+        {
+         "@type": "Offer",
+         "itemOffered": {
+          "@type": "Service",
+          "name": "Automação de Processos",
+          "description": "Automação de tarefas repetitivas como geração de relatórios, envio de e-mails e integração de sistemas."
+         }
+        }
+       ]
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://www.devmrmoraes.com.br/#person",
+      "name": "Maxwell Rigo Moraes",
+      "alternateName": [
+       "Max",
+       "DEVMRMORAES"
+      ],
+      "url": "https://www.devmrmoraes.com.br",
+      "jobTitle": "Desenvolvedor de Software",
+      "knowsAbout": [
+       "C#",
+       ".NET",
+       "HTML",
+       "CSS",
+       "JavaScript",
+       "React Native",
+       "SEO",
+       "Desenvolvimento Web",
+       "Desenvolvimento Mobile",
+       "Automação",
+       "Inteligência Artificial"
+      ],
+      "worksFor": {
+       "@id": "https://www.devmrmoraes.com.br/#business"
+      },
+      "sameAs": [
+       "https://www.linkedin.com/in/DEVMRMORAES",
+       "https://www.instagram.com/DEVMRMORAES",
+       "https://www.google.com/search?kgmid=/g/11z43t27sz"
+      ]
+     },
+     {
+      "@type": "FAQPage",
+      "@id": "https://www.devmrmoraes.com.br/#faq",
+      "mainEntity": [
+       {
+        "@type": "Question",
+        "name": "Quanto custa desenvolver um site ou sistema?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Não tenho tabela de preço, porque dois sites do mesmo tamanho podem dar trabalho bem diferente. O que faz o valor subir é quantidade de páginas, integração com um sistema que você já usa, cadastro de usuário e prazo apertado. Eu monto o escopo, mando o valor fechado e você decide. Orçar não custa nada."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Você atende empresas de todo o Brasil?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Sim. Fora de Canoas e Porto Alegre eu atendo remoto, por WhatsApp, chamada de vídeo e e-mail. Na prática a maior parte da conversa acontece no WhatsApp mesmo, e você acompanha o projeto conforme ele anda."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Qual o prazo de entrega de um site ou sistema?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Depende da complexidade do projeto. Um site institucional leva em média de 1 a 3 semanas. Sistemas mais complexos podem levar de 4 a 12 semanas. O prazo exato é definido na proposta, antes de iniciar o desenvolvimento."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Você oferece suporte após a entrega do projeto?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Sim. Todo projeto sai com 30 dias de suporte incluso: nesse período, erro no que eu entreguei eu corrijo sem cobrar. Depois disso existe plano mensal de manutenção, que cobre atualização, ajuste e funcionalidade nova. O plano é opcional."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Meu site não aparece no Google. O que pode ser?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Quase sempre é uma causa técnica: bloqueio de indexação, conteúdo que só existe depois do JavaScript, estrutura de títulos quebrada, ausência de ancoragem geográfica ou canonical apontando para o lugar errado. O diagnóstico identifica qual delas está afetando o seu site."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Quais tecnologias você utiliza?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "C# e .NET nos sistemas desktop e web. HTML, CSS e JavaScript nos sites. React Native nos aplicativos Android e iOS. Nos chatbots eu uso as APIs dos modelos de IA, ligadas ao WhatsApp ou ao próprio site."
+        }
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "projetos.html": {
+  "title": "Portfólio de Projetos: Sites, Sistemas e SEO | DEVMRMORAES",
+  "description": "Projetos entregues para clientes de Canoas e Porto Alegre: site criado do zero, SEO técnico em site existente e sistema desktop em C# para relatórios.",
+  "canonical": "https://www.devmrmoraes.com.br/projetos.html",
+  "og:title": "Portfólio de Projetos: Sites, Sistemas e SEO | DEVMRMORAES",
+  "og:description": "Projetos entregues para clientes: site criado do zero, SEO técnico em site existente e sistema desktop em C# para relatórios mensais.",
+  "og:url": "https://www.devmrmoraes.com.br/projetos.html",
+  "og:image": "https://www.devmrmoraes.com.br/img/og-image.png",
+  "og:type": "website",
+  "twitter:title": "Portfólio de Projetos: Sites, Sistemas e SEO | DEVMRMORAES",
+  "twitter:description": "Site criado do zero, SEO técnico e sistema em C#: os projetos entregues para clientes.",
+  "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+  "geo.region": "BR-RS",
+  "geo.placename": "Canoas, Rio Grande do Sul",
+  "jsonLd": [
+   {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Portfólio de Projetos DEVMRMORAES",
+    "description": "Projetos de criação de sites, SEO técnico e sistemas entregues para clientes, seguidos dos projetos de prática, identificados como tal",
+    "url": "https://www.devmrmoraes.com.br/projetos.html",
+    "isPartOf": {
+     "@id": "https://www.devmrmoraes.com.br/#website"
+    },
+    "author": {
+     "@type": "Person",
+     "name": "Max Moraes",
+     "alternateName": "DEVMRMORAES",
+     "url": "https://www.devmrmoraes.com.br"
+    },
+    "breadcrumb": {
+     "@type": "BreadcrumbList",
+     "itemListElement": [
+      {
+       "@type": "ListItem",
+       "position": 1,
+       "name": "Início",
+       "item": "https://www.devmrmoraes.com.br/"
+      },
+      {
+       "@type": "ListItem",
+       "position": 2,
+       "name": "Projetos",
+       "item": "https://www.devmrmoraes.com.br/projetos.html"
+      }
+     ]
+    }
+   }
+  ]
+ },
+ "projetos/braskit-seo/index.html": {
+  "title": "Case: SEO Técnico na Braskit Cargas Perigosas | DEVMRMORAES",
+  "description": "Site da Braskit não aparecia no Google: diagnóstico técnico, correção de headings, meta tags, dados estruturados e velocidade de carregamento.",
+  "canonical": "https://www.devmrmoraes.com.br/projetos/braskit-seo/",
+  "og:title": "Case: SEO Técnico na Braskit Cargas Perigosas | DEVMRMORAES",
+  "og:description": "Diagnóstico e correção de SEO técnico num site existente que não ranqueava. Headings, meta tags, dados estruturados e velocidade.",
+  "og:url": "https://www.devmrmoraes.com.br/projetos/braskit-seo/",
+  "og:image": "https://www.devmrmoraes.com.br/img/og-image.png",
+  "og:type": "article",
+  "twitter:title": "Case: SEO Técnico na Braskit Cargas Perigosas | DEVMRMORAES",
+  "twitter:description": "Diagnóstico e correção de SEO técnico num site que não ranqueava no Google.",
+  "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+  "geo.region": "BR-RS",
+  "geo.placename": "Canoas, Rio Grande do Sul",
+  "jsonLd": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CreativeWork",
+      "@id": "https://www.devmrmoraes.com.br/projetos/braskit-seo/#case",
+      "name": "Braskit: manutenção e SEO",
+      "description": "Diagnóstico completo de SEO em site existente que não ranqueava no Google, com correção de estrutura de headings, meta tags, dados estruturados e velocidade de carregamento.",
+      "url": "https://www.devmrmoraes.com.br/projetos/braskit-seo/",
+      "creator": {
+       "@id": "https://www.devmrmoraes.com.br/#person"
+      },
+      "provider": {
+       "@id": "https://www.devmrmoraes.com.br/#business"
+      },
+      "inLanguage": "pt-BR",
+      "genre": "SEO e Manutenção de Sites",
+      "keywords": [
+       "SEO técnico",
+       "Core Web Vitals",
+       "Performance",
+       "Dados estruturados"
+      ],
+      "about": {
+       "@type": "Organization",
+       "name": "Braskit Cargas Perigosas",
+       "url": "https://braskitcargasperigosas.com.br/"
+      }
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Início",
+        "item": "https://www.devmrmoraes.com.br/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Projetos",
+        "item": "https://www.devmrmoraes.com.br/projetos.html"
+       },
+       {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Braskit: manutenção e SEO",
+        "item": "https://www.devmrmoraes.com.br/projetos/braskit-seo/"
+       }
+      ]
+     },
+     {
+      "@type": "WebPage",
+      "name": "Case: SEO técnico na Braskit Cargas Perigosas",
+      "url": "https://www.devmrmoraes.com.br/projetos/braskit-seo/",
+      "isPartOf": {
+       "@id": "https://www.devmrmoraes.com.br/#website"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "projetos/brucker-printers-sistema/index.html": {
+  "title": "Case: Sistema de Relatórios em C# | DEVMRMORAES",
+  "description": "Relatório de faturamento montado à mão em Excel virou um sistema desktop em C#/WPF, com leituras mensais, cálculo automático e exportação em PDF.",
+  "canonical": "https://www.devmrmoraes.com.br/projetos/brucker-printers-sistema/",
+  "og:title": "Case: Sistema de Relatórios em C# | DEVMRMORAES",
+  "og:description": "Sistema desktop em C#/WPF para gestão de parques de impressoras: cadastro, leituras mensais, cálculo de custos e relatórios.",
+  "og:url": "https://www.devmrmoraes.com.br/projetos/brucker-printers-sistema/",
+  "og:image": "https://www.devmrmoraes.com.br/img/og-image.png",
+  "og:type": "article",
+  "twitter:title": "Case: Sistema de Relatórios em C# | DEVMRMORAES",
+  "twitter:description": "Planilha de faturamento mensal substituída por um sistema desktop em C#/WPF.",
+  "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+  "geo.region": "BR-RS",
+  "geo.placename": "Canoas, Rio Grande do Sul",
+  "jsonLd": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CreativeWork",
+      "@id": "https://www.devmrmoraes.com.br/projetos/brucker-printers-sistema/#case",
+      "name": "Brucker Printers: sistema de relatórios",
+      "description": "Aplicação desktop em C#/WPF para gestão de parques de impressoras, com cadastro de empresas e equipamentos, registro de leituras mensais, cálculo automático de custos e geração de relatórios em PDF e Excel.",
+      "url": "https://www.devmrmoraes.com.br/projetos/brucker-printers-sistema/",
+      "creator": {
+       "@id": "https://www.devmrmoraes.com.br/#person"
+      },
+      "provider": {
+       "@id": "https://www.devmrmoraes.com.br/#business"
+      },
+      "inLanguage": "pt-BR",
+      "genre": "Desenvolvimento de Sistemas",
+      "keywords": [
+       "C#",
+       ".NET",
+       "WPF",
+       "Automação de relatórios"
+      ],
+      "about": {
+       "@type": "Organization",
+       "name": "Brucker Printers",
+       "url": "https://bruckerprinters.com.br"
+      }
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Início",
+        "item": "https://www.devmrmoraes.com.br/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Projetos",
+        "item": "https://www.devmrmoraes.com.br/projetos.html"
+       },
+       {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Brucker Printers: sistema de relatórios",
+        "item": "https://www.devmrmoraes.com.br/projetos/brucker-printers-sistema/"
+       }
+      ]
+     },
+     {
+      "@type": "WebPage",
+      "name": "Case: sistema de relatórios em C#",
+      "url": "https://www.devmrmoraes.com.br/projetos/brucker-printers-sistema/",
+      "isPartOf": {
+       "@id": "https://www.devmrmoraes.com.br/#website"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "projetos/brucker-printers-site/index.html": {
+  "title": "Case: Site Institucional Brucker Printers | DEVMRMORAES",
+  "description": "Como criei do zero o site institucional da Brucker Printers, empresa de impressoras: estrutura, SEO técnico e um caminho curto para o visitante virar contato.",
+  "canonical": "https://www.devmrmoraes.com.br/projetos/brucker-printers-site/",
+  "og:title": "Case: Site Institucional Brucker Printers | DEVMRMORAES",
+  "og:description": "Site institucional criado do zero para empresa de impressoras, com SEO técnico e estrutura focada em conversão.",
+  "og:url": "https://www.devmrmoraes.com.br/projetos/brucker-printers-site/",
+  "og:image": "https://www.devmrmoraes.com.br/img/og-image.png",
+  "og:type": "article",
+  "twitter:title": "Case: Site Institucional Brucker Printers | DEVMRMORAES",
+  "twitter:description": "Site institucional criado do zero para empresa de impressoras, com SEO técnico e foco em conversão.",
+  "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+  "geo.region": "BR-RS",
+  "geo.placename": "Canoas, Rio Grande do Sul",
+  "jsonLd": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CreativeWork",
+      "@id": "https://www.devmrmoraes.com.br/projetos/brucker-printers-site/#case",
+      "name": "Brucker Printers: site institucional",
+      "description": "Site institucional criado do zero para a Brucker Printers, empresa especializada em impressoras. Desenvolvido com foco em velocidade, SEO técnico e conversão de visitantes em contatos comerciais.",
+      "url": "https://www.devmrmoraes.com.br/projetos/brucker-printers-site/",
+      "creator": {
+       "@id": "https://www.devmrmoraes.com.br/#person"
+      },
+      "provider": {
+       "@id": "https://www.devmrmoraes.com.br/#business"
+      },
+      "inLanguage": "pt-BR",
+      "genre": "Criação de Sites",
+      "keywords": [
+       "HTML5",
+       "CSS3",
+       "JavaScript",
+       "SEO técnico",
+       "Design responsivo"
+      ],
+      "about": {
+       "@type": "Organization",
+       "name": "Brucker Printers",
+       "url": "https://bruckerprinters.com.br"
+      }
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Início",
+        "item": "https://www.devmrmoraes.com.br/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Projetos",
+        "item": "https://www.devmrmoraes.com.br/projetos.html"
+       },
+       {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Brucker Printers: site institucional",
+        "item": "https://www.devmrmoraes.com.br/projetos/brucker-printers-site/"
+       }
+      ]
+     },
+     {
+      "@type": "WebPage",
+      "name": "Case: Site Institucional Brucker Printers",
+      "url": "https://www.devmrmoraes.com.br/projetos/brucker-printers-site/",
+      "isPartOf": {
+       "@id": "https://www.devmrmoraes.com.br/#website"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "projetos/camila-duarte-fotografia/index.html": {
+  "title": "Case Fictício: Site Portfólio de Fotografia | DEVMRMORAES",
+  "description": "Projeto fictício, criado para prática: site portfólio para uma fotógrafa que não existe, com galeria por categoria, seção sobre e mais de um idioma.",
+  "canonical": "https://www.devmrmoraes.com.br/projetos/camila-duarte-fotografia/",
+  "og:title": "Case Fictício: Site Portfólio de Fotografia | DEVMRMORAES",
+  "og:description": "Projeto fictício de prática: site portfólio para fotógrafa, com galeria de trabalhos, navegação por categoria e suporte a mais de um idioma.",
+  "og:url": "https://www.devmrmoraes.com.br/projetos/camila-duarte-fotografia/",
+  "og:image": "https://www.devmrmoraes.com.br/img/og-image.png",
+  "og:type": "article",
+  "twitter:title": "Case Fictício: Site Portfólio de Fotografia | DEVMRMORAES",
+  "twitter:description": "Projeto fictício de prática: site portfólio para fotógrafa, com galeria e suporte multilíngue.",
+  "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+  "geo.region": "BR-RS",
+  "geo.placename": "Canoas, Rio Grande do Sul",
+  "jsonLd": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CreativeWork",
+      "@id": "https://www.devmrmoraes.com.br/projetos/camila-duarte-fotografia/#case",
+      "name": "Camila Duarte Fotografia: projeto fictício de prática",
+      "description": "Projeto fictício, sem cliente real, criado como exercício de prática. Site portfólio para fotografia autoral, com galeria de trabalhos, seção sobre, serviços, contato, suporte multilíngue e integração com redes sociais.",
+      "url": "https://www.devmrmoraes.com.br/projetos/camila-duarte-fotografia/",
+      "creator": {
+       "@id": "https://www.devmrmoraes.com.br/#person"
+      },
+      "provider": {
+       "@id": "https://www.devmrmoraes.com.br/#business"
+      },
+      "inLanguage": "pt-BR",
+      "genre": "Criação de Sites",
+      "keywords": [
+       "HTML5",
+       "CSS3",
+       "JavaScript",
+       "Design responsivo",
+       "Projeto fictício"
+      ]
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Início",
+        "item": "https://www.devmrmoraes.com.br/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Projetos",
+        "item": "https://www.devmrmoraes.com.br/projetos.html"
+       },
+       {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Camila Duarte Fotografia: projeto fictício de prática",
+        "item": "https://www.devmrmoraes.com.br/projetos/camila-duarte-fotografia/"
+       }
+      ]
+     },
+     {
+      "@type": "WebPage",
+      "name": "Case fictício: site portfólio de fotografia",
+      "url": "https://www.devmrmoraes.com.br/projetos/camila-duarte-fotografia/",
+      "isPartOf": {
+       "@id": "https://www.devmrmoraes.com.br/#website"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "seo-para-sites/index.html": {
+  "title": "SEO e Manutenção de Sites em Canoas e Porto Alegre",
+  "description": "Seu site não aparece no Google? Diagnóstico e correção técnica de SEO para empresas de Canoas, Porto Alegre e região. Análise inicial sem custo.",
+  "canonical": "https://www.devmrmoraes.com.br/seo-para-sites/",
+  "og:title": "SEO e Manutenção de Sites em Canoas e Porto Alegre",
+  "og:description": "Diagnóstico e correção técnica de SEO para empresas de Canoas, Porto Alegre e região. Análise inicial sem custo.",
+  "og:url": "https://www.devmrmoraes.com.br/seo-para-sites/",
+  "og:image": "https://www.devmrmoraes.com.br/img/og-image.png",
+  "og:type": "website",
+  "twitter:title": "SEO e Manutenção de Sites em Canoas e Porto Alegre",
+  "twitter:description": "Diagnóstico e correção técnica de SEO para empresas de Canoas, Porto Alegre e região.",
+  "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+  "geo.region": "BR-RS",
+  "geo.placename": "Canoas, Rio Grande do Sul",
+  "jsonLd": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Service",
+      "serviceType": "SEO e Manutenção de Sites",
+      "name": "SEO e Manutenção de Sites",
+      "description": "Diagnóstico e correção técnica de SEO em sites já existentes, incluindo estrutura de headings, meta tags, dados estruturados, velocidade de carregamento e Core Web Vitals, para que o site seja indexado e posicionado no Google.",
+      "url": "https://www.devmrmoraes.com.br/seo-para-sites/",
+      "provider": {
+       "@id": "https://www.devmrmoraes.com.br/#business"
+      },
+      "areaServed": [
+       {
+        "@type": "City",
+        "name": "Canoas"
+       },
+       {
+        "@type": "City",
+        "name": "Porto Alegre"
+       }
+      ]
+     },
+     {
+      "@type": "FAQPage",
+      "mainEntity": [
+       {
+        "@type": "Question",
+        "name": "Em quanto tempo eu vejo resultado de SEO?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Depende do que estava errado. Se o site tinha bloqueio de indexação, a mudança pode aparecer em dias. Se o problema é falta de relevância (conteúdo raso, nenhuma ancoragem geográfica, nenhum sinal para o Google), a recuperação é de meses, porque envolve construir o que não existia."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Meu site já está no Google, então está tudo certo?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Não necessariamente. Estar indexado significa que o Google leu e guardou a página. Ser exibido significa que ele considerou aquela página a melhor resposta para alguém. É perfeitamente possível ter todas as páginas indexadas e receber zero clique."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Você garante primeira posição no Google?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Não, e desconfie de quem garante. Ninguém controla o algoritmo do Google nem o que os concorrentes vão fazer. O que eu garanto é a parte técnica: site rastreável, indexável, rápido, com a estrutura e os dados que o buscador precisa para entender do que a página trata."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Funciona em site feito em WordPress, Wix ou loja virtual?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Funciona, com limites diferentes em cada caso. Em WordPress consigo mexer em quase tudo. Em construtores fechados, parte do HTML não é editável, e nesses casos digo com clareza o que dá para corrigir e o que só se resolve saindo da plataforma."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Preciso do Perfil da Empresa no Google?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Para quem atende uma região específica, sim. É um dos fatores mais fortes de busca local, e é gratuito. Nome, telefone e cidade precisam estar idênticos no perfil e no site; divergência entre os dois enfraquece os dois."
+        }
+       }
+      ]
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Início",
+        "item": "https://www.devmrmoraes.com.br/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Serviços",
+        "item": "https://www.devmrmoraes.com.br/#servicos"
+       },
+       {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "SEO e Manutenção de Sites",
+        "item": "https://www.devmrmoraes.com.br/seo-para-sites/"
+       }
+      ]
+     },
+     {
+      "@type": "WebPage",
+      "name": "SEO e Manutenção de Sites: Apareça no Google",
+      "url": "https://www.devmrmoraes.com.br/seo-para-sites/",
+      "isPartOf": {
+       "@id": "https://www.devmrmoraes.com.br/#website"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "sistemas-personalizados/index.html": {
+  "title": "Sistemas Sob Medida para Empresas | Canoas, RS",
+  "description": "Sistemas web e desktop sob medida para empresas de Canoas e Porto Alegre: estoque, clientes, ordens de serviço e relatórios no seu fluxo real.",
+  "canonical": "https://www.devmrmoraes.com.br/sistemas-personalizados/",
+  "og:title": "Sistemas Sob Medida para Empresas | Canoas, RS",
+  "og:description": "Sistemas web e desktop sob medida para empresas de Canoas e Porto Alegre: estoque, clientes e ordens de serviço.",
+  "og:url": "https://www.devmrmoraes.com.br/sistemas-personalizados/",
+  "og:image": "https://www.devmrmoraes.com.br/img/og-image.png",
+  "og:type": "website",
+  "twitter:title": "Sistemas Sob Medida para Empresas | Canoas, RS",
+  "twitter:description": "Sistemas web e desktop sob medida para empresas de Canoas, Porto Alegre e região.",
+  "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+  "geo.region": "BR-RS",
+  "geo.placename": "Canoas, Rio Grande do Sul",
+  "jsonLd": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Service",
+      "serviceType": "Desenvolvimento de Sistemas",
+      "name": "Sistemas Personalizados para Empresas",
+      "description": "Desenvolvimento de sistemas web e desktop sob medida para gestão empresarial, incluindo controle de estoque, cadastro de clientes, ordens de serviço e geração de relatórios, construídos conforme o fluxo real da operação.",
+      "url": "https://www.devmrmoraes.com.br/sistemas-personalizados/",
+      "provider": {
+       "@id": "https://www.devmrmoraes.com.br/#business"
+      },
+      "areaServed": [
+       {
+        "@type": "City",
+        "name": "Canoas"
+       },
+       {
+        "@type": "City",
+        "name": "Porto Alegre"
+       }
+      ]
+     },
+     {
+      "@type": "FAQPage",
+      "mainEntity": [
+       {
+        "@type": "Question",
+        "name": "Não sai mais barato comprar um sistema pronto?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Muitas vezes sim, e quando é o caso eu falo. Software de prateleira tem custo inicial menor porque o desenvolvimento foi diluído entre milhares de clientes. A conta vira quando o produto pronto não cobre o seu processo: aí a empresa paga a licença e ainda mantém as planilhas paralelas para o que o sistema não faz."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Os dados que já existem se perdem?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Não. Migração faz parte do projeto. Planilha, banco antigo, exportação de sistema anterior: o que estiver em formato legível eu importo. O que costuma dar trabalho é a inconsistência dos dados antigos, e isso é tratado antes de importar."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "E se eu precisar de uma funcionalidade nova depois?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Funcionalidade nova é orçada como um módulo pequeno, com escopo e prazo próprios, ou entra dentro do plano de suporte mensal. Você não fica refém de roadmap de fornecedor."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "O código-fonte fica comigo?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Fica. Você recebe o código e a documentação técnica junto com a entrega. Se um dia quiser levar a manutenção para outra pessoa ou para uma equipe interna, tem tudo em mãos."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Minha equipe é resistente a mudança. Isso funciona?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "É a maior causa de sistema abandonado, e por isso a equipe entra no processo desde o levantamento. Quem opera participa de definir como as telas funcionam, e recebe cada módulo para usar antes do sistema estar completo."
+        }
+       }
+      ]
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Início",
+        "item": "https://www.devmrmoraes.com.br/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Serviços",
+        "item": "https://www.devmrmoraes.com.br/#servicos"
+       },
+       {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Sistemas Personalizados",
+        "item": "https://www.devmrmoraes.com.br/sistemas-personalizados/"
+       }
+      ]
+     },
+     {
+      "@type": "WebPage",
+      "name": "Sistemas Personalizados para Empresas",
+      "url": "https://www.devmrmoraes.com.br/sistemas-personalizados/",
+      "isPartOf": {
+       "@id": "https://www.devmrmoraes.com.br/#website"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "suporte-e-manutencao/index.html": {
+  "title": "Suporte e Manutenção de Sites e Sistemas | Canoas",
+  "description": "Planos mensais de suporte e manutenção de sites e sistemas para empresas de Canoas, Porto Alegre e região. Prevenção, correção e evolução.",
+  "canonical": "https://www.devmrmoraes.com.br/suporte-e-manutencao/",
+  "og:title": "Suporte e Manutenção de Sites e Sistemas | Canoas",
+  "og:description": "Planos mensais de suporte e manutenção de sites e sistemas para empresas de Canoas, Porto Alegre e região.",
+  "og:url": "https://www.devmrmoraes.com.br/suporte-e-manutencao/",
+  "og:image": "https://www.devmrmoraes.com.br/img/og-image.png",
+  "og:type": "website",
+  "twitter:title": "Suporte e Manutenção de Sites e Sistemas | Canoas",
+  "twitter:description": "Suporte e manutenção mensal de sites e sistemas para empresas de Canoas, Porto Alegre e região.",
+  "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+  "geo.region": "BR-RS",
+  "geo.placename": "Canoas, Rio Grande do Sul",
+  "jsonLd": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Service",
+      "serviceType": "Suporte e Manutenção de Software",
+      "name": "Suporte e Evolução Contínua de Software",
+      "description": "Planos mensais de suporte e manutenção de sites e sistemas, com manutenção preventiva, correção de falhas, atualizações e implementação de novas funcionalidades.",
+      "url": "https://www.devmrmoraes.com.br/suporte-e-manutencao/",
+      "provider": {
+       "@id": "https://www.devmrmoraes.com.br/#business"
+      },
+      "areaServed": [
+       {
+        "@type": "City",
+        "name": "Canoas"
+       },
+       {
+        "@type": "City",
+        "name": "Porto Alegre"
+       }
+      ]
+     },
+     {
+      "@type": "FAQPage",
+      "mainEntity": [
+       {
+        "@type": "Question",
+        "name": "Você assume um projeto que outra pessoa fez?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Assumo, e é bem comum. O que peço antes é um diagnóstico técnico, para eu saber o estado real do que vou manter. Às vezes o projeto está bem cuidado e é só continuar; às vezes existe uma dívida acumulada que precisa ser resolvida antes."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Preciso contratar plano para todo projeto entregue?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Não. Nenhum projeto depende de plano mensal para continuar funcionando. O domínio, a hospedagem e o código são seus. O plano existe para quem quer alguém disponível, não como pedágio para manter o que já foi pago."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "O que acontece se eu não usar as horas do mês?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "A rotina preventiva roda de qualquer forma, então o mês nunca é vazio. As horas de evolução não usadas não viram crédito acumulado indefinidamente, e essa regra é combinada na proposta."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Site fora do ar de madrugada, você atende?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Depende do que foi combinado. Não vendo plantão 24 horas por padrão, porque seria desonesto prometer isso trabalhando sozinho. Para operações que não podem parar fora do horário comercial, converso sobre uma condição específica."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "A manutenção inclui melhorar o posicionamento no Google?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "A manutenção mantém a saúde técnica que o SEO precisa: velocidade, links funcionando, estrutura íntegra. Trabalho ativo de posicionamento é um serviço separado, que pode ser combinado dentro do mesmo plano mensal."
+        }
+       }
+      ]
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Início",
+        "item": "https://www.devmrmoraes.com.br/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Serviços",
+        "item": "https://www.devmrmoraes.com.br/#servicos"
+       },
+       {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Suporte e Manutenção",
+        "item": "https://www.devmrmoraes.com.br/suporte-e-manutencao/"
+       }
+      ]
+     },
+     {
+      "@type": "WebPage",
+      "name": "Suporte e Evolução Contínua de Software",
+      "url": "https://www.devmrmoraes.com.br/suporte-e-manutencao/",
+      "isPartOf": {
+       "@id": "https://www.devmrmoraes.com.br/#website"
+      }
+     }
+    ]
+   }
+  ]
+ }
+}

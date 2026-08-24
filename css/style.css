@@ -421,6 +421,53 @@ section h2 { max-width: 26ch; margin-bottom: var(--e-4); }
 
 .compromissos p { font-size: var(--t-1); }
 
+.capa { padding-block: var(--e-4) var(--e-5); }
+
+.capa h1 { margin-block: var(--e-4); max-width: 22ch; }
+
+.capa-linha {
+  font-size: var(--t-1);
+  color: var(--tinta-2);
+  max-width: 46ch;
+  margin-bottom: var(--e-4);
+}
+
+.trilha { color: var(--tinta-2); }
+
+.trilha a { display: inline-block; text-decoration: none; padding-block: var(--e-3); }
+
+.trilha [aria-current] { color: var(--tinta); }
+
+.cenarios { display: grid; gap: var(--e-4); }
+
+.cenarios article { border-top: 1px solid var(--linha); padding-top: var(--e-3); }
+
+.cenarios h3 { margin-bottom: var(--e-1); }
+
+.cenarios p { color: var(--tinta-2); }
+
+.entregas li { border-top: 1px solid var(--linha); padding-block: var(--e-3); }
+
+.entregas li:last-child { border-bottom: 1px solid var(--linha); }
+
+.preco-numero {
+  font-size: var(--t-3);
+  color: var(--acento);
+  text-transform: none;
+  letter-spacing: -0.01em;
+  margin-bottom: var(--e-3);
+}
+
+.preco p + p { margin-top: var(--e-3); }
+
+.etapas li { display: flex; gap: var(--e-4); padding-block: var(--e-3); border-top: 1px solid var(--linha); }
+
+.etapas .mono { color: var(--acento); padding-top: var(--e-1); }
+
+.etapas h3 { margin-bottom: var(--e-1); }
+
+.etapas p { color: var(--tinta-2); }
+
 .lista-perguntas details:last-child { border-bottom: 1px solid var(--linha); }
 
 summary { font-size: var(--t-1); font-weight: 500; }
@@ -562,6 +609,8 @@ body { padding-bottom: 3.25rem; }
 
   .trabalho,
   .fechamento { padding-block: var(--e-6); }
+
+  .cenarios { grid-template-columns: 1fr 1fr; gap: var(--e-5) var(--e-4); }
 
   .rodape-topo { grid-template-columns: 1fr 1fr; }
 

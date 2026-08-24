@@ -97,6 +97,100 @@ for (const [rel, html] of fonte) {
   if (h1 !== 1) reprova(rel + ': ' + h1 + ' <h1> (esperado 1)');
 }
 
+/* 4b. o FAQPage tem que dizer a mesma coisa que a pagina mostra. Havia 8 divergencias
+   antes desta checagem, uma delas mudando o sentido da resposta. */
+const limpar = (s) => s.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ')
+  .replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/\s+/g, ' ').trim();
+
+for (const [rel, html] of fonte) {
+  const perguntasLd = [];
+  for (const m of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
+    let dados;
+    try { dados = JSON.parse(m[1]); } catch { continue; }
+    const nos = dados['@graph'] || [dados];
+    for (const no of nos) {
+      if (no['@type'] !== 'FAQPage') continue;
+      for (const q of no.mainEntity || []) perguntasLd.push({ nome: q.name, resposta: q.acceptedAnswer?.text || '' });
+    }
+  }
+  if (!perguntasLd.length) continue;
+
+  const visiveis = [...html.matchAll(/<summary[^>]*>([\s\S]*?)<\/summary>/g)].map(m => limpar(m[1]));
+  const respostas = [...html.matchAll(/<summary[^>]*>[\s\S]*?<\/summary>\s*<div>([\s\S]*?)<\/div>/g)].map(m => limpar(m[1]));
+
+  if (perguntasLd.length !== visiveis.length) {
+    reprova(rel + ': FAQPage tem ' + perguntasLd.length + ' perguntas e a pagina mostra ' + visiveis.length);
+  }
+  perguntasLd.forEach((q, i) => {
+    if (!visiveis.includes(limpar(q.nome))) reprova(rel + ': pergunta so no JSON-LD -> "' + q.nome.slice(0, 60) + '"');
+    const vis = respostas[i];
+    if (vis && limpar(q.resposta) !== vis) {
+      reprova(rel + ': resposta ' + (i + 1) + ' diverge entre JSON-LD e pagina');
+    }
+  });
+  visiveis.forEach(v => {
+    if (!perguntasLd.some(q => limpar(q.nome) === v)) reprova(rel + ': pergunta so na pagina -> "' + v.slice(0, 60) + '"');
+  });
+}
+
+/* 4c. o <head> e intocavel: cada valor tem que continuar identico ao do checkpoint.
+   Excecoes autorizadas pelo cliente: o noindex do _modelo.html, o theme-color (a paleta
+   mudou) e o FAQPage, que agora e gerado a partir da pagina pelo sync-faq. */
+const REF = path.join(__dirname, 'head-referencia.json');
+if (fs.existsSync(REF)) {
+  const ref = JSON.parse(fs.readFileSync(REF, 'utf8'));
+  const CAMPOS = {
+    'title': /<title>([\s\S]*?)<\/title>/,
+    'description': /<meta name="description" content="([^"]*)"/,
+    'canonical': /<link rel="canonical" href="([^"]*)"/,
+    'og:title': /<meta property="og:title" content="([^"]*)"/,
+    'og:description': /<meta property="og:description" content="([^"]*)"/,
+    'og:url': /<meta property="og:url" content="([^"]*)"/,
+    'og:image': /<meta property="og:image" content="([^"]*)"/,
+    'og:type': /<meta property="og:type" content="([^"]*)"/,
+    'twitter:title': /<meta name="twitter:title" content="([^"]*)"/,
+    'twitter:description': /<meta name="twitter:description" content="([^"]*)"/,
+    'robots': /<meta name="robots" content="([^"]*)"/,
+    'geo.region': /<meta name="geo.region" content="([^"]*)"/,
+    'geo.placename': /<meta name="geo.placename" content="([^"]*)"/,
+  };
+  const semFaq = (dados) => {
+    const copia = JSON.parse(JSON.stringify(dados));
+    const nos = copia['@graph'] || [copia];
+    for (const no of nos) if (no['@type'] === 'FAQPage') delete no.mainEntity;
+    return JSON.stringify(copia);
+  };
+
+  for (const [rel, html] of fonte) {
+    const esperado = ref[rel];
+    if (!esperado) continue;
+    /* o head do _modelo.html tem exemplos de tag dentro de comentario; nao sao conteudo */
+    const bruto = html.slice(0, html.indexOf('</head>'));
+    const head = bruto.replace(/<!--[\s\S]*?-->/g, '');
+    for (const [nome, re] of Object.entries(CAMPOS)) {
+      if (esperado[nome] === undefined) continue;
+      if (rel === 'artigos/_modelo.html' && nome === 'robots') continue;
+      const m = head.match(re);
+      const agora = m ? m[1].trim() : null;
+      if (agora !== esperado[nome]) {
+        reprova(rel + ': ' + nome + ' mudou\n      antes: ' + esperado[nome] +
+                '\n      agora: ' + (agora === null ? '(ausente)' : agora));
+      }
+    }
+    const ldAgora = [...bruto.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+      .map(m => { try { return JSON.parse(m[1]); } catch { return null; } }).filter(Boolean);
+    if (ldAgora.length !== esperado.jsonLd.length) {
+      reprova(rel + ': tinha ' + esperado.jsonLd.length + ' bloco(s) JSON-LD, agora tem ' + ldAgora.length);
+    } else {
+      ldAgora.forEach((dados, i) => {
+        if (semFaq(dados) !== semFaq(esperado.jsonLd[i])) {
+          reprova(rel + ': JSON-LD #' + (i + 1) + ' mudou fora do FAQPage');
+        }
+      });
+    }
+  }
+}
+
 /* 5. toda saida para o WhatsApp se identifica no GA4 */
 for (const [rel, html] of fonte) {
   for (const m of html.matchAll(/<a\s([^>]*href="[^"]*wa\.me[^"]*"[^>]*)>/g)) {
