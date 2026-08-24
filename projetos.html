@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <!-- ─── SEO ─── -->
   <title>Portfólio de Projetos: Sites, Sistemas e SEO | DEVMRMORAES</title>
   <meta name="description" content="Projetos entregues para clientes de Canoas e Porto Alegre: site criado do zero, SEO técnico em site existente e sistema desktop em C# para relatórios." />
   <meta name="author" content="DEVMRMORAES" />
@@ -13,18 +11,6 @@
   <link rel="canonical" href="https://www.devmrmoraes.com.br/projetos.html" />
   <meta name="geo.region" content="BR-RS" />
   <meta name="geo.placename" content="Canoas, Rio Grande do Sul" />
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-19XH630KZE"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-19XH630KZE');
-  </script>
-  <noscript><style>.animar-preparado{opacity:1!important;transform:none!important}</style></noscript>
-
-  <!-- ─── Open Graph ─── -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="DEVMRMORAES" />
   <meta property="og:title" content="Portfólio de Projetos: Sites, Sistemas e SEO | DEVMRMORAES" />
@@ -35,8 +21,6 @@
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="DEVMRMORAES: portfólio de projetos, sites, sistemas e SEO" />
   <meta property="og:locale" content="pt_BR" />
-
-  <!-- ─── Twitter Card ─── -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@devmrmoraes" />
   <meta name="twitter:creator" content="@devmrmoraes" />
@@ -44,8 +28,6 @@
   <meta name="twitter:description" content="Site criado do zero, SEO técnico e sistema em C#: os projetos entregues para clientes." />
   <meta name="twitter:image" content="https://www.devmrmoraes.com.br/img/og-image.png" />
   <meta name="twitter:image:alt" content="DEVMRMORAES: portfólio de projetos, sites, sistemas e SEO" />
-
-  <!-- ─── Schema.org ─── -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -82,570 +64,241 @@
   }
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;500;600&family=DM+Serif+Display:ital@1&display=swap" />
+  <!-- #assets -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-19XH630KZE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-19XH630KZE');
+  </script>
 
-  <!-- ─── Favicon ─── -->
+  <link rel="preload" as="font" type="font/woff2" href="fonts/schibsted-grotesk-latin.woff2" crossorigin />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/script.js" defer></script>
+
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
-
-  <!-- ─── Manifesto PWA / Mobile ─── -->
   <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#F5F2ED" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="DEVMRMORAES" />
-
-
-  <link rel="stylesheet" href="css/style.css" />
-
-  <!-- JavaScript principal: baixa junto com o CSS e roda antes do primeiro
-       paint, para o conteúdo não aparecer e apagar em conexão lenta -->
-  <script src="js/script.js" defer></script>
+  <!-- /#assets -->
 </head>
 
 <body>
+  <!-- #header -->
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 
-  <!-- ─── Navegação ─── -->
   <header>
-    <nav id="navegacao" aria-label="Navegação principal">
-      <a href="index.html" class="nav-logo" aria-label="DevMrmoraes, voltar ao início">
-        Dev<span>Mr</span>moraes
-      </a>
+    <nav aria-label="Navegação principal">
+      <a class="logo" href="./" aria-label="DEVMRMORAES, página inicial">DEV<span>MR</span>MORAES</a>
 
-      <ul class="nav-links" role="list">
-        <li><a href="index.html#sobre">Sobre</a></li>
-        <li><a href="projetos.html" style="color:var(--cor-dourado)">Projetos</a></li>
+      <ul role="list">
+        <li><a href="projetos.html" aria-current="page">Trabalho</a></li>
+        <li><a href="./#servicos">Serviços</a></li>
         <li><a href="artigos/">Artigos</a></li>
-        <li class="nav-item-dropdown">
-          <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="submenu-servicos">
-            Serviços
-            <span class="nav-dropdown-seta" aria-hidden="true">▾</span>
-          </button>
-          <ul id="submenu-servicos" class="nav-submenu" role="list">
-            <li><a href="criacao-de-sites/">Criação de Sites</a></li>
-            <li><a href="seo-para-sites/">SEO e Manutenção de Sites</a></li>
-            <li><a href="sistemas-personalizados/">Sistemas Personalizados</a></li>
-            <li><a href="automacao-de-processos/">Automação de Processos</a></li>
-            <li><a href="aplicativos-mobile/">Aplicativos Mobile</a></li>
-            <li><a href="consultoria-tecnica/">Consultoria e Diagnóstico Técnico</a></li>
-            <li><a href="chatbot-com-ia/">Chatbots e Assistentes com IA</a></li>
-            <li><a href="suporte-e-manutencao/">Suporte e Evolução Contínua</a></li>
-            <li class="nav-submenu-separador" role="presentation"></li>
-            <li><a href="index.html#servicos" class="nav-submenu-todos">Ver todos os serviços</a></li>
-          </ul>
-        </li>
-        <li><a href="index.html#processo">Processo</a></li>
-        <li><a href="index.html#faq">FAQ</a></li>
-        <li><a href="index.html#contato" class="nav-botao-contato">Orçamento</a></li>
       </ul>
 
-      <button class="nav-menu-toggle" aria-label="Abrir menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <a class="botao botao-compacto" href="./#contato">Falar comigo</a>
     </nav>
   </header>
+  <!-- /#header -->
 
-  <main>
-
-    <!-- ─── Hero da página ─── -->
-    <section class="projetos-hero">
-      <nav class="servico-breadcrumb" aria-label="Breadcrumb">
-        <a href="index.html">Início</a>
-        <span class="breadcrumb-sep" aria-hidden="true">/</span>
-        <span>Projetos</span>
-      </nav>
-
-      <p class="secao-rotulo">Portfólio</p>
-      <h1 class="projetos-hero-titulo">
-        Sites, sistemas e SEO<br><em>já entregues.</em>
-      </h1>
-      <p class="projetos-hero-sub">
-        Três projetos entregues para clientes: um site criado do zero, um trabalho de SEO em site que já existia e um sistema desktop que tirou o relatório mensal da planilha. Abaixo deles ficam os projetos de prática, e eles estão marcados como tal.
-      </p>
+  <main id="conteudo">
+    <section class="capa">
+      <div class="container">
+        <nav class="trilha mono" aria-label="Trilha de navegação">
+          <a href="./">Início</a> <span aria-hidden="true">/</span> <span aria-current="page">Trabalho</span>
+        </nav>
+        <h1>Três trabalhos entregues, e seis exercícios.</h1>
+        <p class="capa-linha">Estão separados porque não valem a mesma coisa. Cliente real primeiro, com o print e o resultado; exercício depois, marcado como exercício.</p>
+      </div>
     </section>
 
-    <!-- ─── Seção principal de projetos ─── -->
-    <section class="secao" style="padding-top:0;" aria-label="Lista de projetos">
+    <section>
+      <div class="container">
+        <h2>Entregues para clientes.</h2>
 
-      <!-- Filtros -->
-      <div class="projetos-filtros-barra" role="group" aria-label="Filtrar por categoria">
-        <button class="filtro-botao ativo" data-filtro="todos" type="button">Todos</button>
-        <button class="filtro-botao" data-filtro="web" type="button">Sites</button>
-        <button class="filtro-botao" data-filtro="seo" type="button">SEO / Manutenção</button>
-        <button class="filtro-botao" data-filtro="sistema" type="button">Sistemas</button>
-        <button class="filtro-botao" data-filtro="pratica" type="button">Projetos de Prática</button>
+        <article class="case">
+          <figure class="exibicao">
+            <img src="img/cases/brucker-printers-site.jpg" width="760" height="475" alt="Página inicial do site da Brucker Printers" loading="lazy" decoding="async" />
+            <figcaption>bruckerprinters.com.br</figcaption>
+          </figure>
+          <div class="case-texto">
+            <p class="mono">01 · Criação de site · Cliente real</p>
+            <h3>A Brucker não existia no Google. Agora existe.</h3>
+            <p>Empresa de impressoras sem site nenhum, perdendo contato para concorrente que tinha. Site institucional do zero, com a estrutura de SEO montada junto com as páginas.</p>
+            <p class="resultado">Primeira página do Google em 30 dias</p>
+            <p class="mono acoes">
+              <a class="link-forte" href="projetos/brucker-printers-site/">Ver o case</a>
+              <a class="link-forte" href="https://bruckerprinters.com.br" target="_blank" rel="noopener noreferrer">Abrir o site</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="case case-invertido">
+          <figure class="exibicao">
+            <img src="img/cases/braskit-seo.jpg" width="760" height="475" alt="Página inicial do site da Braskit Cargas Perigosas" loading="lazy" decoding="async" />
+            <figcaption>braskitcargasperigosas.com.br</figcaption>
+          </figure>
+          <div class="case-texto">
+            <p class="mono">02 · SEO e manutenção · Cliente real</p>
+            <h3>O site da Braskit estava no ar e invisível.</h3>
+            <p>O site existia, abria normalmente e não aparecia em busca nenhuma. Diagnóstico técnico, depois correção de títulos, meta tags, dados estruturados e do que travava o carregamento.</p>
+            <p class="resultado">Site indexado e posicionado no Google</p>
+            <p class="mono acoes">
+              <a class="link-forte" href="projetos/braskit-seo/">Ver o case</a>
+              <a class="link-forte" href="https://braskitcargasperigosas.com.br/" target="_blank" rel="noopener noreferrer">Abrir o site</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="case">
+          <figure class="exibicao">
+            <img src="img/cases/brucker-sistema-visao-geral.jpg" width="760" height="400" alt="Tela principal do sistema de relatórios da Brucker Printers" loading="lazy" decoding="async" />
+            <figcaption>Sistema interno, tela principal</figcaption>
+          </figure>
+          <div class="case-texto">
+            <p class="mono">03 · Sistema sob medida · Cliente real</p>
+            <h3>O relatório mensal da Brucker saiu da planilha.</h3>
+            <p>Todo mês alguém montava o faturamento à mão no Excel. Sistema em C# que recebe as leituras dos equipamentos, calcula o custo por página e exporta em PDF e Excel.</p>
+            <p class="resultado">Relatório mensal saiu da planilha manual</p>
+            <p class="mono acoes">
+              <a class="link-forte" href="projetos/brucker-printers-sistema/">Ver o case</a>
+              <span class="silencio">Sistema interno, sem endereço público</span>
+            </p>
+          </div>
+        </article>
       </div>
-
-      <!-- ─── Projetos Entregues para Clientes ─── -->
-      <h2 class="projetos-secao-label" style="font-family:var(--fonte-titulo);font-size:1.3rem;color:var(--cor-dourado);margin-bottom:1.5rem;letter-spacing:0.5px;">Projetos entregues para clientes</h2>
-
-      <div class="projetos-lista" id="lista-projetos">
-
-        <!-- Projeto 01 — Brucker Printers -->
-        <article class="projeto-linha projeto-linha-clicavel" data-categoria="web" tabindex="0" role="article"
-          data-case="projetos/brucker-printers-site/"
-          data-url="https://bruckerprinters.com.br"
-          data-tem-url="true"
-          data-descricao="Site institucional criado do zero para a Brucker Printers, que trabalha com impressoras. A empresa não tinha site nenhum. Montei a estrutura de páginas, o SEO técnico e a otimização de carregamento, para o site ser encontrado no Google e virar contato comercial."
-          data-tags="HTML/CSS,JavaScript,SEO,Responsivo">
-          <p class="projeto-linha-numero">01</p>
-          <div class="projeto-linha-conteudo">
-            <div class="projeto-linha-header">
-              <h3 class="projeto-linha-titulo"><a href="projetos/brucker-printers-site/">Brucker Printers: site institucional</a></h3>
-              <span class="projeto-linha-cat">Website · Cliente Real</span>
-            </div>
-            <p class="projeto-linha-desc">
-              Site criado do zero para uma empresa de impressoras que não tinha site nenhum. Abre rápido no celular, tem o SEO técnico feito e foi montado para o visitante virar contato comercial.
-            </p>
-            <div class="projeto-linha-tags">
-              <span class="tech-tag">HTML / CSS</span>
-              <span class="tech-tag">JavaScript</span>
-              <span class="tech-tag">SEO</span>
-              <span class="tech-tag">Responsivo</span>
-            </div>
-          </div>
-          <span class="projeto-linha-arrow" aria-hidden="true">↗</span>
-        </article>
-
-        <!-- Projeto 02 — Braskit SEO -->
-        <article class="projeto-linha projeto-linha-clicavel" data-categoria="seo" tabindex="0" role="article"
-          data-case="projetos/braskit-seo/"
-          data-url="https://braskitcargasperigosas.com.br/"
-          data-tem-url="true"
-          data-descricao="Site da Braskit, feito por outra empresa, que não ranqueava no Google e carregava devagar. Fiz o diagnóstico de SEO, arrumei a estrutura de títulos, as meta tags e os dados estruturados, e reduzi o tempo de carregamento. Depois disso o site passou a ser indexado e a aparecer nas buscas."
-          data-tags="SEO Técnico,Performance,Core Web Vitals,HTML/CSS">
-          <p class="projeto-linha-numero">02</p>
-          <div class="projeto-linha-conteudo">
-            <div class="projeto-linha-header">
-              <h3 class="projeto-linha-titulo"><a href="projetos/braskit-seo/">Braskit: manutenção e SEO</a></h3>
-              <span class="projeto-linha-cat">SEO / Manutenção · Cliente Real</span>
-            </div>
-            <p class="projeto-linha-desc">
-              Site feito por outra empresa que não aparecia no Google. Fiz o diagnóstico técnico e corrigi estrutura, velocidade e SEO on-page. Era o que faltava para o Google conseguir ler e indexar a página.
-            </p>
-            <div class="projeto-linha-tags">
-              <span class="tech-tag">SEO Técnico</span>
-              <span class="tech-tag">Performance</span>
-              <span class="tech-tag">HTML / CSS</span>
-            </div>
-          </div>
-          <span class="projeto-linha-arrow" aria-hidden="true">↗</span>
-        </article>
-
-        <!-- Projeto 03 — Brucker Printers Sistema de Geração de Relatórios -->
-        <article class="projeto-linha projeto-linha-clicavel" data-case="projetos/brucker-printers-sistema/"
-          data-categoria="sistema" tabindex="0" role="article">
-          <p class="projeto-linha-numero">03</p>
-          <div class="projeto-linha-conteudo">
-            <div class="projeto-linha-header">
-              <h3 class="projeto-linha-titulo"><a href="projetos/brucker-printers-sistema/">Brucker Printers: sistema de relatórios</a></h3>
-              <span class="projeto-linha-cat">Sistema · Cliente Real</span>
-            </div>
-            <p class="projeto-linha-desc">
-              O relatório de faturamento mensal da Brucker Printers era montado à mão numa planilha de Excel. Fiz um sistema desktop em C#/WPF que guarda os equipamentos e as leituras do mês, calcula os custos e gera o relatório pronto em PDF e Excel.
-            </p>
-            <div class="projeto-linha-tags">
-              <span class="tech-tag">C#</span>
-              <span class="tech-tag">.NET</span>
-              <span class="tech-tag">WPF</span>
-            </div>
-          </div>
-          <span class="projeto-linha-arrow" aria-hidden="true">→</span>
-        </article>
-
-      </div>
-
-      <!-- ─── Projetos de Estudo ─── -->
-      <h2 class="projetos-secao-label" style="font-family:var(--fonte-titulo);font-size:1.1rem;color:var(--cor-texto-muted);margin-top:4rem;margin-bottom:1.5rem;letter-spacing:0.5px;">Projetos de estudo e prática</h2>
-
-      <div class="projetos-lista" id="lista-projetos-pratica">
-
-        <!-- Projeto 04 — Vital Acesso -->
-        <article class="projeto-linha projeto-linha-clicavel" data-categoria="pratica" tabindex="0" role="article"
-          data-url="https://maxcanoas.github.io/vitalacesso/"
-          data-tem-url="true"
-          data-descricao="Projeto de prática. Site institucional para uma empresa de trabalho em altura, com o texto puxando para segurança. Serviu para treinar layout responsivo em HTML5, CSS3 e JavaScript."
-          data-tags="HTML5,CSS3,JavaScript">
-          <p class="projeto-linha-numero">04</p>
-          <div class="projeto-linha-conteudo">
-            <div class="projeto-linha-header">
-              <h3 class="projeto-linha-titulo">Vital Acesso</h3>
-              <span class="projeto-linha-cat">Website · Projeto de Prática</span>
-            </div>
-            <p class="projeto-linha-desc">
-              Site institucional para uma empresa de trabalho em altura, com o texto puxando para segurança. Feito para praticar layout responsivo.
-            </p>
-            <div class="projeto-linha-tags">
-              <span class="tech-tag">HTML5</span>
-              <span class="tech-tag">CSS3</span>
-              <span class="tech-tag">JavaScript</span>
-            </div>
-          </div>
-          <span class="projeto-linha-arrow" aria-hidden="true">↗</span>
-        </article>
-
-        <!-- Projeto 05 — Consultório Odontológico -->
-        <article class="projeto-linha projeto-linha-clicavel" data-categoria="pratica" tabindex="0" role="article"
-          data-url="https://maxcanoas.github.io/consultorio-odonto/"
-          data-tem-url="true"
-          data-descricao="Projeto de prática. Consultório odontológico numa página só, com a lista de serviços e o mapa de localização embutido."
-          data-tags="HTML5,CSS3">
-          <p class="projeto-linha-numero">05</p>
-          <div class="projeto-linha-conteudo">
-            <div class="projeto-linha-header">
-              <h3 class="projeto-linha-titulo">Consultório Odontológico</h3>
-              <span class="projeto-linha-cat">Website · Projeto de Prática</span>
-            </div>
-            <p class="projeto-linha-desc">
-              Consultório odontológico numa página só, com os serviços e o mapa de localização embutido.
-            </p>
-            <div class="projeto-linha-tags">
-              <span class="tech-tag">HTML5</span>
-              <span class="tech-tag">CSS3</span>
-            </div>
-          </div>
-          <span class="projeto-linha-arrow" aria-hidden="true">↗</span>
-        </article>
-
-        <!-- Projeto 06 — Projeto Android -->
-        <article class="projeto-linha projeto-linha-clicavel" data-categoria="pratica" tabindex="0" role="article"
-          data-url="https://maxcanoas.github.io/projeto-android/"
-          data-tem-url="true"
-          data-descricao="Projeto de prática, e um dos primeiros que fiz. Página sobre a história do Android, para treinar responsividade em CSS e embutir vídeo."
-          data-tags="HTML5,CSS3">
-          <p class="projeto-linha-numero">06</p>
-          <div class="projeto-linha-conteudo">
-            <div class="projeto-linha-header">
-              <h3 class="projeto-linha-titulo">Projeto Android</h3>
-              <span class="projeto-linha-cat">Website · Projeto de Prática</span>
-            </div>
-            <p class="projeto-linha-desc">
-              Página sobre a história do Android. Foi um dos meus primeiros exercícios, feito para treinar responsividade em CSS e embutir vídeo.
-            </p>
-            <div class="projeto-linha-tags">
-              <span class="tech-tag">HTML5</span>
-              <span class="tech-tag">CSS3</span>
-            </div>
-          </div>
-          <span class="projeto-linha-arrow" aria-hidden="true">↗</span>
-        </article>
-
-        <!-- Projeto 07 — Run Coach PRO -->
-        <article class="projeto-linha projeto-linha-clicavel" data-categoria="pratica" tabindex="0" role="article"
-          data-url="https://maxcanoas.github.io/assessoria-um/index.html"
-          data-tem-url="true"
-          data-descricao="Site para assessoria de corrida, apresentando planos, resultados da equipe e seção de perguntas frequentes. Projeto de prática com HTML5, CSS3 e JavaScript."
-          data-tags="HTML5,CSS3,JavaScript">
-          <p class="projeto-linha-numero">07</p>
-          <div class="projeto-linha-conteudo">
-            <div class="projeto-linha-header">
-              <h3 class="projeto-linha-titulo">Run Coach PRO</h3>
-              <span class="projeto-linha-cat">Website · Projeto de Prática</span>
-            </div>
-            <p class="projeto-linha-desc">
-              Site para assessoria de corrida, detalhando planos oferecidos, resultados da equipe e seção de perguntas frequentes. Design focado em esportividade e conversão.
-            </p>
-            <div class="projeto-linha-tags">
-              <span class="tech-tag">HTML5</span>
-              <span class="tech-tag">CSS3</span>
-              <span class="tech-tag">JavaScript</span>
-            </div>
-          </div>
-          <span class="projeto-linha-arrow" aria-hidden="true">↗</span>
-        </article>
-
-        <!-- Projeto 08 — Run Elite -->
-        <article class="projeto-linha projeto-linha-clicavel" data-categoria="pratica" tabindex="0" role="article"
-          data-url="https://maxcanoas.github.io/assessoria-dois/index.html"
-          data-tem-url="true"
-          data-descricao="Site para equipe de corrida, apresentando a história da equipe, patrocinadores, staff e formulário de contato via WhatsApp. Projeto de prática com HTML5, CSS3 e JavaScript."
-          data-tags="HTML5,CSS3,JavaScript">
-          <p class="projeto-linha-numero">08</p>
-          <div class="projeto-linha-conteudo">
-            <div class="projeto-linha-header">
-              <h3 class="projeto-linha-titulo">Run Elite</h3>
-              <span class="projeto-linha-cat">Website · Projeto de Prática</span>
-            </div>
-            <p class="projeto-linha-desc">
-              Site para equipe de corrida com história da equipe, patrocinadores, staff e formulário de contato integrado ao WhatsApp.
-            </p>
-            <div class="projeto-linha-tags">
-              <span class="tech-tag">HTML5</span>
-              <span class="tech-tag">CSS3</span>
-              <span class="tech-tag">JavaScript</span>
-            </div>
-          </div>
-          <span class="projeto-linha-arrow" aria-hidden="true">↗</span>
-        </article>
-
-        <article class="projeto-linha projeto-linha-clicavel" data-categoria="pratica" tabindex="0" role="article"
-          data-case="projetos/camila-duarte-fotografia/"
-          data-url="https://maxcanoas.github.io/fotografia/index.html"
-          data-tem-url="true"
-          data-descricao="PROJETO FICTÍCIO, não existe cliente real. Site portfólio criado a partir de um briefing inventado, para prática: seções de sobre, galeria de trabalhos (casamentos, retratos, maternidade, família), serviços e contato. Fiz o layout minimalista, o suporte a mais de um idioma e a ligação com as redes sociais."
-          data-tags="HTML5,CSS3,JavaScript,Responsivo">
-          <p class="projeto-linha-numero">09</p>
-          <div class="projeto-linha-conteudo">
-            <div class="projeto-linha-header">
-              <h3 class="projeto-linha-titulo"><a href="projetos/camila-duarte-fotografia/">Camila Duarte Fotografia</a></h3>
-              <span class="projeto-linha-cat">Website · Projeto fictício</span>
-            </div>
-            <p class="projeto-linha-desc">
-              <strong style="color:var(--cor-dourado)">Projeto fictício, sem cliente real.</strong> Site portfólio criado a partir de um briefing inventado, como exercício de prática: galeria de trabalhos, seção sobre a artista e integração com redes sociais.
-            </p>
-            <div class="projeto-linha-tags">
-              <span class="tech-tag">HTML5</span>
-              <span class="tech-tag">CSS3</span>
-              <span class="tech-tag">JavaScript</span>
-              <span class="tech-tag">Responsivo</span>
-            </div>
-          </div>
-          <span class="projeto-linha-arrow" aria-hidden="true">↗</span>
-        </article>
-
-      </div>
-
-      <!-- Estado vazio ao filtrar -->
-      <div id="estado-vazio" style="display:none;text-align:center;padding:5rem 0;">
-        <p style="font-family:var(--fonte-titulo);font-size:1.5rem;color:var(--cor-texto-muted);">
-          Nenhum projeto nessa categoria ainda.
-        </p>
-        <p style="font-size:0.85rem;color:var(--cor-texto-muted);margin-top:0.5rem;">
-          Mais projetos em breve.
-        </p>
-      </div>
-
     </section>
 
-    <!-- ─── CTA ─── -->
-    <div class="cta-secao">
-      <h2 class="cta-titulo">
-        Seu processo tem<br>um gargalo parecido<br>com algum <em>desses?</em>
-      </h2>
-      <p class="cta-subtitulo">
-        Me descreve o que trava a sua operação hoje. Eu analiso e digo se faz sentido construir algo, e quanto custaria.
-      </p>
-      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-        <a href="index.html#contato" class="botao-primario">
-          <span>Quero uma análise gratuita</span>
-          <span aria-hidden="true">→</span>
-        </a>
-        <a href="index.html" class="botao-secundario">
-          ← Voltar ao início
-        </a>
-      </div>
-    </div>
+    <section class="pratica">
+      <div class="container">
+        <h2>Exercícios de prática.</h2>
+        <p class="medida silencio">Sites que eu fiz para estudar ou para testar uma ideia. Não houve cliente, não houve briefing de ninguém e não houve resultado comercial. Estão aqui porque o código e as decisões de projeto são reais, e porque esconder isso seria o mesmo que contar como entrega.</p>
 
+        <ul class="lista-pratica" role="list">
+          <li>
+            <div>
+              <h3>Camila Duarte Fotografia</h3>
+              <p><strong>Projeto fictício.</strong> Camila Duarte não existe. Inventei o briefing de uma fotógrafa autoral sem lugar para mostrar o portfólio, e construí o site a partir dele.</p>
+            </div>
+            <p class="mono acoes">
+              <a class="link-forte" href="projetos/camila-duarte-fotografia/">Ver o case</a>
+              <a class="link-forte" href="https://maxcanoas.github.io/fotografia/index.html" target="_blank" rel="noopener noreferrer">Abrir</a>
+            </p>
+          </li>
+          <li>
+            <div>
+              <h3>Vital Acesso</h3>
+              <p>Site institucional de uma empresa de acessibilidade, feito como exercício de estrutura e de contraste.</p>
+            </div>
+            <p class="mono acoes">
+              <a class="link-forte" href="https://maxcanoas.github.io/vitalacesso/" target="_blank" rel="noopener noreferrer">Abrir</a>
+            </p>
+          </li>
+          <li>
+            <div>
+              <h3>Consultório odontológico</h3>
+              <p>Página de captação para clínica, com foco em agendamento pelo WhatsApp.</p>
+            </div>
+            <p class="mono acoes">
+              <a class="link-forte" href="https://maxcanoas.github.io/consultorio-odonto/" target="_blank" rel="noopener noreferrer">Abrir</a>
+            </p>
+          </li>
+          <li>
+            <div>
+              <h3>Run Coach PRO</h3>
+              <p>Assessoria esportiva. Exercício de página longa com planos e depoimento.</p>
+            </div>
+            <p class="mono acoes">
+              <a class="link-forte" href="https://maxcanoas.github.io/assessoria-um/index.html" target="_blank" rel="noopener noreferrer">Abrir</a>
+            </p>
+          </li>
+          <li>
+            <div>
+              <h3>Run Elite</h3>
+              <p>A mesma ideia da anterior, resolvida de outro jeito, para comparar as duas abordagens.</p>
+            </div>
+            <p class="mono acoes">
+              <a class="link-forte" href="https://maxcanoas.github.io/assessoria-dois/index.html" target="_blank" rel="noopener noreferrer">Abrir</a>
+            </p>
+          </li>
+          <li>
+            <div>
+              <h3>Projeto Android</h3>
+              <p>Um dos primeiros que eu fiz. Está aqui por honestidade cronológica, e não porque eu faria assim hoje.</p>
+            </div>
+            <p class="mono acoes">
+              <a class="link-forte" href="https://maxcanoas.github.io/projeto-android/" target="_blank" rel="noopener noreferrer">Abrir</a>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contato" class="fechamento">
+      <div class="container grade">
+        <div class="col-6 fechamento-canal fluxo">
+          <h2>Algum desses problemas se parece com o seu?</h2>
+          <p><a class="telefone mono" href="https://wa.me/5551999608608?text=Ol%C3%A1%21%20Vi%20os%20projetos%20no%20site%20e%20quero%20falar%20sobre%20o%20meu." target="_blank" rel="noopener noreferrer" data-origem="projetos">(51) 99960-8608</a></p>
+          <p>Me descreve o que trava a sua operação hoje. Eu digo se faz sentido construir algo, e quanto custaria.</p>
+          <p class="mono">Canoas RS · presencial em Porto Alegre e Região Metropolitana · remoto no resto do Brasil</p>
+        </div>
+        <div class="col-5 inicio-8 fluxo">
+          <p class="mono">Por serviço</p>
+          <p><a class="link-forte" href="criacao-de-sites/">Criação de sites</a></p>
+          <p><a class="link-forte" href="seo-para-sites/">SEO e manutenção de sites</a></p>
+          <p><a class="link-forte" href="sistemas-personalizados/">Sistemas personalizados</a></p>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- ─── Footer ─── -->
+  <!-- #footer -->
   <footer>
-    <div class="footer-topo">
-      <address class="footer-nap">
+    <div class="rodape-topo container">
+      <address>
         <strong>DEVMRMORAES</strong> · Maxwell Rigo Moraes<br />
-        Canoas, Rio Grande do Sul. Atendimento presencial em Canoas, Porto Alegre e Região Metropolitana<br />
-        Projetos remotos para todo o Brasil<br />
-        <a href="https://wa.me/5551999608608" target="_blank" rel="noopener noreferrer" data-origem="rodape_telefone">(51) 99960-8608</a>
+        Canoas, Rio Grande do Sul. Atendimento presencial em Canoas, Porto Alegre e Região Metropolitana.<br />
+        Projetos remotos para todo o Brasil.<br />
+        <a class="mono" href="https://wa.me/5551999608608" target="_blank" rel="noopener noreferrer" data-origem="rodape_telefone">(51) 99960-8608</a>
       </address>
 
-      <nav class="footer-coluna" aria-label="Serviços">
-        <p class="footer-coluna-titulo">Serviços</p>
+      <nav aria-label="Serviços">
+        <p class="mono">Serviços</p>
         <ul role="list">
-          <li><a href="criacao-de-sites/">Criação de Sites</a></li>
-          <li><a href="seo-para-sites/">SEO e Manutenção de Sites</a></li>
-          <li><a href="sistemas-personalizados/">Sistemas Personalizados</a></li>
-          <li><a href="automacao-de-processos/">Automação de Processos</a></li>
-          <li><a href="aplicativos-mobile/">Aplicativos Mobile</a></li>
-          <li><a href="consultoria-tecnica/">Consultoria e Diagnóstico Técnico</a></li>
-          <li><a href="chatbot-com-ia/">Chatbots e Assistentes com IA</a></li>
-          <li><a href="suporte-e-manutencao/">Suporte e Evolução Contínua</a></li>
-        </ul>
-      </nav>
-
-      <nav class="footer-coluna" aria-label="Institucional">
-        <p class="footer-coluna-titulo">Institucional</p>
-        <ul role="list">
-          <li><a href="index.html">Início</a></li>
-          <li><a href="projetos.html">Projetos</a></li>
-          <li><a href="artigos/">Artigos</a></li>
-          <li><a href="index.html#sobre">Sobre</a></li>
-          <li><a href="index.html#processo">Processo</a></li>
-          <li><a href="index.html#faq">Perguntas frequentes</a></li>
-          <li><a href="index.html#contato">Contato</a></li>
+          <li><a href="criacao-de-sites/">Criação de sites</a></li>
+          <li><a href="seo-para-sites/">SEO e manutenção de sites</a></li>
+          <li><a href="sistemas-personalizados/">Sistemas personalizados</a></li>
+          <li><a href="automacao-de-processos/">Automação de processos</a></li>
+          <li><a href="aplicativos-mobile/">Aplicativos mobile</a></li>
+          <li><a href="consultoria-tecnica/">Consultoria e diagnóstico técnico</a></li>
+          <li><a href="chatbot-com-ia/">Chatbots e assistentes com IA</a></li>
+          <li><a href="suporte-e-manutencao/">Suporte e evolução contínua</a></li>
         </ul>
       </nav>
     </div>
 
-    <div class="footer-inner">
-      <p class="footer-logo">Dev<span>Mr</span>moraes</p>
-      <p class="footer-copy">© <span id="ano-atual"></span> DEVMRMORAES · Todos os direitos reservados</p>
-      <nav class="footer-links" aria-label="Links do rodapé">
-        <a href="https://www.linkedin.com/in/devmrmoraes" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-          </svg>
+    <div class="rodape-base container">
+      <p class="mono">© <span data-ano></span> DEVMRMORAES</p>
+      <nav aria-label="Redes sociais">
+        <a href="https://www.linkedin.com/in/DEVMRMORAES" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
-        <a href="https://www.instagram.com/devmrmoraes" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-          </svg>
+        <a href="https://www.instagram.com/DEVMRMORAES" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
         </a>
-        <a href="index.html#contato">Contato</a>
       </nav>
+    </div>
+
+    <div class="barra-acao">
+      <a href="https://wa.me/5551999608608?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer" data-origem="barra_movel">WhatsApp</a>
+      <a href="tel:+5551999608608">Ligar <span class="mono">(51) 99960-8608</span></a>
     </div>
   </footer>
-
-  <script>document.getElementById('ano-atual').textContent = new Date().getFullYear();</script>
-
-  <!-- JS reutilizado: nav, animações de entrada, formulário -->
-
-  <!-- Filtros específicos da página de projetos -->
-  <script>
-    (function () {
-      'use strict';
-
-      function inicializarFiltrosProjetos() {
-        const botoes = document.querySelectorAll('.projetos-filtros-barra .filtro-botao');
-        const projetos = document.querySelectorAll('#lista-projetos .projeto-linha, #lista-projetos-pratica .projeto-linha');
-        const labelClientes = document.querySelector('.projetos-secao-label');
-        const labelPratica = document.querySelectorAll('.projetos-secao-label')[1];
-        const listaPratica = document.getElementById('lista-projetos-pratica');
-        const estadoVazio = document.getElementById('estado-vazio');
-
-        botoes.forEach(botao => {
-          botao.addEventListener('click', () => {
-            const filtro = botao.dataset.filtro;
-
-            botoes.forEach(b => b.classList.remove('ativo'));
-            botao.classList.add('ativo');
-
-            let visiveis = 0;
-
-            projetos.forEach(projeto => {
-              const mostrar = filtro === 'todos' || projeto.dataset.categoria === filtro;
-              projeto.style.display = mostrar ? '' : 'none';
-              if (mostrar) visiveis++;
-            });
-
-            // Mostrar/esconder labels de seção conforme filtro
-            if (labelClientes && labelPratica && listaPratica) {
-              if (filtro === 'todos') {
-                labelClientes.style.display = '';
-                labelPratica.style.display = '';
-                listaPratica.style.display = '';
-              } else if (filtro === 'pratica') {
-                labelClientes.style.display = 'none';
-                labelPratica.style.display = '';
-                listaPratica.style.display = '';
-              } else {
-                labelClientes.style.display = '';
-                labelPratica.style.display = 'none';
-                listaPratica.style.display = 'none';
-              }
-            }
-
-            estadoVazio.style.display = visiveis === 0 ? 'block' : 'none';
-          });
-        });
-      }
-
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', inicializarFiltrosProjetos);
-      } else {
-        inicializarFiltrosProjetos();
-      }
-    })();
-  </script>
-
-  <!-- Modal HTML -->
-  <div id="modal-projeto" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-titulo" style="display:none;">
-    <div class="modal-caixa">
-      <button class="modal-fechar" id="modal-fechar" aria-label="Fechar">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-      <p class="modal-tipo" id="modal-tipo"></p>
-      <h3 class="modal-titulo" id="modal-titulo"></h3>
-      <p class="modal-descricao" id="modal-descricao"></p>
-      <div class="modal-tags" id="modal-tags"></div>
-      <div class="modal-acoes" id="modal-acoes"></div>
-    </div>
-  </div>
-
-  <script>
-  (function () {
-    'use strict';
-    const modal       = document.getElementById('modal-projeto');
-    const btnFechar   = document.getElementById('modal-fechar');
-    const elTipo      = document.getElementById('modal-tipo');
-    const elTitulo    = document.getElementById('modal-titulo');
-    const elDescricao = document.getElementById('modal-descricao');
-    const elTags      = document.getElementById('modal-tags');
-    const elAcoes     = document.getElementById('modal-acoes');
-
-    function abrirModal(card) {
-      elTipo.textContent      = card.querySelector('.projeto-linha-cat')?.textContent || '';
-      elTitulo.textContent    = card.querySelector('h2')?.textContent || '';
-      elDescricao.textContent = card.dataset.descricao || card.querySelector('.projeto-linha-desc')?.textContent || '';
-      elTags.innerHTML = (card.dataset.tags || '').split(',').filter(Boolean)
-        .map(t => `<span class="tech-tag">${t.trim()}</span>`).join('');
-      elAcoes.innerHTML = '';
-      const url     = card.dataset.url || '';
-      const temUrl  = card.dataset.temUrl === 'true';
-      const urlCase = card.dataset.case || '';
-
-      /* Projeto com página de case própria: essa é a ação principal */
-      if (urlCase) {
-        const c = document.createElement('a');
-        c.href = urlCase;
-        c.className = 'modal-btn-primario';
-        c.innerHTML = 'Ver o case completo <span aria-hidden="true">→</span>';
-        elAcoes.appendChild(c);
-      }
-
-      if (temUrl && url) {
-        const a = document.createElement('a');
-        a.href = url; a.target = '_blank'; a.rel = 'noopener noreferrer';
-        a.className = urlCase ? 'modal-btn-secundario' : 'modal-btn-primario';
-        a.innerHTML = 'Abrir site <span aria-hidden="true">↗</span>';
-        elAcoes.appendChild(a);
-      }
-
-      const btn = document.createElement('a');
-      btn.href = 'index.html#contato';
-      btn.className = 'modal-btn-secundario';
-      btn.textContent = 'Quero algo assim →';
-      elAcoes.appendChild(btn);
-      modal.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-      btnFechar.focus();
-    }
-
-    function fecharModal() {
-      modal.style.display = 'none';
-      document.body.style.overflow = '';
-    }
-
-    /* O card abre o modal, mas sem interceptar os links reais dentro dele */
-    document.querySelectorAll('.projeto-linha-clicavel').forEach(card => {
-      card.addEventListener('click', e => {
-        if (e.target.closest('a')) return;
-        abrirModal(card);
-      });
-      card.addEventListener('keydown', e => {
-        if (e.target.closest('a')) return;
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); abrirModal(card); }
-      });
-    });
-
-    btnFechar.addEventListener('click', fecharModal);
-    modal.addEventListener('click', e => { if (e.target === modal) fecharModal(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') fecharModal(); });
-  })();
-  </script>
-
+  <!-- /#footer -->
 </body>
 </html>

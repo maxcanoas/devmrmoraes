@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <!-- ─── SEO ─── -->
   <title>Case: Sistema de Relatórios em C# | DEVMRMORAES</title>
   <meta name="description" content="Relatório de faturamento montado à mão em Excel virou um sistema desktop em C#/WPF, com leituras mensais, cálculo automático e exportação em PDF." />
   <meta name="author" content="DEVMRMORAES" />
@@ -13,18 +11,6 @@
   <link rel="canonical" href="https://www.devmrmoraes.com.br/projetos/brucker-printers-sistema/" />
   <meta name="geo.region" content="BR-RS" />
   <meta name="geo.placename" content="Canoas, Rio Grande do Sul" />
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-19XH630KZE"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-19XH630KZE');
-  </script>
-  <noscript><style>.animar-preparado{opacity:1!important;transform:none!important}</style></noscript>
-
-  <!-- ─── Open Graph ─── -->
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="DEVMRMORAES" />
   <meta property="og:title" content="Case: Sistema de Relatórios em C# | DEVMRMORAES" />
@@ -35,8 +21,6 @@
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="DEVMRMORAES: Case Brucker Printers, sistema de relatórios" />
   <meta property="og:locale" content="pt_BR" />
-
-  <!-- ─── Twitter Card ─── -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@devmrmoraes" />
   <meta name="twitter:creator" content="@devmrmoraes" />
@@ -44,8 +28,6 @@
   <meta name="twitter:description" content="Planilha de faturamento mensal substituída por um sistema desktop em C#/WPF." />
   <meta name="twitter:image" content="https://www.devmrmoraes.com.br/img/og-image.png" />
   <meta name="twitter:image:alt" content="DEVMRMORAES: Case Brucker Printers, sistema de relatórios" />
-
-  <!-- ─── Schema.org JSON-LD ─── -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -81,279 +63,184 @@
   }
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;500;600&family=DM+Serif+Display:ital@1&display=swap" />
+  <!-- #assets -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-19XH630KZE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-19XH630KZE');
+  </script>
+
+  <link rel="preload" as="font" type="font/woff2" href="../../fonts/schibsted-grotesk-latin.woff2" crossorigin />
+  <link rel="stylesheet" href="../../css/style.css" />
+  <script src="../../js/script.js" defer></script>
 
   <link rel="icon" href="../../img/favicon.svg" type="image/svg+xml" />
   <link rel="manifest" href="../../manifest.json" />
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#F5F2ED" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="DEVMRMORAES" />
-
-  <link rel="stylesheet" href="../../css/style.css" />
-
-  <!-- JavaScript principal: baixa junto com o CSS e roda antes do primeiro
-       paint, para o conteúdo não aparecer e apagar em conexão lenta -->
-  <script src="../../js/script.js" defer></script>
+  <!-- /#assets -->
 </head>
 
 <body>
+  <!-- #header -->
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 
-  <!-- ─── Navegação ─── -->
   <header>
-    <nav id="navegacao" aria-label="Navegação principal">
-      <a href="../../index.html" class="nav-logo" aria-label="DEVMRMORAES, voltar ao início">
-        Dev<span>Mr</span>moraes
-      </a>
+    <nav aria-label="Navegação principal">
+      <a class="logo" href="../../" aria-label="DEVMRMORAES, página inicial">DEV<span>MR</span>MORAES</a>
 
-      <ul class="nav-links" role="list">
-        <li><a href="../../index.html#sobre">Sobre</a></li>
-        <li><a href="../../projetos.html" style="color:var(--cor-dourado)">Projetos</a></li>
+      <ul role="list">
+        <li><a href="../../projetos.html" aria-current="true">Trabalho</a></li>
+        <li><a href="../../#servicos">Serviços</a></li>
         <li><a href="../../artigos/">Artigos</a></li>
-        <li class="nav-item-dropdown">
-          <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="submenu-servicos">
-            Serviços
-            <span class="nav-dropdown-seta" aria-hidden="true">▾</span>
-          </button>
-          <ul id="submenu-servicos" class="nav-submenu" role="list">
-            <li><a href="../../criacao-de-sites/">Criação de Sites</a></li>
-            <li><a href="../../seo-para-sites/">SEO e Manutenção de Sites</a></li>
-            <li><a href="../../sistemas-personalizados/">Sistemas Personalizados</a></li>
-            <li><a href="../../automacao-de-processos/">Automação de Processos</a></li>
-            <li><a href="../../aplicativos-mobile/">Aplicativos Mobile</a></li>
-            <li><a href="../../consultoria-tecnica/">Consultoria e Diagnóstico Técnico</a></li>
-            <li><a href="../../chatbot-com-ia/">Chatbots e Assistentes com IA</a></li>
-            <li><a href="../../suporte-e-manutencao/">Suporte e Evolução Contínua</a></li>
-            <li class="nav-submenu-separador" role="presentation"></li>
-            <li><a href="../../index.html#servicos" class="nav-submenu-todos">Ver todos os serviços</a></li>
-          </ul>
-        </li>
-        <li><a href="../../index.html#processo">Processo</a></li>
-        <li><a href="../../index.html#faq">FAQ</a></li>
-        <li><a href="../../index.html#contato" class="nav-botao-contato">Orçamento</a></li>
       </ul>
 
-      <button class="nav-menu-toggle" aria-label="Abrir menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <a class="botao botao-compacto" href="../../#contato">Falar comigo</a>
     </nav>
   </header>
+  <!-- /#header -->
 
-  <main>
+  <main id="conteudo">
+    <article>
+      <section class="capa">
+        <div class="container">
+          <nav class="trilha mono" aria-label="Trilha de navegação">
+            <a href="../../">Início</a> <span aria-hidden="true">/</span> <a href="../../projetos.html">Trabalho</a> <span aria-hidden="true">/</span> <span aria-current="page">Sistema de relatórios</span>
+          </nav>
+          <h1>O relatório mensal da Brucker saiu da planilha.</h1>
+          <p class="capa-linha">Todo mês, a mesma rotina: abrir o Excel, conferir a leitura de cada equipamento, calcular o que cada cliente devia e montar o relatório à mão.</p>
+        </div>
+      </section>
 
-    <!-- ─── Hero ─── -->
-    <section class="servico-hero">
-      <nav class="servico-breadcrumb" aria-label="Breadcrumb">
-        <a href="../../index.html">Início</a>
-        <span class="breadcrumb-sep" aria-hidden="true">/</span>
-        <a href="../../projetos.html">Projetos</a>
-        <span class="breadcrumb-sep" aria-hidden="true">/</span>
-        <span>Brucker Printers: sistema</span>
-      </nav>
+      <section>
+        <div class="container">
+          <div class="par-figuras">
+            <figure class="exibicao">
+              <img src="../../img/cases/brucker-sistema-visao-geral.jpg" width="760" height="400" alt="Tela de visão geral do sistema, com faturamento e volume do mês" loading="lazy" decoding="async" />
+              <figcaption>Visão geral: faturamento e volume do mês, com os equipamentos parados destacados</figcaption>
+            </figure>
+            <figure class="exibicao">
+              <img src="../../img/cases/brucker-sistema-relatorio.jpg" width="760" height="400" alt="Tela de relatório mensal do sistema, com exportação para PDF e Excel" loading="lazy" decoding="async" />
+              <figcaption>Relatório mensal, com exportação para PDF e Excel. É a tela que substituiu a planilha.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
 
-      <h1 class="servico-hero-titulo">
-        Brucker Printers:<br><em>sistema de relatórios</em>
-      </h1>
+      <section>
+        <div class="container grade">
+          <div class="col-5">
+            <h2>O problema.</h2>
+          </div>
+          <div class="col-6 inicio-7 fluxo">
+            <p>A Brucker administra parques de impressoras para empresas. O modelo é conhecido no setor: o equipamento fica com o cliente e a cobrança é pelo volume impresso, medido no contador de cada máquina.</p>
+            <p>Isso significa um ciclo mensal fixo — coletar a leitura de cada equipamento, calcular a diferença em relação ao mês anterior, aplicar a regra de cobrança de cada contrato e emitir o relatório. Multiplicado por muitos equipamentos e vários clientes, é um volume grande de conta.</p>
+            <p>Tudo isso rodava em planilha. Funcionava, no sentido de que os relatórios saíam. Custava caro em três frentes: <strong>tempo</strong>, porque consumia horas de alguém sempre nos mesmos dias do mês; <strong>erro</strong>, porque cálculo à mão em planilha grande erra, e num modelo de cobrança por leitura um número errado significa cobrar a menos ou cobrar demais de um cliente; e <strong>dependência</strong>, porque a planilha estava na cabeça e na máquina de uma pessoa.</p>
+          </div>
+        </div>
+      </section>
 
-      <div class="case-meta">
-        <span><strong>Cliente:</strong> Brucker Printers</span>
-        <span><strong>Tipo:</strong> Sistema desktop</span>
-        <span><strong>Serviço:</strong> <a href="../../sistemas-personalizados/">Sistemas personalizados</a></span>
+      <section>
+        <div class="container grade">
+          <div class="col-5">
+            <h2>O que eu fiz.</h2>
+          </div>
+          <div class="col-6 inicio-7 fluxo">
+            <p>Um sistema desktop em C# que recebe as leituras, guarda o histórico de cada equipamento, aplica a regra de cobrança do contrato e emite o relatório pronto, exportável em PDF e Excel.</p>
+            <p>O cadastro de equipamentos e de contratos deixou de viver numa aba de planilha e passou a ser dado estruturado, com o histórico de leituras preservado mês a mês. Isso é o que permite conferir um número do passado sem depender de quem estava lá.</p>
+            <p>A tela de visão geral existe por um motivo específico: destacar equipamento parado. Máquina que não imprime não fatura, e antes isso só aparecia quando alguém reparava numa linha zerada no meio da planilha.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <h2>O resultado.</h2>
+          <p class="resultado resultado-grande">Relatório mensal saiu da planilha manual</p>
+          <p class="medida">O fechamento deixou de ser um trabalho de digitação e conferência e passou a ser uma conferência só. O cálculo é o mesmo todo mês, e é justamente por isso que ele não precisava de uma pessoa.</p>
+        </div>
+      </section>
+
+      <section>
+        <div class="container grade">
+          <div class="col-5">
+            <h2>Ficha técnica.</h2>
+          </div>
+          <table class="col-6 inicio-7">
+            <tr><th>Cliente</th><td>Brucker Printers</td></tr>
+            <tr><th>Tipo</th><td>Sistema desktop, sob medida</td></tr>
+            <tr><th>Tecnologias</th><td>C#, .NET, WPF</td></tr>
+            <tr><th>Acesso</th><td>Sistema interno, sem endereço público</td></tr>
+          </table>
+        </div>
+      </section>
+    </article>
+
+    <section id="contato" class="fechamento">
+      <div class="container grade">
+        <div class="col-6 fechamento-canal fluxo">
+          <h2>Tem um processo parecido rodando na mão?</h2>
+          <p><a class="telefone mono" href="https://wa.me/5551999608608?text=Ol%C3%A1%21%20Vi%20o%20case%20do%20sistema%20de%20relat%C3%B3rios%20e%20tenho%20um%20processo%20parecido%20na%20minha%20empresa." target="_blank" rel="noopener noreferrer" data-origem="case_brucker_sistema">(51) 99960-8608</a></p>
+          <p>Me conta quanto tempo ele leva, quantas vezes por mês acontece e quem faz. Com isso eu já digo se compensa automatizar.</p>
+          <p class="mono">Canoas RS · presencial em Porto Alegre e Região Metropolitana · remoto no resto do Brasil</p>
+        </div>
+        <div class="col-5 inicio-8 fluxo">
+          <p class="mono">Relacionados</p>
+          <p><a class="link-forte" href="../../sistemas-personalizados/">Sistemas sob medida, entregues por módulo</a></p>
+          <p><a class="link-forte" href="../../automacao-de-processos/">Quando é só uma tarefa, e não a operação inteira</a></p>
+          <p><a class="link-forte" href="../../projetos.html">Ver os outros trabalhos</a></p>
+        </div>
       </div>
-
-      <p class="servico-hero-sub">
-        Todo mês, a mesma rotina: abrir a planilha, conferir as leituras de cada equipamento, calcular o que cada cliente devia e montar o relatório à mão. Horas de trabalho que se repetiam sem variação.
-      </p>
     </section>
-
-    <div class="servico-conteudo">
-
-      <div class="case-figuras-par">
-        <figure class="case-figura">
-          <img src="../../img/cases/brucker-sistema-visao-geral.jpg" width="760" height="400" loading="lazy" decoding="async"
-            alt="Tela de visão geral do sistema: gráfico de valor faturado por mês, gráfico de volume de impressões em preto e branco e em cor, painel lateral com total de impressoras ativas e alertas, e lista de impressoras ociosas no mês" />
-          <figcaption>Visão geral: faturamento e volume do mês, com os equipamentos parados destacados.</figcaption>
-        </figure>
-        <figure class="case-figura">
-          <img src="../../img/cases/brucker-sistema-relatorio.jpg" width="760" height="400" loading="lazy" decoding="async"
-            alt="Tela de relatório mensal do sistema: tabela com modelo, série e contadores inicial e final de cada impressora, e o quadro de totais com locação, produção e valor total do mês" />
-          <figcaption>Relatório mensal, com exportação para PDF e Excel. É a tela que substituiu a planilha.</figcaption>
-        </figure>
-      </div>
-
-      <!-- ─── Contexto ─── -->
-      <section class="servico-bloco">
-        <h2>Contexto</h2>
-        <p>
-          A Brucker Printers administra parques de impressoras para empresas clientes. O modelo é conhecido no setor: o equipamento fica com o cliente e a cobrança é feita pelo volume impresso, medido a partir do contador de cada máquina.
-        </p>
-        <p>
-          Isso significa um ciclo mensal fixo: coletar a leitura de cada equipamento, calcular a diferença em relação ao mês anterior, aplicar a regra de cobrança de cada contrato e emitir o relatório de faturamento. Multiplicado por muitos equipamentos e vários clientes, é um volume grande de conta.
-        </p>
-      </section>
-
-      <!-- ─── Problema ─── -->
-      <section class="servico-bloco">
-        <h2>Problema</h2>
-        <p>
-          Todo esse ciclo rodava em planilha de Excel. Funcionava, no sentido de que os relatórios saíam. Mas custava caro em três frentes.
-        </p>
-        <p>
-          A primeira era tempo: montar o faturamento consumia horas de alguém todo mês, sempre nos mesmos dias, sempre com o mesmo tipo de trabalho mecânico.
-        </p>
-        <p>
-          A segunda era risco de erro. Cálculo feito à mão em planilha grande erra. E num modelo de cobrança por leitura, um número errado significa cobrar a menos, cobrar a mais, ou descobrir a inconsistência meses depois.
-        </p>
-        <p>
-          A terceira era dependência. O conhecimento de como a planilha funcionava estava na cabeça de quem a montou. Uma ausência no período de fechamento travava o faturamento inteiro.
-        </p>
-      </section>
-
-      <!-- ─── Solução ─── -->
-      <section class="servico-bloco">
-        <h2>Solução</h2>
-        <p>
-          Construí uma aplicação desktop em C# com WPF, desenhada em torno do ciclo real de trabalho, não de um modelo genérico de gestão.
-        </p>
-        <p>
-          O sistema mantém o cadastro das empresas clientes e dos equipamentos de cada uma. A cada mês, as leituras são registradas por equipamento, e o cálculo de custo passa a ser feito pelo sistema, com a regra de cobrança já configurada por contrato.
-        </p>
-        <p>
-          Do lado da saída, o relatório de faturamento é gerado em PDF e Excel. O PDF para enviar ao cliente, o Excel para quem precisa continuar trabalhando com os números. O que antes era montagem manual virou uma exportação.
-        </p>
-        <p>
-          A escolha por desktop em vez de web foi deliberada: a operação acontece dentro da empresa, o volume de dados é local e não havia necessidade de acesso remoto. Web teria acrescentado complexidade e custo de hospedagem sem entregar nada em troca neste caso.
-        </p>
-      </section>
-
-      <!-- ─── Tecnologias ─── -->
-      <section class="servico-bloco">
-        <h2>Tecnologias</h2>
-        <p>
-          C# com WPF para a aplicação desktop, sobre a plataforma .NET. É uma combinação madura, estável e adequada para sistema de uso interno com interface rica e trabalho intenso com dados.
-        </p>
-        <div class="case-tecnologias">
-          <span class="tech-tag">C#</span><span class="tech-tag">.NET</span><span class="tech-tag">WPF</span><span class="tech-tag">Geração de PDF</span><span class="tech-tag">Exportação Excel</span>
-        </div>
-      </section>
-
-      <!-- ─── Resultado ─── -->
-      <section class="servico-bloco">
-        <h2>Resultado</h2>
-        <p>
-          O fechamento mensal deixou de ser um projeto e virou uma tarefa. Os dados são registrados ao longo do mês, e o relatório sai pronto quando é preciso.
-        </p>
-        <p>
-          Junto com o tempo, foram embora o risco de erro de cálculo e a dependência de uma pessoa específica saber operar a planilha. O processo passou a estar no sistema, não na memória de alguém.
-        </p>
-        <div class="case-resultado-destaque">Processo de horas reduzido a minutos</div>
-      </section>
-
-      <!-- ─── Serviços relacionados ─── -->
-      <div class="servico-relacionados">
-        <h2>Serviços usados neste projeto</h2>
-        <div class="servico-relacionados-grid">
-          <a href="../../sistemas-personalizados/" class="servico-relacionado-card">
-            <h3>Sistemas Personalizados</h3>
-            <p>O serviço aplicado neste projeto: software desenhado a partir do fluxo real da operação.</p>
-          </a>
-          <a href="../../automacao-de-processos/" class="servico-relacionado-card">
-            <h3>Automação de Processos</h3>
-            <p>Quando a tarefa repetitiva é isolada e não justifica um sistema inteiro, o caminho é automatizar.</p>
-          </a>
-          <a href="../brucker-printers-site/" class="servico-relacionado-card">
-            <h3>Case: Brucker Printers: site</h3>
-            <p>O outro projeto entregue para o mesmo cliente, esse do lado do site.</p>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- ─── CTA ─── -->
-    <div class="cta-secao">
-      <h2 class="cta-titulo">
-        Sua operação ainda<br><em>roda em planilhas?</em>
-      </h2>
-      <p class="cta-subtitulo">
-        Me descreva o processo que hoje consome mais tempo da equipe. Digo se vale construir um sistema, automatizar, ou se um produto pronto resolve melhor.
-      </p>
-      <div class="cta-botoes">
-        <a href="../../index.html#contato" class="botao-primario">
-          <span>Quero meu orçamento</span>
-          <span aria-hidden="true">→</span>
-        </a>
-        <a href="https://wa.me/5551999608608?text=Ol%C3%A1!%20Vi%20o%20case%20do%20sistema%20de%20relat%C3%B3rios%20e%20tenho%20um%20processo%20parecido%20na%20minha%20empresa." data-origem="cta_central" target="_blank" rel="noopener noreferrer" class="botao-secundario">
-          Falar no WhatsApp
-        </a>
-      </div>
-    </div>
-
   </main>
 
+  <!-- #footer -->
   <footer>
-    <div class="footer-topo">
-      <address class="footer-nap">
+    <div class="rodape-topo container">
+      <address>
         <strong>DEVMRMORAES</strong> · Maxwell Rigo Moraes<br />
-        Canoas, Rio Grande do Sul. Atendimento presencial em Canoas, Porto Alegre e Região Metropolitana<br />
-        Projetos remotos para todo o Brasil<br />
-        <a href="https://wa.me/5551999608608" target="_blank" rel="noopener noreferrer" data-origem="rodape_telefone">(51) 99960-8608</a>
+        Canoas, Rio Grande do Sul. Atendimento presencial em Canoas, Porto Alegre e Região Metropolitana.<br />
+        Projetos remotos para todo o Brasil.<br />
+        <a class="mono" href="https://wa.me/5551999608608" target="_blank" rel="noopener noreferrer" data-origem="rodape_telefone">(51) 99960-8608</a>
       </address>
 
-      <nav class="footer-coluna" aria-label="Serviços">
-        <p class="footer-coluna-titulo">Serviços</p>
+      <nav aria-label="Serviços">
+        <p class="mono">Serviços</p>
         <ul role="list">
-          <li><a href="../../criacao-de-sites/">Criação de Sites</a></li>
-          <li><a href="../../seo-para-sites/">SEO e Manutenção de Sites</a></li>
-          <li><a href="../../sistemas-personalizados/">Sistemas Personalizados</a></li>
-          <li><a href="../../automacao-de-processos/">Automação de Processos</a></li>
-          <li><a href="../../aplicativos-mobile/">Aplicativos Mobile</a></li>
-          <li><a href="../../consultoria-tecnica/">Consultoria e Diagnóstico Técnico</a></li>
-          <li><a href="../../chatbot-com-ia/">Chatbots e Assistentes com IA</a></li>
-          <li><a href="../../suporte-e-manutencao/">Suporte e Evolução Contínua</a></li>
-        </ul>
-      </nav>
-
-      <nav class="footer-coluna" aria-label="Institucional">
-        <p class="footer-coluna-titulo">Institucional</p>
-        <ul role="list">
-          <li><a href="../../index.html">Início</a></li>
-          <li><a href="../../projetos.html">Projetos</a></li>
-          <li><a href="../../artigos/">Artigos</a></li>
-          <li><a href="../../index.html#sobre">Sobre</a></li>
-          <li><a href="../../index.html#processo">Processo</a></li>
-          <li><a href="../../index.html#faq">Perguntas frequentes</a></li>
-          <li><a href="../../index.html#contato">Contato</a></li>
+          <li><a href="../../criacao-de-sites/">Criação de sites</a></li>
+          <li><a href="../../seo-para-sites/">SEO e manutenção de sites</a></li>
+          <li><a href="../../sistemas-personalizados/">Sistemas personalizados</a></li>
+          <li><a href="../../automacao-de-processos/">Automação de processos</a></li>
+          <li><a href="../../aplicativos-mobile/">Aplicativos mobile</a></li>
+          <li><a href="../../consultoria-tecnica/">Consultoria e diagnóstico técnico</a></li>
+          <li><a href="../../chatbot-com-ia/">Chatbots e assistentes com IA</a></li>
+          <li><a href="../../suporte-e-manutencao/">Suporte e evolução contínua</a></li>
         </ul>
       </nav>
     </div>
 
-    <div class="footer-inner">
-      <p class="footer-logo">Dev<span>Mr</span>moraes</p>
-      <p class="footer-copy">
-        © <span id="ano-atual"></span> DEVMRMORAES · Todos os direitos reservados
-      </p>
-      <nav class="footer-links" aria-label="Links do rodapé">
+    <div class="rodape-base container">
+      <p class="mono">© <span data-ano></span> DEVMRMORAES</p>
+      <nav aria-label="Redes sociais">
         <a href="https://www.linkedin.com/in/DEVMRMORAES" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-          </svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
         <a href="https://www.instagram.com/DEVMRMORAES" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-          </svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
         </a>
-        <a href="../../index.html#contato">Contato</a>
       </nav>
     </div>
+
+    <div class="barra-acao">
+      <a href="https://wa.me/5551999608608?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer" data-origem="barra_movel">WhatsApp</a>
+      <a href="tel:+5551999608608">Ligar <span class="mono">(51) 99960-8608</span></a>
+    </div>
   </footer>
-
-  <script>document.getElementById('ano-atual').textContent = new Date().getFullYear();</script>
-
+  <!-- /#footer -->
 </body>
 </html>

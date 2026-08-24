@@ -474,6 +474,30 @@ section h2 { max-width: 26ch; margin-bottom: var(--e-4); }
 
 .conversa dd { margin: 0; padding-bottom: var(--e-3); }
 
+.acoes { display: flex; flex-wrap: wrap; gap: var(--e-4); align-items: baseline; }
+
+/* Exercicio nao ocupa o mesmo espaco de trabalho pago: sem print, uma linha cada,
+   e o nome no mesmo corpo de um paragrafo em vez do corpo de um titulo de case. */
+.lista-pratica li { border-top: 1px solid var(--linha); padding-block: var(--e-3); }
+
+.lista-pratica li:last-child { border-bottom: 1px solid var(--linha); }
+
+.lista-pratica h3 { font-size: var(--t-0); margin-bottom: var(--e-1); }
+
+.lista-pratica p { color: var(--tinta-2); }
+
+.lista-pratica .acoes { margin-top: var(--e-2); }
+
+.resultado-grande { font-size: var(--t-2); margin-bottom: var(--e-4); }
+
+/* O aviso de ficticio precisa ser lido antes do resto, e por isso e a unica caixa
+   do site com fundo proprio. */
+.aviso { border: 1px solid var(--acento); padding: var(--e-4); margin-top: var(--e-4); max-width: 60ch; }
+
+.aviso .mono { color: var(--acento); margin-bottom: var(--e-2); }
+
+.par-figuras { display: grid; gap: var(--e-4); }
+
 .lista-perguntas details:last-child { border-bottom: 1px solid var(--linha); }
 
 summary { font-size: var(--t-1); font-weight: 500; }
@@ -615,6 +639,8 @@ body { padding-bottom: 3.25rem; }
 
   .trabalho,
   .fechamento { padding-block: var(--e-6); }
+
+  .par-figuras { grid-template-columns: 1fr 1fr; }
 
   .cenarios { grid-template-columns: 1fr 1fr; gap: var(--e-5) var(--e-4); }
 

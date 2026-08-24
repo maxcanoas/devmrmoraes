@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <!-- ─── SEO ─── -->
   <title>Case Fictício: Site Portfólio de Fotografia | DEVMRMORAES</title>
   <meta name="description" content="Projeto fictício, criado para prática: site portfólio para uma fotógrafa que não existe, com galeria por categoria, seção sobre e mais de um idioma." />
   <meta name="author" content="DEVMRMORAES" />
@@ -13,18 +11,6 @@
   <link rel="canonical" href="https://www.devmrmoraes.com.br/projetos/camila-duarte-fotografia/" />
   <meta name="geo.region" content="BR-RS" />
   <meta name="geo.placename" content="Canoas, Rio Grande do Sul" />
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-19XH630KZE"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-19XH630KZE');
-  </script>
-  <noscript><style>.animar-preparado{opacity:1!important;transform:none!important}</style></noscript>
-
-  <!-- ─── Open Graph ─── -->
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="DEVMRMORAES" />
   <meta property="og:title" content="Case Fictício: Site Portfólio de Fotografia | DEVMRMORAES" />
@@ -35,8 +21,6 @@
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="DEVMRMORAES: Case fictício, site portfólio de fotografia" />
   <meta property="og:locale" content="pt_BR" />
-
-  <!-- ─── Twitter Card ─── -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@devmrmoraes" />
   <meta name="twitter:creator" content="@devmrmoraes" />
@@ -44,8 +28,6 @@
   <meta name="twitter:description" content="Projeto fictício de prática: site portfólio para fotógrafa, com galeria e suporte multilíngue." />
   <meta name="twitter:image" content="https://www.devmrmoraes.com.br/img/og-image.png" />
   <meta name="twitter:image:alt" content="DEVMRMORAES: Case fictício, site portfólio de fotografia" />
-
-  <!-- ─── Schema.org JSON-LD ─── -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -80,274 +62,174 @@
   }
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;500;600&family=DM+Serif+Display:ital@1&display=swap" />
+  <!-- #assets -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-19XH630KZE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-19XH630KZE');
+  </script>
+
+  <link rel="preload" as="font" type="font/woff2" href="../../fonts/schibsted-grotesk-latin.woff2" crossorigin />
+  <link rel="stylesheet" href="../../css/style.css" />
+  <script src="../../js/script.js" defer></script>
 
   <link rel="icon" href="../../img/favicon.svg" type="image/svg+xml" />
   <link rel="manifest" href="../../manifest.json" />
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#F5F2ED" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="DEVMRMORAES" />
-
-  <link rel="stylesheet" href="../../css/style.css" />
-
-  <!-- JavaScript principal: baixa junto com o CSS e roda antes do primeiro
-       paint, para o conteúdo não aparecer e apagar em conexão lenta -->
-  <script src="../../js/script.js" defer></script>
+  <!-- /#assets -->
 </head>
 
 <body>
+  <!-- #header -->
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 
-  <!-- ─── Navegação ─── -->
   <header>
-    <nav id="navegacao" aria-label="Navegação principal">
-      <a href="../../index.html" class="nav-logo" aria-label="DEVMRMORAES, voltar ao início">
-        Dev<span>Mr</span>moraes
-      </a>
+    <nav aria-label="Navegação principal">
+      <a class="logo" href="../../" aria-label="DEVMRMORAES, página inicial">DEV<span>MR</span>MORAES</a>
 
-      <ul class="nav-links" role="list">
-        <li><a href="../../index.html#sobre">Sobre</a></li>
-        <li><a href="../../projetos.html" style="color:var(--cor-dourado)">Projetos</a></li>
+      <ul role="list">
+        <li><a href="../../projetos.html" aria-current="true">Trabalho</a></li>
+        <li><a href="../../#servicos">Serviços</a></li>
         <li><a href="../../artigos/">Artigos</a></li>
-        <li class="nav-item-dropdown">
-          <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="submenu-servicos">
-            Serviços
-            <span class="nav-dropdown-seta" aria-hidden="true">▾</span>
-          </button>
-          <ul id="submenu-servicos" class="nav-submenu" role="list">
-            <li><a href="../../criacao-de-sites/">Criação de Sites</a></li>
-            <li><a href="../../seo-para-sites/">SEO e Manutenção de Sites</a></li>
-            <li><a href="../../sistemas-personalizados/">Sistemas Personalizados</a></li>
-            <li><a href="../../automacao-de-processos/">Automação de Processos</a></li>
-            <li><a href="../../aplicativos-mobile/">Aplicativos Mobile</a></li>
-            <li><a href="../../consultoria-tecnica/">Consultoria e Diagnóstico Técnico</a></li>
-            <li><a href="../../chatbot-com-ia/">Chatbots e Assistentes com IA</a></li>
-            <li><a href="../../suporte-e-manutencao/">Suporte e Evolução Contínua</a></li>
-            <li class="nav-submenu-separador" role="presentation"></li>
-            <li><a href="../../index.html#servicos" class="nav-submenu-todos">Ver todos os serviços</a></li>
-          </ul>
-        </li>
-        <li><a href="../../index.html#processo">Processo</a></li>
-        <li><a href="../../index.html#faq">FAQ</a></li>
-        <li><a href="../../index.html#contato" class="nav-botao-contato">Orçamento</a></li>
       </ul>
 
-      <button class="nav-menu-toggle" aria-label="Abrir menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <a class="botao botao-compacto" href="../../#contato">Falar comigo</a>
     </nav>
   </header>
+  <!-- /#header -->
 
-  <main>
+  <main id="conteudo">
+    <article>
+      <section class="capa">
+        <div class="container">
+          <nav class="trilha mono" aria-label="Trilha de navegação">
+            <a href="../../">Início</a> <span aria-hidden="true">/</span> <a href="../../projetos.html">Trabalho</a> <span aria-hidden="true">/</span> <span aria-current="page">Camila Duarte (fictício)</span>
+          </nav>
+          <h1>Uma fotógrafa que não existe, e um site que existe.</h1>
+          <div class="aviso" role="note">
+            <p class="mono">Projeto fictício</p>
+            <p>Camila Duarte não é uma pessoa real e não existe cliente por trás deste trabalho. Inventei o briefing e construí o site do zero como exercício. Está no portfólio porque o código e as decisões de projeto são reais, mas nenhum resultado comercial aqui aconteceu de verdade.</p>
+          </div>
+        </div>
+      </section>
 
-    <!-- ─── Hero ─── -->
-    <section class="servico-hero">
-      <nav class="servico-breadcrumb" aria-label="Breadcrumb">
-        <a href="../../index.html">Início</a>
-        <span class="breadcrumb-sep" aria-hidden="true">/</span>
-        <a href="../../projetos.html">Projetos</a>
-        <span class="breadcrumb-sep" aria-hidden="true">/</span>
-        <span>Camila Duarte (fictício)</span>
-      </nav>
+      <section>
+        <div class="container">
+          <figure class="exibicao">
+            <img src="../../img/cases/camila-duarte-fotografia.jpg" width="760" height="475" alt="Página inicial do site portfólio fictício de fotografia" loading="lazy" decoding="async" />
+            <figcaption>A fotógrafa da imagem, como o resto do projeto, não é uma cliente: é banco de imagem escolhido para o briefing inventado.</figcaption>
+          </figure>
+        </div>
+      </section>
 
-      <h1 class="servico-hero-titulo">
-        Camila Duarte Fotografia:<br><em>site portfólio (fictício)</em>
-      </h1>
+      <section>
+        <div class="container grade">
+          <div class="col-5">
+            <h2>Por que este exercício.</h2>
+          </div>
+          <div class="col-6 inicio-7 fluxo">
+            <p>Site de portfólio criativo funciona por regras diferentes das de um site institucional. Ali a hierarquia é invertida: a imagem carrega a mensagem, o texto apoia, e o layout precisa sumir para não competir com o trabalho exposto.</p>
+            <p>É o oposto do que eu costumo construir, e foi por isso que escolhi praticar nisso. O briefing que eu escrevi para mim mesmo foi de uma fotógrafa autoral com anos de estrada — casamento, retrato, maternidade, família — precisando de um lugar próprio para mostrar o trabalho e receber contato.</p>
+            <p>Persona inventada, mas com as restrições que um projeto real teria.</p>
+          </div>
+        </div>
+      </section>
 
-      <div class="case-aviso" role="note">
-        <span class="case-aviso-icone" aria-hidden="true">▲</span>
-        <span><strong>Este é um projeto fictício.</strong> Camila Duarte não é uma pessoa real e não existe cliente por trás deste trabalho. O site foi criado do zero como exercício de prática, a partir de um briefing inventado por mim. Está no portfólio porque o código e as decisões de projeto são reais, mas nenhum resultado comercial aqui aconteceu de verdade.</span>
+      <section>
+        <div class="container grade">
+          <div class="col-5">
+            <h2>O problema técnico.</h2>
+          </div>
+          <div class="col-6 inicio-7 fluxo">
+            <p>O desafio central de um portfólio visual é o equilíbrio entre peso e velocidade. Fotografia em qualidade suficiente para valorizar o trabalho é pesada, e página pesada afasta o visitante antes de a primeira imagem aparecer.</p>
+            <p>Resolvi com carregamento adiado do que está abaixo da dobra, dimensão declarada em toda imagem para o layout não pular enquanto carrega, e uma galeria que abre em tela cheia sem carregar a versão grande antes de alguém pedir.</p>
+            <p>A navegação some quase por completo: sem menu carregado, sem chamada piscando, sem nada disputando atenção com a foto.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container grade">
+          <div class="col-5">
+            <h2>Ficha técnica.</h2>
+          </div>
+          <table class="col-6 inicio-7">
+            <tr><th>Cliente</th><td>Nenhum. Persona fictícia.</td></tr>
+            <tr><th>Tipo</th><td>Exercício de prática</td></tr>
+            <tr><th>Tecnologias</th><td>HTML, CSS, JavaScript</td></tr>
+            <tr><th>Resultado comercial</th><td>Nenhum, e não poderia haver</td></tr>
+            <tr><th>No ar em</th><td><a href="https://maxcanoas.github.io/fotografia/index.html" target="_blank" rel="noopener noreferrer">maxcanoas.github.io/fotografia</a></td></tr>
+          </table>
+        </div>
+      </section>
+    </article>
+
+    <section id="contato" class="fechamento">
+      <div class="container grade">
+        <div class="col-6 fechamento-canal fluxo">
+          <h2>Se você quer um portfólio de verdade.</h2>
+          <p><a class="telefone mono" href="https://wa.me/5551999608608?text=Ol%C3%A1%21%20Quero%20um%20site%20portf%C3%B3lio%20para%20mostrar%20o%20meu%20trabalho." target="_blank" rel="noopener noreferrer" data-origem="case_camila">(51) 99960-8608</a></p>
+          <p>Este aqui é exercício, e eu prefiro dizer isso do que deixar você descobrir depois. O trabalho de verdade começa com uma conversa sobre o seu.</p>
+          <p class="mono">Canoas RS · presencial em Porto Alegre e Região Metropolitana · remoto no resto do Brasil</p>
+        </div>
+        <div class="col-5 inicio-8 fluxo">
+          <p class="mono">Trabalhos com cliente real</p>
+          <p><a class="link-forte" href="../brucker-printers-site/">A Brucker não existia no Google. Agora existe.</a></p>
+          <p><a class="link-forte" href="../braskit-seo/">O site da Braskit estava no ar e invisível.</a></p>
+          <p><a class="link-forte" href="../../projetos.html">Ver os outros trabalhos</a></p>
+        </div>
       </div>
-
-      <div class="case-meta">
-        <span><strong>Cliente:</strong> nenhum, persona fictícia</span>
-        <span><strong>Tipo:</strong> Projeto de prática</span>
-        <span><strong>Serviço:</strong> <a href="../../criacao-de-sites/">Criação de sites</a></span>
-      </div>
-
-      <p class="servico-hero-sub">
-        Um exercício com um objetivo específico: praticar um tipo de site em que a imagem é o produto e o texto entra em segundo plano. É o oposto do site institucional que costumo construir.
-      </p>
-      <a href="https://maxcanoas.github.io/fotografia/index.html" target="_blank" rel="noopener noreferrer" class="botao-primario">
-        <span>Ver o projeto no ar</span>
-        <span aria-hidden="true">↗</span>
-      </a>
     </section>
-
-    <div class="servico-conteudo">
-
-      <figure class="case-figura">
-        <img src="../../img/cases/camila-duarte-fotografia.jpg" width="760" height="475" loading="lazy" decoding="async"
-          alt="Página inicial do site de portfólio: menu de navegação, seletor de idioma, título sobre histórias contadas através da luz e botão para o portfólio, sobre a foto de uma fotógrafa em um campo ao entardecer" />
-        <figcaption>Página inicial do exercício. A fotógrafa da imagem, como o resto do projeto, não é uma cliente: é banco de imagem escolhido para o briefing inventado.</figcaption>
-      </figure>
-
-      <!-- ─── Contexto ─── -->
-      <section class="servico-bloco">
-        <h2>Contexto</h2>
-        <p>
-          Sites de portfólio criativo funcionam por regras diferentes das de um site institucional. Ali a hierarquia é invertida: a imagem carrega a mensagem, o texto apoia, e o layout precisa sumir para não competir com o trabalho exposto.
-        </p>
-        <p>
-          Como não havia cliente, escrevi o briefing: uma fotógrafa autoral com anos de estrada, atuando em casamentos, retratos, maternidade e família, precisando de um lugar próprio para mostrar o trabalho e receber contato. Persona inventada, mas com as restrições que um projeto real teria.
-        </p>
-      </section>
-
-      <!-- ─── Problema ─── -->
-      <section class="servico-bloco">
-        <h2>Problema</h2>
-        <p>
-          O desafio central de um portfólio visual é o equilíbrio entre peso e velocidade. Fotografia exige imagem grande e de qualidade, e imagem grande é exatamente o que derruba o tempo de carregamento de uma página.
-        </p>
-        <p>
-          Há também o problema de navegação: galeria com muitas categorias (casamento, retrato, maternidade, família) precisa deixar o visitante achar o que procura sem transformar a home num menu longo.
-        </p>
-        <p>
-          E, no fim, o site precisa converter. Portfólio bonito que não deixa claro como contratar o serviço cumpriu metade da função.
-        </p>
-      </section>
-
-      <!-- ─── Solução ─── -->
-      <section class="servico-bloco">
-        <h2>Solução</h2>
-        <p>
-          O layout ficou minimalista de propósito: pouca interface, muito espaço em branco, tipografia discreta. Tudo que não é a fotografia recua.
-        </p>
-        <p>
-          A navegação foi organizada em torno das categorias de trabalho, com seções separadas para a apresentação da fotógrafa, os serviços oferecidos e o contato, cada uma alcançável sem rolar a página inteira.
-        </p>
-        <p>
-          Acrescentei suporte multilíngue, que era parte do briefing que escrevi, e integração com redes sociais e WhatsApp, porque no mercado de fotografia o primeiro contato costuma acontecer por esses canais e não por formulário.
-        </p>
-      </section>
-
-      <!-- ─── Tecnologias ─── -->
-      <section class="servico-bloco">
-        <h2>Tecnologias</h2>
-        <p>
-          HTML, CSS e JavaScript diretos, sem framework. É a mesma abordagem que uso em projeto real, o que faz do exercício uma prática de verdade e não uma demonstração descartável.
-        </p>
-        <div class="case-tecnologias">
-          <span class="tech-tag">HTML5</span><span class="tech-tag">CSS3</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Design responsivo</span><span class="tech-tag">Multilíngue</span>
-        </div>
-      </section>
-
-      <!-- ─── Resultado ─── -->
-      <section class="servico-bloco">
-        <h2>Resultado</h2>
-        <p>
-          O resultado é um site portfólio completo e navegável, que cumpre o que o briefing fictício pedia: apresentar o trabalho com destaque, contar quem é a profissional e abrir um caminho curto para o contato.
-        </p>
-        <p>
-          Não há métrica de negócio para mostrar aqui, e não haveria como haver: não existe cliente, não existe operação, não existe cliente convertido. O que este projeto demonstra é decisão de layout, organização de galeria e código responsivo. Nada além disso.
-        </p>
-      </section>
-
-      <!-- ─── Serviços relacionados ─── -->
-      <div class="servico-relacionados">
-        <h2>Serviços usados neste projeto</h2>
-        <div class="servico-relacionados-grid">
-          <a href="../../criacao-de-sites/" class="servico-relacionado-card">
-            <h3>Criação de Sites</h3>
-            <p>O mesmo tipo de trabalho aplicado a projetos reais, com escopo, prazo e valor fechados.</p>
-          </a>
-          <a href="../brucker-printers-site/" class="servico-relacionado-card">
-            <h3>Case: Brucker Printers: site</h3>
-            <p>Um projeto de cliente real, com problema de negócio concreto por trás.</p>
-          </a>
-          <a href="../braskit-seo/" class="servico-relacionado-card">
-            <h3>Case: Braskit: SEO técnico</h3>
-            <p>Diagnóstico e correção de SEO num site que já existia e não era encontrado.</p>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- ─── CTA ─── -->
-    <div class="cta-secao">
-      <h2 class="cta-titulo">
-        Precisa de um site<br><em>que mostre o seu trabalho?</em>
-      </h2>
-      <p class="cta-subtitulo">
-        Portfólio, estúdio, ateliê ou consultório: se o seu serviço se vende pelo que você mostra, o site precisa ser construído em torno disso.
-      </p>
-      <div class="cta-botoes">
-        <a href="../../index.html#contato" class="botao-primario">
-          <span>Quero meu orçamento</span>
-          <span aria-hidden="true">→</span>
-        </a>
-        <a href="https://wa.me/5551999608608?text=Ol%C3%A1!%20Quero%20um%20site%20portf%C3%B3lio%20para%20mostrar%20o%20meu%20trabalho." data-origem="cta_central" target="_blank" rel="noopener noreferrer" class="botao-secundario">
-          Falar no WhatsApp
-        </a>
-      </div>
-    </div>
-
   </main>
 
+  <!-- #footer -->
   <footer>
-    <div class="footer-topo">
-      <address class="footer-nap">
+    <div class="rodape-topo container">
+      <address>
         <strong>DEVMRMORAES</strong> · Maxwell Rigo Moraes<br />
-        Canoas, Rio Grande do Sul. Atendimento presencial em Canoas, Porto Alegre e Região Metropolitana<br />
-        Projetos remotos para todo o Brasil<br />
-        <a href="https://wa.me/5551999608608" target="_blank" rel="noopener noreferrer" data-origem="rodape_telefone">(51) 99960-8608</a>
+        Canoas, Rio Grande do Sul. Atendimento presencial em Canoas, Porto Alegre e Região Metropolitana.<br />
+        Projetos remotos para todo o Brasil.<br />
+        <a class="mono" href="https://wa.me/5551999608608" target="_blank" rel="noopener noreferrer" data-origem="rodape_telefone">(51) 99960-8608</a>
       </address>
 
-      <nav class="footer-coluna" aria-label="Serviços">
-        <p class="footer-coluna-titulo">Serviços</p>
+      <nav aria-label="Serviços">
+        <p class="mono">Serviços</p>
         <ul role="list">
-          <li><a href="../../criacao-de-sites/">Criação de Sites</a></li>
-          <li><a href="../../seo-para-sites/">SEO e Manutenção de Sites</a></li>
-          <li><a href="../../sistemas-personalizados/">Sistemas Personalizados</a></li>
-          <li><a href="../../automacao-de-processos/">Automação de Processos</a></li>
-          <li><a href="../../aplicativos-mobile/">Aplicativos Mobile</a></li>
-          <li><a href="../../consultoria-tecnica/">Consultoria e Diagnóstico Técnico</a></li>
-          <li><a href="../../chatbot-com-ia/">Chatbots e Assistentes com IA</a></li>
-          <li><a href="../../suporte-e-manutencao/">Suporte e Evolução Contínua</a></li>
-        </ul>
-      </nav>
-
-      <nav class="footer-coluna" aria-label="Institucional">
-        <p class="footer-coluna-titulo">Institucional</p>
-        <ul role="list">
-          <li><a href="../../index.html">Início</a></li>
-          <li><a href="../../projetos.html">Projetos</a></li>
-          <li><a href="../../artigos/">Artigos</a></li>
-          <li><a href="../../index.html#sobre">Sobre</a></li>
-          <li><a href="../../index.html#processo">Processo</a></li>
-          <li><a href="../../index.html#faq">Perguntas frequentes</a></li>
-          <li><a href="../../index.html#contato">Contato</a></li>
+          <li><a href="../../criacao-de-sites/">Criação de sites</a></li>
+          <li><a href="../../seo-para-sites/">SEO e manutenção de sites</a></li>
+          <li><a href="../../sistemas-personalizados/">Sistemas personalizados</a></li>
+          <li><a href="../../automacao-de-processos/">Automação de processos</a></li>
+          <li><a href="../../aplicativos-mobile/">Aplicativos mobile</a></li>
+          <li><a href="../../consultoria-tecnica/">Consultoria e diagnóstico técnico</a></li>
+          <li><a href="../../chatbot-com-ia/">Chatbots e assistentes com IA</a></li>
+          <li><a href="../../suporte-e-manutencao/">Suporte e evolução contínua</a></li>
         </ul>
       </nav>
     </div>
 
-    <div class="footer-inner">
-      <p class="footer-logo">Dev<span>Mr</span>moraes</p>
-      <p class="footer-copy">
-        © <span id="ano-atual"></span> DEVMRMORAES · Todos os direitos reservados
-      </p>
-      <nav class="footer-links" aria-label="Links do rodapé">
+    <div class="rodape-base container">
+      <p class="mono">© <span data-ano></span> DEVMRMORAES</p>
+      <nav aria-label="Redes sociais">
         <a href="https://www.linkedin.com/in/DEVMRMORAES" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-          </svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
         <a href="https://www.instagram.com/DEVMRMORAES" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-          </svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
         </a>
-        <a href="../../index.html#contato">Contato</a>
       </nav>
     </div>
+
+    <div class="barra-acao">
+      <a href="https://wa.me/5551999608608?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer" data-origem="barra_movel">WhatsApp</a>
+      <a href="tel:+5551999608608">Ligar <span class="mono">(51) 99960-8608</span></a>
+    </div>
   </footer>
-
-  <script>document.getElementById('ano-atual').textContent = new Date().getFullYear();</script>
-
+  <!-- /#footer -->
 </body>
 </html>

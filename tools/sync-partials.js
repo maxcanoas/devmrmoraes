@@ -47,7 +47,12 @@ function chaveDaPagina(rel) {
 
 function renderizar(fonte, raiz, chave) {
   const grau = (alvo) => chave === alvo ? 'exato' : chave.startsWith(alvo + '/') ? 'ancestral' : '';
+  /* {{inicio}} prefixa ancora que mora na home. Na propria home fica vazio, para o link
+     rolar em vez de recarregar; em qualquer outra pagina precisa levar ate la primeiro,
+     inclusive nas que estao na raiz, como projetos.html. */
+  const inicio = chave === 'inicio' ? '' : (raiz || './');
   return fonte
+    .replace(/\{\{inicio\}\}/g, inicio)
     .replace(/\{\{raiz\}\}/g, raiz)
     .replace(/\{\{home\}\}/g, raiz || './')
     .replace(/\{\{ativo:([^}]+)\}\}/g, (_, alvo) => {
