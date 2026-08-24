@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <!-- ─── SEO ─── -->
   <title>Site não aparece no Google: 7 causas técnicas | DEVMRMORAES</title>
   <meta name="description" content="Estar indexado e ser exibido são coisas diferentes. Sete causas técnicas para um site não aparecer no Google, cada uma com verificação e correção." />
   <meta name="author" content="DEVMRMORAES" />
@@ -13,18 +11,6 @@
   <link rel="canonical" href="https://www.devmrmoraes.com.br/artigos/meu-site-nao-aparece-no-google/" />
   <meta name="geo.region" content="BR-RS" />
   <meta name="geo.placename" content="Canoas, Rio Grande do Sul" />
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-19XH630KZE"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-19XH630KZE');
-  </script>
-  <noscript><style>.animar-preparado{opacity:1!important;transform:none!important}</style></noscript>
-
-  <!-- ─── Open Graph ─── -->
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="DEVMRMORAES" />
   <meta property="og:title" content="Site não aparece no Google: 7 causas técnicas | DEVMRMORAES" />
@@ -35,8 +21,6 @@
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="DEVMRMORAES: Meu site não aparece no Google: 7 causas técnicas" />
   <meta property="og:locale" content="pt_BR" />
-
-  <!-- ─── Twitter Card ─── -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@devmrmoraes" />
   <meta name="twitter:creator" content="@devmrmoraes" />
@@ -44,8 +28,6 @@
   <meta name="twitter:description" content="Sete causas técnicas para um site não aparecer no Google, com sintoma, verificação e correção." />
   <meta name="twitter:image" content="https://www.devmrmoraes.com.br/img/og-image.png" />
   <meta name="twitter:image:alt" content="DEVMRMORAES: Meu site não aparece no Google: 7 causas técnicas" />
-
-  <!-- ─── Schema.org JSON-LD ─── -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -79,297 +61,189 @@
   }
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;500;600&family=DM+Serif+Display:ital@1&display=swap" />
+  <!-- #assets -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-19XH630KZE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-19XH630KZE');
+  </script>
+
+  <link rel="preload" as="font" type="font/woff2" href="../../fonts/schibsted-grotesk-latin.woff2" crossorigin />
+  <link rel="stylesheet" href="../../css/style.css" />
+  <script src="../../js/script.js" defer></script>
 
   <link rel="icon" href="../../img/favicon.svg" type="image/svg+xml" />
   <link rel="manifest" href="../../manifest.json" />
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#F5F2ED" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="DEVMRMORAES" />
-
-  <link rel="stylesheet" href="../../css/style.css" />
-
-  <!-- JavaScript principal: baixa junto com o CSS e roda antes do primeiro
-       paint, para o conteúdo não aparecer e apagar em conexão lenta -->
-  <script src="../../js/script.js" defer></script>
+  <!-- /#assets -->
 </head>
 
 <body>
+  <!-- #header -->
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 
   <header>
-    <nav id="navegacao" aria-label="Navegação principal">
-      <a href="../../index.html" class="nav-logo" aria-label="DEVMRMORAES, voltar ao início">
-        Dev<span>Mr</span>moraes
-      </a>
+    <nav aria-label="Navegação principal">
+      <a class="logo" href="../../" aria-label="DEVMRMORAES, página inicial">DEV<span>MR</span>MORAES</a>
 
-      <ul class="nav-links" role="list">
-        <li><a href="../../index.html#sobre">Sobre</a></li>
-        <li><a href="../../projetos.html">Projetos</a></li>
-        <li><a href="../../artigos/" style="color:var(--cor-dourado)">Artigos</a></li>
-        <li class="nav-item-dropdown">
-          <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="submenu-servicos">
-            Serviços
-            <span class="nav-dropdown-seta" aria-hidden="true">▾</span>
-          </button>
-          <ul id="submenu-servicos" class="nav-submenu" role="list">
-            <li><a href="../../criacao-de-sites/">Criação de Sites</a></li>
-            <li><a href="../../seo-para-sites/">SEO e Manutenção de Sites</a></li>
-            <li><a href="../../sistemas-personalizados/">Sistemas Personalizados</a></li>
-            <li><a href="../../automacao-de-processos/">Automação de Processos</a></li>
-            <li><a href="../../aplicativos-mobile/">Aplicativos Mobile</a></li>
-            <li><a href="../../consultoria-tecnica/">Consultoria e Diagnóstico Técnico</a></li>
-            <li><a href="../../chatbot-com-ia/">Chatbots e Assistentes com IA</a></li>
-            <li><a href="../../suporte-e-manutencao/">Suporte e Evolução Contínua</a></li>
-            <li class="nav-submenu-separador" role="presentation"></li>
-            <li><a href="../../index.html#servicos" class="nav-submenu-todos">Ver todos os serviços</a></li>
-          </ul>
-        </li>
-        <li><a href="../../index.html#processo">Processo</a></li>
-        <li><a href="../../index.html#faq">FAQ</a></li>
-        <li><a href="../../index.html#contato" class="nav-botao-contato">Orçamento</a></li>
+      <ul role="list">
+        <li><a href="../../projetos.html">Trabalho</a></li>
+        <li><a href="../../#servicos">Serviços</a></li>
+        <li><a href="../../artigos/" aria-current="true">Artigos</a></li>
       </ul>
 
-      <button class="nav-menu-toggle" aria-label="Abrir menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <a class="botao botao-compacto" href="../../#contato">Falar comigo</a>
     </nav>
   </header>
+  <!-- /#header -->
 
-  <main>
-
+  <main id="conteudo">
     <article>
-
-      <!-- ─── Cabeçalho do artigo ─── -->
-      <section class="servico-hero">
-        <nav class="servico-breadcrumb" aria-label="Breadcrumb">
-          <a href="../../index.html">Início</a>
-          <span class="breadcrumb-sep" aria-hidden="true">/</span>
-          <a href="../index.html">Artigos</a>
-          <span class="breadcrumb-sep" aria-hidden="true">/</span>
-          <span>Meu site não aparece no Google</span>
-        </nav>
-
-        <h1 class="servico-hero-titulo">
-          Meu site não aparece no Google:<br><em>7 causas técnicas</em>
-        </h1>
-
-        <div class="artigo-meta">
-          <span>Por <strong>Maxwell Rigo Moraes</strong></span>
-          <span>Publicado em <time datetime="2026-08-13">13 de agosto de 2026</time></span>
-          <span>Leitura de 6 minutos</span>
+      <section class="capa">
+        <div class="container">
+          <nav class="trilha mono" aria-label="Trilha de navegação">
+            <a href="../../">Início</a> <span aria-hidden="true">/</span> <a href="../">Artigos</a> <span aria-hidden="true">/</span> <span aria-current="page">Site não aparece no Google</span>
+          </nav>
+          <h1>Meu site não aparece no Google: 7 causas técnicas</h1>
+          <p class="capa-linha">Se o seu site existe, está no ar e ainda assim ninguém chega nele pela busca, o problema quase nunca é misterioso. Na maior parte das vezes é uma destas sete coisas, e todas dão para verificar por conta própria.</p>
+          <p class="mono ficha-artigo">
+            Por Maxwell Rigo Moraes · <time datetime="2026-08-13">13 de agosto de 2026</time> · Leitura de 6 minutos
+          </p>
         </div>
-
-        <p class="servico-hero-sub">
-          Se o seu site existe, está no ar e ainda assim ninguém chega nele pela busca, o problema quase nunca é misterioso. Na maior parte das vezes é uma destas sete coisas, e todas dão para verificar por conta própria.
-        </p>
       </section>
 
-      <div class="artigo-corpo">
+      <section>
+        <div class="container prosa">
+          <p>Antes das causas, é preciso separar duas coisas que costumam ser confundidas, e essa confusão sozinha já explica boa parte da frustração.</p>
 
-        <p>
-          Antes das causas, é preciso separar duas coisas que costumam ser confundidas, e essa confusão sozinha já explica boa parte da frustração.
-        </p>
-        <p>
-          <strong>Estar indexado</strong> significa que o Google leu a sua página e guardou uma cópia dela no índice. <strong>Ser exibido</strong> significa que, para alguma busca real de alguma pessoa real, ele decidiu que a sua página era a melhor resposta disponível. São etapas diferentes, e a segunda é muito mais difícil que a primeira.
-        </p>
-        <p>
-          É perfeitamente possível ter todas as páginas indexadas, o Search Console mostrando tudo verde, e zero clique orgânico por meses. Já vi isso muitas vezes. Quando acontece, o site não tem problema de rastreamento: tem problema de relevância. As causas abaixo cobrem os dois casos, começando pelos que impedem a indexação e terminando nos que impedem o posicionamento.
-        </p>
+          <p><strong>Estar indexado</strong> significa que o Google leu a sua página e guardou uma cópia dela no índice. <strong>Ser exibido</strong> significa que, para alguma busca real de alguma pessoa real, ele decidiu que a sua página era a melhor resposta disponível. São etapas diferentes, e a segunda é muito mais difícil que a primeira.</p>
 
-        <h2>1. O site está pedindo para não ser indexado</h2>
-        <p>
-          É a causa mais simples e a mais dolorosa, porque costuma ser um resto de configuração de quando o site estava em desenvolvimento. Duas formas: uma linha <code>Disallow</code> no arquivo <code>robots.txt</code> bloqueando o rastreamento, ou uma tag <code>&lt;meta name="robots" content="noindex"&gt;</code> no HTML pedindo explicitamente para o Google não guardar a página.
-        </p>
-        <h3>Como verificar</h3>
-        <p>
-          Acesse <code>seusite.com.br/robots.txt</code> no navegador e leia o que está escrito. Se houver <code>Disallow: /</code> logo abaixo de <code>User-agent: *</code>, o site inteiro está bloqueado. Depois, abra qualquer página, use Ctrl+U para ver o código-fonte e procure por <code>noindex</code>. Se aparecer, é isso.
-        </p>
-        <h3>Como corrigir</h3>
-        <p>
-          Remova o bloqueio e peça a reindexação no Search Console, pela ferramenta de inspeção de URL. É a correção que dá resultado mais rápido de todas desta lista, às vezes em poucos dias.
-        </p>
+          <p>É perfeitamente possível ter todas as páginas indexadas, o Search Console mostrando tudo verde, e zero clique orgânico por meses. Já vi isso muitas vezes. Quando acontece, o site não tem problema de rastreamento: tem problema de relevância. As causas abaixo cobrem os dois casos, começando pelas que impedem a indexação e terminando nas que impedem o posicionamento.</p>
 
-        <h2>2. O conteúdo só existe depois que o JavaScript roda</h2>
-        <p>
-          Sites feitos em certos frameworks entregam ao navegador uma página praticamente vazia e montam o conteúdo por JavaScript depois. O Google até consegue executar JavaScript, mas isso acontece numa segunda passada, com fila e com custo. Nem sempre acontece, e quando acontece é mais devagar.
-        </p>
-        <h3>Como verificar</h3>
-        <p>
-          Ctrl+U abre o código-fonte original, antes de qualquer JavaScript. Procure ali por um parágrafo que você sabe que existe na página. Se o texto não estiver no código-fonte, ele não existe para o buscador na primeira leitura. Outra forma: desabilite o JavaScript nas configurações do navegador e recarregue.
-        </p>
-        <h3>Como corrigir</h3>
-        <p>
-          O conteúdo principal, ou seja, títulos, textos e links de navegação, precisa vir no HTML inicial. Dependendo da tecnologia, isso significa renderização no servidor ou geração estática. Efeito visual pode continuar a cargo do JavaScript; o texto, não.
-        </p>
+          <h2>1. O site está pedindo para não ser indexado</h2>
+          <p>É a causa mais simples e a mais dolorosa, porque costuma ser um resto de configuração de quando o site estava em desenvolvimento. Duas formas: uma linha <code>Disallow</code> no arquivo <code>robots.txt</code> bloqueando o rastreamento, ou uma tag <code>&lt;meta name="robots" content="noindex"&gt;</code> no HTML pedindo explicitamente para o Google não guardar a página.</p>
+          <h3 class="mono">Como verificar</h3>
+          <p>Acesse <code>seusite.com.br/robots.txt</code> no navegador e leia o que está escrito. Se houver <code>Disallow: /</code> logo abaixo de <code>User-agent: *</code>, o site inteiro está bloqueado. Depois, abra qualquer página, use <kbd>Ctrl+U</kbd> para ver o código-fonte e procure por <code>noindex</code>. Se aparecer, é isso.</p>
+          <h3 class="mono">Como corrigir</h3>
+          <p>Remova o bloqueio e peça a reindexação no Search Console, pela ferramenta de inspeção de URL. É a correção que dá resultado mais rápido de todas desta lista, às vezes em poucos dias.</p>
 
-        <h2>3. A página não tem conteúdo suficiente para competir</h2>
-        <p>
-          Uma página de serviço com trezentas palavras, sendo boa parte delas menu e rodapé, dá ao Google muito pouco para trabalhar. Ele consegue indexar, mas não encontra motivo para preferir a sua página à de um concorrente que escreveu de verdade sobre o assunto.
-        </p>
-        <h3>Como verificar</h3>
-        <p>
-          Copie o texto visível de uma página, só o miolo, sem menu e rodapé, e cole num contador de palavras. Depois faça o mesmo com a página do concorrente que aparece em primeiro lugar para o termo que você quer. A diferença costuma ser evidente.
-        </p>
-        <h3>Como corrigir</h3>
-        <p>
-          Escreva o que o cliente pergunta antes de fechar: para quem o serviço serve, o que está incluído, como é o processo, quanto tempo leva, o que costuma dar errado. Não é encher linguiça com sinônimo. É responder de verdade. Conteúdo raso não engana mais ninguém desde as atualizações de conteúdo útil do Google.
-        </p>
+          <h2>2. O conteúdo só existe depois que o JavaScript roda</h2>
+          <p>Sites feitos em certos frameworks entregam ao navegador uma página praticamente vazia e montam o conteúdo por JavaScript depois. O Google até consegue executar JavaScript, mas isso acontece numa segunda passada, com fila e com custo. Nem sempre acontece, e quando acontece é mais devagar.</p>
+          <h3 class="mono">Como verificar</h3>
+          <p><kbd>Ctrl+U</kbd> abre o código-fonte original, antes de qualquer JavaScript. Procure ali por um parágrafo que você sabe que existe na página. Se o texto não estiver no código-fonte, ele não existe para o buscador na primeira leitura. Outra forma: desabilite o JavaScript nas configurações do navegador e recarregue.</p>
+          <h3 class="mono">Como corrigir</h3>
+          <p>O conteúdo principal, ou seja, títulos, textos e links de navegação, precisa vir no HTML inicial. Dependendo da tecnologia, isso significa renderização no servidor ou geração estática. Efeito visual pode continuar a cargo do JavaScript; o texto, não.</p>
 
-        <h2>4. Você está competindo em termo nacional sem ser nacional</h2>
-        <p>
-          Esta é, na minha experiência, a causa mais subestimada. Um profissional ou uma empresa pequena que disputa a busca "criação de sites" está competindo com agências que têm anos de autoridade acumulada e orçamento de conteúdo. É briga perdida.
-        </p>
-        <p>
-          Já a busca "criação de sites em Canoas" tem um punhado de concorrentes reais, e quem faz é justamente quem trabalha na região. O erro comum é o site não dizer em lugar nenhum onde a empresa fica e quem ela atende.
-        </p>
-        <h3>Como verificar</h3>
-        <p>
-          Procure pelo nome da sua cidade dentro do seu próprio site. Se não aparecer no texto das páginas, nem nas meta descriptions, nem nos dados estruturados, o Google não tem como associar você a busca nenhuma da sua região.
-        </p>
-        <h3>Como corrigir</h3>
-        <p>
-          Mencione a cidade e a região de forma natural no corpo do texto, adicione o endereço da área de atendimento nos dados estruturados e mantenha o Perfil da Empresa no Google preenchido com exatamente o mesmo nome, telefone e cidade que estão no site. Divergência entre os dois enfraquece os dois.
-        </p>
+          <h2>3. A página não tem conteúdo suficiente para competir</h2>
+          <p>Uma página de serviço com trezentas palavras, sendo boa parte delas menu e rodapé, dá ao Google muito pouco para trabalhar. Ele consegue indexar, mas não encontra motivo para preferir a sua página à de um concorrente que escreveu de verdade sobre o assunto.</p>
+          <h3 class="mono">Como verificar</h3>
+          <p>Copie o texto visível de uma página, só o miolo, sem menu e rodapé, e cole num contador de palavras. Depois faça o mesmo com a página do concorrente que aparece em primeiro lugar para o termo que você quer. A diferença costuma ser evidente.</p>
+          <h3 class="mono">Como corrigir</h3>
+          <p>Escreva o que o cliente pergunta antes de fechar: para quem o serviço serve, o que está incluído, como é o processo, quanto tempo leva, o que costuma dar errado. Não é encher linguiça com sinônimo. É responder de verdade. Conteúdo raso não engana mais ninguém desde as atualizações de conteúdo útil do Google.</p>
 
-        <h2>5. A estrutura de títulos está quebrada</h2>
-        <p>
-          A hierarquia de <code>h1</code> a <code>h6</code> é como o Google entende a organização do conteúdo. Página com três <code>h1</code>, ou que pula de <code>h1</code> direto para <code>h3</code>, ou que usa título grande só porque a fonte fica bonita, entrega uma estrutura confusa.
-        </p>
-        <h3>Como verificar</h3>
-        <p>
-          Ctrl+U e procure por <code>&lt;h1</code>. Deve haver exatamente um por página, e ele deve descrever o assunto principal. Depois confira se os <code>h2</code> vêm antes dos <code>h3</code>, sem saltos.
-        </p>
-        <h3>Como corrigir</h3>
-        <p>
-          Um <code>h1</code> por página, <code>h2</code> para as seções, <code>h3</code> para subseções. Tamanho de fonte se resolve no CSS. A tag existe para dar significado, não aparência.
-        </p>
+          <h2>4. Você está competindo em termo nacional sem ser nacional</h2>
+          <p>Esta é, na minha experiência, a causa mais subestimada. Um profissional ou uma empresa pequena que disputa a busca "criação de sites" está competindo com agências que têm anos de autoridade acumulada e orçamento de conteúdo. É briga perdida.</p>
+          <p>Já a busca "criação de sites em Canoas" tem um punhado de concorrentes reais, e quem faz é justamente quem trabalha na região. O erro comum é o site não dizer em lugar nenhum onde a empresa fica e quem ela atende.</p>
+          <h3 class="mono">Como verificar</h3>
+          <p>Procure pelo nome da sua cidade dentro do seu próprio site. Se não aparecer no texto das páginas, nem nas meta descriptions, nem nos dados estruturados, o Google não tem como associar você a busca nenhuma da sua região.</p>
+          <h3 class="mono">Como corrigir</h3>
+          <p>Mencione a cidade e a região de forma natural no corpo do texto, adicione o endereço da área de atendimento nos dados estruturados e mantenha o Perfil da Empresa no Google preenchido com exatamente o mesmo nome, telefone e cidade que estão no site. Divergência entre os dois enfraquece os dois.</p>
 
-        <h2>6. O site demora a carregar</h2>
-        <p>
-          Velocidade é fator de classificação, mas o efeito indireto é ainda maior: se a página leva vários segundos para aparecer no celular, boa parte das pessoas desiste antes de ver qualquer coisa. O Google percebe esse abandono.
-        </p>
-        <h3>Como verificar</h3>
-        <p>
-          Rode o PageSpeed Insights do Google no endereço da página e olhe a aba de dispositivos móveis, não a de desktop. Os três indicadores que importam são o tempo até o maior elemento aparecer, a estabilidade do layout enquanto carrega e a resposta ao primeiro toque.
-        </p>
-        <h3>Como corrigir</h3>
-        <p>
-          Os culpados de sempre: imagens enormes servidas em tamanho original, fontes que travam a exibição do texto, scripts de terceiros carregados antes do conteúdo e telas de carregamento que seguram a página. No fim, é quase sempre peso desnecessário. E peso desnecessário se remove.
-        </p>
+          <h2>5. A estrutura de títulos está quebrada</h2>
+          <p>A hierarquia de <code>h1</code> a <code>h6</code> é como o Google entende a organização do conteúdo. Página com três <code>h1</code>, ou que pula de <code>h1</code> direto para <code>h3</code>, ou que usa título grande só porque a fonte fica bonita, entrega uma estrutura confusa.</p>
+          <h3 class="mono">Como verificar</h3>
+          <p><kbd>Ctrl+U</kbd> e procure por <code>&lt;h1</code>. Deve haver exatamente um por página, e ele deve descrever o assunto principal. Depois confira se os <code>h2</code> vêm antes dos <code>h3</code>, sem saltos.</p>
+          <h3 class="mono">Como corrigir</h3>
+          <p>Um <code>h1</code> por página, <code>h2</code> para as seções, <code>h3</code> para subseções. Tamanho de fonte se resolve no CSS. A tag existe para dar significado, não aparência.</p>
 
-        <h2>7. Canonical errado ou conteúdo duplicado</h2>
-        <p>
-          Quando o mesmo conteúdo está acessível por vários endereços (com e sem <code>www</code>, com e sem <code>https</code>, com e sem barra no final), o Google escolhe um para exibir e ignora os outros. Se a tag <code>canonical</code> apontar para o endereço errado, ou se todas as páginas apontarem para a home, você está pedindo para ele ignorar o site inteiro.
-        </p>
-        <h3>Como verificar</h3>
-        <p>
-          Ctrl+U e procure por <code>rel="canonical"</code>. Cada página deve apontar para o próprio endereço, em URL absoluta e na versão canônica do domínio. Confirme também que a versão sem <code>www</code> redireciona para a com <code>www</code>, ou o contrário, desde que seja sempre a mesma escolha.
-        </p>
-        <h3>Como corrigir</h3>
-        <p>
-          Escolha uma versão do domínio, redirecione as demais para ela e coloque em cada página um canonical apontando para si mesma. Se houver páginas com conteúdo praticamente idêntico, junte-as numa só: duas páginas fracas competindo entre si rendem menos que uma boa.
-        </p>
+          <h2>6. O site demora a carregar</h2>
+          <p>Velocidade é fator de classificação, mas o efeito indireto é ainda maior: se a página leva vários segundos para aparecer no celular, boa parte das pessoas desiste antes de ver qualquer coisa. O Google percebe esse abandono.</p>
+          <h3 class="mono">Como verificar</h3>
+          <p>Rode o PageSpeed Insights do Google no endereço da página e olhe a aba de dispositivos móveis, não a de desktop. Os três indicadores que importam são o tempo até o maior elemento aparecer, a estabilidade do layout enquanto carrega e a resposta ao primeiro toque.</p>
+          <h3 class="mono">Como corrigir</h3>
+          <p>Os culpados de sempre: imagens enormes servidas em tamanho original, fontes que travam a exibição do texto, scripts de terceiros carregados antes do conteúdo e telas de carregamento que seguram a página. No fim, é quase sempre peso desnecessário. E peso desnecessário se remove.</p>
 
-        <h2>Por onde começar</h2>
-        <p>
-          Na ordem: primeiro confira se existe bloqueio de indexação, porque é o que impede tudo o mais. Depois veja se o conteúdo aparece no HTML sem JavaScript. Resolvidos esses dois, o site está tecnicamente visível, e o jogo passa a ser de relevância: conteúdo, ancoragem geográfica e velocidade.
-        </p>
-        <p>
-          Foi exatamente esse caminho que percorri num <a href="../../projetos/braskit-seo/">projeto de diagnóstico e correção de SEO técnico</a> em que o site do cliente estava no ar, bonito, e simplesmente não ranqueava. Nenhuma das causas era exótica: eram itens desta lista, somados.
-        </p>
-        <p>
-          Se depois de percorrer os sete pontos você não conseguir identificar o que está travando o seu site, é disso que trata o serviço de <a href="../../seo-para-sites/">SEO e manutenção de sites</a>. O diagnóstico inicial é sem custo, e você recebe a lista do que encontrei mesmo que decida corrigir por conta própria ou com outra pessoa.
-        </p>
+          <h2>7. Canonical errado ou conteúdo duplicado</h2>
+          <p>Quando o mesmo conteúdo está acessível por vários endereços (com e sem <code>www</code>, com e sem <code>https</code>, com e sem barra no final), o Google escolhe um para exibir e ignora os outros. Se a tag <code>canonical</code> apontar para o endereço errado, ou se todas as páginas apontarem para a home, você está pedindo para ele ignorar o site inteiro.</p>
+          <h3 class="mono">Como verificar</h3>
+          <p><kbd>Ctrl+U</kbd> e procure por <code>rel="canonical"</code>. Cada página deve apontar para o próprio endereço, em URL absoluta e na versão canônica do domínio. Confirme também que a versão sem <code>www</code> redireciona para a com <code>www</code>, ou o contrário, desde que seja sempre a mesma escolha.</p>
+          <h3 class="mono">Como corrigir</h3>
+          <p>Escolha uma versão do domínio, redirecione as demais para ela e coloque em cada página um canonical apontando para si mesma. Se houver páginas com conteúdo praticamente idêntico, junte-as numa só: duas páginas fracas competindo entre si rendem menos que uma boa.</p>
 
-      </div>
+          <h2>Por onde começar</h2>
+          <p>Na ordem: primeiro confira se existe bloqueio de indexação, porque é o que impede tudo o mais. Depois veja se o conteúdo aparece no HTML sem JavaScript. Resolvidos esses dois, o site está tecnicamente visível, e o jogo passa a ser de relevância: conteúdo, ancoragem geográfica e velocidade.</p>
+          <p>Foi exatamente esse caminho que percorri <a href="../../projetos/braskit-seo/">no diagnóstico do site da Braskit</a>, que estava no ar, bonito, e simplesmente não ranqueava. Nenhuma das causas era exótica: eram itens desta lista, somados.</p>
+          <p>Se depois de percorrer os sete pontos você não conseguir identificar o que está travando o seu site, é disso que trata o serviço de <a href="../../seo-para-sites/">SEO e manutenção de sites</a>. O diagnóstico inicial é sem custo, e você recebe a lista do que encontrei mesmo que decida corrigir por conta própria ou com outra pessoa.</p>
+        </div>
+      </section>
     </article>
 
-    <!-- ─── CTA ─── -->
-    <div class="cta-secao">
-      <h2 class="cta-titulo">
-        Quer saber o que está<br><em>travando o seu site?</em>
-      </h2>
-      <p class="cta-subtitulo">
-        Me manda o endereço. Rodo o diagnóstico e te devolvo a lista do que encontrei, sem compromisso.
-      </p>
-      <div class="cta-botoes">
-        <a href="../../index.html#contato" class="botao-primario">
-          <span>Quero meu diagnóstico</span>
-          <span aria-hidden="true">→</span>
-        </a>
-        <a href="https://wa.me/5551999608608?text=Ol%C3%A1!%20Li%20o%20artigo%20sobre%20site%20que%20n%C3%A3o%20aparece%20no%20Google%20e%20quero%20um%20diagn%C3%B3stico." data-origem="cta_central" target="_blank" rel="noopener noreferrer" class="botao-secundario">
-          Falar no WhatsApp
-        </a>
+    <section id="contato" class="fechamento">
+      <div class="container grade">
+        <div class="col-6 fechamento-canal fluxo">
+          <h2>Quer saber o que está travando o seu?</h2>
+          <p><a class="telefone mono" href="https://wa.me/5551999608608?text=Ol%C3%A1%21%20Li%20o%20artigo%20sobre%20site%20que%20n%C3%A3o%20aparece%20no%20Google%20e%20quero%20um%20diagn%C3%B3stico." target="_blank" rel="noopener noreferrer" data-origem="artigo_seo">(51) 99960-8608</a></p>
+          <p>Me manda o endereço. Rodo a checagem e te devolvo a lista do que encontrei, sem compromisso.</p>
+          <p class="mono">Canoas RS · presencial em Porto Alegre e Região Metropolitana · remoto no resto do Brasil</p>
+        </div>
+        <div class="col-5 inicio-8 fluxo">
+          <p class="mono">Continue lendo</p>
+          <p><a class="link-forte" href="../../seo-para-sites/">As 12 checagens que eu abro em cada diagnóstico</a></p>
+          <p><a class="link-forte" href="../../projetos/braskit-seo/">Um site que estava no ar e invisível</a></p>
+          <p><a class="link-forte" href="../">Todos os artigos</a></p>
+        </div>
       </div>
-    </div>
-
+    </section>
   </main>
 
+  <!-- #footer -->
   <footer>
-    <div class="footer-topo">
-      <address class="footer-nap">
+    <div class="rodape-topo container">
+      <address>
         <strong>DEVMRMORAES</strong> · Maxwell Rigo Moraes<br />
-        Canoas, Rio Grande do Sul. Atendimento presencial em Canoas, Porto Alegre e Região Metropolitana<br />
-        Projetos remotos para todo o Brasil<br />
-        <a href="https://wa.me/5551999608608" target="_blank" rel="noopener noreferrer" data-origem="rodape_telefone">(51) 99960-8608</a>
+        Canoas, Rio Grande do Sul. Atendimento presencial em Canoas, Porto Alegre e Região Metropolitana.<br />
+        Projetos remotos para todo o Brasil.<br />
+        <a class="mono" href="https://wa.me/5551999608608" target="_blank" rel="noopener noreferrer" data-origem="rodape_telefone">(51) 99960-8608</a>
       </address>
 
-      <nav class="footer-coluna" aria-label="Serviços">
-        <p class="footer-coluna-titulo">Serviços</p>
+      <nav aria-label="Serviços">
+        <p class="mono">Serviços</p>
         <ul role="list">
-          <li><a href="../../criacao-de-sites/">Criação de Sites</a></li>
-          <li><a href="../../seo-para-sites/">SEO e Manutenção de Sites</a></li>
-          <li><a href="../../sistemas-personalizados/">Sistemas Personalizados</a></li>
-          <li><a href="../../automacao-de-processos/">Automação de Processos</a></li>
-          <li><a href="../../aplicativos-mobile/">Aplicativos Mobile</a></li>
-          <li><a href="../../consultoria-tecnica/">Consultoria e Diagnóstico Técnico</a></li>
-          <li><a href="../../chatbot-com-ia/">Chatbots e Assistentes com IA</a></li>
-          <li><a href="../../suporte-e-manutencao/">Suporte e Evolução Contínua</a></li>
-        </ul>
-      </nav>
-
-      <nav class="footer-coluna" aria-label="Institucional">
-        <p class="footer-coluna-titulo">Institucional</p>
-        <ul role="list">
-          <li><a href="../../index.html">Início</a></li>
-          <li><a href="../../projetos.html">Projetos</a></li>
-          <li><a href="../../artigos/">Artigos</a></li>
-          <li><a href="../../index.html#sobre">Sobre</a></li>
-          <li><a href="../../index.html#processo">Processo</a></li>
-          <li><a href="../../index.html#faq">Perguntas frequentes</a></li>
-          <li><a href="../../index.html#contato">Contato</a></li>
+          <li><a href="../../criacao-de-sites/">Criação de sites</a></li>
+          <li><a href="../../seo-para-sites/">SEO e manutenção de sites</a></li>
+          <li><a href="../../sistemas-personalizados/">Sistemas personalizados</a></li>
+          <li><a href="../../automacao-de-processos/">Automação de processos</a></li>
+          <li><a href="../../aplicativos-mobile/">Aplicativos mobile</a></li>
+          <li><a href="../../consultoria-tecnica/">Consultoria e diagnóstico técnico</a></li>
+          <li><a href="../../chatbot-com-ia/">Chatbots e assistentes com IA</a></li>
+          <li><a href="../../suporte-e-manutencao/">Suporte e evolução contínua</a></li>
         </ul>
       </nav>
     </div>
 
-    <div class="footer-inner">
-      <p class="footer-logo">Dev<span>Mr</span>moraes</p>
-      <p class="footer-copy">
-        © <span id="ano-atual"></span> DEVMRMORAES · Todos os direitos reservados
-      </p>
-      <nav class="footer-links" aria-label="Links do rodapé">
+    <div class="rodape-base container">
+      <p class="mono">© <span data-ano></span> DEVMRMORAES</p>
+      <nav aria-label="Redes sociais">
         <a href="https://www.linkedin.com/in/DEVMRMORAES" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-          </svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
         <a href="https://www.instagram.com/DEVMRMORAES" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-          </svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
         </a>
-        <a href="../../index.html#contato">Contato</a>
       </nav>
     </div>
+
+    <div class="barra-acao">
+      <a href="https://wa.me/5551999608608?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer" data-origem="barra_movel">WhatsApp</a>
+      <a href="tel:+5551999608608">Ligar <span class="mono">(51) 99960-8608</span></a>
+    </div>
   </footer>
-
-  <script>document.getElementById('ano-atual').textContent = new Date().getFullYear();</script>
-
+  <!-- /#footer -->
 </body>
 </html>

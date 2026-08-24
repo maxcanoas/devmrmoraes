@@ -498,6 +498,40 @@ section h2 { max-width: 26ch; margin-bottom: var(--e-4); }
 
 .par-figuras { display: grid; gap: var(--e-4); }
 
+/* Coluna de leitura. h2, h3 e p ja estao estilizados nos elementos: aqui so entra a
+   medida e o ritmo entre eles. */
+.prosa { max-width: 68ch; }
+
+.prosa > * + * { margin-top: var(--e-3); }
+
+.prosa h2 { font-size: var(--t-2); margin-top: var(--e-5); }
+
+.prosa h3 { color: var(--acento); margin-top: var(--e-4); }
+
+.prosa a { text-underline-offset: 0.2em; }
+
+code, kbd {
+  font-family: var(--fonte-mono);
+  font-size: 0.9em;
+  background: var(--superficie);
+  border: 1px solid var(--linha);
+  padding: 0 var(--e-1);
+}
+
+.ficha-artigo { color: var(--tinta-2); margin-top: var(--e-4); }
+
+.lista-artigos li { border-top: 1px solid var(--linha); padding-block: var(--e-4); }
+
+.lista-artigos li:last-child { border-bottom: 1px solid var(--linha); }
+
+.lista-artigos .mono { color: var(--tinta-2); }
+
+.lista-artigos h2 { font-size: var(--t-2); max-width: 30ch; margin-block: var(--e-2); }
+
+.lista-artigos h2 a { text-decoration: none; }
+
+.lista-artigos > li > p:last-child { color: var(--tinta-2); }
+
 .lista-perguntas details:last-child { border-bottom: 1px solid var(--linha); }
 
 summary { font-size: var(--t-1); font-weight: 500; }

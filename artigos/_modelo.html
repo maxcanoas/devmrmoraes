@@ -1,67 +1,9 @@
 <!DOCTYPE html>
-<!--
-  ══════════════════════════════════════════════════════════════════════
-  MODELO DE ARTIGO — DEVMRMORAES
-  ══════════════════════════════════════════════════════════════════════
-
-  COMO USAR
-  ─────────
-  1. Copie este arquivo para  artigos/<slug-do-artigo>/index.html
-     O slug é a URL: curto, sem acento, palavras separadas por hífen.
-     Exemplo: artigos/quanto-custa-um-site/index.html
-
-  2. Troque tudo que está em MAIÚSCULAS neste arquivo. Os pontos são:
-     - <title> ......................... até 60 caracteres
-     - <meta name="description"> ....... até 155 caracteres
-     - <link rel="canonical"> .......... URL completa, com www e barra final
-     - og:title / og:description / og:url / og:image:alt
-     - twitter:title / twitter:description / twitter:image:alt
-     - JSON-LD: headline, description, url, datePublished, dateModified,
-       @id, articleSection, keywords e os itens do BreadcrumbList
-     - <h1>, a data visível, o tempo de leitura e o texto do artigo
-
-  3. Troque  <meta name="robots" content="noindex, nofollow">  por
-     <meta name="robots" content="index, follow, max-snippet:-1,
-     max-image-preview:large, max-video-preview:-1">
-     Este modelo é noindex de propósito, para não ser indexado enquanto
-     estiver como template. Publicar sem trocar essa linha = artigo invisível.
-
-  4. Acrescente o artigo em DOIS lugares:
-     - artigos/index.html ....... um novo <a class="artigo-card"> na listagem,
-       e um item em "blogPost" dentro do JSON-LD daquela página
-     - sitemap.xml .............. nova <url> com lastmod da data de publicação
-                                  e priority 0.6
-
-  5. Se o artigo responder a uma pergunta do FAQ da home ou de alguma página
-     de serviço, linke de lá para cá. Link contextual vale mais que link solto.
-
-  REGRAS DE CONTEÚDO
-  ──────────────────
-  - Um único <h1>. Seções em <h2>, subseções em <h3>. Sem pular nível.
-  - 900 a 1.200 palavras é a faixa que costuma funcionar. Menos que isso
-    dificilmente compete; muito mais, ninguém lê até o fim.
-  - Tom do site: segunda pessoa, direto, foco no problema do leitor.
-    Sem jargão de agência e sem promessa que não dá para cumprir.
-  - Nenhum número inventado. Se não tiver o dado, escreva sem ele.
-  - Datas em datePublished/dateModified no formato AAAA-MM-DD.
-    Ao editar um artigo já publicado, atualize dateModified — e só ele.
-
-  CAMINHOS
-  ────────
-  Os caminhos deste arquivo usam ../../ porque o artigo mora dois níveis
-  abaixo da raiz (artigos/<slug>/index.html). Mantidos assim de propósito:
-  ao copiar para a pasta certa, tudo já aponta para o lugar certo.
-  Enquanto o arquivo estiver aqui em artigos/, os links ficam quebrados —
-  isso é esperado e é mais um motivo para ele ser noindex.
-  ══════════════════════════════════════════════════════════════════════
--->
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <!-- ─── SEO ─── -->
   <title>TITULO DO ARTIGO (ate 60 caracteres) | DEVMRMORAES</title>
   <meta name="description" content="RESUMO DO ARTIGO EM ATE 155 CARACTERES. Diga o que o leitor ganha ao ler." />
   <meta name="author" content="DEVMRMORAES" />
@@ -69,18 +11,6 @@
   <link rel="canonical" href="https://www.devmrmoraes.com.br/artigos/SLUG-DO-ARTIGO/" />
   <meta name="geo.region" content="BR-RS" />
   <meta name="geo.placename" content="Canoas, Rio Grande do Sul" />
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-19XH630KZE"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-19XH630KZE');
-  </script>
-  <noscript><style>.animar-preparado{opacity:1!important;transform:none!important}</style></noscript>
-
-  <!-- ─── Open Graph ─── -->
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="DEVMRMORAES" />
   <meta property="og:title" content="TITULO DO ARTIGO | DEVMRMORAES" />
@@ -91,8 +21,6 @@
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="DEVMRMORAES — TITULO DO ARTIGO" />
   <meta property="og:locale" content="pt_BR" />
-
-  <!-- ─── Twitter Card ─── -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@devmrmoraes" />
   <meta name="twitter:creator" content="@devmrmoraes" />
@@ -100,8 +28,6 @@
   <meta name="twitter:description" content="RESUMO PARA REDES SOCIAIS." />
   <meta name="twitter:image" content="https://www.devmrmoraes.com.br/img/og-image.png" />
   <meta name="twitter:image:alt" content="DEVMRMORAES — TITULO DO ARTIGO" />
-
-  <!-- ─── Schema.org JSON-LD ─── -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -135,233 +61,161 @@
   }
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;500;600&family=DM+Serif+Display:ital@1&display=swap" />
+  <!-- #assets -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-19XH630KZE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-19XH630KZE');
+  </script>
+
+  <link rel="preload" as="font" type="font/woff2" href="../../fonts/schibsted-grotesk-latin.woff2" crossorigin />
+  <link rel="stylesheet" href="../../css/style.css" />
+  <script src="../../js/script.js" defer></script>
 
   <link rel="icon" href="../../img/favicon.svg" type="image/svg+xml" />
   <link rel="manifest" href="../../manifest.json" />
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#F5F2ED" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="DEVMRMORAES" />
-
-  <link rel="stylesheet" href="../../css/style.css" />
-
-  <!-- JavaScript principal: baixa junto com o CSS e roda antes do primeiro
-       paint, para o conteúdo não aparecer e apagar em conexão lenta -->
-  <script src="../../js/script.js" defer></script>
+  <!-- /#assets -->
 </head>
 
 <body>
+  <!-- #header -->
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 
   <header>
-    <nav id="navegacao" aria-label="Navegação principal">
-      <a href="../../index.html" class="nav-logo" aria-label="DEVMRMORAES — voltar ao início">
-        Dev<span>Mr</span>moraes
-      </a>
+    <nav aria-label="Navegação principal">
+      <a class="logo" href="../../" aria-label="DEVMRMORAES, página inicial">DEV<span>MR</span>MORAES</a>
 
-      <ul class="nav-links" role="list">
-        <li><a href="../../index.html#sobre">Sobre</a></li>
-        <li><a href="../../projetos.html">Projetos</a></li>
-        <li><a href="../../artigos/" style="color:var(--cor-dourado)">Artigos</a></li>
-        <li class="nav-item-dropdown">
-          <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="submenu-servicos">
-            Serviços
-            <span class="nav-dropdown-seta" aria-hidden="true">▾</span>
-          </button>
-          <ul id="submenu-servicos" class="nav-submenu" role="list">
-            <li><a href="../../criacao-de-sites/">Criação de Sites</a></li>
-            <li><a href="../../seo-para-sites/">SEO e Manutenção de Sites</a></li>
-            <li><a href="../../sistemas-personalizados/">Sistemas Personalizados</a></li>
-            <li><a href="../../automacao-de-processos/">Automação de Processos</a></li>
-            <li><a href="../../aplicativos-mobile/">Aplicativos Mobile</a></li>
-            <li><a href="../../consultoria-tecnica/">Consultoria e Diagnóstico Técnico</a></li>
-            <li><a href="../../chatbot-com-ia/">Chatbots e Assistentes com IA</a></li>
-            <li><a href="../../suporte-e-manutencao/">Suporte e Evolução Contínua</a></li>
-            <li class="nav-submenu-separador" role="presentation"></li>
-            <li><a href="../../index.html#servicos" class="nav-submenu-todos">Ver todos os serviços</a></li>
-          </ul>
-        </li>
-        <li><a href="../../index.html#processo">Processo</a></li>
-        <li><a href="../../index.html#faq">FAQ</a></li>
-        <li><a href="../../index.html#contato" class="nav-botao-contato">Orçamento</a></li>
+      <ul role="list">
+        <li><a href="../../projetos.html">Trabalho</a></li>
+        <li><a href="../../#servicos">Serviços</a></li>
+        <li><a href="../../artigos/" aria-current="true">Artigos</a></li>
       </ul>
 
-      <button class="nav-menu-toggle" aria-label="Abrir menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <a class="botao botao-compacto" href="../../#contato">Falar comigo</a>
     </nav>
   </header>
+  <!-- /#header -->
 
-  <main>
+  <!--
+    COMO USAR ESTE MODELO
 
+    1. Copie a pasta: crie artigos/SLUG-DO-ARTIGO/ e salve este arquivo la dentro
+       como index.html. Os caminhos ../../ ja estao certos para essa profundidade.
+    2. No <head>, troque: <title>, a meta description, o canonical, og:title,
+       og:description, og:url, twitter:title, twitter:description, e no JSON-LD o
+       headline, a description, o datePublished, o dateModified e o item do
+       BreadcrumbList. Tire o <meta name="robots" content="noindex, nofollow"> --
+       ele existe so para o modelo nao ser indexado enquanto estiver vazio.
+    3. No corpo, troque o H1, a linha de abertura, a data do <time> e o tempo de
+       leitura. Escreva as secoes em <h2>, e subsecao em <h3 class="mono">.
+    4. Acrescente o artigo em artigos/index.html e uma <url> em sitemap.xml.
+    5. Rode: node tools/sync-partials.js && node tools/verificar.js
+
+    O header e o rodape vem dos partials. Nao edite os blocos entre os marcadores:
+    o que voce escrever ali sera sobrescrito na proxima sincronizacao.
+  -->
+
+  <main id="conteudo">
     <article>
-
-      <!-- ─── Cabeçalho do artigo ─── -->
-      <section class="servico-hero">
-        <nav class="servico-breadcrumb" aria-label="Breadcrumb">
-          <a href="../../index.html">Início</a>
-          <span class="breadcrumb-sep" aria-hidden="true">/</span>
-          <a href="../index.html">Artigos</a>
-          <span class="breadcrumb-sep" aria-hidden="true">/</span>
-          <span>TITULO CURTO DO ARTIGO</span>
-        </nav>
-
-        <!-- H1: um único por página. O <em> vira serifa dourada em itálico. -->
-        <h1 class="servico-hero-titulo">
-          PRIMEIRA PARTE DO TITULO:<br><em>SEGUNDA PARTE EM DESTAQUE</em>
-        </h1>
-
-        <div class="artigo-meta">
-          <span>Por <strong>Maxwell Rigo Moraes</strong></span>
-          <!-- datetime em AAAA-MM-DD; o texto visível em português por extenso -->
-          <span>Publicado em <time datetime="AAAA-MM-DD">DIA de MÊS de ANO</time></span>
-          <span>Leitura de N minutos</span>
+      <section class="capa">
+        <div class="container">
+          <nav class="trilha mono" aria-label="Trilha de navegação">
+            <a href="../../">Início</a> <span aria-hidden="true">/</span> <a href="../">Artigos</a> <span aria-hidden="true">/</span> <span aria-current="page">TÍTULO CURTO PARA A TRILHA</span>
+          </nav>
+          <h1>TÍTULO DO ARTIGO, ATÉ 60 CARACTERES</h1>
+          <p class="capa-linha">Uma ou duas frases dizendo para quem é o texto e o que a pessoa leva dele. Sem prometer o que o artigo não entrega.</p>
+          <p class="mono ficha-artigo">
+            Por Maxwell Rigo Moraes · <time datetime="2026-01-01">1 de janeiro de 2026</time> · Leitura de N minutos
+          </p>
         </div>
-
-        <!-- Abertura: por que o leitor deve continuar lendo. 2 a 3 linhas. -->
-        <p class="servico-hero-sub">
-          PARAGRAFO DE ABERTURA. Diga o problema do leitor e o que ele vai levar deste texto.
-        </p>
       </section>
 
-      <div class="artigo-corpo">
+      <section>
+        <div class="container prosa">
+          <p>Parágrafo de abertura. Diga o problema concreto antes de qualquer explicação, do jeito que o cliente descreveria.</p>
 
-        <!--
-          CORPO DO ARTIGO
-          ───────────────
-          Tags disponíveis, todas já estilizadas em css/style.css:
+          <h2>Primeira seção</h2>
+          <p>Texto corrido. A largura da coluna já está limitada a 68 caracteres, que é onde o olho pega a próxima linha sem se perder.</p>
+          <h3 class="mono">Como verificar</h3>
+          <p>Quando o artigo for de diagnóstico, este par de subseções ajuda o leitor a agir. Use <code>code</code> para nome de arquivo, tag e trecho de configuração, e <kbd>kbd</kbd> para tecla.</p>
+          <h3 class="mono">Como corrigir</h3>
+          <p>O que fazer, na ordem. Se a correção exigir alguém técnico, diga isso em vez de fingir que é simples.</p>
 
-            <p>              parágrafo
-            <h2>             seção
-            <h3>             subseção (dourado, menor)
-            <ul> / <ol>      listas
-            <strong>         destaque de texto
-            <code>           trecho de código ou nome de arquivo
-            <blockquote>     citação em caixa com barra dourada
-            <a href="...">   link — sempre com texto âncora descritivo,
-                             nunca "clique aqui" ou "saiba mais"
+          <h2>Segunda seção</h2>
+          <p>Quantas seções o assunto pedir. Não force um número redondo: artigo com sete itens porque sete é bonito se nota.</p>
 
-          Caminhos a partir daqui:
-            ../../                     raiz do site
-            ../../seo-para-sites/      página de serviço
-            ../../projetos/SLUG/       case de projeto
-            ../                        listagem de artigos
-        -->
-
-        <p>
-          PARAGRAFO DE CONTEXTO. Prepare o terreno antes da primeira seção.
-        </p>
-
-        <h2>PRIMEIRA SEÇÃO</h2>
-        <p>
-          TEXTO DA SEÇÃO.
-        </p>
-
-        <h3>SUBSEÇÃO, SE FIZER SENTIDO</h3>
-        <p>
-          TEXTO DA SUBSEÇÃO.
-        </p>
-
-        <h2>SEGUNDA SEÇÃO</h2>
-        <p>
-          TEXTO DA SEÇÃO.
-        </p>
-
-        <h2>FECHAMENTO</h2>
-        <p>
-          Resuma o que o leitor deve fazer a seguir e linke para a página de
-          serviço correspondente, com texto âncora descritivo. Exemplo:
-          <a href="../../seo-para-sites/">SEO e manutenção de sites</a>.
-        </p>
-
-      </div>
+          <h2>Fechamento</h2>
+          <p>Resuma o caminho e ligue ao serviço que resolve, com link. <a href="../../seo-para-sites/">Assim</a>. Uma vez, no fim, e não a cada seção.</p>
+        </div>
+      </section>
     </article>
 
-    <!-- ─── CTA ─── -->
-    <div class="cta-secao">
-      <h2 class="cta-titulo">
-        Quer saber o que está<br><em>travando o seu site?</em>
-      </h2>
-      <p class="cta-subtitulo">
-        Me manda o endereço. Rodo o diagnóstico e te devolvo a lista do que encontrei, sem compromisso.
-      </p>
-      <div class="cta-botoes">
-        <a href="../../index.html#contato" class="botao-primario">
-          <span>Quero meu diagnóstico</span>
-          <span aria-hidden="true">→</span>
-        </a>
-        <a href="https://wa.me/5551999608608?text=Ol%C3%A1!%20Li%20o%20artigo%20sobre%20site%20que%20n%C3%A3o%20aparece%20no%20Google%20e%20quero%20um%20diagn%C3%B3stico." data-origem="cta_central" target="_blank" rel="noopener noreferrer" class="botao-secundario">
-          Falar no WhatsApp
-        </a>
+    <section id="contato" class="fechamento">
+      <div class="container grade">
+        <div class="col-6 fechamento-canal fluxo">
+          <h2>CHAMADA FINAL, LIGADA AO ASSUNTO DO ARTIGO</h2>
+          <p><a class="telefone mono" href="https://wa.me/5551999608608?text=MENSAGEM%20ESPEC%C3%8DFICA%20DESTE%20ARTIGO" target="_blank" rel="noopener noreferrer" data-origem="artigo_SLUG">(51) 99960-8608</a></p>
+          <p>Uma frase dizendo o que a pessoa recebe se chamar. Troque também a mensagem do WhatsApp acima e o data-origem, para o GA4 separar de onde veio a conversa.</p>
+          <p class="mono">Canoas RS · presencial em Porto Alegre e Região Metropolitana · remoto no resto do Brasil</p>
+        </div>
+        <div class="col-5 inicio-8 fluxo">
+          <p class="mono">Continue lendo</p>
+          <p><a class="link-forte" href="../../seo-para-sites/">Um serviço relacionado ao assunto</a></p>
+          <p><a class="link-forte" href="../">Todos os artigos</a></p>
+        </div>
       </div>
-    </div>
-
+    </section>
   </main>
 
+  <!-- #footer -->
   <footer>
-    <div class="footer-topo">
-      <address class="footer-nap">
+    <div class="rodape-topo container">
+      <address>
         <strong>DEVMRMORAES</strong> · Maxwell Rigo Moraes<br />
-        Canoas, Rio Grande do Sul — atendimento presencial em Canoas, Porto Alegre e Região Metropolitana<br />
-        Projetos remotos para todo o Brasil<br />
-        <a href="https://wa.me/5551999608608" target="_blank" rel="noopener noreferrer" data-origem="rodape_telefone">(51) 99960-8608</a>
+        Canoas, Rio Grande do Sul. Atendimento presencial em Canoas, Porto Alegre e Região Metropolitana.<br />
+        Projetos remotos para todo o Brasil.<br />
+        <a class="mono" href="https://wa.me/5551999608608" target="_blank" rel="noopener noreferrer" data-origem="rodape_telefone">(51) 99960-8608</a>
       </address>
 
-      <nav class="footer-coluna" aria-label="Serviços">
-        <p class="footer-coluna-titulo">Serviços</p>
+      <nav aria-label="Serviços">
+        <p class="mono">Serviços</p>
         <ul role="list">
-          <li><a href="../../criacao-de-sites/">Criação de Sites</a></li>
-          <li><a href="../../seo-para-sites/">SEO e Manutenção de Sites</a></li>
-          <li><a href="../../sistemas-personalizados/">Sistemas Personalizados</a></li>
-          <li><a href="../../automacao-de-processos/">Automação de Processos</a></li>
-          <li><a href="../../aplicativos-mobile/">Aplicativos Mobile</a></li>
-          <li><a href="../../consultoria-tecnica/">Consultoria e Diagnóstico Técnico</a></li>
-          <li><a href="../../chatbot-com-ia/">Chatbots e Assistentes com IA</a></li>
-          <li><a href="../../suporte-e-manutencao/">Suporte e Evolução Contínua</a></li>
-        </ul>
-      </nav>
-
-      <nav class="footer-coluna" aria-label="Institucional">
-        <p class="footer-coluna-titulo">Institucional</p>
-        <ul role="list">
-          <li><a href="../../index.html">Início</a></li>
-          <li><a href="../../projetos.html">Projetos</a></li>
-          <li><a href="../../artigos/">Artigos</a></li>
-          <li><a href="../../index.html#sobre">Sobre</a></li>
-          <li><a href="../../index.html#processo">Processo</a></li>
-          <li><a href="../../index.html#faq">Perguntas frequentes</a></li>
-          <li><a href="../../index.html#contato">Contato</a></li>
+          <li><a href="../../criacao-de-sites/">Criação de sites</a></li>
+          <li><a href="../../seo-para-sites/">SEO e manutenção de sites</a></li>
+          <li><a href="../../sistemas-personalizados/">Sistemas personalizados</a></li>
+          <li><a href="../../automacao-de-processos/">Automação de processos</a></li>
+          <li><a href="../../aplicativos-mobile/">Aplicativos mobile</a></li>
+          <li><a href="../../consultoria-tecnica/">Consultoria e diagnóstico técnico</a></li>
+          <li><a href="../../chatbot-com-ia/">Chatbots e assistentes com IA</a></li>
+          <li><a href="../../suporte-e-manutencao/">Suporte e evolução contínua</a></li>
         </ul>
       </nav>
     </div>
 
-    <div class="footer-inner">
-      <p class="footer-logo">Dev<span>Mr</span>moraes</p>
-      <p class="footer-copy">
-        © <span id="ano-atual"></span> DEVMRMORAES · Todos os direitos reservados
-      </p>
-      <nav class="footer-links" aria-label="Links do rodapé">
+    <div class="rodape-base container">
+      <p class="mono">© <span data-ano></span> DEVMRMORAES</p>
+      <nav aria-label="Redes sociais">
         <a href="https://www.linkedin.com/in/DEVMRMORAES" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-          </svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
         <a href="https://www.instagram.com/DEVMRMORAES" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-          </svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
         </a>
-        <a href="../../index.html#contato">Contato</a>
       </nav>
     </div>
+
+    <div class="barra-acao">
+      <a href="https://wa.me/5551999608608?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer" data-origem="barra_movel">WhatsApp</a>
+      <a href="tel:+5551999608608">Ligar <span class="mono">(51) 99960-8608</span></a>
+    </div>
   </footer>
-
-  <script>document.getElementById('ano-atual').textContent = new Date().getFullYear();</script>
-
+  <!-- /#footer -->
 </body>
 </html>
