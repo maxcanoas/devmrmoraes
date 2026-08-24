@@ -8,6 +8,9 @@ const RAIZ = path.resolve(__dirname, '..');
 const SITE = 'https://www.devmrmoraes.com.br';
 const IGNORAR = new Set(['.git', 'node_modules', 'tools', 'partials', 'img', 'css', 'js', 'fonts']);
 
+/* Superficie de teste da fundacao: noindex, fora do sitemap, apagada na ultima fase. */
+const EXCLUIR = new Set(['laboratorio.html']);
+
 const falhas = [];
 const avisos = [];
 const reprova = (m) => falhas.push(m);
@@ -19,7 +22,7 @@ function listar(dir, base = '') {
     if (IGNORAR.has(item.name)) continue;
     const rel = base ? base + '/' + item.name : item.name;
     if (item.isDirectory()) saida.push(...listar(path.join(dir, item.name), rel));
-    else if (item.name.endsWith('.html')) saida.push(rel);
+    else if (item.name.endsWith('.html') && !EXCLUIR.has(rel)) saida.push(rel);
   }
   return saida.sort();
 }

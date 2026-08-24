@@ -1,0 +1,18 @@
+Fontes deste diretorio, com origem e licenca.
+
+Schibsted Grotesk  -- schibsted-grotesk-latin.woff2, schibsted-grotesk-latin-ext.woff2
+  Schibsted Media / Or Type.  SIL Open Font License 1.1.
+  https://github.com/schibsted/schibsted-grotesk
+  Arquivo variavel: cobre os pesos 400 a 700 num binario so.
+
+IBM Plex Mono      -- ibm-plex-mono-latin.woff2, ibm-plex-mono-latin-ext.woff2
+  IBM.  SIL Open Font License 1.1.
+  https://github.com/IBM/plex
+
+Os binarios sao os subsets latin e latin-ext servidos pelo Google Fonts,
+baixados e hospedados aqui para que a pagina nao dependa de fonts.googleapis.com
+nem de fonts.gstatic.com: sao dois DNS, dois handshakes TLS e um CSS bloqueante
+a menos no 4G de quem visita o site.
+
+A OFL permite hospedagem propria e redistribuicao. Nao permite venda isolada
+das fontes nem uso do nome reservado numa versao modificada.
