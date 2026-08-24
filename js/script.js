@@ -85,9 +85,9 @@ function configurarFormulario() {
     const pedido = formulario.querySelector('#campo-pedido');
 
     if (!nome.value.trim()) { erroNoCampo(nome, 'Escreva seu nome para eu saber como te chamar.'); nome.focus(); return; }
-    if (!pedido.value.trim()) { erroNoCampo(pedido, 'Escreva o que voce precisa, mesmo que em uma linha.'); pedido.focus(); return; }
+    if (!pedido.value.trim()) { erroNoCampo(pedido, 'Escreva o que você precisa, mesmo que em uma linha.'); pedido.focus(); return; }
 
-    const texto = 'Ola! Meu nome e ' + nome.value.trim() + '. ' + pedido.value.trim();
+    const texto = 'Olá! Meu nome é ' + nome.value.trim() + '. ' + pedido.value.trim();
     const url = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(texto);
     const janela = open(url, '_blank');
 

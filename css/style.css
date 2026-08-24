@@ -164,7 +164,7 @@ details { border-top: 1px solid var(--linha); }
 summary {
   cursor: pointer;
   list-style: none;
-  padding-block: var(--e-4);
+  padding-block: var(--e-3);
 }
 
 summary::-webkit-details-marker { display: none; }
@@ -248,18 +248,334 @@ select {
   white-space: nowrap;
 }
 
+.pular {
+  position: absolute;
+  left: var(--e-3);
+  top: -4rem;
+  z-index: 3;
+  background: var(--tinta);
+  color: var(--papel);
+  padding: var(--e-3);
+}
+
+.pular:focus { top: var(--e-2); color: var(--papel); }
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--papel);
+  border-bottom: 1px solid transparent;
+}
+
+header.rolado { border-bottom-color: var(--linha); }
+
+header nav {
+  display: flex;
+  align-items: center;
+  gap: var(--e-4);
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: var(--e-2) max(5vw, 1.25rem);
+}
+
+.logo {
+  font-weight: 700;
+  min-height: 2.75rem;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+  padding-block: var(--e-2);
+}
+
+.logo span { color: var(--acento); }
+
+header ul {
+  display: flex;
+  gap: var(--e-3);
+  margin-left: auto;
+  font-size: var(--t--1);
+}
+
+header ul a {
+  display: block;
+  padding-block: var(--e-3);
+  text-decoration: none;
+}
+
+/* No celular o botao do header sairia da tela, e seria redundante: a barra fixa
+   de baixo ja tem WhatsApp e Ligar, mais perto do polegar. */
+header .botao { display: none; }
+
+header [aria-current] { color: var(--acento); }
+
+.botao {
+  display: inline-block;
+  background: var(--acento);
+  color: var(--superficie);
+  text-decoration: none;
+  font-weight: 500;
+  padding: var(--e-3) var(--e-4);
+  min-height: 2.75rem;
+  border: 1px solid var(--acento);
+}
+
+.botao:hover { background: var(--tinta); border-color: var(--tinta); color: var(--superficie); }
+
+.botao-compacto { padding: var(--e-2) var(--e-3); min-height: 2.5rem; }
+
+/* Dentro do bloco escuro o acento da 2,95:1 e reprova. Papel sobre tinta da 16,5:1. */
+.botao-claro { background: var(--papel); border-color: var(--papel); color: var(--tinta); }
+
+.botao-claro:hover { background: var(--superficie); border-color: var(--superficie); color: var(--tinta); }
+
+/* Ritmo vertical: no celular ninguem quer 96px de respiro entre secoes, entao a base
+   e --e-5 e so a prova volta a respirar no desktop. */
+section { padding-block: var(--e-5); }
+
+section + section { border-top: 1px solid var(--linha); }
+
+section h2 { max-width: 26ch; margin-bottom: var(--e-4); }
+
+.ficha { padding-block: var(--e-4) var(--e-5); }
+
+.ficha h1 { margin-bottom: var(--e-4); max-width: 26ch; }
+
+.ficha-promessa {
+  font-size: var(--t-1);
+  color: var(--tinta-2);
+  margin-bottom: var(--e-4);
+  max-width: 46ch;
+}
+
+.ficha-dados { margin-bottom: var(--e-4); }
+
+.ficha-pessoa img {
+  width: 100%;
+  max-width: 13rem;
+  border: 1px solid var(--linha);
+  margin-bottom: var(--e-3);
+}
+
+.ficha-pessoa p { font-size: var(--t--1); color: var(--tinta-2); }
+
+.case { padding-bottom: var(--e-5); }
+
+.case:last-of-type { padding-bottom: var(--e-4); }
+
+.exibicao { margin-bottom: var(--e-4); }
+
+.exibicao img { border: 1px solid var(--linha); background: var(--superficie); }
+
+.case-texto > * + * { margin-top: var(--e-3); }
+
+.case-texto .mono { color: var(--tinta-2); }
+
+.case-texto h3 { font-size: var(--t-2); max-width: 24ch; }
+
+.resultado {
+  font-family: var(--fonte-mono);
+  font-size: var(--t--1);
+  color: var(--acento);
+  border-left: 2px solid var(--acento);
+  padding-left: var(--e-3);
+}
+
+.link-forte {
+  display: inline-block;
+  font-weight: 500;
+  text-underline-offset: 0.25em;
+  padding-block: var(--e-3);
+}
+
+.ver-tudo { border-top: 1px solid var(--linha); }
+
+.ver-tudo a { display: inline-block; padding-block: var(--e-3); }
+
+.servicos h2,
+.perguntas h2,
+.processo h2 { margin-bottom: var(--e-4); }
+
+.lista-servicos li { border-top: 1px solid var(--linha); }
+
+.lista-servicos li:last-child { border-bottom: 1px solid var(--linha); }
+
+.lista-servicos a {
+  font-size: var(--t-1);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  display: block;
+  padding-block: var(--e-3);
+}
+
+.lista-servicos .destaque a { font-size: var(--t-2); }
+
+.lista-servicos p { color: var(--tinta-2); padding-bottom: var(--e-3); }
+
+.compromissos li { display: flex; gap: var(--e-4); padding-block: var(--e-3); border-top: 1px solid var(--linha); }
+
+.compromissos .mono { color: var(--acento); padding-top: var(--e-1); }
+
+.compromissos p { font-size: var(--t-1); }
+
+.lista-perguntas details:last-child { border-bottom: 1px solid var(--linha); }
+
+summary { font-size: var(--t-1); font-weight: 500; }
+
+summary::after { content: ' +'; color: var(--acento); }
+
+details[open] summary::after { content: ' −'; }
+
+.lista-perguntas div { padding-bottom: var(--e-4); }
+
+.fechamento { background: var(--tinta); color: var(--tinta-sobre); }
+
+.fechamento h2 { color: var(--superficie); margin-bottom: var(--e-4); }
+
+.fechamento .mono { color: var(--tinta-sobre); }
+
+.telefone {
+  font-size: var(--t-3);
+  color: var(--superficie);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  display: inline-block;
+  padding-block: var(--e-1);
+}
+
+.telefone:hover { color: var(--papel); text-decoration: underline; }
+
+.fechamento label { font-size: var(--t--1); color: var(--tinta-sobre); margin-bottom: var(--e-1); }
+
+.fechamento input,
+.fechamento textarea { border-color: var(--tinta-sobre); color: var(--tinta); }
+
+.campo-erro { color: var(--superficie); font-size: var(--t--1); margin-top: var(--e-1); }
+
+.campo-erro::before { content: '↑ '; color: var(--acento); }
+
+.saida-manual a { color: var(--superficie); }
+
+footer { border-top: 1px solid var(--linha); padding-block: var(--e-5); }
+
+.rodape-topo { display: grid; gap: var(--e-5); padding-bottom: var(--e-5); }
+
+.rodape-topo address { font-size: var(--t--1); color: var(--tinta-2); max-width: 42ch; }
+
+.rodape-topo address strong { color: var(--tinta); }
+
+.rodape-topo nav p { color: var(--tinta-2); margin-bottom: var(--e-3); }
+
+.rodape-topo nav ul { columns: 2; column-gap: var(--e-4); }
+
+.rodape-topo li a {
+  display: block;
+  font-size: var(--t--1);
+  text-decoration: none;
+  padding-block: var(--e-3);
+}
+
+.rodape-base {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-3);
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--linha);
+  padding-top: var(--e-4);
+}
+
+.rodape-base p { color: var(--tinta-2); }
+
+.rodape-base nav { display: flex; gap: var(--e-3); }
+
+.rodape-base nav a {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  color: var(--tinta-2);
+}
+
+.rodape-base nav a:hover { color: var(--acento); }
+
+/* No celular as duas acoes ficam sempre ao alcance do polegar, e por isso o rodape
+   reserva a altura delas. No desktop a barra nao existe. */
+.barra-acao {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  display: flex;
+  background: var(--tinta);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.barra-acao a {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--e-2);
+  height: 3.25rem;
+  color: var(--papel);
+  text-decoration: none;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.barra-acao a + a { border-left: 1px solid var(--tinta-2); }
+
+.barra-acao .mono { text-transform: none; letter-spacing: 0; color: var(--tinta-sobre); }
+
+body { padding-bottom: 3.25rem; }
+
 @media (min-width: 48em) {
-  .col-2 { grid-column: span 2; }
-  .col-3 { grid-column: span 3; }
-  .col-4 { grid-column: span 4; }
-  .col-5 { grid-column: span 5; }
-  .col-6 { grid-column: span 6; }
-  .col-7 { grid-column: span 7; }
-  .col-8 { grid-column: span 8; }
-  .col-9 { grid-column: span 9; }
-  .col-12 { grid-column: 1 / -1; }
-  .inicio-2 { grid-column-start: 2; }
+  body { padding-bottom: 0; }
+  .barra-acao { display: none; }
+
+  header .botao { display: inline-block; }
+  header ul { gap: var(--e-4); font-size: var(--t-0); }
+
+  section h2 { font-size: var(--t-4); }
+
+  .case { display: grid; grid-template-columns: 1fr 1fr; gap: var(--e-5); align-items: start; }
+
+  .case-invertido .exibicao { order: 2; }
+
+  .exibicao { margin-bottom: 0; }
+
+  /* Nome a esquerda, explicacao a direita: a lista fica com a metade da altura que
+     teria empilhada, e a linha inteira vira alvo de toque. */
+  .lista-servicos li {
+    display: grid;
+    grid-template-columns: 22rem 1fr;
+    gap: var(--e-4);
+    align-items: baseline;
+  }
+
+  .lista-servicos p { padding-block: var(--e-3); }
+
+  .trabalho,
+  .fechamento { padding-block: var(--e-6); }
+
+  .rodape-topo { grid-template-columns: 1fr 1fr; }
+
+  /* span vai no grid-column-END: usar o atalho grid-column apagaria o start
+     declarado por .inicio-*, e o elemento encolheria para uma coluna. */
+  .col-3 { grid-column-end: span 3; }
+  .col-4 { grid-column-end: span 4; }
+  .col-5 { grid-column-end: span 5; }
+  .col-6 { grid-column-end: span 6; }
+  .col-7 { grid-column-end: span 7; }
+  .col-8 { grid-column-end: span 8; }
+  .col-9 { grid-column-end: span 9; }
   .inicio-7 { grid-column-start: 7; }
+  .inicio-8 { grid-column-start: 8; }
   .inicio-9 { grid-column-start: 9; }
 }
 
