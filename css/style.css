@@ -343,6 +343,10 @@ section { padding-block: var(--e-5); }
 
 section + section { border-top: 1px solid var(--linha); }
 
+.trabalho { padding-block: 0; border-top: 0; }
+
+.trabalho .ver-tudo { margin-top: var(--e-5); }
+
 section h2 { max-width: 26ch; margin-bottom: var(--e-4); }
 
 .ficha { padding-block: var(--e-3) var(--e-4); }
@@ -439,13 +443,100 @@ main section { container-type: inline-size; }
 
 .case-texto h3 { font-size: var(--t-2); max-width: 24ch; }
 
-.resultado {
-  font-family: var(--fonte-mono);
-  font-size: var(--t--1);
-  color: var(--acento);
-  border-left: 2px solid var(--acento);
-  padding-left: var(--e-3);
+/* Cada case e um ato: fundo proprio, composicao propria. A troca de fundo entre eles
+   e o que da cadencia -- sem ela a pagina inteira le como um bloco so. */
+.ato {
+  position: relative;
+  overflow: clip;
+  padding-block: var(--e-5);
+  border-top: 1px solid var(--linha);
 }
+
+.ato-escuro {
+  background: var(--tinta);
+  color: var(--tinta-sobre);
+  border-top-color: var(--tinta);
+}
+
+.ato-escuro h2 { color: var(--superficie); }
+
+.ato-escuro strong { color: var(--superficie); }
+
+.ato-escuro .tela { border-color: var(--fantasma-escuro); }
+
+.ato-escuro .tela-barra { border-bottom-color: var(--fantasma-escuro); background: var(--fantasma-escuro); }
+
+.ato-escuro .tela-pontos i { background: var(--tinta-2); }
+
+.ato-papel-2 { background: var(--papel-2); border-top-color: var(--papel-2); }
+
+/* Numera de verdade, e por isso e o unico ornamento do site. Sangra para fora e fica
+   a um passo do fundo: visivel, nunca competindo com o texto. */
+.ato-numero {
+  position: absolute;
+  top: -0.28em;
+  left: -0.06em;
+  z-index: 0;
+  font-size: var(--t-6);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--fantasma-claro);
+  text-transform: none;
+  pointer-events: none;
+}
+
+.ato-escuro .ato-numero { color: var(--fantasma-escuro); }
+
+.ato > .container { position: relative; z-index: 1; }
+
+.ato-kicker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-2) var(--e-4);
+  justify-content: space-between;
+  color: var(--acento);
+  border-bottom: 1px solid var(--linha);
+  padding-bottom: var(--e-2);
+  margin-bottom: var(--e-4);
+}
+
+.ato-kicker span { color: var(--tinta-2); text-transform: none; letter-spacing: 0; }
+
+.ato-escuro .ato-kicker { border-bottom-color: var(--fantasma-escuro); color: var(--tinta-sobre); }
+
+/* --tinta-2 sobre fundo escuro da 2,2:1. No ato escuro o secundario e --tinta-sobre. */
+.ato-escuro .ato-kicker span,
+.ato-escuro .tela-barra .mono,
+.ato-escuro figcaption { color: var(--tinta-sobre); }
+
+.ato h2 { font-size: var(--t-4); max-width: 22ch; margin-bottom: var(--e-4); }
+
+/* O resultado e a frase mais valiosa da pagina. Estava em 14px ao lado de um fio. */
+.resultado-bloco { border-top: 2px solid var(--acento); padding-top: var(--e-2); }
+
+.resultado-bloco .mono { color: var(--acento); }
+
+.resultado-manchete {
+  font-size: var(--t-2);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--tinta);
+}
+
+.ato-escuro .resultado-bloco { border-top-color: var(--tinta-sobre); }
+
+.ato-escuro .resultado-bloco .mono { color: var(--tinta-sobre); }
+
+.ato-escuro .resultado-manchete { color: var(--superficie); }
+
+/* o ato 03 nao divide em colunas: o print manda, e o texto vem embaixo. Limitar a
+   largura dele evita uma imagem de 556px de altura so por ser larga. */
+.ato-largo .tela { max-width: 52rem; }
+
+.ato-rodape { display: grid; gap: var(--e-4); margin-top: var(--e-4); }
+
+.ato-rodape > div > * + * { margin-top: var(--e-3); }
 
 .link-forte {
   display: inline-block;
@@ -744,8 +835,15 @@ body { padding-bottom: 3.25rem; }
 
   .ficha-pessoa img { max-width: 16rem; }
 
-  .trabalho,
   .fechamento { padding-block: var(--e-6); }
+
+  .ato { padding-block: var(--e-5); }
+
+  .ato h2 { font-size: var(--t-5); }
+
+  .ato-rodape { grid-template-columns: 1fr 1fr; gap: var(--e-5); }
+
+  .resultado-manchete { font-size: var(--t-3); }
 
   .par-figuras { grid-template-columns: 1fr 1fr; }
 
