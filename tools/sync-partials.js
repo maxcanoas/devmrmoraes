@@ -9,7 +9,8 @@ const RAIZ = path.resolve(__dirname, '..');
 const BLOCOS = { assets: 'head-assets.html', header: 'header.html', footer: 'footer.html' };
 const IGNORAR = new Set(['.git', 'node_modules', 'tools', 'partials', 'img', 'css', 'js', 'fonts']);
 
-const EXCLUIR = new Set();
+/* referencia visual da fase 6, fora do site */
+const EXCLUIR = new Set(["mockup-presenca.html"]);
 
 /* _modelo.html mora em artigos/ mas e copiado para artigos/<slug>/index.html.
    Os caminhos que ele carrega sao os do destino, nao os da posicao atual no disco. */

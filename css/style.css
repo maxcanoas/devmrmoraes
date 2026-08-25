@@ -46,12 +46,16 @@
 
 :root {
   --papel: #F5F2ED;
+  --papel-2: #EBE7E0;
   --superficie: #FFFFFF;
   --linha: #DDD8D0;
   --tinta: #15171A;
   --tinta-2: #4B5058;
   --acento: #B0350F;
   --tinta-sobre: #B9BDC4;
+  /* o numero do ato: um passo do fundo, nunca competindo com o texto */
+  --fantasma-claro: #DFDAD2;
+  --fantasma-escuro: #23262B;
 
   --t--1: 0.875rem;
   --t-0: 1.0625rem;
@@ -60,6 +64,7 @@
   --t-3: 2.25rem;
   --t-4: 3rem;
   --t-5: clamp(3.25rem, 7vw, 5.25rem);
+  --t-6: clamp(4rem, 17vw, 13rem);
 
   --e-1: 0.25rem;
   --e-2: 0.5rem;
@@ -366,9 +371,67 @@ section h2 { max-width: 26ch; margin-bottom: var(--e-4); }
 
 .case:last-of-type { padding-bottom: var(--e-4); }
 
-.exibicao { margin-bottom: var(--e-4); }
+/* A secao e o container; o case responde ao espaco que ela lhe da, e nao ao viewport.
+   Assim o mesmo componente serve a home, a pagina de servico e projetos.html sem
+   duplicar breakpoint. 62fr/34fr com gutter de 48px num container de 1200 da 744px. */
+main section { container-type: inline-size; }
 
-.exibicao img { border: 1px solid var(--linha); background: var(--superficie); }
+@container (min-width: 46rem) {
+  .case {
+    display: grid;
+    grid-template-columns: 66fr 34fr;
+    gap: var(--e-5);
+    align-items: start;
+  }
+
+  .case-invertido { grid-template-columns: 34fr 66fr; }
+}
+
+/* Print solto le como figura de apoio. Com a barra de 1px em cima ele le como site
+   publicado, que e o que ele e. Quadrados, e nao circulos: o raio zero vale aqui
+   tambem, e o clichê da barra do macOS nao faz falta nenhuma. */
+.tela {
+  border: 1px solid var(--linha);
+  background: var(--superficie);
+  margin-bottom: var(--e-4);
+}
+
+.tela-barra {
+  display: flex;
+  align-items: center;
+  gap: var(--e-3);
+  height: 2.125rem;
+  padding-inline: var(--e-3);
+  border-bottom: 1px solid var(--linha);
+}
+
+.tela-pontos { display: flex; gap: var(--e-1); flex: none; }
+
+.tela-pontos i { width: 8px; height: 8px; background: var(--linha); }
+
+.tela-barra .mono {
+  color: var(--tinta-2);
+  min-width: 0;
+  text-transform: none;
+  letter-spacing: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tela img { width: 100%; }
+
+/* No celular o print sangra ate a borda: e o ativo mais importante da pagina e nao
+   tem por que respeitar a margem do texto. */
+@media (max-width: 47.999em) {
+  .tela {
+    margin-inline: calc(-1 * max(5vw, 1.25rem));
+    border-inline: 0;
+  }
+
+  /* duas telas lado a lado nao cabem sangrando: a margem negativa somaria duas vezes */
+  .par-figuras .tela { margin-inline: 0; border-inline: 1px solid var(--linha); }
+}
 
 .case-texto > * + * { margin-top: var(--e-3); }
 
@@ -656,11 +719,9 @@ body { padding-bottom: 3.25rem; }
 
   section h2 { font-size: var(--t-4); }
 
-  .case { display: grid; grid-template-columns: 1fr 1fr; gap: var(--e-5); align-items: start; }
+  .case-invertido .tela { order: 2; }
 
-  .case-invertido .exibicao { order: 2; }
-
-  .exibicao { margin-bottom: 0; }
+  .tela { margin-bottom: 0; }
 
   /* Nome a esquerda, explicacao a direita: a lista fica com a metade da altura que
      teria empilhada, e a linha inteira vira alvo de toque. */

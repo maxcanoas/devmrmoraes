@@ -8,7 +8,8 @@ const RAIZ = path.resolve(__dirname, '..');
 const SITE = 'https://www.devmrmoraes.com.br';
 const IGNORAR = new Set(['.git', 'node_modules', 'tools', 'partials', 'img', 'css', 'js', 'fonts']);
 
-const EXCLUIR = new Set();
+/* referencia visual da fase 6, fora do site */
+const EXCLUIR = new Set(["mockup-presenca.html"]);
 
 const falhas = [];
 const avisos = [];
