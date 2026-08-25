@@ -223,7 +223,8 @@ const PROIBIDO = [
   [/fonts\.(?:googleapis|gstatic)\.com/, 'Google Fonts'],
   [/[─═]{3}|={6}/, 'comentario-caixa'],
   [/\sstyle="/, 'style inline'],
-  [/Bebas Neue|DM Sans|DM Serif|Inter|Poppins|Montserrat|Roboto|Open Sans|Lato|Nunito|Raleway|Playfair|Space Grotesk|Outfit|Sora|Manrope/, 'familia proibida'],
+  /* fronteira de palavra: sem ela "IntersectionObserver" casava com "Inter" */
+  [/\b(?:Bebas Neue|DM Sans|DM Serif|Inter|Poppins|Montserrat|Roboto|Open Sans|Lato|Nunito|Raleway|Playfair|Space Grotesk|Outfit|Sora|Manrope)\b/, 'familia proibida'],
 ];
 const alvos = [...paginas, 'css/style.css', 'js/script.js'];
 for (const rel of alvos) {
