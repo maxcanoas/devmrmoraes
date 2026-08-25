@@ -44,6 +44,18 @@
     U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
+/* Fallback com a largura casada com a Schibsted, que e 2,6% mais larga que a Arial.
+   Sem isto o texto pinta com a fonte do sistema, troca quando a real chega, e o
+   reflow custa 0,06 de CLS em CPU lenta -- que e o aparelho do visitante deste site. */
+@font-face {
+  font-family: 'Grotesk Substituta';
+  src: local('Arial'), local('Helvetica'), local('Liberation Sans');
+  size-adjust: 102.6%;
+  ascent-override: 96%;
+  descent-override: 24%;
+  line-gap-override: 0%;
+}
+
 :root {
   --papel: #F5F2ED;
   --papel-2: #EBE7E0;
@@ -76,7 +88,7 @@
   --raio: 0;
   --dur: 140ms;
 
-  --fonte: 'Schibsted Grotesk', system-ui, -apple-system, sans-serif;
+  --fonte: 'Schibsted Grotesk', 'Grotesk Substituta', system-ui, sans-serif;
   --fonte-mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
 }
 
@@ -909,11 +921,12 @@ body { padding-bottom: 3.25rem; }
 header { view-transition-name: cabecalho; }
 
 /* O print sobe ao entrar na tela. Roda no compositor, fora da main thread: e o
-   oposto do IntersectionObserver com translateY que a gente apagou na fase 1.
-   So nos prints -- em texto, nunca. */
+   oposto do IntersectionObserver com translateY que apagamos na fase 1.
+   Anima a imagem e nao a moldura: com a moldura em opacity 0.55 o dominio na barra
+   ficava translucido e o contraste caia para 2,6:1 enquanto a animacao rodava. */
 @media (prefers-reduced-motion: no-preference) {
   @supports (animation-timeline: view()) {
-    .ato .tela {
+    .ato .tela img {
       animation: entrar-print linear both;
       animation-timeline: view();
       animation-range: entry 10% cover 32%;
@@ -937,5 +950,5 @@ html { scrollbar-gutter: stable; }
     animation-duration: 1ms;
     transition-duration: 1ms;
   }
-  .ato .tela { animation: none; opacity: 1; translate: none; }
+  .ato .tela img { animation: none; opacity: 1; translate: none; }
 }
