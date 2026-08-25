@@ -349,27 +349,47 @@ section + section { border-top: 1px solid var(--linha); }
 
 section h2 { max-width: 26ch; margin-bottom: var(--e-4); }
 
-.ficha { padding-block: var(--e-3) var(--e-4); }
+.ficha { padding-block: 0; }
 
-.ficha h1 { margin-bottom: var(--e-3); max-width: 26ch; }
+.ficha-kicker { color: var(--acento); margin-bottom: var(--e-2); }
+
+.ficha h1 { margin-bottom: var(--e-3); max-width: 15ch; }
 
 .ficha-promessa {
   font-size: var(--t-1);
   color: var(--tinta-2);
-  margin-bottom: var(--e-4);
+  margin-bottom: var(--e-3);
   max-width: 46ch;
 }
 
-.ficha-dados { margin-bottom: var(--e-4); }
+.ficha .botao { margin-bottom: var(--e-3); }
 
-.ficha-pessoa img {
-  width: 100%;
-  max-width: 13rem;
-  border: 1px solid var(--linha);
-  margin-bottom: var(--e-3);
+/* Fecha a primeira tela com uma aresta desenhada em vez de bege vazio, e poe rosto,
+   cidade e telefone acima da dobra -- que e o que o visitante precisa para acreditar
+   que existe alguem do outro lado. */
+.faixa { background: var(--tinta); color: var(--tinta-sobre); padding-block: var(--e-3); }
+
+/* no celular a foto e o nome dividem a primeira linha e o telefone fica embaixo:
+   empilhar os tres custava 307px e jogava a faixa para fora da dobra */
+.faixa-grade { display: grid; grid-template-columns: 76px 1fr; gap: var(--e-3) var(--e-3); align-items: center; }
+
+.faixa-fone { grid-column: 1 / -1; }
+
+.faixa img {
+  width: 76px;
+  height: 76px;
+  object-fit: cover;
+  object-position: center 22%;
+  border: 1px solid var(--fantasma-escuro);
 }
 
-.ficha-pessoa p { font-size: var(--t--1); color: var(--tinta-2); }
+.faixa-nome strong { display: block; color: var(--superficie); }
+
+.faixa-nome .mono { color: var(--tinta-sobre); text-transform: none; letter-spacing: 0; }
+
+.faixa-fone .mono { display: block; color: var(--tinta-sobre); }
+
+.faixa-fone .telefone { font-size: var(--t-2); }
 
 .case { padding-bottom: var(--e-5); }
 
@@ -829,11 +849,17 @@ body { padding-bottom: 3.25rem; }
      coluna sobrando para ela. */
   /* No celular o espaco e curto e 13rem ja e metade da largura da tela. A foto so
      cresce, e a Ficha so respira, quando ha coluna sobrando para isso. */
-  .ficha { padding-block: var(--e-4) var(--e-5); }
+  .ficha { padding-block: var(--e-5) 0; }
 
-  .ficha h1 { margin-bottom: var(--e-4); }
+  .ficha .botao { margin-bottom: var(--e-5); }
 
-  .ficha-pessoa img { max-width: 16rem; }
+  .faixa { padding-block: var(--e-4); }
+
+  .faixa-grade { grid-template-columns: 76px 1fr auto; gap: var(--e-4); }
+
+  .faixa-fone { grid-column: auto; }
+
+  .faixa-fone { text-align: right; }
 
   .fechamento { padding-block: var(--e-6); }
 
