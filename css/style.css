@@ -105,6 +105,12 @@ img,
 svg,
 video { display: block; max-width: 100%; }
 
+/* o picture some do layout para os seletores continuarem mirando a img. Junto some
+   o <source>, que sem isto vira item de grid e ocupa uma celula. */
+picture { display: contents; }
+
+source { display: none; }
+
 img { height: auto; }
 
 input,
