@@ -349,6 +349,11 @@ section { padding-block: var(--e-5); }
 
 section + section { border-top: 1px solid var(--linha); }
 
+/* lista respira menos que prova: o ritmo vertical e proposital, nao uniforme */
+.servicos,
+.processo,
+.perguntas { padding-block: var(--e-4); }
+
 .trabalho { padding-block: 0; border-top: 0; }
 
 .trabalho .ver-tudo { margin-top: var(--e-5); }
@@ -523,7 +528,7 @@ main section { container-type: inline-size; }
   color: var(--acento);
   border-bottom: 1px solid var(--linha);
   padding-bottom: var(--e-2);
-  margin-bottom: var(--e-4);
+  margin-bottom: var(--e-3);
 }
 
 .ato-kicker span { color: var(--tinta-2); text-transform: none; letter-spacing: 0; }
@@ -535,7 +540,7 @@ main section { container-type: inline-size; }
 .ato-escuro .tela-barra .mono,
 .ato-escuro figcaption { color: var(--tinta-sobre); }
 
-.ato h2 { font-size: var(--t-4); max-width: 22ch; margin-bottom: var(--e-4); }
+.ato h2 { font-size: var(--t-3); max-width: 22ch; margin-bottom: var(--e-3); }
 
 /* O resultado e a frase mais valiosa da pagina. Estava em 14px ao lado de um fio. */
 .resultado-bloco { border-top: 2px solid var(--acento); padding-top: var(--e-2); }
@@ -558,7 +563,7 @@ main section { container-type: inline-size; }
 
 /* o ato 03 nao divide em colunas: o print manda, e o texto vem embaixo. Limitar a
    largura dele evita uma imagem de 556px de altura so por ser larga. */
-.ato-largo .tela { max-width: 52rem; }
+.ato-largo .tela { max-width: 46rem; }
 
 .ato-rodape { display: grid; gap: var(--e-4); margin-top: var(--e-4); }
 
@@ -867,11 +872,11 @@ body { padding-bottom: 3.25rem; }
 
   .faixa-fone { text-align: right; }
 
-  .fechamento { padding-block: var(--e-6); }
+  .fechamento { padding-block: var(--e-5); }
 
   .ato { padding-block: var(--e-5); }
 
-  .ato h2 { font-size: var(--t-5); }
+  .ato h2 { font-size: var(--t-4); }
 
   .ato-rodape { grid-template-columns: 1fr 1fr; gap: var(--e-5); }
 

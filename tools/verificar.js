@@ -202,8 +202,9 @@ for (const [rel, html] of fonte) {
 /* 6. os prints reais continuam referenciados */
 const usadas = new Set();
 for (const html of fonte.values()) {
-  for (const m of html.matchAll(/(?:src|href)="[^"]*img\/(cases\/[^"]+|[^"/]+\.(?:jpg|png|svg))"/g)) {
-    usadas.add(m[1].replace(/^cases\//, 'cases/'));
+  /* srcset junto: os WebP chegam por <source srcset>, e nao por src */
+  for (const m of html.matchAll(/(?:src|href|srcset)="[^"]*img\/(cases\/[^"]+|[^"/]+\.(?:jpg|png|svg|webp))"/g)) {
+    usadas.add(m[1]);
   }
 }
 for (const arq of fs.readdirSync(path.join(RAIZ, 'img', 'cases'))) {
