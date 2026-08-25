@@ -117,8 +117,7 @@ img,
 svg,
 video { display: block; max-width: 100%; }
 
-/* o picture some do layout para os seletores continuarem mirando a img. Junto some
-   o <source>, que sem isto vira item de grid e ocupa uma celula. */
+/* o <source> sem display:none vira item de grid e ocupa uma celula */
 picture { display: contents; }
 
 source { display: none; }
@@ -486,8 +485,7 @@ main section { container-type: inline-size; }
 
 .case-texto h3 { font-size: var(--t-2); max-width: 24ch; }
 
-/* Cada case e um ato: fundo proprio, composicao propria. A troca de fundo entre eles
-   e o que da cadencia -- sem ela a pagina inteira le como um bloco so. */
+/* Cada case e um ato: fundo e composicao proprios. A troca entre eles da a cadencia. */
 .ato {
   position: relative;
   overflow: clip;
