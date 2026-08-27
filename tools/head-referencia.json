@@ -192,6 +192,82 @@
    }
   ]
  },
+ "artigos/empresa-nao-aparece-no-google-maps/index.html": {
+  "title": "Empresa não aparece no Google Maps: 6 motivos",
+  "description": "Sua empresa não aparece no mapa quando alguém procura o seu serviço na cidade. São seis motivos comuns, com o sintoma de cada um e como verificar sozinho.",
+  "canonical": "https://www.devmrmoraes.com.br/artigos/empresa-nao-aparece-no-google-maps/",
+  "og:title": "Empresa não aparece no Google Maps: 6 motivos",
+  "og:description": "Seis motivos que deixam uma empresa fora do mapa do Google, com o sintoma de cada um e como verificar sozinho.",
+  "og:url": "https://www.devmrmoraes.com.br/artigos/empresa-nao-aparece-no-google-maps/",
+  "og:image": "https://www.devmrmoraes.com.br/img/og-image.png",
+  "og:type": "article",
+  "twitter:title": "Empresa não aparece no Google Maps: 6 motivos",
+  "twitter:description": "Seis motivos que deixam uma empresa fora do mapa do Google, com o sintoma de cada um e como verificar sozinho.",
+  "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+  "geo.region": "BR-RS",
+  "geo.placename": "Canoas, Rio Grande do Sul",
+  "jsonLd": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Article",
+      "@id": "https://www.devmrmoraes.com.br/artigos/empresa-nao-aparece-no-google-maps/#article",
+      "headline": "Minha empresa não aparece no Google Maps: 6 motivos e como verificar cada um",
+      "description": "Sua empresa não aparece no mapa quando alguém procura o seu serviço na cidade. São seis motivos comuns, com o sintoma de cada um e como verificar sozinho.",
+      "url": "https://www.devmrmoraes.com.br/artigos/empresa-nao-aparece-no-google-maps/",
+      "datePublished": "2026-08-27",
+      "dateModified": "2026-08-27",
+      "inLanguage": "pt-BR",
+      "author": {
+       "@id": "https://www.devmrmoraes.com.br/#person"
+      },
+      "publisher": {
+       "@id": "https://www.devmrmoraes.com.br/#business"
+      },
+      "image": "https://www.devmrmoraes.com.br/img/og-image.png",
+      "mainEntityOfPage": {
+       "@type": "WebPage",
+       "@id": "https://www.devmrmoraes.com.br/artigos/empresa-nao-aparece-no-google-maps/"
+      },
+      "articleSection": "Busca local",
+      "keywords": [
+       "Google Meu Negócio",
+       "Perfil da Empresa no Google",
+       "Google Maps",
+       "busca local"
+      ],
+      "isPartOf": {
+       "@id": "https://www.devmrmoraes.com.br/artigos/#blog"
+      }
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Início",
+        "item": "https://www.devmrmoraes.com.br/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Artigos",
+        "item": "https://www.devmrmoraes.com.br/artigos/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Empresa não aparece no Google Maps",
+        "item": "https://www.devmrmoraes.com.br/artigos/empresa-nao-aparece-no-google-maps/"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
  "artigos/index.html": {
   "title": "Artigos sobre SEO, Sites e Sistemas | DEVMRMORAES",
   "description": "Artigos sobre SEO técnico, criação de sites, sistemas e automação, escritos a partir de problemas que encontrei em projetos reais. Sem receita pronta.",
@@ -224,6 +300,15 @@
        "@id": "https://www.devmrmoraes.com.br/#person"
       },
       "blogPost": [
+       {
+        "@type": "BlogPosting",
+        "headline": "Minha empresa não aparece no Google Maps: 6 motivos e como verificar cada um",
+        "url": "https://www.devmrmoraes.com.br/artigos/empresa-nao-aparece-no-google-maps/",
+        "datePublished": "2026-08-27",
+        "author": {
+         "@id": "https://www.devmrmoraes.com.br/#person"
+        }
+       },
        {
         "@type": "BlogPosting",
         "headline": "Meu site não aparece no Google: 7 causas técnicas e como identificar cada uma",
@@ -789,6 +874,140 @@
    }
   ]
  },
+ "google-meu-negocio/index.html": {
+  "title": "Google Meu Negócio em Canoas e Porto Alegre",
+  "description": "Criação, correção e manutenção de Perfil da Empresa no Google para empresas de Canoas, Porto Alegre e região. Você aprova escopo e valor antes de eu começar.",
+  "canonical": "https://www.devmrmoraes.com.br/google-meu-negocio/",
+  "og:title": "Google Meu Negócio em Canoas e Porto Alegre",
+  "og:description": "Criação, correção e manutenção de Perfil da Empresa no Google para empresas de Canoas, Porto Alegre e região.",
+  "og:url": "https://www.devmrmoraes.com.br/google-meu-negocio/",
+  "og:image": "https://www.devmrmoraes.com.br/img/og-image.png",
+  "og:type": "website",
+  "twitter:title": "Google Meu Negócio em Canoas e Porto Alegre",
+  "twitter:description": "Criação, correção e manutenção de Perfil da Empresa no Google para empresas de Canoas, Porto Alegre e região.",
+  "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+  "geo.region": "BR-RS",
+  "geo.placename": "Canoas, Rio Grande do Sul",
+  "jsonLd": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Service",
+      "serviceType": "Perfil da Empresa no Google",
+      "name": "Criação e Manutenção de Perfil da Empresa no Google",
+      "description": "Criação, correção e manutenção de Perfil da Empresa no Google, o antigo Google Meu Negócio, incluindo categoria, área de atendimento, horário, serviços, fotos, verificação junto ao Google e resposta a avaliações, para empresas que dependem de busca local.",
+      "url": "https://www.devmrmoraes.com.br/google-meu-negocio/",
+      "provider": {
+       "@id": "https://www.devmrmoraes.com.br/#business"
+      },
+      "areaServed": [
+       {
+        "@type": "City",
+        "name": "Canoas"
+       },
+       {
+        "@type": "City",
+        "name": "Porto Alegre"
+       }
+      ]
+     },
+     {
+      "@type": "FAQPage",
+      "mainEntity": [
+       {
+        "@type": "Question",
+        "name": "Quanto tempo leva para o perfil aparecer?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "A criação leva um dia. O que demora é a verificação do Google, que costuma levar de alguns dias a duas semanas, dependendo do método que ele exigir. Enquanto não verifica, o perfil existe mas não aparece para quem procura. Esse prazo é do Google e eu não tenho como acelerar."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Eu atendo na casa do cliente e não tenho loja. Dá para ter perfil?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Dá, e é o meu próprio caso. O Google chama isso de negócio com área de atendimento: em vez de endereço, você define as cidades ou os bairros onde atende, e o endereço fica escondido. Eletricista, encanador, fotógrafo e quem trabalha de casa entram nesse formato."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "O perfil da minha empresa foi criado por outra pessoa. Consigo recuperar?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Na maior parte das vezes sim. Existe um processo de pedido de posse: você reivindica, o Google avisa quem está com o perfil e essa pessoa tem alguns dias para responder. Se ela não responder, o perfil passa para você. Se responder e negar, vira uma disputa que pode não dar certo, e nesse ponto eu já não tenho controle."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Dá para apagar uma avaliação ruim?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Só se ela quebrar alguma regra do Google: xingamento, propaganda, texto sem relação com o seu negócio ou avaliação de quem nunca foi seu cliente. Nesses casos eu peço a remoção e às vezes funciona. Avaliação negativa de cliente real e dentro das regras não sai, e o que resta é responder bem, em público."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Preciso ter site para ter perfil?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Não. O perfil funciona sozinho, e para muito comércio de bairro ele já é o suficiente no começo. Os dois juntos rendem mais: o perfil traz a ligação de quem está procurando agora, e o site responde à dúvida de quem quer saber mais antes de ligar."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Qual a diferença entre isso e o serviço de SEO?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "O de SEO mexe no seu site, para o Google conseguir ler e exibir as páginas. Este mexe na ficha da sua empresa dentro do Google, que é o que aparece no mapa. São trabalhos separados, um não depende do outro, e eles se reforçam quando os dados dos dois batem."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "No fim, a conta fica no meu nome?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Fica. O perfil é da sua empresa e eu entro como gerente, não como proprietário. Se um dia você quiser tirar o meu acesso, você tira sozinho pelo painel, sem precisar falar comigo."
+        }
+       }
+      ]
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Início",
+        "item": "https://www.devmrmoraes.com.br/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Serviços",
+        "item": "https://www.devmrmoraes.com.br/#servicos"
+       },
+       {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Perfil da Empresa no Google",
+        "item": "https://www.devmrmoraes.com.br/google-meu-negocio/"
+       }
+      ]
+     },
+     {
+      "@type": "WebPage",
+      "name": "Perfil da Empresa no Google: apareça no mapa da sua cidade",
+      "url": "https://www.devmrmoraes.com.br/google-meu-negocio/",
+      "isPartOf": {
+       "@id": "https://www.devmrmoraes.com.br/#website"
+      }
+     }
+    ]
+   }
+  ]
+ },
  "index.html": {
   "title": "Criação de Sites em Canoas e Porto Alegre | DEVMRMORAES",
   "description": "Criação de sites, sistemas e aplicativos para empresas de Canoas, Porto Alegre e região. Você aprova escopo e valor por escrito antes de eu começar.",
@@ -843,6 +1062,7 @@
        "Desenvolvimento de Sistemas",
        "Aplicativos Mobile",
        "SEO e Otimização de Sites",
+       "Perfil da Empresa no Google",
        "Automação de Processos",
        "Consultoria Técnica",
        "Chatbots e Assistentes com IA",
@@ -907,6 +1127,14 @@
          "@type": "Offer",
          "itemOffered": {
           "@type": "Service",
+          "name": "Perfil da Empresa no Google",
+          "description": "Criação, correção e manutenção do Perfil da Empresa no Google, o antigo Google Meu Negócio, para empresas que dependem de busca local."
+         }
+        },
+        {
+         "@type": "Offer",
+         "itemOffered": {
+          "@type": "Service",
           "name": "Automação de Processos",
           "description": "Automação de tarefas repetitivas como geração de relatórios, envio de e-mails e integração de sistemas."
          }
@@ -952,34 +1180,34 @@
       "mainEntity": [
        {
         "@type": "Question",
-        "name": "Quanto custa desenvolver um site ou sistema?",
+        "name": "Quanto custa um site ou um sistema?",
         "acceptedAnswer": {
          "@type": "Answer",
-         "text": "Não tenho tabela de preço, porque dois sites do mesmo tamanho podem dar trabalho bem diferente. O que faz o valor subir é quantidade de páginas, integração com um sistema que você já usa, cadastro de usuário e prazo apertado. Eu monto o escopo, mando o valor fechado e você decide. Orçar não custa nada."
+         "text": "Site institucional começa em R$ 1.989. O que faz subir dali é quantidade de página, integração com um sistema que você já usa, cadastro de usuário e prazo apertado. Sistema e aplicativo dependem do tamanho da operação. Em todos os casos eu monto o escopo, mando o valor fechado e você decide antes de eu começar."
         }
        },
        {
         "@type": "Question",
-        "name": "Você atende empresas de todo o Brasil?",
+        "name": "Você atende empresas de fora de Canoas?",
         "acceptedAnswer": {
          "@type": "Answer",
-         "text": "Sim. Fora de Canoas e Porto Alegre eu atendo remoto, por WhatsApp, chamada de vídeo e e-mail. Na prática a maior parte da conversa acontece no WhatsApp mesmo, e você acompanha o projeto conforme ele anda."
+         "text": "Sim. Em Canoas, Porto Alegre e Região Metropolitana eu vou até a empresa. No resto do Brasil o atendimento é remoto, por WhatsApp e chamada de vídeo, e na prática a maior parte da conversa acontece no WhatsApp mesmo."
         }
        },
        {
         "@type": "Question",
-        "name": "Qual o prazo de entrega de um site ou sistema?",
+        "name": "Qual o prazo de entrega?",
         "acceptedAnswer": {
          "@type": "Answer",
-         "text": "Depende da complexidade do projeto. Um site institucional leva em média de 1 a 3 semanas. Sistemas mais complexos podem levar de 4 a 12 semanas. O prazo exato é definido na proposta, antes de iniciar o desenvolvimento."
+         "text": "Um site institucional leva de uma a três semanas. Sistema leva de quatro a doze, dependendo de quantos módulos entram. O prazo exato vai na proposta, junto com o valor, antes de começar."
         }
        },
        {
         "@type": "Question",
-        "name": "Você oferece suporte após a entrega do projeto?",
+        "name": "E depois que o projeto é entregue?",
         "acceptedAnswer": {
          "@type": "Answer",
-         "text": "Sim. Todo projeto sai com 30 dias de suporte incluso: nesse período, erro no que eu entreguei eu corrijo sem cobrar. Depois disso existe plano mensal de manutenção, que cobre atualização, ajuste e funcionalidade nova. O plano é opcional."
+         "text": "Todo projeto sai com trinta dias de suporte inclusos: nesse período, erro no que eu entreguei eu corrijo sem cobrar. Depois disso existe plano mensal de manutenção, que cobre atualização, ajuste e funcionalidade nova. O plano é opcional, e quem não quiser assinar me chama avulso."
         }
        },
        {
@@ -987,12 +1215,12 @@
         "name": "Meu site não aparece no Google. O que pode ser?",
         "acceptedAnswer": {
          "@type": "Answer",
-         "text": "Quase sempre é uma causa técnica: bloqueio de indexação, conteúdo que só existe depois do JavaScript, estrutura de títulos quebrada, ausência de ancoragem geográfica ou canonical apontando para o lugar errado. O diagnóstico identifica qual delas está afetando o seu site."
+         "text": "Quase sempre é causa técnica, não falta de sorte: bloqueio de indexação, conteúdo que só existe depois que o JavaScript roda, estrutura de títulos quebrada, ausência de ancoragem geográfica ou canonical apontando para o lugar errado. Escrevi um artigo com as sete causas mais comuns e como verificar cada uma por conta própria."
         }
        },
        {
         "@type": "Question",
-        "name": "Quais tecnologias você utiliza?",
+        "name": "Que tecnologias você usa?",
         "acceptedAnswer": {
          "@type": "Answer",
          "text": "C# e .NET nos sistemas desktop e web. HTML, CSS e JavaScript nos sites. React Native nos aplicativos Android e iOS. Nos chatbots eu uso as APIs dos modelos de IA, ligadas ao WhatsApp ou ao próprio site."
