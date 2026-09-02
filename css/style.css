@@ -443,7 +443,7 @@ section + section { border-top: 1px solid var(--impresso); }
 /* Tres brancos seguidos apagavam a cadencia: as condicoes voltam para a segunda via. */
 .processo { background: var(--via-2); border-top-color: var(--via-2); }
 
-.trabalho .ver-tudo { margin-top: var(--e-5); }
+.trabalho .ver-tudo { margin-top: var(--e-4); }
 
 section h2 { max-width: 26ch; margin-bottom: var(--e-4); }
 
@@ -451,10 +451,12 @@ section h2 { max-width: 26ch; margin-bottom: var(--e-4); }
 
 .ficha-kicker { color: var(--caneta); margin-bottom: var(--e-2); }
 
-.ficha h1 { max-width: 15ch; }
+/* 15ch foi medido na Schibsted, que e larga. Na condensada o mesmo 15ch estrangula o
+   H1 em tres linhas e custa 82px de altura. */
+.ficha h1 { max-width: 24ch; }
 
 /* A acao fecha o formulario: o fio acima dela e a linha onde o documento termina. */
-.ficha-acao { border-top: 1px solid var(--impresso); padding-top: var(--e-4); }
+.ficha-acao { border-top: 1px solid var(--impresso); padding-top: var(--e-3); }
 
 .ficha .botao { margin-bottom: var(--e-3); }
 
@@ -556,7 +558,7 @@ main section { container-type: inline-size; }
 .ato {
   position: relative;
   overflow: clip;
-  padding-block: var(--e-5);
+  padding-block: var(--e-4) var(--e-5);
   border-top: 1px solid var(--impresso);
 }
 
@@ -645,7 +647,7 @@ main section { container-type: inline-size; }
 
 .servicos h2,
 .perguntas h2,
-.processo h2 { margin-bottom: var(--e-4); }
+.processo h2 { margin-bottom: var(--e-3); }
 
 .lista-servicos li { border-top: 1px solid var(--impresso); }
 
@@ -658,12 +660,12 @@ main section { container-type: inline-size; }
   letter-spacing: -0.01em;
   text-decoration: none;
   display: block;
-  padding-block: var(--e-3);
+  padding: var(--e-3) 0 var(--e-2);
 }
 
 .lista-servicos .destaque a { font-size: var(--t-2); }
 
-.lista-servicos p { color: var(--grafite-2); padding-bottom: var(--e-3); }
+.lista-servicos p { color: var(--grafite-2); padding-bottom: var(--e-2); }
 
 .compromissos li { display: flex; gap: var(--e-4); padding-block: var(--e-3); border-top: 1px solid var(--impresso); }
 
@@ -791,7 +793,7 @@ details[open] summary::after { content: ' −'; }
 
 .lista-perguntas div { padding-bottom: var(--e-4); }
 
-.fechamento { background: var(--grafite); color: var(--sobre); }
+.fechamento { background: var(--grafite); color: var(--sobre); padding-block: var(--e-4); }
 
 .fechamento h2 { color: var(--folha); margin-bottom: var(--e-4); }
 
@@ -819,13 +821,16 @@ details[open] summary::after { content: ' −'; }
 
 .saida-manual a { color: var(--folha); }
 
-footer { border-top: 1px solid var(--impresso); padding-block: var(--e-5); }
+footer { border-top: 1px solid var(--impresso); padding-block: var(--e-4); }
 
-.rodape-topo { display: grid; gap: var(--e-5); padding-bottom: var(--e-5); }
+.rodape-topo { display: grid; gap: var(--e-5); padding-bottom: var(--e-4); }
 
 .rodape-topo address { font-size: var(--t--1); color: var(--grafite-2); max-width: 42ch; }
 
 .rodape-topo address strong { color: var(--grafite); }
+
+/* O telefone do rodape media 126x18: fora de frase corrida, alvo de toque precisa de 44. */
+.rodape-topo address a { display: inline-block; padding-block: var(--e-3); }
 
 .rodape-topo nav p { color: var(--grafite-2); margin-bottom: var(--e-3); }
 
@@ -845,7 +850,7 @@ footer { border-top: 1px solid var(--impresso); padding-block: var(--e-5); }
   align-items: center;
   justify-content: space-between;
   border-top: 1px solid var(--impresso);
-  padding-top: var(--e-4);
+  padding-top: var(--e-3);
 }
 
 .rodape-base p { color: var(--grafite-2); }
@@ -922,13 +927,13 @@ body { padding-bottom: 3.25rem; }
     align-items: baseline;
   }
 
-  .lista-servicos p { padding-block: var(--e-3); }
+  .lista-servicos p { padding-block: var(--e-2); }
 
   /* No celular o espaco e curto e 13rem ja e metade da largura da tela. A foto so
      cresce, e a Ficha so respira, quando ha coluna sobrando para isso. */
-  .ficha { padding-block: var(--e-5) 0; }
+  .ficha { padding-block: var(--e-4) 0; }
 
-  .ficha .botao { margin-bottom: var(--e-5); }
+  .ficha .botao { margin-bottom: var(--e-3); }
 
   .faixa { padding-block: var(--e-4); }
 
@@ -938,9 +943,8 @@ body { padding-bottom: 3.25rem; }
 
   .faixa-fone { text-align: right; }
 
-  .fechamento { padding-block: var(--e-5); }
-
-  .ato { padding-block: var(--e-5); }
+  /* O fundo escuro ja separa do FAQ: 48px de escuro em cima e respiro pago duas vezes. */
+  .fechamento { padding-block: var(--e-4) var(--e-5); }
 
   .ato h2 { font-size: var(--t-4); }
 
@@ -978,8 +982,8 @@ header { view-transition-name: cabecalho; }
 
 /* O print sobe ao entrar na tela. Roda no compositor, fora da main thread: e o
    oposto do IntersectionObserver com translateY que apagamos na fase 1.
-   Anima a imagem e nao a moldura: com a moldura em opacity 0.55 o dominio na barra
-   ficava translucido e o contraste caia para 2,6:1 enquanto a animacao rodava. */
+   Anima a imagem e nao a figura inteira: com o figure em opacity 0.55 o dominio do
+   rotulo ficava translucido e o contraste caia enquanto a animacao rodava. */
 @media (prefers-reduced-motion: no-preference) {
   @supports (animation-timeline: view()) {
     .ato .anexo img {
