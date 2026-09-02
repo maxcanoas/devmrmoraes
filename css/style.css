@@ -297,7 +297,7 @@ select {
    ate agora ele estava em 14px ao lado de um fio. */
 .valor {
   font-family: var(--fonte-mono);
-  font-size: var(--t-4);
+  font-size: var(--t-3);
   line-height: 1.1;
   letter-spacing: -0.03em;
   color: var(--caneta);
@@ -440,6 +440,9 @@ section + section { border-top: 1px solid var(--impresso); }
 
 .trabalho { padding-block: 0; border-top: 0; }
 
+/* Tres brancos seguidos apagavam a cadencia: as condicoes voltam para a segunda via. */
+.processo { background: var(--via-2); border-top-color: var(--via-2); }
+
 .trabalho .ver-tudo { margin-top: var(--e-5); }
 
 section h2 { max-width: 26ch; margin-bottom: var(--e-4); }
@@ -448,14 +451,10 @@ section h2 { max-width: 26ch; margin-bottom: var(--e-4); }
 
 .ficha-kicker { color: var(--caneta); margin-bottom: var(--e-2); }
 
-.ficha h1 { margin-bottom: var(--e-3); max-width: 15ch; }
+.ficha h1 { max-width: 15ch; }
 
-.ficha-promessa {
-  font-size: var(--t-1);
-  color: var(--grafite-2);
-  margin-bottom: var(--e-3);
-  max-width: 46ch;
-}
+/* A acao fecha o formulario: o fio acima dela e a linha onde o documento termina. */
+.ficha-acao { border-top: 1px solid var(--impresso); padding-top: var(--e-4); }
 
 .ficha .botao { margin-bottom: var(--e-3); }
 
@@ -514,14 +513,14 @@ main section { container-type: inline-size; }
 .anexo-rotulo {
   display: flex;
   gap: var(--e-2) var(--e-3);
-  justify-content: space-between;
+  align-items: baseline;
   color: var(--grafite-2);
   border-bottom: 1px solid var(--impresso);
-  padding-bottom: var(--e-2);
+  padding: 0 0 var(--e-2);
   margin-bottom: var(--e-2);
 }
 
-.anexo-rotulo span {
+.anexo-rotulo .mono {
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -544,6 +543,10 @@ main section { container-type: inline-size; }
 }
 
 .case-texto > * + * { margin-top: var(--e-3); }
+
+/* Campos vizinhos encostam: o fio de um fecha o outro, como em formulario impresso. */
+.case-texto > .campo,
+.ato-rodape .campo { margin-top: 0; }
 
 .case-texto .mono { color: var(--grafite-2); }
 
@@ -583,24 +586,29 @@ main section { container-type: inline-size; }
   justify-content: space-between;
   color: var(--caneta);
   border-bottom: 1px solid var(--impresso);
-  padding-bottom: var(--e-2);
+  padding: 0 0 var(--e-2);
   margin-bottom: var(--e-3);
 }
-
-.os-cabecalho span { color: var(--grafite-2); }
 
 .ato-escuro .os-cabecalho { border-bottom-color: var(--impresso-2); color: var(--sobre); }
 
 /* --grafite-2 sobre fundo escuro da 2,2:1. No ato escuro o secundario e --sobre. */
-.ato-escuro .os-cabecalho span,
+.faixa .rotulo,
+.ato-escuro .rotulo,
+.fechamento .rotulo,
 .ato-escuro figcaption { color: var(--sobre); }
+
+/* Sobre fundo escuro o valor vira branco: 17,8:1, e ele e o dado que a pessoa veio ler. */
+.faixa .valor,
+.ato-escuro .valor,
+.fechamento .valor { color: var(--folha); }
 
 .ato h2 { font-size: var(--t-3); max-width: 22ch; margin-bottom: var(--e-3); }
 
 /* O resultado e a frase mais valiosa da pagina. Estava em 14px ao lado de um fio. */
 .resultado-bloco { border-top: 2px solid var(--caneta); padding-top: var(--e-2); }
 
-.resultado-bloco .mono { color: var(--caneta); }
+.resultado-bloco .rotulo { color: var(--caneta); }
 
 .resultado-manchete {
   font-size: var(--t-2);
@@ -612,7 +620,7 @@ main section { container-type: inline-size; }
 
 .ato-escuro .resultado-bloco { border-top-color: var(--sobre); }
 
-.ato-escuro .resultado-bloco .mono { color: var(--sobre); }
+.ato-escuro .resultado-bloco .rotulo { color: var(--sobre); }
 
 .ato-escuro .resultado-manchete { color: var(--folha); }
 
@@ -644,6 +652,7 @@ main section { container-type: inline-size; }
 .lista-servicos li:last-child { border-bottom: 1px solid var(--impresso); }
 
 .lista-servicos a {
+  font-family: var(--fonte-rotulo);
   font-size: var(--t-1);
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -799,7 +808,7 @@ details[open] summary::after { content: ' −'; }
 
 .telefone:hover { color: var(--folha); text-decoration: underline; }
 
-.fechamento label { font-size: var(--t--1); color: var(--sobre); margin-bottom: var(--e-1); }
+.fechamento label { margin-bottom: var(--e-1); }
 
 .fechamento input,
 .fechamento textarea { border-color: var(--sobre); color: var(--grafite); }
@@ -886,9 +895,10 @@ footer { border-top: 1px solid var(--impresso); padding-block: var(--e-5); }
 body { padding-bottom: 3.25rem; }
 
 @media (min-width: 48em) {
-  /* No desktop o rotulo vira a coluna da esquerda, e a pagina inteira ganha a mesma
-     margem de formulario. 9rem cabe "SITUACAO ENCONTRADA" em duas linhas. */
-  .campo { grid-template-columns: 9rem 1fr; gap: var(--e-4); align-items: baseline; }
+  /* No desktop o rotulo vira a coluna da esquerda, onde ha largura para isso. Dentro
+     da coluna estreita de um case ele fica em cima: 9rem ali sobraria 200px de texto. */
+  .ficha .campo,
+  .ato-rodape .campo { grid-template-columns: 9rem 1fr; gap: var(--e-4); align-items: baseline; }
 
   body { padding-bottom: 0; }
   .barra-acao { display: none; }
@@ -937,6 +947,8 @@ body { padding-bottom: 3.25rem; }
   .ato-rodape { grid-template-columns: 1fr 1fr; gap: var(--e-5); }
 
   .resultado-manchete { font-size: var(--t-3); }
+
+  .valor { font-size: var(--t-4); }
 
   .par-figuras { grid-template-columns: 1fr 1fr; }
 
