@@ -119,7 +119,7 @@
        BreadcrumbList. Tire o <meta name="robots" content="noindex, nofollow"> --
        ele existe so para o modelo nao ser indexado enquanto estiver vazio.
     3. No corpo, troque o H1, a linha de abertura, a data do <time> e o tempo de
-       leitura. Escreva as secoes em <h2>, e subsecao em <h3 class="mono">.
+       leitura. Escreva as secoes em <h2>, e subsecao em <h3 class="rotulo">.
     4. Acrescente o artigo em artigos/index.html e uma <url> em sitemap.xml.
     5. Rode: node tools/sync-partials.js && node tools/verificar.js
 
@@ -139,9 +139,10 @@
             <p class="rotulo">Resumo</p>
             <p class="capa-linha">Uma ou duas frases dizendo para quem é o texto e o que a pessoa leva dele. Sem prometer o que o artigo não entrega.</p>
           </div>
-          <p class="mono ficha-artigo">
-            Por Maxwell Rigo Moraes · <time datetime="2026-01-01">1 de janeiro de 2026</time> · Leitura de N minutos
-          </p>
+          <div class="campo">
+            <p class="rotulo">Publicado</p>
+            <p class="mono">Por Maxwell Rigo Moraes · <time datetime="2026-01-01">1 de janeiro de 2026</time> · Leitura de N minutos</p>
+          </div>
         </div>
       </section>
 
@@ -151,9 +152,9 @@
 
           <h2>Primeira seção</h2>
           <p>Texto corrido. A largura da coluna já está limitada a 68 caracteres, que é onde o olho pega a próxima linha sem se perder.</p>
-          <h3 class="mono">Como verificar</h3>
+          <h3 class="rotulo">Como verificar</h3>
           <p>Quando o artigo for de diagnóstico, este par de subseções ajuda o leitor a agir. Use <code>code</code> para nome de arquivo, tag e trecho de configuração, e <kbd>kbd</kbd> para tecla.</p>
-          <h3 class="mono">Como corrigir</h3>
+          <h3 class="rotulo">Como corrigir</h3>
           <p>O que fazer, na ordem. Se a correção exigir alguém técnico, diga isso em vez de fingir que é simples.</p>
 
           <h2>Segunda seção</h2>

@@ -647,6 +647,8 @@ main section { container-type: inline-size; }
 /* O resultado e a frase mais valiosa da pagina. Estava em 14px ao lado de um fio. */
 .resultado-bloco { border-top: 2px solid var(--caneta); padding-top: var(--e-2); }
 
+.resultado-bloco + p { margin-top: var(--e-3); }
+
 .resultado-bloco .rotulo { color: var(--caneta); }
 
 .resultado-manchete {
@@ -737,8 +739,6 @@ main section { container-type: inline-size; }
 
 .lista-pratica .acoes { margin-top: var(--e-2); }
 
-.resultado-grande { font-size: var(--t-2); margin-bottom: var(--e-4); }
-
 /* O aviso de ficticio precisa ser lido antes do resto, e por isso e a unica caixa
    do site com fundo proprio. */
 .aviso { border: 1px solid var(--caneta); padding: var(--e-4); margin-top: var(--e-4); max-width: 60ch; }
@@ -766,8 +766,6 @@ code, kbd {
   border: 1px solid var(--impresso);
   padding: 0 var(--e-1);
 }
-
-.ficha-artigo { color: var(--grafite-2); margin-top: var(--e-4); }
 
 .lista-artigos li { border-top: 1px solid var(--impresso); padding-block: var(--e-4); }
 
