@@ -5,8 +5,8 @@
   "start_url": "/",
   "scope": "/",
   "display": "browser",
-  "background_color": "#F5F2ED",
-  "theme_color": "#F5F2ED",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FFFFFF",
   "lang": "pt-BR",
   "dir": "ltr",
   "categories": [

@@ -1,6 +1,10 @@
+/* Tres vozes, e cada uma tem um trabalho so. A Libre Franklin e a prosa: ela desce da
+   Franklin Gothic, que e o tipo dos formularios e dos documentos impressos. A Archivo
+   Narrow e o rotulo pre-impresso do formulario. A IBM Plex Mono e o que foi preenchido:
+   valor, prazo, telefone, dominio. */
 @font-face {
-  font-family: 'Schibsted Grotesk';
-  src: url('../fonts/schibsted-grotesk-latin.woff2') format('woff2');
+  font-family: 'Libre Franklin';
+  src: url('../fonts/libre-franklin-latin.woff2') format('woff2');
   font-weight: 400 700;
   font-style: normal;
   font-display: swap;
@@ -10,16 +14,28 @@
 }
 
 /* Portugues cabe inteiro no subset latin. Este so baixa se a pagina usar um caractere
-   fora dele, o que na pratica nao acontece. */
+   fora dele, o que na pratica nao acontece. Rotulo e valor nao ganham este subset: sao
+   nome de servico, numero e dominio, e nenhum deles sai do latin. */
 @font-face {
-  font-family: 'Schibsted Grotesk';
-  src: url('../fonts/schibsted-grotesk-latin-ext.woff2') format('woff2');
+  font-family: 'Libre Franklin';
+  src: url('../fonts/libre-franklin-latin-ext.woff2') format('woff2');
   font-weight: 400 700;
   font-style: normal;
   font-display: swap;
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
     U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0,
     U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Archivo Narrow';
+  src: url('../fonts/archivo-narrow-latin.woff2') format('woff2');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
 }
 
 @font-face {
@@ -33,41 +49,46 @@
     U+FEFF, U+FFFD;
 }
 
+/* Fallback com a largura casada. Sem isto o texto pinta com a fonte do sistema, troca
+   quando a real chega, e o reflow custa CLS em CPU lenta -- que e o aparelho do visitante
+   deste site. Sao duas porque a Archivo Narrow e 20% mais estreita que a Libre Franklin:
+   um substituto so nao serve as duas. Numeros medidos no navegador contra a Arial. */
 @font-face {
-  font-family: 'IBM Plex Mono';
-  src: url('../fonts/ibm-plex-mono-latin-ext.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
-    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0,
-    U+2113, U+2C60-2C7F, U+A720-A7FF;
+  font-family: 'Franklin Substituta';
+  src: local('Arial'), local('Helvetica'), local('Liberation Sans');
+  size-adjust: 102.2%;
+  ascent-override: 94.9%;
+  descent-override: 24.5%;
+  line-gap-override: 0%;
 }
 
-/* Fallback com a largura casada com a Schibsted, que e 2,6% mais larga que a Arial.
-   Sem isto o texto pinta com a fonte do sistema, troca quando a real chega, e o
-   reflow custa 0,06 de CLS em CPU lenta -- que e o aparelho do visitante deste site. */
 @font-face {
-  font-family: 'Grotesk Substituta';
+  font-family: 'Narrow Substituta';
   src: local('Arial'), local('Helvetica'), local('Liberation Sans');
-  size-adjust: 102.6%;
-  ascent-override: 96%;
-  descent-override: 24%;
+  size-adjust: 82.2%;
+  ascent-override: 126.4%;
+  descent-override: 37.7%;
   line-gap-override: 0%;
 }
 
 :root {
-  --papel: #F5F2ED;
-  --papel-2: #EBE7E0;
-  --superficie: #FFFFFF;
-  --linha: #DDD8D0;
-  --tinta: #15171A;
-  --tinta-2: #4B5058;
-  --acento: #B0350F;
-  --tinta-sobre: #B9BDC4;
-  /* o numero do ato: um passo do fundo, nunca competindo com o texto */
-  --fantasma-claro: #DFDAD2;
-  --fantasma-escuro: #23262B;
+  /* A via branca, a segunda via e o fio pre-impresso do formulario. */
+  --folha: #FFFFFF;
+  --via-2: #EDF0F2;
+  --impresso: #BFC9D1;
+  /* o mesmo fio no verso escuro, onde --impresso brilharia demais */
+  --impresso-2: #2A2F36;
+
+  --grafite: #14181C;
+  --grafite-2: #545C66;
+
+  /* Azul de esferografica: e o que foi preenchido a mao, e nao a cor da marca. Entra em
+     valor, link, botao primario e carimbo -- nunca em fundo de secao, nunca em titulo. */
+  --caneta: #1B3A8C;
+
+  /* dentro do bloco --grafite: --grafite-2 da 2,2:1 e --caneta da 1,9:1, ambos reprovam */
+  --sobre: #C2C8CE;
+  --caneta-2: #7FA6E8;
 
   --t--1: 0.875rem;
   --t-0: 1.0625rem;
@@ -75,8 +96,7 @@
   --t-2: 1.6875rem;
   --t-3: 2.25rem;
   --t-4: 3rem;
-  --t-5: clamp(3.25rem, 7vw, 5.25rem);
-  --t-6: clamp(4rem, 17vw, 13rem);
+  --t-5: clamp(3rem, 6.5vw, 4.75rem);
 
   --e-1: 0.25rem;
   --e-2: 0.5rem;
@@ -88,7 +108,8 @@
   --raio: 0;
   --dur: 140ms;
 
-  --fonte: 'Schibsted Grotesk', 'Grotesk Substituta', system-ui, sans-serif;
+  --fonte: 'Libre Franklin', 'Franklin Substituta', system-ui, sans-serif;
+  --fonte-rotulo: 'Archivo Narrow', 'Narrow Substituta', system-ui, sans-serif;
   --fonte-mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
 }
 
@@ -104,8 +125,8 @@ html {
 }
 
 body {
-  background: var(--papel);
-  color: var(--tinta);
+  background: var(--folha);
+  color: var(--grafite);
   font-family: var(--fonte);
   font-size: var(--t-0);
   font-weight: 400;
@@ -134,14 +155,15 @@ select {
 }
 
 h1, h2, h3, h4 {
+  font-family: var(--fonte-rotulo);
   font-weight: 700;
   line-height: 1.08;
   text-wrap: balance;
 }
 
-h1 { font-size: var(--t-5); letter-spacing: -0.03em; }
-h2 { font-size: var(--t-3); letter-spacing: -0.02em; }
-h3 { font-size: var(--t-1); letter-spacing: -0.01em; }
+h1 { font-size: var(--t-5); letter-spacing: -0.02em; }
+h2 { font-size: var(--t-3); letter-spacing: -0.01em; }
+h3 { font-size: var(--t-1); }
 h4 { font-size: var(--t-0); }
 
 p, li { text-wrap: pretty; }
@@ -154,23 +176,23 @@ strong { font-weight: 700; }
 
 a { color: inherit; }
 
-a:hover { color: var(--acento); }
+a:hover { color: var(--caneta); }
 
 ul[role='list'],
 ol[role='list'] { list-style: none; padding: 0; }
 
 hr {
   border: 0;
-  border-top: 1px solid var(--linha);
+  border-top: 1px solid var(--impresso);
 }
 
-/* --linha da 1,42:1 sobre branco: serve de fio estrutural, mas reprova WCAG 1.4.11
-   como limite de um controle. Campo de formulario usa --tinta-2, que da 8,1:1. */
+/* --impresso da 1,42:1 sobre branco: serve de fio estrutural, mas reprova WCAG 1.4.11
+   como limite de um controle. Campo de formulario usa --grafite-2, que da 8,1:1. */
 input,
 textarea,
 select {
-  background: var(--superficie);
-  border: 1px solid var(--tinta-2);
+  background: var(--folha);
+  border: 1px solid var(--grafite-2);
   padding: var(--e-2) var(--e-3);
   width: 100%;
 }
@@ -181,7 +203,7 @@ button { background: none; border: 0; cursor: pointer; }
 
 label { display: block; }
 
-details { border-top: 1px solid var(--linha); }
+details { border-top: 1px solid var(--impresso); }
 
 summary {
   cursor: pointer;
@@ -196,7 +218,7 @@ figure { margin: 0; }
 figcaption {
   font-family: var(--fonte-mono);
   font-size: var(--t--1);
-  color: var(--tinta-2);
+  color: var(--grafite-2);
   padding-top: var(--e-2);
 }
 
@@ -206,7 +228,7 @@ table { border-collapse: collapse; width: 100%; }
 
 th, td {
   text-align: left;
-  border-bottom: 1px solid var(--linha);
+  border-bottom: 1px solid var(--impresso);
   padding: var(--e-2) var(--e-3) var(--e-2) 0;
 }
 
@@ -219,9 +241,16 @@ td { font-family: var(--fonte-mono); font-size: var(--t--1); overflow-wrap: anyw
 [id] { scroll-margin-top: var(--e-6); }
 
 :focus-visible {
-  outline: 2px solid var(--acento);
+  outline: 2px solid var(--caneta);
   outline-offset: 2px;
 }
+
+/* --caneta sobre --grafite da 1,9:1: no bloco escuro o anel de foco some. Aqui ele
+   troca para o azul claro, que da 7,3:1. */
+.faixa :focus-visible,
+.ato-escuro :focus-visible,
+.fechamento :focus-visible,
+.barra-acao :focus-visible { outline-color: var(--caneta-2); }
 
 a,
 button,
@@ -251,16 +280,60 @@ select {
 
 .fluxo-largo > * + * { margin-top: var(--e-4); }
 
-.mono {
-  font-family: var(--fonte-mono);
+.mono { font-family: var(--fonte-mono); font-size: var(--t--1); }
+
+/* O rotulo pre-impresso do formulario. Condensada, caixa alta, pequena: e a voz que
+   nomeia o campo, nunca a que responde por ele. */
+.rotulo {
+  font-family: var(--fonte-rotulo);
   font-size: var(--t--1);
-  letter-spacing: 0.04em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: var(--grafite-2);
+}
+
+/* O que foi preenchido. Grande de proposito: o dono de empresa veio buscar o numero, e
+   ate agora ele estava em 14px ao lado de um fio. */
+.valor {
+  font-family: var(--fonte-mono);
+  font-size: var(--t-4);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--caneta);
+}
+
+/* O trilho de rotulos. E ele que faz cada bloco ler como campo de formulario, e e ele
+   que passa a ser a constante da composicao -- antes a constante era o titulo grande a
+   esquerda, cinco secoes seguidas. Abaixo de 48em o rotulo sobe para cima do valor. */
+.campo {
+  display: grid;
+  gap: var(--e-1);
+  padding-block: var(--e-3);
+  border-top: 1px solid var(--impresso);
+}
+
+.campo:last-child { border-bottom: 1px solid var(--impresso); }
+
+.campo > :last-child { max-width: 60ch; }
+
+/* Encerrada ou em aberto: o unico ornamento da pagina, e ele carrega informacao. */
+.carimbo {
+  font-family: var(--fonte-rotulo);
+  font-size: var(--t--1);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--caneta);
+  border: 2px solid var(--caneta);
+  padding: var(--e-1) var(--e-2);
+  align-self: start;
+  white-space: nowrap;
 }
 
 .medida { max-width: 68ch; }
 
-.silencio { color: var(--tinta-2); }
+.silencio { color: var(--grafite-2); }
 
 .vis-oculto {
   position: absolute;
@@ -276,22 +349,22 @@ select {
   left: var(--e-3);
   top: -4rem;
   z-index: 3;
-  background: var(--tinta);
-  color: var(--papel);
+  background: var(--grafite);
+  color: var(--folha);
   padding: var(--e-3);
 }
 
-.pular:focus { top: var(--e-2); color: var(--papel); }
+.pular:focus { top: var(--e-2); color: var(--folha); }
 
 header {
   position: sticky;
   top: 0;
   z-index: 2;
-  background: var(--papel);
+  background: var(--folha);
   border-bottom: 1px solid transparent;
 }
 
-header.rolado { border-bottom-color: var(--linha); }
+header.rolado { border-bottom-color: var(--impresso); }
 
 header nav {
   display: flex;
@@ -313,7 +386,7 @@ header nav {
   padding-block: var(--e-2);
 }
 
-.logo span { color: var(--acento); }
+.logo span { color: var(--caneta); }
 
 header ul {
   display: flex;
@@ -332,33 +405,33 @@ header ul a {
    de baixo ja tem WhatsApp e Ligar, mais perto do polegar. */
 header .botao { display: none; }
 
-header [aria-current] { color: var(--acento); }
+header [aria-current] { color: var(--caneta); }
 
 .botao {
   display: inline-block;
-  background: var(--acento);
-  color: var(--superficie);
+  background: var(--caneta);
+  color: var(--folha);
   text-decoration: none;
   font-weight: 500;
   padding: var(--e-3) var(--e-4);
   min-height: 2.75rem;
-  border: 1px solid var(--acento);
+  border: 1px solid var(--caneta);
 }
 
-.botao:hover { background: var(--tinta); border-color: var(--tinta); color: var(--superficie); }
+.botao:hover { background: var(--grafite); border-color: var(--grafite); color: var(--folha); }
 
 .botao-compacto { padding: var(--e-2) var(--e-3); min-height: 2.5rem; }
 
 /* Dentro do bloco escuro o acento da 2,95:1 e reprova. Papel sobre tinta da 16,5:1. */
-.botao-claro { background: var(--papel); border-color: var(--papel); color: var(--tinta); }
+.botao-claro { background: var(--folha); border-color: var(--folha); color: var(--grafite); }
 
-.botao-claro:hover { background: var(--superficie); border-color: var(--superficie); color: var(--tinta); }
+.botao-claro:hover { background: var(--folha); border-color: var(--folha); color: var(--grafite); }
 
 /* Ritmo vertical: no celular ninguem quer 96px de respiro entre secoes, entao a base
    e --e-5 e so a prova volta a respirar no desktop. */
 section { padding-block: var(--e-5); }
 
-section + section { border-top: 1px solid var(--linha); }
+section + section { border-top: 1px solid var(--impresso); }
 
 /* lista respira menos que prova: o ritmo vertical e proposital, nao uniforme */
 .servicos,
@@ -373,13 +446,13 @@ section h2 { max-width: 26ch; margin-bottom: var(--e-4); }
 
 .ficha { padding-block: 0; }
 
-.ficha-kicker { color: var(--acento); margin-bottom: var(--e-2); }
+.ficha-kicker { color: var(--caneta); margin-bottom: var(--e-2); }
 
 .ficha h1 { margin-bottom: var(--e-3); max-width: 15ch; }
 
 .ficha-promessa {
   font-size: var(--t-1);
-  color: var(--tinta-2);
+  color: var(--grafite-2);
   margin-bottom: var(--e-3);
   max-width: 46ch;
 }
@@ -389,7 +462,7 @@ section h2 { max-width: 26ch; margin-bottom: var(--e-4); }
 /* Fecha a primeira tela com uma aresta desenhada em vez de bege vazio, e poe rosto,
    cidade e telefone acima da dobra -- que e o que o visitante precisa para acreditar
    que existe alguem do outro lado. */
-.faixa { background: var(--tinta); color: var(--tinta-sobre); padding-block: var(--e-3); }
+.faixa { background: var(--grafite); color: var(--sobre); padding-block: var(--e-3); }
 
 /* no celular a foto e o nome dividem a primeira linha e o telefone fica embaixo:
    empilhar os tres custava 307px e jogava a faixa para fora da dobra */
@@ -402,14 +475,14 @@ section h2 { max-width: 26ch; margin-bottom: var(--e-4); }
   height: 76px;
   object-fit: cover;
   object-position: center 22%;
-  border: 1px solid var(--fantasma-escuro);
+  border: 1px solid var(--impresso-2);
 }
 
-.faixa-nome strong { display: block; color: var(--superficie); }
+.faixa-nome strong { display: block; color: var(--folha); }
 
-.faixa-nome .mono { color: var(--tinta-sobre); text-transform: none; letter-spacing: 0; }
+.faixa-nome .mono { color: var(--sobre); }
 
-.faixa-fone .mono { display: block; color: var(--tinta-sobre); }
+.faixa-fone .mono { display: block; color: var(--sobre); }
 
 .faixa-fone .telefone { font-size: var(--t-2); }
 
@@ -433,55 +506,46 @@ main section { container-type: inline-size; }
   .case-invertido { grid-template-columns: 34fr 66fr; }
 }
 
-/* Print solto le como figura de apoio. Com a barra de 1px em cima ele le como site
-   publicado, que e o que ele e. Quadrados, e nao circulos: o raio zero vale aqui
-   tambem, e o clichê da barra do macOS nao faz falta nenhuma. */
-.tela {
-  border: 1px solid var(--linha);
-  background: var(--superficie);
-  margin-bottom: var(--e-4);
-}
+/* O print nao e uma janela: e o anexo da OS. Fio de 1px em volta e o dominio real logo
+   acima, em mono -- que continua provando que o site esta no ar sem pedir emprestada a
+   barra de titulo de outro sistema operacional. */
+.anexo { margin-bottom: var(--e-4); }
 
-.tela-barra {
+.anexo-rotulo {
   display: flex;
-  align-items: center;
-  gap: var(--e-3);
-  height: 2.125rem;
-  padding-inline: var(--e-3);
-  border-bottom: 1px solid var(--linha);
+  gap: var(--e-2) var(--e-3);
+  justify-content: space-between;
+  color: var(--grafite-2);
+  border-bottom: 1px solid var(--impresso);
+  padding-bottom: var(--e-2);
+  margin-bottom: var(--e-2);
 }
 
-.tela-pontos { display: flex; gap: var(--e-1); flex: none; }
-
-.tela-pontos i { width: 8px; height: 8px; background: var(--linha); }
-
-.tela-barra .mono {
-  color: var(--tinta-2);
+.anexo-rotulo span {
   min-width: 0;
-  text-transform: none;
-  letter-spacing: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.tela img { width: 100%; }
+.anexo img { width: 100%; border: 1px solid var(--impresso); }
 
-/* No celular o print sangra ate a borda: e o ativo mais importante da pagina e nao
-   tem por que respeitar a margem do texto. */
+/* No celular o anexo sangra ate a borda: e o ativo mais importante da pagina e nao tem
+   por que respeitar a margem do texto. */
 @media (max-width: 47.999em) {
-  .tela {
+  .anexo img {
     margin-inline: calc(-1 * max(5vw, 1.25rem));
+    width: calc(100% + 2 * max(5vw, 1.25rem));
+    max-width: none;
     border-inline: 0;
   }
 
-  /* duas telas lado a lado nao cabem sangrando: a margem negativa somaria duas vezes */
-  .par-figuras .tela { margin-inline: 0; border-inline: 1px solid var(--linha); }
+  .par-figuras .anexo img { margin-inline: 0; width: 100%; border-inline: 1px solid var(--impresso); }
 }
 
 .case-texto > * + * { margin-top: var(--e-3); }
 
-.case-texto .mono { color: var(--tinta-2); }
+.case-texto .mono { color: var(--grafite-2); }
 
 .case-texto h3 { font-size: var(--t-2); max-width: 24ch; }
 
@@ -490,90 +554,71 @@ main section { container-type: inline-size; }
   position: relative;
   overflow: clip;
   padding-block: var(--e-5);
-  border-top: 1px solid var(--linha);
+  border-top: 1px solid var(--impresso);
 }
 
 .ato-escuro {
-  background: var(--tinta);
-  color: var(--tinta-sobre);
-  border-top-color: var(--tinta);
+  background: var(--grafite);
+  color: var(--sobre);
+  border-top-color: var(--grafite);
 }
 
-.ato-escuro h2 { color: var(--superficie); }
+.ato-escuro h2 { color: var(--folha); }
 
-.ato-escuro strong { color: var(--superficie); }
+.ato-escuro strong { color: var(--folha); }
 
-.ato-escuro .tela { border-color: var(--fantasma-escuro); }
+.ato-escuro .carimbo,
+.fechamento .carimbo { color: var(--caneta-2); border-color: var(--caneta-2); }
 
-.ato-escuro .tela-barra { border-bottom-color: var(--fantasma-escuro); background: var(--fantasma-escuro); }
+.ato-escuro .anexo img { border-color: var(--impresso-2); }
 
-.ato-escuro .tela-pontos i { background: var(--tinta-2); }
+.ato-escuro .anexo-rotulo { border-bottom-color: var(--impresso-2); }
 
-.ato-papel-2 { background: var(--papel-2); border-top-color: var(--papel-2); }
+.ato-via-2 { background: var(--via-2); border-top-color: var(--via-2); }
 
-/* Numera de verdade, e por isso e o unico ornamento do site. Sangra para fora e fica
-   a um passo do fundo: visivel, nunca competindo com o texto. */
-.ato-numero {
-  position: absolute;
-  top: -0.28em;
-  left: -0.06em;
-  z-index: 0;
-  font-size: var(--t-6);
-  line-height: 1;
-  letter-spacing: -0.04em;
-  color: var(--fantasma-claro);
-  text-transform: none;
-  pointer-events: none;
-}
-
-.ato-escuro .ato-numero { color: var(--fantasma-escuro); }
-
-.ato > .container { position: relative; z-index: 1; }
-
-.ato-kicker {
+.os-cabecalho {
   display: flex;
   flex-wrap: wrap;
   gap: var(--e-2) var(--e-4);
   justify-content: space-between;
-  color: var(--acento);
-  border-bottom: 1px solid var(--linha);
+  color: var(--caneta);
+  border-bottom: 1px solid var(--impresso);
   padding-bottom: var(--e-2);
   margin-bottom: var(--e-3);
 }
 
-.ato-kicker span { color: var(--tinta-2); text-transform: none; letter-spacing: 0; }
+.os-cabecalho span { color: var(--grafite-2); }
 
-.ato-escuro .ato-kicker { border-bottom-color: var(--fantasma-escuro); color: var(--tinta-sobre); }
+.ato-escuro .os-cabecalho { border-bottom-color: var(--impresso-2); color: var(--sobre); }
 
-/* --tinta-2 sobre fundo escuro da 2,2:1. No ato escuro o secundario e --tinta-sobre. */
-.ato-escuro .ato-kicker span,
-.ato-escuro .tela-barra .mono,
-.ato-escuro figcaption { color: var(--tinta-sobre); }
+/* --grafite-2 sobre fundo escuro da 2,2:1. No ato escuro o secundario e --sobre. */
+.ato-escuro .os-cabecalho span,
+.ato-escuro figcaption { color: var(--sobre); }
 
 .ato h2 { font-size: var(--t-3); max-width: 22ch; margin-bottom: var(--e-3); }
 
 /* O resultado e a frase mais valiosa da pagina. Estava em 14px ao lado de um fio. */
-.resultado-bloco { border-top: 2px solid var(--acento); padding-top: var(--e-2); }
+.resultado-bloco { border-top: 2px solid var(--caneta); padding-top: var(--e-2); }
 
-.resultado-bloco .mono { color: var(--acento); }
+.resultado-bloco .mono { color: var(--caneta); }
 
 .resultado-manchete {
   font-size: var(--t-2);
   font-weight: 700;
   line-height: 1.12;
   letter-spacing: -0.02em;
-  color: var(--tinta);
+  color: var(--grafite);
 }
 
-.ato-escuro .resultado-bloco { border-top-color: var(--tinta-sobre); }
+.ato-escuro .resultado-bloco { border-top-color: var(--sobre); }
 
-.ato-escuro .resultado-bloco .mono { color: var(--tinta-sobre); }
+.ato-escuro .resultado-bloco .mono { color: var(--sobre); }
 
-.ato-escuro .resultado-manchete { color: var(--superficie); }
+.ato-escuro .resultado-manchete { color: var(--folha); }
 
 /* o ato 03 nao divide em colunas: o print manda, e o texto vem embaixo. Limitar a
    largura dele evita uma imagem de 556px de altura so por ser larga. */
-.ato-largo .tela { max-width: 46rem; }
+.ato-largo .anexo { max-width: 46rem; }
 
 .ato-rodape { display: grid; gap: var(--e-4); margin-top: var(--e-4); }
 
@@ -586,7 +631,7 @@ main section { container-type: inline-size; }
   padding-block: var(--e-3);
 }
 
-.ver-tudo { border-top: 1px solid var(--linha); }
+.ver-tudo { border-top: 1px solid var(--impresso); }
 
 .ver-tudo a { display: inline-block; padding-block: var(--e-3); }
 
@@ -594,9 +639,9 @@ main section { container-type: inline-size; }
 .perguntas h2,
 .processo h2 { margin-bottom: var(--e-4); }
 
-.lista-servicos li { border-top: 1px solid var(--linha); }
+.lista-servicos li { border-top: 1px solid var(--impresso); }
 
-.lista-servicos li:last-child { border-bottom: 1px solid var(--linha); }
+.lista-servicos li:last-child { border-bottom: 1px solid var(--impresso); }
 
 .lista-servicos a {
   font-size: var(--t-1);
@@ -609,11 +654,11 @@ main section { container-type: inline-size; }
 
 .lista-servicos .destaque a { font-size: var(--t-2); }
 
-.lista-servicos p { color: var(--tinta-2); padding-bottom: var(--e-3); }
+.lista-servicos p { color: var(--grafite-2); padding-bottom: var(--e-3); }
 
-.compromissos li { display: flex; gap: var(--e-4); padding-block: var(--e-3); border-top: 1px solid var(--linha); }
+.compromissos li { display: flex; gap: var(--e-4); padding-block: var(--e-3); border-top: 1px solid var(--impresso); }
 
-.compromissos .mono { color: var(--acento); padding-top: var(--e-1); }
+.compromissos .mono { color: var(--caneta); padding-top: var(--e-1); }
 
 .compromissos p { font-size: var(--t-1); }
 
@@ -623,50 +668,49 @@ main section { container-type: inline-size; }
 
 .capa-linha {
   font-size: var(--t-1);
-  color: var(--tinta-2);
+  color: var(--grafite-2);
   max-width: 46ch;
   margin-bottom: var(--e-4);
 }
 
-.trilha { color: var(--tinta-2); }
+.trilha { color: var(--grafite-2); }
 
 .trilha a { display: inline-block; text-decoration: none; padding-block: var(--e-3); }
 
-.trilha [aria-current] { color: var(--tinta); }
+.trilha [aria-current] { color: var(--grafite); }
 
 .cenarios { display: grid; gap: var(--e-4); }
 
-.cenarios article { border-top: 1px solid var(--linha); padding-top: var(--e-3); }
+.cenarios article { border-top: 1px solid var(--impresso); padding-top: var(--e-3); }
 
 .cenarios h3 { margin-bottom: var(--e-1); }
 
-.cenarios p { color: var(--tinta-2); }
+.cenarios p { color: var(--grafite-2); }
 
-.entregas li { border-top: 1px solid var(--linha); padding-block: var(--e-3); }
+.entregas li { border-top: 1px solid var(--impresso); padding-block: var(--e-3); }
 
-.entregas li:last-child { border-bottom: 1px solid var(--linha); }
+.entregas li:last-child { border-bottom: 1px solid var(--impresso); }
 
 .preco-numero {
   font-size: var(--t-3);
-  color: var(--acento);
-  text-transform: none;
+  color: var(--caneta);
   letter-spacing: -0.01em;
   margin-bottom: var(--e-3);
 }
 
 .preco p + p { margin-top: var(--e-3); }
 
-.etapas li { display: flex; gap: var(--e-4); padding-block: var(--e-3); border-top: 1px solid var(--linha); }
+.etapas li { display: flex; gap: var(--e-4); padding-block: var(--e-3); border-top: 1px solid var(--impresso); }
 
-.etapas .mono { color: var(--acento); padding-top: var(--e-1); }
+.etapas .mono { color: var(--caneta); padding-top: var(--e-1); }
 
 .etapas h3 { margin-bottom: var(--e-1); }
 
-.etapas p { color: var(--tinta-2); }
+.etapas p { color: var(--grafite-2); }
 
 /* Dialogo como transcricao, e nao como app de chat: quem fala em mono na margem,
    a fala ao lado. Sem balao, sem avatar, sem canto arredondado. */
-.conversa dt { border-top: 1px solid var(--linha); padding-top: var(--e-3); color: var(--tinta-2); }
+.conversa dt { border-top: 1px solid var(--impresso); padding-top: var(--e-3); color: var(--grafite-2); }
 
 .conversa dd { margin: 0; padding-bottom: var(--e-3); }
 
@@ -674,13 +718,13 @@ main section { container-type: inline-size; }
 
 /* Exercicio nao ocupa o mesmo espaco de trabalho pago: sem print, uma linha cada,
    e o nome no mesmo corpo de um paragrafo em vez do corpo de um titulo de case. */
-.lista-pratica li { border-top: 1px solid var(--linha); padding-block: var(--e-3); }
+.lista-pratica li { border-top: 1px solid var(--impresso); padding-block: var(--e-3); }
 
-.lista-pratica li:last-child { border-bottom: 1px solid var(--linha); }
+.lista-pratica li:last-child { border-bottom: 1px solid var(--impresso); }
 
 .lista-pratica h3 { font-size: var(--t-0); margin-bottom: var(--e-1); }
 
-.lista-pratica p { color: var(--tinta-2); }
+.lista-pratica p { color: var(--grafite-2); }
 
 .lista-pratica .acoes { margin-top: var(--e-2); }
 
@@ -688,9 +732,9 @@ main section { container-type: inline-size; }
 
 /* O aviso de ficticio precisa ser lido antes do resto, e por isso e a unica caixa
    do site com fundo proprio. */
-.aviso { border: 1px solid var(--acento); padding: var(--e-4); margin-top: var(--e-4); max-width: 60ch; }
+.aviso { border: 1px solid var(--caneta); padding: var(--e-4); margin-top: var(--e-4); max-width: 60ch; }
 
-.aviso .mono { color: var(--acento); margin-bottom: var(--e-2); }
+.aviso .mono { color: var(--caneta); margin-bottom: var(--e-2); }
 
 .par-figuras { display: grid; gap: var(--e-4); }
 
@@ -702,79 +746,79 @@ main section { container-type: inline-size; }
 
 .prosa h2 { font-size: var(--t-2); margin-top: var(--e-5); }
 
-.prosa h3 { color: var(--acento); margin-top: var(--e-4); }
+.prosa h3 { color: var(--caneta); margin-top: var(--e-4); }
 
 .prosa a { text-underline-offset: 0.2em; }
 
 code, kbd {
   font-family: var(--fonte-mono);
   font-size: 0.9em;
-  background: var(--superficie);
-  border: 1px solid var(--linha);
+  background: var(--via-2);
+  border: 1px solid var(--impresso);
   padding: 0 var(--e-1);
 }
 
-.ficha-artigo { color: var(--tinta-2); margin-top: var(--e-4); }
+.ficha-artigo { color: var(--grafite-2); margin-top: var(--e-4); }
 
-.lista-artigos li { border-top: 1px solid var(--linha); padding-block: var(--e-4); }
+.lista-artigos li { border-top: 1px solid var(--impresso); padding-block: var(--e-4); }
 
-.lista-artigos li:last-child { border-bottom: 1px solid var(--linha); }
+.lista-artigos li:last-child { border-bottom: 1px solid var(--impresso); }
 
-.lista-artigos .mono { color: var(--tinta-2); }
+.lista-artigos .mono { color: var(--grafite-2); }
 
 .lista-artigos h2 { font-size: var(--t-2); max-width: 30ch; margin-block: var(--e-2); }
 
 .lista-artigos h2 a { text-decoration: none; }
 
-.lista-artigos > li > p:last-child { color: var(--tinta-2); }
+.lista-artigos > li > p:last-child { color: var(--grafite-2); }
 
-.lista-perguntas details:last-child { border-bottom: 1px solid var(--linha); }
+.lista-perguntas details:last-child { border-bottom: 1px solid var(--impresso); }
 
 summary { font-size: var(--t-1); font-weight: 500; }
 
-summary::after { content: ' +'; color: var(--acento); }
+summary::after { content: ' +'; color: var(--caneta); }
 
 details[open] summary::after { content: ' −'; }
 
 .lista-perguntas div { padding-bottom: var(--e-4); }
 
-.fechamento { background: var(--tinta); color: var(--tinta-sobre); }
+.fechamento { background: var(--grafite); color: var(--sobre); }
 
-.fechamento h2 { color: var(--superficie); margin-bottom: var(--e-4); }
+.fechamento h2 { color: var(--folha); margin-bottom: var(--e-4); }
 
-.fechamento .mono { color: var(--tinta-sobre); }
+.fechamento .mono { color: var(--sobre); }
 
 .telefone {
   font-size: var(--t-3);
-  color: var(--superficie);
+  color: var(--folha);
   text-decoration: none;
   letter-spacing: -0.02em;
   display: inline-block;
   padding-block: var(--e-1);
 }
 
-.telefone:hover { color: var(--papel); text-decoration: underline; }
+.telefone:hover { color: var(--folha); text-decoration: underline; }
 
-.fechamento label { font-size: var(--t--1); color: var(--tinta-sobre); margin-bottom: var(--e-1); }
+.fechamento label { font-size: var(--t--1); color: var(--sobre); margin-bottom: var(--e-1); }
 
 .fechamento input,
-.fechamento textarea { border-color: var(--tinta-sobre); color: var(--tinta); }
+.fechamento textarea { border-color: var(--sobre); color: var(--grafite); }
 
-.campo-erro { color: var(--superficie); font-size: var(--t--1); margin-top: var(--e-1); }
+.campo-erro { color: var(--folha); font-size: var(--t--1); margin-top: var(--e-1); }
 
-.campo-erro::before { content: '↑ '; color: var(--acento); }
+.campo-erro::before { content: '↑ '; color: var(--caneta); }
 
-.saida-manual a { color: var(--superficie); }
+.saida-manual a { color: var(--folha); }
 
-footer { border-top: 1px solid var(--linha); padding-block: var(--e-5); }
+footer { border-top: 1px solid var(--impresso); padding-block: var(--e-5); }
 
 .rodape-topo { display: grid; gap: var(--e-5); padding-bottom: var(--e-5); }
 
-.rodape-topo address { font-size: var(--t--1); color: var(--tinta-2); max-width: 42ch; }
+.rodape-topo address { font-size: var(--t--1); color: var(--grafite-2); max-width: 42ch; }
 
-.rodape-topo address strong { color: var(--tinta); }
+.rodape-topo address strong { color: var(--grafite); }
 
-.rodape-topo nav p { color: var(--tinta-2); margin-bottom: var(--e-3); }
+.rodape-topo nav p { color: var(--grafite-2); margin-bottom: var(--e-3); }
 
 .rodape-topo nav ul { columns: 2; column-gap: var(--e-4); }
 
@@ -791,11 +835,11 @@ footer { border-top: 1px solid var(--linha); padding-block: var(--e-5); }
   gap: var(--e-3);
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid var(--linha);
+  border-top: 1px solid var(--impresso);
   padding-top: var(--e-4);
 }
 
-.rodape-base p { color: var(--tinta-2); }
+.rodape-base p { color: var(--grafite-2); }
 
 .rodape-base nav { display: flex; gap: var(--e-3); }
 
@@ -804,10 +848,10 @@ footer { border-top: 1px solid var(--linha); padding-block: var(--e-5); }
   place-items: center;
   width: 2.75rem;
   height: 2.75rem;
-  color: var(--tinta-2);
+  color: var(--grafite-2);
 }
 
-.rodape-base nav a:hover { color: var(--acento); }
+.rodape-base nav a:hover { color: var(--caneta); }
 
 /* No celular as duas acoes ficam sempre ao alcance do polegar, e por isso o rodape
    reserva a altura delas. No desktop a barra nao existe. */
@@ -818,7 +862,7 @@ footer { border-top: 1px solid var(--linha); padding-block: var(--e-5); }
   bottom: 0;
   z-index: 2;
   display: flex;
-  background: var(--tinta);
+  background: var(--grafite);
   padding-bottom: env(safe-area-inset-bottom);
 }
 
@@ -829,19 +873,23 @@ footer { border-top: 1px solid var(--linha); padding-block: var(--e-5); }
   justify-content: center;
   gap: var(--e-2);
   height: 3.25rem;
-  color: var(--papel);
+  color: var(--folha);
   text-decoration: none;
   font-weight: 500;
   white-space: nowrap;
 }
 
-.barra-acao a + a { border-left: 1px solid var(--tinta-2); }
+.barra-acao a + a { border-left: 1px solid var(--grafite-2); }
 
-.barra-acao .mono { text-transform: none; letter-spacing: 0; color: var(--tinta-sobre); }
+.barra-acao .mono { color: var(--sobre); }
 
 body { padding-bottom: 3.25rem; }
 
 @media (min-width: 48em) {
+  /* No desktop o rotulo vira a coluna da esquerda, e a pagina inteira ganha a mesma
+     margem de formulario. 9rem cabe "SITUACAO ENCONTRADA" em duas linhas. */
+  .campo { grid-template-columns: 9rem 1fr; gap: var(--e-4); align-items: baseline; }
+
   body { padding-bottom: 0; }
   .barra-acao { display: none; }
 
@@ -851,9 +899,9 @@ body { padding-bottom: 3.25rem; }
 
   section h2 { font-size: var(--t-4); }
 
-  .case-invertido .tela { order: 2; }
+  .case-invertido .anexo { order: 2; }
 
-  .tela { margin-bottom: 0; }
+  .anexo { margin-bottom: 0; }
 
   /* Nome a esquerda, explicacao a direita: a lista fica com a metade da altura que
      teria empilhada, e a linha inteira vira alvo de toque. */
@@ -866,8 +914,6 @@ body { padding-bottom: 3.25rem; }
 
   .lista-servicos p { padding-block: var(--e-3); }
 
-  /* No celular 13rem ja e metade da largura da tela; a foto so cresce quando ha
-     coluna sobrando para ela. */
   /* No celular o espaco e curto e 13rem ja e metade da largura da tela. A foto so
      cresce, e a Ficha so respira, quando ha coluna sobrando para isso. */
   .ficha { padding-block: var(--e-5) 0; }
@@ -924,7 +970,7 @@ header { view-transition-name: cabecalho; }
    ficava translucido e o contraste caia para 2,6:1 enquanto a animacao rodava. */
 @media (prefers-reduced-motion: no-preference) {
   @supports (animation-timeline: view()) {
-    .ato .tela img {
+    .ato .anexo img {
       animation: entrar-print linear both;
       animation-timeline: view();
       animation-range: entry 10% cover 32%;
@@ -948,5 +994,5 @@ html { scrollbar-gutter: stable; }
     animation-duration: 1ms;
     transition-duration: 1ms;
   }
-  .ato .tela img { animation: none; opacity: 1; translate: none; }
+  .ato .anexo img { animation: none; opacity: 1; translate: none; }
 }
