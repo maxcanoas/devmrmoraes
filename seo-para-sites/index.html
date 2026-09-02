@@ -194,8 +194,11 @@
           <a href="../">Início</a> <span aria-hidden="true">/</span> <a href="../#servicos">Serviços</a> <span aria-hidden="true">/</span> <span aria-current="page">SEO e manutenção</span>
         </nav>
         <h1>Seu site está no ar. Isso não quer dizer que ele apareça.</h1>
-        <p class="capa-linha">Descubro o que trava a indexação do seu site e corrijo. Sem promessa de primeiro lugar, porque ninguém pode fazer essa promessa.</p>
-        <p><a class="botao" href="#contato">Pedir uma análise</a></p>
+        <div class="campo">
+          <p class="rotulo">Escopo</p>
+          <p class="capa-linha">Descubro o que trava a indexação do seu site e corrijo. Sem promessa de primeiro lugar, porque ninguém pode fazer essa promessa.</p>
+        </div>
+        <p class="ficha-acao"><a class="botao" href="#contato">Pedir uma análise</a></p>
       </div>
     </section>
 
@@ -217,19 +220,19 @@
       <div class="container">
         <h2>O que eu checo.</h2>
         <p class="silencio">A lista completa, e não uma amostra. É o que eu abro em todo diagnóstico.</p>
-        <ul class="entregas" role="list">
-          <li>Se existe bloqueio de indexação no <code>robots.txt</code> ou em meta tag, e se ele é intencional</li>
-          <li>Se o conteúdo existe no HTML ou só aparece depois que o JavaScript roda</li>
-          <li>Se o <code>canonical</code> de cada página aponta para ela mesma, e não para outro lugar</li>
-          <li>Se a hierarquia de títulos tem um H1 por página e desce sem pular nível</li>
-          <li>Se título e descrição de cada página são distintos e descrevem o que a página faz</li>
-          <li>Se há dados estruturados válidos, e se eles batem com o que a página mostra</li>
-          <li>Se o sitemap existe, está atualizado e é aceito pelo Search Console</li>
-          <li>Quanto tempo a página leva para pintar o conteúdo principal, medido no PageSpeed</li>
-          <li>Se as imagens têm dimensão declarada e formato adequado ao tamanho de exibição</li>
-          <li>Se o site tem ancoragem geográfica, para quem depende de busca local</li>
-          <li>Se existem páginas duplicadas competindo entre si pelo mesmo termo</li>
-          <li>Se o site responde em HTTPS, com uma versão canônica só, sem redirecionamento em cadeia</li>
+        <ul role="list">
+          <li class="campo">Se existe bloqueio de indexação no <code>robots.txt</code> ou em meta tag, e se ele é intencional</li>
+          <li class="campo">Se o conteúdo existe no HTML ou só aparece depois que o JavaScript roda</li>
+          <li class="campo">Se o <code>canonical</code> de cada página aponta para ela mesma, e não para outro lugar</li>
+          <li class="campo">Se a hierarquia de títulos tem um H1 por página e desce sem pular nível</li>
+          <li class="campo">Se título e descrição de cada página são distintos e descrevem o que a página faz</li>
+          <li class="campo">Se há dados estruturados válidos, e se eles batem com o que a página mostra</li>
+          <li class="campo">Se o sitemap existe, está atualizado e é aceito pelo Search Console</li>
+          <li class="campo">Quanto tempo a página leva para pintar o conteúdo principal, medido no PageSpeed</li>
+          <li class="campo">Se as imagens têm dimensão declarada e formato adequado ao tamanho de exibição</li>
+          <li class="campo">Se o site tem ancoragem geográfica, para quem depende de busca local</li>
+          <li class="campo">Se existem páginas duplicadas competindo entre si pelo mesmo termo</li>
+          <li class="campo">Se o site responde em HTTPS, com uma versão canônica só, sem redirecionamento em cadeia</li>
         </ul>
       </div>
     </section>
@@ -238,11 +241,8 @@
       <div class="container">
         <h2>Um site que passou por isso.</h2>
         <article class="case">
-          <figure class="tela">
-            <div class="tela-barra">
-              <span class="tela-pontos" aria-hidden="true"><i></i><i></i><i></i></span>
-              <span class="mono">braskitcargasperigosas.com.br</span>
-            </div>
+          <figure class="anexo">
+            <figcaption class="anexo-rotulo"><span class="rotulo">Anexo</span> <span class="mono">braskitcargasperigosas.com.br</span></figcaption>
             <picture>
               <source srcset="../img/cases/braskit-seo.webp" type="image/webp" />
               <img src="../img/cases/braskit-seo.jpg" width="760" height="475" alt="Página inicial do site da Braskit Cargas Perigosas" loading="lazy" decoding="async" />
@@ -265,29 +265,29 @@
           <h2>O que você recebe.</h2>
           <p class="silencio">Nesta ordem, e sem custo na primeira etapa.</p>
         </div>
-        <ol class="etapas col-6 inicio-7" role="list">
-          <li>
+        <ol class="col-6 inicio-7" role="list">
+          <li class="campo">
             <span class="mono">01</span>
             <div>
               <h3>Um relatório em português</h3>
               <p>Escrito para você ler, não para outro dev. Cada problema com o que é, onde está e o que acontece se ficar como está.</p>
             </div>
           </li>
-          <li>
+          <li class="campo">
             <span class="mono">02</span>
             <div>
               <h3>A ordem de correção</h3>
               <p>Do que muda mais para o que muda menos. Quase sempre duas ou três coisas respondem pela maior parte do problema.</p>
             </div>
           </li>
-          <li>
+          <li class="campo">
             <span class="mono">03</span>
             <div>
               <h3>A correção, se você quiser</h3>
               <p>Você pode contratar a execução comigo ou levar o relatório para quem já cuida do site. Ele é seu de qualquer forma.</p>
             </div>
           </li>
-          <li>
+          <li class="campo">
             <span class="mono">04</span>
             <div>
               <h3>A medição depois</h3>

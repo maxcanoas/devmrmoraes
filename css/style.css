@@ -178,6 +178,13 @@ a { color: inherit; }
 
 a:hover { color: var(--caneta); }
 
+/* --caneta sobre --grafite da 1,73:1: dentro do bloco escuro o hover deixaria o link
+   menos legivel do que antes de ser apontado. */
+.faixa a:hover,
+.ato-escuro a:hover,
+.fechamento a:hover,
+.barra-acao a:hover { color: var(--folha); }
+
 ul[role='list'],
 ol[role='list'] { list-style: none; padding: 0; }
 
@@ -236,6 +243,9 @@ th { font-weight: 500; }
 
 /* URL de dominio nao tem espaco onde quebrar, e estica a tabela alem da tela. */
 td { font-family: var(--fonte-mono); font-size: var(--t--1); overflow-wrap: anywhere; }
+
+/* Link em celula de tabela nao esta em frase corrida: precisa dos 44px de alvo. */
+td a { display: inline-block; padding-block: var(--e-3); }
 
 /* Header e fixo: sem isto toda ancora do site aterrissa por baixo dele. */
 [id] { scroll-margin-top: var(--e-6); }
@@ -305,17 +315,40 @@ select {
 
 /* O trilho de rotulos. E ele que faz cada bloco ler como campo de formulario, e e ele
    que passa a ser a constante da composicao -- antes a constante era o titulo grande a
-   esquerda, cinco secoes seguidas. Abaixo de 48em o rotulo sobe para cima do valor. */
+   esquerda, cinco secoes seguidas.
+   A base e bloco, e nao grid: campo sem rotulo carrega frase corrida, e um <code> ou um
+   link no meio dela viraria item de grid e quebraria a frase em tres linhas. */
 .campo {
-  display: grid;
-  gap: var(--e-1);
   padding-block: var(--e-3);
   border-top: 1px solid var(--impresso);
 }
 
+.campo > * + * { margin-top: var(--e-1); }
+
 .campo:last-child { border-bottom: 1px solid var(--impresso); }
 
 .campo > :last-child { max-width: 60ch; }
+
+/* Container query, e nao media query: o campo responde a largura que a coluna lhe da.
+   Assim o mesmo componente serve o hero, a coluna estreita de um case e a pagina de
+   servico sem uma lista de excecoes. 7rem porque a maior palavra de rotulo mede 92px. */
+@container (min-width: 34rem) {
+  .campo:has(> :where(.rotulo, .mono)) {
+    display: grid;
+    grid-template-columns: 7rem 1fr;
+    column-gap: var(--e-4);
+    align-items: baseline;
+  }
+
+  .campo:has(> :where(.rotulo, .mono)) > * { margin-top: 0; }
+}
+
+/* O numero da etapa e dado, nao rotulo: por isso mono, e nao Archivo Narrow. */
+.campo > .mono:first-child { color: var(--caneta); }
+
+.campo h3 { margin-bottom: var(--e-1); }
+
+.campo h3 + p { color: var(--grafite-2); }
 
 /* Encerrada ou em aberto: o unico ornamento da pagina, e ele carrega informacao. */
 .carimbo {
@@ -445,7 +478,7 @@ section + section { border-top: 1px solid var(--impresso); }
 
 .trabalho .ver-tudo { margin-top: var(--e-4); }
 
-section h2 { max-width: 26ch; margin-bottom: var(--e-4); }
+section h2 { max-width: 26ch; margin-bottom: var(--e-3); }
 
 .ficha { padding-block: 0; }
 
@@ -456,7 +489,7 @@ section h2 { max-width: 26ch; margin-bottom: var(--e-4); }
 .ficha h1 { max-width: 24ch; }
 
 /* A acao fecha o formulario: o fio acima dela e a linha onde o documento termina. */
-.ficha-acao { border-top: 1px solid var(--impresso); padding-top: var(--e-3); }
+.ficha-acao { border-top: 1px solid var(--impresso); padding-top: var(--e-3); max-width: none; }
 
 .ficha .botao { margin-bottom: var(--e-3); }
 
@@ -543,6 +576,10 @@ main section { container-type: inline-size; }
 
   .par-figuras .anexo img { margin-inline: 0; width: 100%; border-inline: 1px solid var(--impresso); }
 }
+
+/* Faz do texto do case um container, para o campo ali dentro responder a esta coluna e
+   nao a da secao: com 340px o trilho deixaria 200px de texto. */
+.case-texto { container-type: inline-size; }
 
 .case-texto > * + * { margin-top: var(--e-3); }
 
@@ -643,11 +680,6 @@ main section { container-type: inline-size; }
 
 .ver-tudo { border-top: 1px solid var(--impresso); }
 
-.ver-tudo a { display: inline-block; padding-block: var(--e-3); }
-
-.servicos h2,
-.perguntas h2,
-.processo h2 { margin-bottom: var(--e-3); }
 
 .lista-servicos li { border-top: 1px solid var(--impresso); }
 
@@ -667,22 +699,14 @@ main section { container-type: inline-size; }
 
 .lista-servicos p { color: var(--grafite-2); padding-bottom: var(--e-2); }
 
-.compromissos li { display: flex; gap: var(--e-4); padding-block: var(--e-3); border-top: 1px solid var(--impresso); }
-
-.compromissos .mono { color: var(--caneta); padding-top: var(--e-1); }
-
 .compromissos p { font-size: var(--t-1); }
 
 .capa { padding-block: var(--e-4) var(--e-5); }
 
-.capa h1 { margin-block: var(--e-4); max-width: 22ch; }
+/* 22ch tambem era medida de Schibsted: na condensada cabe mais letra por linha. */
+.capa h1 { margin-block: var(--e-4) var(--e-3); max-width: 26ch; }
 
-.capa-linha {
-  font-size: var(--t-1);
-  color: var(--grafite-2);
-  max-width: 46ch;
-  margin-bottom: var(--e-4);
-}
+.capa-linha { font-size: var(--t-1); color: var(--grafite-2); max-width: 46ch; }
 
 .trilha { color: var(--grafite-2); }
 
@@ -698,27 +722,6 @@ main section { container-type: inline-size; }
 
 .cenarios p { color: var(--grafite-2); }
 
-.entregas li { border-top: 1px solid var(--impresso); padding-block: var(--e-3); }
-
-.entregas li:last-child { border-bottom: 1px solid var(--impresso); }
-
-.preco-numero {
-  font-size: var(--t-3);
-  color: var(--caneta);
-  letter-spacing: -0.01em;
-  margin-bottom: var(--e-3);
-}
-
-.preco p + p { margin-top: var(--e-3); }
-
-.etapas li { display: flex; gap: var(--e-4); padding-block: var(--e-3); border-top: 1px solid var(--impresso); }
-
-.etapas .mono { color: var(--caneta); padding-top: var(--e-1); }
-
-.etapas h3 { margin-bottom: var(--e-1); }
-
-.etapas p { color: var(--grafite-2); }
-
 /* Dialogo como transcricao, e nao como app de chat: quem fala em mono na margem,
    a fala ao lado. Sem balao, sem avatar, sem canto arredondado. */
 .conversa dt { border-top: 1px solid var(--impresso); padding-top: var(--e-3); color: var(--grafite-2); }
@@ -729,13 +732,8 @@ main section { container-type: inline-size; }
 
 /* Exercicio nao ocupa o mesmo espaco de trabalho pago: sem print, uma linha cada,
    e o nome no mesmo corpo de um paragrafo em vez do corpo de um titulo de case. */
-.lista-pratica li { border-top: 1px solid var(--impresso); padding-block: var(--e-3); }
-
-.lista-pratica li:last-child { border-bottom: 1px solid var(--impresso); }
-
 .lista-pratica h3 { font-size: var(--t-0); margin-bottom: var(--e-1); }
 
-.lista-pratica p { color: var(--grafite-2); }
 
 .lista-pratica .acoes { margin-top: var(--e-2); }
 
@@ -900,11 +898,6 @@ footer { border-top: 1px solid var(--impresso); padding-block: var(--e-4); }
 body { padding-bottom: 3.25rem; }
 
 @media (min-width: 48em) {
-  /* No desktop o rotulo vira a coluna da esquerda, onde ha largura para isso. Dentro
-     da coluna estreita de um case ele fica em cima: 9rem ali sobraria 200px de texto. */
-  .ficha .campo,
-  .ato-rodape .campo { grid-template-columns: 9rem 1fr; gap: var(--e-4); align-items: baseline; }
-
   body { padding-bottom: 0; }
   .barra-acao { display: none; }
 
