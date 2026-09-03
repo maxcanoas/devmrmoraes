@@ -876,7 +876,9 @@ main section { container-type: inline-size; }
 
 /* O numero da pagina interna e menor que o da home: la ele divide a primeira tela com
    o retrato, aqui ele divide com a frase de escopo, que precisa continuar legivel. */
-.capa .numero { font-size: clamp(2.75rem, 10vw, 4.5rem); }
+/* O piso e 2,5rem e nao 2,75: o maior valor do site, "4 a 12 semanas", quebrava em
+   duas linhas numa tela de 320px por quatro pixels. */
+.capa .numero { font-size: clamp(2.5rem, 10vw, 4.5rem); }
 
 .capa-linha { font-size: var(--t-1); color: var(--grafite-2); max-width: 42ch; }
 
