@@ -169,6 +169,21 @@ O arquivo é `img/maxwell-rigo-moraes.webp`, com `img/maxwell-rigo-moraes.jpg` d
 - Evite: camisa com estampa ou listra fina (mói na compressão), fundo com textura forte,
   e qualquer coisa que peça retoque para ficar apresentável.
 
+### O card de compartilhamento
+
+`img/og-image.png` (1200 × 630) é o que aparece quando o link é mandado no WhatsApp.
+Ele é gerado a partir de `tools/og-card.html`, que usa os mesmos tokens e as mesmas
+fontes do site — não é um arquivo de imagem editado à mão.
+
+**Ao trocar a foto, refaça o card.** Sirva o repositório num servidor local, abra
+`tools/og-card.html`, capture em 1200 × 630 sem escala, e comprima com paleta
+(`sharp(...).png({ quality: 90, palette: true })`) — a compressão cai de ~245 KB para
+~100 KB sem diferença visível. **Fique abaixo de 300 KB**: acima disso o WhatsApp
+deixa de mostrar o preview.
+
+O que precisa sobreviver quando o card encolhe para 320 px no aplicativo: o rosto, o
+preço e o nome da marca. O rótulo e a linha de cidade viram textura, e tudo bem.
+
 ---
 
 ## Orçamento

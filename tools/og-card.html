@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../css/style.css" />
+<style>
+  /* Peca de compartilhamento, 1200x630. Usa os tokens e as fontes do site, mas com a
+     composicao refeita para o formato deitado: em 300px de largura no WhatsApp, o que
+     precisa sobreviver e o rosto, o preco e o nome da marca. */
+  html, body { margin: 0; }
+  body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 384px;
+    gap: 56px;
+    align-items: center;
+    padding: 56px 64px;
+    box-sizing: border-box;
+  }
+  .marca {
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: -0.03em;
+    color: var(--grafite);
+  }
+  .marca span { color: var(--caneta); }
+  .chamada {
+    font-size: 55px;
+    font-weight: 700;
+    line-height: 1.06;
+    letter-spacing: -0.03em;
+    margin: 30px 0 0;
+    max-width: 20ch;
+    text-wrap: balance;
+  }
+  .fio { height: 3px; background: var(--grafite); margin: 38px 0 32px; }
+  .rot {
+    font-family: var(--fonte-mono);
+    font-size: 19px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--grafite-2);
+  }
+  .preco {
+    font-family: var(--fonte-mono);
+    font-size: 104px;
+    font-weight: 600;
+    line-height: 0.94;
+    letter-spacing: -0.07em;
+    word-spacing: -0.32em;
+    color: var(--caneta);
+    margin-top: 6px;
+  }
+  .onde {
+    font-family: var(--fonte-mono);
+    font-size: 20px;
+    color: var(--grafite-2);
+    margin-top: 26px;
+  }
+  figure { margin: 0; display: grid; gap: 14px; }
+  figure img {
+    width: 384px;
+    height: 480px;
+    object-fit: cover;
+    object-position: center 18%;
+    border: 1px solid var(--impresso);
+    border-radius: 2px;
+    display: block;
+  }
+  .nome { font-family: var(--fonte); font-size: 26px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; }
+  .funcao {
+    font-family: var(--fonte-mono);
+    font-size: 17px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--caneta);
+    margin-top: 4px;
+  }
+</style>
+</head>
+<body>
+  <div>
+    <p class="marca">DEV<span>MR</span>MORAES</p>
+    <p class="chamada">Sites que trazem cliente e sistemas que tiram trabalho da sua mesa.</p>
+    <div class="fio"></div>
+    <p class="rot">Site institucional a partir de</p>
+    <p class="preco">R$ 1.989</p>
+    <p class="onde">Canoas e Porto Alegre · remoto no Brasil</p>
+  </div>
+  <figure>
+    <img src="../img/maxwell-rigo-moraes.jpg" alt="" />
+    <figcaption>
+      <span class="nome">Maxwell Rigo Moraes</span>
+      <span class="funcao" style="display:block">Desenvolvedor</span>
+    </figcaption>
+  </figure>
+</body>
+</html>
