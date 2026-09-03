@@ -178,10 +178,10 @@ Medido no Lighthouse mobile, com gzip, em `index.html`.
 | Item | Teto | Hoje |
 |---|---|---|
 | CSS | 45.000 B bruto | 38.780 B (11.497 B gzip) |
-| JS de runtime | — | 6.483 B (2.502 B gzip) |
+| JS de runtime | — | 6.681 B (2.575 B gzip) |
 | Fontes carregadas | 2 famílias, 4 arquivos | 33.624 B (só os subsets `latin`) |
-| Performance mobile | ≥ 90 | 97 |
-| LCP | < 2,5 s | 1,66 s |
+| Performance mobile | ≥ 90 | 96 (o antigo, medido lado a lado, dava 82) |
+| LCP | < 2,5 s | 1,66 s (o antigo dava 4,17 s) |
 | CLS | < 0,1 | 0 |
 
 **Se um efeito novo não couber, corte o efeito — não aumente o teto.**
