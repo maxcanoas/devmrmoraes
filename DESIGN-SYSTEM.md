@@ -181,13 +181,18 @@ fontes do site — não é um arquivo de imagem editado à mão.
 ~100 KB sem diferença visível. **Fique abaixo de 300 KB**: acima disso o WhatsApp
 deixa de mostrar o preview.
 
-**O card não leva o preço.** Na home o número é a manchete, mas num link que chega pelo
-WhatsApp o que precisa aparecer é o que ele faz — os nove serviços ocupam a largura
-inteira embaixo do fio, em três colunas.
+**O card não leva o preço, e não leva os nove serviços.** Na home o número é a manchete,
+mas num link que chega pelo WhatsApp o que precisa aparecer é o que ele faz — e apenas os
+**cinco carros-chefe**, em duas colunas embaixo do fio: criação de sites, SEO, sistemas,
+Perfil da Empresa no Google e aplicativos mobile.
 
-O que precisa sobreviver quando o card encolhe no aplicativo: o rosto, a chamada e o
-nome da marca. Os serviços ficam no limite da leitura e a linha de cidade vira textura,
-e tudo bem: quem quer detalhe abre o link.
+A conta é de legibilidade. O card é lido a uns 350 px de largura dentro do aplicativo,
+o que divide todo corpo por três e meio. Com nove nomes eles cabiam em 21 px e ninguém
+lia de relance; com cinco, cabem em 27 px e leem. Os outros quatro serviços continuam na
+home e no rodapé, que é onde há espaço para eles.
+
+O que precisa sobreviver quando o card encolhe: o rosto, a chamada, a marca e os cinco
+nomes. A linha de cidade vira textura, e tudo bem.
 
 ---
 

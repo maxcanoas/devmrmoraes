@@ -6,8 +6,10 @@
 <style>
   /* Peca de compartilhamento, 1200x630. Usa os tokens e as fontes do site, com a
      composicao refeita para o formato deitado: a chamada e o retrato dividem a metade
-     de cima, e os nove servicos ocupam a largura inteira embaixo -- em duas colunas eles
-     ficariam estreitos demais para os nomes longos. */
+     de cima, e os cinco carros-chefe ocupam a largura inteira embaixo.
+     Cinco e nao nove: o card e lido a uns 350px de largura dentro do WhatsApp, e nove
+     nomes obrigavam um corpo em que ninguem le de relance. Os outros quatro servicos
+     continuam na home e no rodape. */
   html, body { margin: 0; }
   body {
     width: 1200px;
@@ -76,19 +78,19 @@
   /* O fio e o mesmo eixo da home, e aqui ele separa quem eu sou do que eu faco. */
   .servicos {
     border-top: 3px solid var(--grafite);
-    margin-top: 30px;
-    padding-top: 20px;
+    margin-top: 22px;
+    padding-top: 18px;
   }
   .servicos ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    columns: 3;
-    column-gap: 44px;
+    columns: 2;
+    column-gap: 56px;
   }
   .servicos li {
-    font-size: 21px;
-    line-height: 1.3;
+    font-size: 27px;
+    line-height: 1.25;
     padding: 6px 0;
     break-inside: avoid;
     color: var(--grafite);
@@ -117,11 +119,7 @@
       <li>SEO e manutenção de sites</li>
       <li>Sistemas personalizados</li>
       <li>Perfil da Empresa no Google</li>
-      <li>Automação de processos</li>
       <li>Aplicativos mobile</li>
-      <li>Consultoria e diagnóstico técnico</li>
-      <li>Chatbots e assistentes com IA</li>
-      <li>Suporte e evolução contínua</li>
     </ul>
   </div>
 </body>
