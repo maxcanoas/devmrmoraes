@@ -394,6 +394,10 @@ select {
   }
 
   .campo:has(> :where(.rotulo, .mono)) > * { margin-top: 0; }
+
+  /* O trilho de 7rem foi medido para o maior rotulo do site. Onde ele carrega so o
+     numero da etapa, sobram 90px de vazio entre o numero e o titulo. */
+  .compromissos .campo { grid-template-columns: 3.5rem 1fr; }
 }
 
 /* O numero da etapa e dado, nao rotulo: por isso mono, e nao Archivo Narrow. */
