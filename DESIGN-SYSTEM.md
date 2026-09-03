@@ -181,8 +181,13 @@ fontes do site — não é um arquivo de imagem editado à mão.
 ~100 KB sem diferença visível. **Fique abaixo de 300 KB**: acima disso o WhatsApp
 deixa de mostrar o preview.
 
-O que precisa sobreviver quando o card encolhe para 320 px no aplicativo: o rosto, o
-preço e o nome da marca. O rótulo e a linha de cidade viram textura, e tudo bem.
+**O card não leva o preço.** Na home o número é a manchete, mas num link que chega pelo
+WhatsApp o que precisa aparecer é o que ele faz — os nove serviços ocupam a largura
+inteira embaixo do fio, em três colunas.
+
+O que precisa sobreviver quando o card encolhe no aplicativo: o rosto, a chamada e o
+nome da marca. Os serviços ficam no limite da leitura e a linha de cidade vira textura,
+e tudo bem: quem quer detalhe abre o link.
 
 ---
 
