@@ -857,12 +857,39 @@ main section { container-type: inline-size; }
 
 .compromissos p { font-size: var(--t-1); }
 
-.capa { padding-block: var(--e-4) var(--e-5); }
+/* A ABERTURA DAS INTERNAS
+   Mesma logica da home: o titulo declara, o eixo fecha a declaracao, e abaixo dele fica
+   o dado que a pessoa veio buscar. A diferenca e que aqui o dado varia por pagina -- na
+   de criacao de sites e o preco, e onde nao houver dado a coluna da direita assume
+   sozinha e a abertura vira tipografica. */
+.capa { padding-block: var(--e-3) var(--e-5); }
 
-/* 22ch tambem era medida de Schibsted: na condensada cabe mais letra por linha. */
-.capa h1 { margin-block: var(--e-4) var(--e-3); max-width: 26ch; }
+.capa h1 { margin-block: var(--e-3) 0; max-width: 26ch; }
 
-.capa-linha { font-size: var(--t-1); color: var(--grafite-2); max-width: 46ch; }
+.capa .eixo { margin-block: var(--e-3); }
+
+.capa-grade { display: grid; gap: var(--e-4); }
+
+.capa-oferta > * + * { margin-top: var(--e-3); }
+
+.capa-oferta .rotulo { margin-bottom: calc(-1 * var(--e-2)); }
+
+/* O numero da pagina interna e menor que o da home: la ele divide a primeira tela com
+   o retrato, aqui ele divide com a frase de escopo, que precisa continuar legivel. */
+.capa .numero { font-size: clamp(2.75rem, 10vw, 4.5rem); }
+
+.capa-linha { font-size: var(--t-1); color: var(--grafite-2); max-width: 42ch; }
+
+.capa .ficha-acao { max-width: none; margin-top: var(--e-4); }
+
+/* Sem numero, a frase de escopo sobe de corpo e assume a abertura sozinha: e ela que
+   responde por que a pessoa esta ali. */
+.capa-grade:not(:has(.numero)) .capa-linha {
+  font-size: var(--t-2);
+  line-height: 1.35;
+  color: var(--grafite);
+  max-width: 30ch;
+}
 
 .trilha { color: var(--grafite-2); }
 
@@ -1121,6 +1148,26 @@ footer { border-top: 1px solid var(--impresso); padding-block: var(--e-4); }
      4:5 cada 100px de largura custa 125px de altura, e a altura e o recurso escasso.
      O limite e de largura, e nao de altura: limitar a altura achataria o retrato. */
   .retrato img { max-width: 17rem; justify-self: start; }
+
+  /* Onde ha coluna sobrando, o dado e o escopo dividem a abertura, como o preco e o
+     retrato dividem na home. As bases alinham no mesmo fio de base. */
+  .capa { padding-block: var(--e-4) var(--e-6); }
+
+  /* Com numero, a frase de escopo comeca na linha do rotulo: alinhar pela base a
+     deixaria boiando no fundo da coluna, longe do dado que ela explica. */
+  .capa-grade { grid-template-columns: 1fr 1fr; gap: var(--e-5); align-items: start; }
+
+  .capa .eixo { margin-block: var(--e-4); }
+
+  .capa-grade .capa-linha { padding-top: var(--e-2); }
+
+  /* Sem numero, quem abre e a frase, e a acao vai para a direita na mesma linha de base.
+     Deixar a direita vazia faria a pagina voltar a parecer documento. */
+  .capa-grade:not(:has(.numero)) { grid-template-columns: minmax(0, 1.35fr) auto; align-items: end; }
+
+  .capa-grade:not(:has(.numero)) .capa-linha { padding-top: 0; }
+
+  .capa-grade:not(:has(.numero)) .ficha-acao { margin-top: 0; justify-self: end; }
 
   /* O fundo escuro ja separa do FAQ: 48px de escuro em cima e respiro pago duas vezes. */
   .fechamento { padding-block: var(--e-4) var(--e-5); }
