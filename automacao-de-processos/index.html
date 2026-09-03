@@ -125,6 +125,13 @@
   </script>
 
   <!-- #assets -->
+  <script>
+    /* Antes do primeiro paint, senao a pagina pisca no tema errado. O try/catch e para
+       navegador com armazenamento bloqueado, onde localStorage lanca em vez de voltar
+       vazio -- sem ele o site inteiro deixaria de pintar. */
+    try { var t = localStorage.getItem('tema'); if (t === 'claro' || t === 'escuro') document.documentElement.dataset.tema = t; } catch (e) {}
+  </script>
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-19XH630KZE"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -137,14 +144,15 @@
   {"prerender":[{"where":{"href_matches":"/*"},"eagerness":"moderate"}]}
   </script>
 
-  <link rel="preload" as="font" type="font/woff2" href="../fonts/libre-franklin-latin.woff2" crossorigin />
-  <link rel="preload" as="font" type="font/woff2" href="../fonts/archivo-narrow-latin.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="../fonts/familjen-grotesk-latin.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="../fonts/ibm-plex-mono-latin.woff2" crossorigin />
   <link rel="stylesheet" href="../css/style.css" />
   <script src="../js/script.js" defer></script>
 
   <link rel="icon" href="../img/favicon.svg" type="image/svg+xml" />
   <link rel="manifest" href="../manifest.json" />
-  <meta name="theme-color" content="#FFFFFF" />
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0F1216" media="(prefers-color-scheme: dark)" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -165,6 +173,13 @@
         <li><a href="../#servicos" aria-current="true">Serviços</a></li>
         <li><a href="../artigos/">Artigos</a></li>
       </ul>
+
+      <button class="tema" type="button" data-tema-botao aria-label="Mudar para o tema escuro">
+        <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+          <circle cx="10" cy="10" r="7.25" fill="none" stroke="currentColor" stroke-width="1.5" />
+          <path d="M10 2.75a7.25 7.25 0 0 0 0 14.5z" fill="currentColor" />
+        </svg>
+      </button>
 
       <a class="botao botao-compacto" href="../#contato">Falar comigo</a>
     </nav>
@@ -343,12 +358,12 @@
         </a>
       </nav>
     </div>
-
-    <div class="barra-acao">
-      <a href="https://wa.me/5551999608608?text=Ol%C3%A1!%20Estou%20no%20seu%20site%20pelo%20celular.%20Queria%20falar%20sobre%3A%20" target="_blank" rel="noopener noreferrer" data-origem="barra_movel">WhatsApp</a>
-      <a href="tel:+5551999608608">Ligar <span class="mono">(51) 99960-8608</span></a>
-    </div>
   </footer>
+
+  <a class="atalho" href="https://wa.me/5551999608608?text=Ol%C3%A1!%20Vim%20pelo%20site.%20Queria%20falar%20sobre%3A%20" target="_blank" rel="noopener noreferrer" data-origem="atalho" data-atalho hidden>
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.91-9.91a9.85 9.85 0 0 0-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.69 8.23-8.23 8.23Zm4.52-6.16c-.25-.13-1.47-.72-1.69-.8-.23-.09-.39-.13-.56.12-.16.25-.64.8-.78.97-.15.16-.29.18-.53.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.09-.16.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.47c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05s.88 2.38 1 2.54c.13.17 1.74 2.65 4.21 3.72.59.25 1.05.4 1.4.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.08.15-1.18-.06-.11-.23-.17-.48-.29Z"/></svg>
+  <span>Falar no WhatsApp</span>
+  </a>
   <!-- /#footer -->
 </body>
 </html>
