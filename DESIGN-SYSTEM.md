@@ -230,12 +230,49 @@ Ordem de trabalho: editar → `node tools/sync-partials.js` → `node tools/sync
 
 ---
 
-## Ao aplicar numa página interna (Fase 2)
+## A abertura das páginas internas
 
-1. **Ache o número da página** e dê a ele o `.numero` e o `.eixo` logo acima. Um só.
-2. O H1 continua em `--t-4` e o eixo fecha a declaração.
-3. Reuse `.campo`, `.rotulo` e `.valor` para qualquer par nome/dado. Não invente componente
-   novo antes de olhar a tabela acima.
+Aplicado em 03/09/2026 nas 18 internas. Toda abertura é: **trilha, H1, eixo, e o que a
+pessoa veio buscar**. O que varia é a última parte, e existem três formas.
+
+**Com número** (`.capa-oferta` + `.numero`) — quando há um dado curto: preço ou prazo.
+O dado fica à esquerda com o CTA embaixo, e a frase de escopo à direita, começando na
+linha do rótulo. Hoje: criação de sites (R$ 1.989), sistemas (4 a 12 semanas) e Perfil
+no Google (1 dia). **Nenhum desses números foi inventado** — os três já estavam
+publicados e só saíram do meio do texto.
+
+**Com resultado** (`.capa-oferta` + `.resultado-manchete`) — nos cases. O resultado é
+frase inteira, então usa a grotesca e não a mono do número. Ele sai da seção "O
+resultado." e o parágrafo de apoio dela fica: é o mesmo texto em lugares diferentes.
+
+**Tipográfica** — quando não há dado. A frase de escopo assume em corpo maior e o CTA vai
+para a direita, na mesma linha de base. Deixar a direita vazia faz a página voltar a
+parecer documento. Hoje: SEO, automação, apps, consultoria, chatbot, suporte, as duas
+listagens e os artigos.
+
+**Onde não há dado, não invente um.** A página de SEO fica sem número de propósito: ela
+diz que quem promete prazo fixo está chutando, e uma manchete de prazo ali contradiria o
+próprio texto.
+
+### O miolo
+
+O problema do miolo nunca é uma seção, é a sequência delas. Antes da Fase 2 as internas
+tinham seis seções seguidas com o mesmo padding e o mesmo fundo — uma esteira. A seção de
+sequência de cada página ("Como funciona", "Como eu trabalho") virou `section.processo`,
+a mesma dos compromissos da home: fundo de segunda via, título preso à esquerda, passos
+passando pela direita. **São os dois únicos blocos do site que são sequência de verdade**,
+e por isso os dois únicos numerados.
+
+Ao criar página nova, pergunte se ela tem uma seção que é sequência. Se tiver, ela é
+`.processo` e o `<ol>` é `.compromissos`. Se não tiver, não force: invente outra quebra
+de ritmo em vez de fingir uma sequência.
+
+### Regras que valem para qualquer página
+
+1. **Um eixo por página**, logo abaixo do H1. É ele que amarra a interna à home.
+2. **Uma manchete por página.** Se aparecerem duas, uma delas está errada.
+3. Reuse `.campo`, `.rotulo` e `.valor` para qualquer par nome/dado. Não invente
+   componente novo antes de olhar a tabela de componentes.
 4. Blocos invertidos usam `--inverso` de fundo e `--inverso-texto` de texto. **Nunca**
    `--grafite` e `--folha` fixos: no tema escuro eles invertem e o bloco some.
 5. Se a página ganhar movimento, ele entra na lista dos quatro momentos ou substitui um.

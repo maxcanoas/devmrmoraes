@@ -892,6 +892,10 @@ main section { container-type: inline-size; }
 
 .capa .resultado-bloco { border-top: 0; padding-top: 0; }
 
+/* Num artigo o resumo abre e o credito fica ao lado: sao duas informacoes de peso
+   diferente, e empilhar as duas em cinza faria uma mancha so. */
+.capa-credito { color: var(--grafite-2); max-width: none; }
+
 .capa .ficha-acao { max-width: none; margin-top: var(--e-4); }
 
 /* Sem numero, a frase de escopo sobe de corpo e assume a abertura sozinha: e ela que
@@ -1180,6 +1184,12 @@ footer { border-top: 1px solid var(--impresso); padding-block: var(--e-4); }
   .capa-grade:not(:has(.numero, .resultado-manchete)) .capa-linha { padding-top: 0; }
 
   .capa-grade:not(:has(.numero, .resultado-manchete)) .ficha-acao { margin-top: 0; justify-self: end; }
+
+  /* No artigo o credito acompanha a primeira linha do resumo, e nao a ultima: alinhado
+     pela base ele boiava a seis linhas de distancia do texto que ele credita. */
+  .capa-grade:has(.capa-credito) { align-items: start; }
+
+  .capa-credito { padding-top: var(--e-2); text-align: right; }
 
   /* O fundo escuro ja separa do FAQ: 48px de escuro em cima e respiro pago duas vezes. */
   .fechamento { padding-block: var(--e-4) var(--e-5); }
