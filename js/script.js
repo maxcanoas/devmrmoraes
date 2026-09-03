@@ -63,23 +63,27 @@ function configurarTema() {
   rotular();
 }
 
-/* O atalho do WhatsApp so existe entre o fim do hero e o inicio do contato: antes disso
-   ele disputaria com o CTA principal, e dentro do contato ele repetiria o formulario que
-   ja esta na tela. Um observer com dois alvos, e nao um listener de scroll. */
+/* O atalho do WhatsApp so existe entre o fim da abertura e o inicio do contato: antes
+   disso ele disputaria com a acao principal, e dentro do contato ele repetiria o
+   formulario que ja esta na tela.
+   O alvo do topo e a acao do hero na home e o titulo nas internas -- o que garante que
+   ele funcione nas 19 paginas, e nao so aqui. Dois observers, e nenhum listener de scroll. */
 function configurarAtalho() {
   const atalho = document.querySelector('[data-atalho]');
-  const hero = document.querySelector('#hero');
-  const contato = document.querySelector('#contato');
-  if (!atalho || !hero) return;
+  if (!atalho) return;
 
-  let passouDoHero = false;
+  const topo = document.querySelector('.ficha-acao') || document.querySelector('main h1') || document.querySelector('h1');
+  const contato = document.querySelector('#contato');
+  if (!topo) return;
+
+  let passouDoTopo = false;
   let noContato = false;
-  const decidir = () => { atalho.hidden = !(passouDoHero && !noContato); };
+  const decidir = () => { atalho.hidden = !(passouDoTopo && !noContato); };
 
   new IntersectionObserver(([e]) => {
-    passouDoHero = !e.isIntersecting && e.boundingClientRect.top < 0;
+    passouDoTopo = e.boundingClientRect.bottom < 0;
     decidir();
-  }, { threshold: 0 }).observe(hero);
+  }, { threshold: 0 }).observe(topo);
 
   if (contato) {
     new IntersectionObserver(([e]) => {
