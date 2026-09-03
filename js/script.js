@@ -155,15 +155,19 @@ function configurarFormulario() {
   });
 }
 
-/* O que a pessoa pode acionar no primeiro segundo entra agora: o tema, o fio do header
-   e o formulario. O resto -- o atalho, que so aparece depois do hero, a medicao e o ano
-   do rodape -- espera a linha principal esvaziar. Sao 60ms de TBT em CPU de celular. */
+/* Tudo que pode ser acionado entra agora, inclusive a medicao: um listener de clique
+   instalado tarde e um contato que o GA4 nao viu. Medido em CPU 4x lenta, adiar a
+   medicao abria uma janela de ~300ms em que o clique se perdia -- ganhava pouco TBT e
+   custava dado, entao voltou.
+   So o atalho e o ano do rodape esperam a linha principal esvaziar: o atalho nasce
+   escondido e ninguem clica no que nao ve, e o ano e cosmetico. */
 function iniciar() {
   fioDoHeader();
   configurarTema();
   configurarFormulario();
+  medirSaidas();
 
-  const depois = () => { configurarAtalho(); medirSaidas(); marcarAno(); };
+  const depois = () => { configurarAtalho(); marcarAno(); };
   if (typeof requestIdleCallback === 'function') requestIdleCallback(depois, { timeout: 2000 });
   else setTimeout(depois, 200);
 }
