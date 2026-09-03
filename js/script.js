@@ -36,6 +36,59 @@ function fioDoHeader() {
   alternar();
 }
 
+/* O tema. O <head> ja aplicou a escolha salva antes do primeiro paint; aqui so entra o
+   botao. Sem escolha salva o site segue o sistema, e o rotulo do botao precisa dizer
+   para onde ele leva -- por isso ele le o tema em vigor, e nao o atributo. */
+function configurarTema() {
+  const botao = document.querySelector('[data-tema-botao]');
+  if (!botao) return;
+
+  const escuro = () => document.documentElement.dataset.tema
+    ? document.documentElement.dataset.tema === 'escuro'
+    : matchMedia('(prefers-color-scheme: dark)').matches;
+
+  const rotular = () => {
+    botao.setAttribute('aria-label', escuro() ? 'Mudar para o tema claro' : 'Mudar para o tema escuro');
+  };
+
+  botao.addEventListener('click', () => {
+    const alvo = escuro() ? 'claro' : 'escuro';
+    document.documentElement.dataset.tema = alvo;
+    try { localStorage.setItem('tema', alvo); } catch (e) {}
+    rotular();
+  });
+
+  /* Quem nunca escolheu acompanha o sistema, inclusive se ele mudar com a pagina aberta. */
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', rotular);
+  rotular();
+}
+
+/* O atalho do WhatsApp so existe entre o fim do hero e o inicio do contato: antes disso
+   ele disputaria com o CTA principal, e dentro do contato ele repetiria o formulario que
+   ja esta na tela. Um observer com dois alvos, e nao um listener de scroll. */
+function configurarAtalho() {
+  const atalho = document.querySelector('[data-atalho]');
+  const hero = document.querySelector('#hero');
+  const contato = document.querySelector('#contato');
+  if (!atalho || !hero) return;
+
+  let passouDoHero = false;
+  let noContato = false;
+  const decidir = () => { atalho.hidden = !(passouDoHero && !noContato); };
+
+  new IntersectionObserver(([e]) => {
+    passouDoHero = !e.isIntersecting && e.boundingClientRect.top < 0;
+    decidir();
+  }, { threshold: 0 }).observe(hero);
+
+  if (contato) {
+    new IntersectionObserver(([e]) => {
+      noContato = e.isIntersecting;
+      decidir();
+    }, { threshold: 0 }).observe(contato);
+  }
+}
+
 function erroNoCampo(campo, mensagem) {
   campo.setAttribute('aria-invalid', 'true');
   const aviso = document.createElement('p');
@@ -98,11 +151,17 @@ function configurarFormulario() {
   });
 }
 
+/* O que a pessoa pode acionar no primeiro segundo entra agora: o tema, o fio do header
+   e o formulario. O resto -- o atalho, que so aparece depois do hero, a medicao e o ano
+   do rodape -- espera a linha principal esvaziar. Sao 60ms de TBT em CPU de celular. */
 function iniciar() {
-  marcarAno();
   fioDoHeader();
+  configurarTema();
   configurarFormulario();
-  medirSaidas();
+
+  const depois = () => { configurarAtalho(); medirSaidas(); marcarAno(); };
+  if (typeof requestIdleCallback === 'function') requestIdleCallback(depois, { timeout: 2000 });
+  else setTimeout(depois, 200);
 }
 
 if (document.readyState === 'loading') addEventListener('DOMContentLoaded', iniciar);

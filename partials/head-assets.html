@@ -1,3 +1,10 @@
+  <script>
+    /* Antes do primeiro paint, senao a pagina pisca no tema errado. O try/catch e para
+       navegador com armazenamento bloqueado, onde localStorage lanca em vez de voltar
+       vazio -- sem ele o site inteiro deixaria de pintar. */
+    try { var t = localStorage.getItem('tema'); if (t === 'claro' || t === 'escuro') document.documentElement.dataset.tema = t; } catch (e) {}
+  </script>
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-19XH630KZE"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -10,14 +17,15 @@
   {"prerender":[{"where":{"href_matches":"/*"},"eagerness":"moderate"}]}
   </script>
 
-  <link rel="preload" as="font" type="font/woff2" href="{{raiz}}fonts/libre-franklin-latin.woff2" crossorigin />
-  <link rel="preload" as="font" type="font/woff2" href="{{raiz}}fonts/archivo-narrow-latin.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="{{raiz}}fonts/familjen-grotesk-latin.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="{{raiz}}fonts/ibm-plex-mono-latin.woff2" crossorigin />
   <link rel="stylesheet" href="{{raiz}}css/style.css" />
   <script src="{{raiz}}js/script.js" defer></script>
 
   <link rel="icon" href="{{raiz}}img/favicon.svg" type="image/svg+xml" />
   <link rel="manifest" href="{{raiz}}manifest.json" />
-  <meta name="theme-color" content="#FFFFFF" />
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0F1216" media="(prefers-color-scheme: dark)" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
