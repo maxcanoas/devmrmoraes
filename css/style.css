@@ -1,10 +1,10 @@
-/* Tres vozes, e cada uma tem um trabalho so. A Libre Franklin e a prosa: ela desce da
-   Franklin Gothic, que e o tipo dos formularios e dos documentos impressos. A Archivo
-   Narrow e o rotulo pre-impresso do formulario. A IBM Plex Mono e o que foi preenchido:
-   valor, prazo, telefone, dominio. */
+/* Duas vozes. A Familjen Grotesk e a prosa e o titulo: uma grotesca escandinava de
+   terminais cortados em angulo, que le como texto e nao como interface. A IBM Plex Mono
+   e o dado -- valor, prazo, dominio, rotulo -- e no hero ela sobe a corpo de manchete,
+   porque o preco e a informacao que a pessoa veio buscar. */
 @font-face {
-  font-family: 'Libre Franklin';
-  src: url('../fonts/libre-franklin-latin.woff2') format('woff2');
+  font-family: 'Familjen Grotesk';
+  src: url('../fonts/familjen-grotesk-latin.woff2') format('woff2');
   font-weight: 400 700;
   font-style: normal;
   font-display: swap;
@@ -14,11 +14,10 @@
 }
 
 /* Portugues cabe inteiro no subset latin. Este so baixa se a pagina usar um caractere
-   fora dele, o que na pratica nao acontece. Rotulo e valor nao ganham este subset: sao
-   nome de servico, numero e dominio, e nenhum deles sai do latin. */
+   fora dele, o que na pratica nao acontece. */
 @font-face {
-  font-family: 'Libre Franklin';
-  src: url('../fonts/libre-franklin-latin-ext.woff2') format('woff2');
+  font-family: 'Familjen Grotesk';
+  src: url('../fonts/familjen-grotesk-latin-ext.woff2') format('woff2');
   font-weight: 400 700;
   font-style: normal;
   font-display: swap;
@@ -28,9 +27,9 @@
 }
 
 @font-face {
-  font-family: 'Archivo Narrow';
-  src: url('../fonts/archivo-narrow-latin.woff2') format('woff2');
-  font-weight: 400 700;
+  font-family: 'IBM Plex Mono';
+  src: url('../fonts/ibm-plex-mono-latin.woff2') format('woff2');
+  font-weight: 400 600;
   font-style: normal;
   font-display: swap;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
@@ -40,63 +39,67 @@
 
 @font-face {
   font-family: 'IBM Plex Mono';
-  src: url('../fonts/ibm-plex-mono-latin.woff2') format('woff2');
-  font-weight: 400;
+  src: url('../fonts/ibm-plex-mono-latin-ext.woff2') format('woff2');
+  font-weight: 400 600;
   font-style: normal;
   font-display: swap;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
-    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
-    U+FEFF, U+FFFD;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0,
+    U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 /* Fallback com a largura casada. Sem isto o texto pinta com a fonte do sistema, troca
    quando a real chega, e o reflow custa CLS em CPU lenta -- que e o aparelho do visitante
-   deste site. Sao duas porque a Archivo Narrow e 20% mais estreita que a Libre Franklin:
-   um substituto so nao serve as duas. Numeros medidos no navegador contra a Arial. */
+   deste site. A Familjen e 6,6% mais estreita que a Arial: numeros medidos com fontkit
+   sobre os proprios binarios, e nao chutados. A mono nao precisa de substituta: ela nao
+   pinta paragrafo, e onde ela aparece o texto e curto. */
 @font-face {
-  font-family: 'Franklin Substituta';
+  font-family: 'Grotesk Substituta';
   src: local('Arial'), local('Helvetica'), local('Liberation Sans');
-  size-adjust: 102.2%;
-  ascent-override: 94.9%;
-  descent-override: 24.5%;
+  size-adjust: 93.4%;
+  ascent-override: 109.7%;
+  descent-override: 24.1%;
   line-gap-override: 0%;
 }
 
-@font-face {
-  font-family: 'Narrow Substituta';
-  src: local('Arial'), local('Helvetica'), local('Liberation Sans');
-  size-adjust: 82.2%;
-  ascent-override: 126.4%;
-  descent-override: 37.7%;
-  line-gap-override: 0%;
-}
-
+/* A folha branca, a segunda via e o fio. Os nomes vem da direcao anterior e ficam:
+   folha continua sendo o fundo e grafite continua sendo o texto nos dois temas, o que
+   deixa as 17 paginas internas herdarem o tema escuro sem tocar numa linha delas. */
 :root {
-  /* A via branca, a segunda via e o fio pre-impresso do formulario. */
+  color-scheme: light;
+
   --folha: #FFFFFF;
   --via-2: #EDF0F2;
-  --impresso: #BFC9D1;
-  /* o mesmo fio no verso escuro, onde --impresso brilharia demais */
-  --impresso-2: #2A2F36;
+  --impresso: #CFD7DD;
 
-  --grafite: #14181C;
-  --grafite-2: #545C66;
+  --grafite: #0F1216;
+  --grafite-2: #565F69;
 
   /* Azul de esferografica: e o que foi preenchido a mao, e nao a cor da marca. Entra em
      valor, link, botao primario e carimbo -- nunca em fundo de secao, nunca em titulo. */
   --caneta: #1B3A8C;
 
-  /* dentro do bloco --grafite: --grafite-2 da 2,2:1 e --caneta da 1,9:1, ambos reprovam */
+  /* O bloco invertido: o verso do documento. No tema claro ele e quase preto; no escuro
+     ele sobe um degrau em vez de descer, senao sumiria dentro do proprio fundo. */
+  --inverso: #0F1216;
+  --inverso-texto: #FFFFFF;
   --sobre: #C2C8CE;
+  --impresso-2: #2A2F36;
   --caneta-2: #7FA6E8;
 
-  --t--1: 0.875rem;
+  /* O vidro do header e do botao flutuante. Cor da folha com transparencia, para o blur
+     ter o que borrar quando passa por cima de um print ou de um bloco escuro. */
+  --vidro: rgb(255 255 255 / 0.72);
+  --vidro-borrao: 12px;
+
+  --t--1: 0.8125rem;
   --t-0: 1.0625rem;
   --t-1: 1.3125rem;
-  --t-2: 1.6875rem;
-  --t-3: 2.25rem;
-  --t-4: 3rem;
-  --t-5: clamp(3rem, 6.5vw, 4.75rem);
+  --t-2: 1.625rem;
+  --t-3: clamp(1.6rem, 5.2vw, 2.125rem);
+  --t-4: clamp(1.9rem, 6.4vw, 2.875rem);
+  /* o preco do hero, e so ele */
+  --t-5: clamp(3.25rem, 13vw, 6.5rem);
 
   --e-1: 0.25rem;
   --e-2: 0.5rem;
@@ -105,13 +108,65 @@
   --e-5: 3rem;
   --e-6: 6rem;
 
-  --raio: 0;
+  --raio: 2px;
   --dur: 140ms;
+  --dur-2: 320ms;
 
-  --fonte: 'Libre Franklin', 'Franklin Substituta', system-ui, sans-serif;
-  --fonte-rotulo: 'Archivo Narrow', 'Narrow Substituta', system-ui, sans-serif;
+  --fonte: 'Familjen Grotesk', 'Grotesk Substituta', system-ui, sans-serif;
   --fonte-mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  /* o rotulo passou a ser mono: a voz que nomeia o campo e a mesma que escreve o dado,
+     so que menor e em caixa alta. Uma familia a menos para baixar. */
+  --fonte-rotulo: var(--fonte-mono);
 }
+
+/* O tema escuro vive nos mesmos nomes. Quem pinta e o valor, nao o seletor: por isso
+   nenhuma regra abaixo precisa saber em que tema esta. */
+[data-tema='escuro'] {
+  color-scheme: dark;
+
+  --folha: #0F1216;
+  --via-2: #171C22;
+  --impresso: #2D353D;
+
+  --grafite: #F0F2F4;
+  --grafite-2: #98A1AA;
+
+  --caneta: #8AAAF0;
+
+  --inverso: #232931;
+  --inverso-texto: #FFFFFF;
+  --sobre: #B6BEC7;
+  --impresso-2: #39424C;
+  --caneta-2: #A9C2F7;
+
+  --vidro: rgb(15 18 22 / 0.72);
+}
+
+/* Sem escolha salva, o tema segue o sistema. O :not() deixa a escolha explicita vencer:
+   quem clicou em claro continua no claro mesmo com o sistema no escuro. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-tema='claro']) {
+    color-scheme: dark;
+
+    --folha: #0F1216;
+    --via-2: #171C22;
+    --impresso: #2D353D;
+
+    --grafite: #F0F2F4;
+    --grafite-2: #98A1AA;
+
+    --caneta: #8AAAF0;
+
+    --inverso: #232931;
+    --inverso-texto: #FFFFFF;
+    --sobre: #B6BEC7;
+    --impresso-2: #39424C;
+    --caneta-2: #A9C2F7;
+
+    --vidro: rgb(15 18 22 / 0.72);
+  }
+}
+
 
 *,
 *::before,
@@ -155,13 +210,13 @@ select {
 }
 
 h1, h2, h3, h4 {
-  font-family: var(--fonte-rotulo);
+  font-family: var(--fonte);
   font-weight: 700;
   line-height: 1.08;
   text-wrap: balance;
 }
 
-h1 { font-size: var(--t-5); letter-spacing: -0.02em; }
+h1 { font-size: var(--t-4); letter-spacing: -0.025em; }
 h2 { font-size: var(--t-3); letter-spacing: -0.01em; }
 h3 { font-size: var(--t-1); }
 h4 { font-size: var(--t-0); }
@@ -180,10 +235,9 @@ a:hover { color: var(--caneta); }
 
 /* --caneta sobre --grafite da 1,73:1: dentro do bloco escuro o hover deixaria o link
    menos legivel do que antes de ser apontado. */
-.faixa a:hover,
 .ato-escuro a:hover,
 .fechamento a:hover,
-.barra-acao a:hover { color: var(--folha); }
+
 
 ul[role='list'],
 ol[role='list'] { list-style: none; padding: 0; }
@@ -257,10 +311,9 @@ td a { display: inline-block; padding-block: var(--e-3); }
 
 /* --caneta sobre --grafite da 1,9:1: no bloco escuro o anel de foco some. Aqui ele
    troca para o azul claro, que da 7,3:1. */
-.faixa :focus-visible,
 .ato-escuro :focus-visible,
 .fechamento :focus-visible,
-.barra-acao :focus-visible { outline-color: var(--caneta-2); }
+
 
 a,
 button,
@@ -382,12 +435,12 @@ select {
   left: var(--e-3);
   top: -4rem;
   z-index: 3;
-  background: var(--grafite);
-  color: var(--folha);
+  background: var(--inverso);
+  color: var(--inverso-texto);
   padding: var(--e-3);
 }
 
-.pular:focus { top: var(--e-2); color: var(--folha); }
+.pular:focus { top: var(--e-2); color: var(--inverso-texto); }
 
 header {
   position: sticky;
@@ -397,7 +450,12 @@ header {
   border-bottom: 1px solid transparent;
 }
 
-header.rolado { border-bottom-color: var(--impresso); }
+header.rolado {
+  border-bottom-color: var(--impresso);
+  background: var(--vidro);
+  -webkit-backdrop-filter: blur(var(--vidro-borrao));
+  backdrop-filter: blur(var(--vidro-borrao));
+}
 
 header nav {
   display: flex;
@@ -440,6 +498,42 @@ header .botao { display: none; }
 
 header [aria-current] { color: var(--caneta); }
 
+/* Abaixo de 24em nao existe corpo de texto legivel que caiba a logo, os tres links e o
+   botao de tema na mesma linha: os links descem, em vez de virar menu escondido. */
+@media (max-width: 23.999em) {
+  header nav { flex-wrap: wrap; row-gap: 0; }
+
+  header ul {
+    order: 3;
+    width: 100%;
+    margin-left: 0;
+    justify-content: space-between;
+    border-top: 1px solid var(--impresso);
+  }
+}
+
+/* O botao de tema. Um circulo meio preenchido, e nao o par sol/lua: o mesmo desenho
+   serve os dois estados, e a troca e ele girando meia volta -- que e a animacao curta
+   inteira, sem um segundo icone para carregar. */
+.tema {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex: none;
+  color: var(--grafite-2);
+}
+
+.tema svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  transition: rotate var(--dur-2), color var(--dur);
+}
+
+.tema:hover { color: var(--caneta); }
+
+[data-tema='escuro'] .tema svg { rotate: 180deg; }
+
 .botao {
   display: inline-block;
   background: var(--caneta);
@@ -456,9 +550,9 @@ header [aria-current] { color: var(--caneta); }
 .botao-compacto { padding: var(--e-2) var(--e-3); min-height: 2.5rem; }
 
 /* Dentro do bloco escuro o acento da 2,95:1 e reprova. Papel sobre tinta da 16,5:1. */
-.botao-claro { background: var(--folha); border-color: var(--folha); color: var(--grafite); }
+.botao-claro { background: var(--inverso-texto); border-color: var(--inverso-texto); color: var(--inverso); }
 
-.botao-claro:hover { background: var(--folha); border-color: var(--folha); color: var(--grafite); }
+.botao-claro:hover { background: var(--inverso-texto); border-color: var(--inverso-texto); color: var(--inverso); }
 
 /* Ritmo vertical: no celular ninguem quer 96px de respiro entre secoes, entao a base
    e --e-5 e so a prova volta a respirar no desktop. */
@@ -480,45 +574,107 @@ section + section { border-top: 1px solid var(--impresso); }
 
 section h2 { max-width: 26ch; margin-bottom: var(--e-3); }
 
-.ficha { padding-block: 0; }
+/* A ABERTURA
+   O preco e a manchete. Nenhum concorrente dele publica o dele, e o dono de empresa que
+   chega aqui veio buscar exatamente esse numero -- ate agora ele estava em 17px no meio
+   de um paragrafo. Acima dele o H1 diz o que e, e o fio fecha a declaracao: e o unico
+   fio estrutural da pagina inteira, e por isso ele pode ser grosso e pode se desenhar. */
+.ficha { padding-block: var(--e-2) var(--e-5); }
 
-.ficha-kicker { color: var(--caneta); margin-bottom: var(--e-2); }
+.ficha h1 { max-width: 26ch; }
 
-/* 15ch foi medido na Schibsted, que e larga. Na condensada o mesmo 15ch estrangula o
-   H1 em tres linhas e custa 82px de altura. */
-.ficha h1 { max-width: 24ch; }
-
-/* A acao fecha o formulario: o fio acima dela e a linha onde o documento termina. */
-.ficha-acao { border-top: 1px solid var(--impresso); padding-top: var(--e-3); max-width: none; }
-
-.ficha .botao { margin-bottom: var(--e-3); }
-
-/* Fecha a primeira tela com uma aresta desenhada em vez de bege vazio, e poe rosto,
-   cidade e telefone acima da dobra -- que e o que o visitante precisa para acreditar
-   que existe alguem do outro lado. */
-.faixa { background: var(--grafite); color: var(--sobre); padding-block: var(--e-3); }
-
-/* no celular a foto e o nome dividem a primeira linha e o telefone fica embaixo:
-   empilhar os tres custava 307px e jogava a faixa para fora da dobra */
-.faixa-grade { display: grid; grid-template-columns: 76px 1fr; gap: var(--e-3) var(--e-3); align-items: center; }
-
-.faixa-fone { grid-column: 1 / -1; }
-
-.faixa img {
-  width: 76px;
-  height: 76px;
-  object-fit: cover;
-  object-position: center 22%;
-  border: 1px solid var(--impresso-2);
+/* O eixo. Tudo abaixo dele pende dele. 2px porque um fio de 1px aqui viraria o fio de
+   1px de todo o resto, e este e o unico que carrega peso de composicao. */
+.eixo {
+  height: 2px;
+  background: var(--grafite);
+  margin-block: var(--e-2) var(--e-3);
+  transform-origin: left center;
 }
 
-.faixa-nome strong { display: block; color: var(--folha); }
+/* row-gap maior que column-gap: no celular a cidade em mono encosta no rotulo do preco,
+   que tambem e mono, e as duas linhas cinzas viram uma so mancha. */
+.ficha-grade { display: grid; gap: var(--e-4) var(--e-2); }
 
-.faixa-nome .mono { color: var(--sobre); }
+.ficha-oferta > * + * { margin-top: var(--e-3); }
 
-.faixa-fone .mono { display: block; color: var(--sobre); }
+.ficha-oferta .rotulo { margin-bottom: calc(-1 * var(--e-2)); }
 
-.faixa-fone .telefone { font-size: var(--t-2); }
+/* O numero. Mono, porque ele sai de uma tabela e nao de um anuncio: e o mesmo tipo do
+   relatorio e da nota fiscal, so que em corpo de manchete. O tabular-nums trava a
+   largura dos algarismos para o numero nao dancar quando a fonte real chega. */
+.numero {
+  font-family: var(--fonte-mono);
+  font-size: var(--t-5);
+  font-weight: 600;
+  line-height: 0.92;
+  letter-spacing: -0.07em;
+  font-variant-numeric: tabular-nums;
+  /* A mono e de largura fixa: em corpo de manchete ela abre buracos entre o cifrao e o
+     numero. Os dois valores foram achados medindo no navegador, e nao no escuro -- mais
+     apertado que isto o cifrao encosta no 1. */
+  word-spacing: -0.32em;
+  color: var(--caneta);
+  max-width: none;
+}
+
+.ficha-promessa { max-width: 44ch; }
+
+.ficha-acao { max-width: none; margin-top: var(--e-3); }
+
+/* O RETRATO
+   O numero e o rosto da pagina; o rosto e a assinatura embaixo dele. Sem tratamento de
+   cor: assim a mesma regra serve a foto atual, de fundo neutro, e a que vier recortada.
+   O aspect-ratio no proprio img reserva a altura antes do byte chegar -- e o que segura
+   o CLS em zero quando a foto e o maior elemento da primeira tela. */
+/* No celular o rosto vem antes do preco: a primeira duvida de quem chega e quem esta do
+   outro lado, e so depois quanto custa. Foto e nome dividem a primeira linha; cidade e
+   telefone atravessam as duas colunas, porque o numero em mono nao cabe em meia linha
+   sem quebrar no meio. */
+.retrato {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: var(--e-2) var(--e-3);
+  align-items: end;
+  order: -1;
+}
+
+.retrato-onde { grid-column: 1 / -1; }
+
+.retrato-onde { color: var(--grafite-2); max-width: none; }
+
+.retrato img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 18%;
+  border: 1px solid var(--impresso);
+  border-radius: var(--raio);
+}
+
+.retrato-nome { padding-top: 0; align-self: end; }
+
+.retrato-nome > * + * { margin-top: var(--e-2); }
+
+.retrato-nome strong {
+  display: block;
+  font-family: var(--fonte);
+  font-size: var(--t-1);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--grafite);
+}
+
+.retrato-nome .rotulo { display: block; color: var(--caneta); }
+
+
+
+/* Fecha a oferta: quem nao quer preencher formulario nenhum chama direto. */
+.retrato-fone { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--e-1) var(--e-3); max-width: none; }
+
+.retrato-fone .telefone { color: var(--grafite); white-space: nowrap; }
+
+.retrato-fone .telefone:hover { color: var(--caneta); }
 
 .case { padding-bottom: var(--e-5); }
 
@@ -600,14 +756,14 @@ main section { container-type: inline-size; }
 }
 
 .ato-escuro {
-  background: var(--grafite);
+  background: var(--inverso);
   color: var(--sobre);
-  border-top-color: var(--grafite);
+  border-top-color: var(--inverso);
 }
 
-.ato-escuro h2 { color: var(--folha); }
+.ato-escuro h2 { color: var(--inverso-texto); }
 
-.ato-escuro strong { color: var(--folha); }
+.ato-escuro strong { color: var(--inverso-texto); }
 
 .ato-escuro .carimbo,
 .fechamento .carimbo { color: var(--caneta-2); border-color: var(--caneta-2); }
@@ -632,15 +788,13 @@ main section { container-type: inline-size; }
 .ato-escuro .os-cabecalho { border-bottom-color: var(--impresso-2); color: var(--sobre); }
 
 /* --grafite-2 sobre fundo escuro da 2,2:1. No ato escuro o secundario e --sobre. */
-.faixa .rotulo,
 .ato-escuro .rotulo,
 .fechamento .rotulo,
 .ato-escuro figcaption { color: var(--sobre); }
 
 /* Sobre fundo escuro o valor vira branco: 17,8:1, e ele e o dado que a pessoa veio ler. */
-.faixa .valor,
 .ato-escuro .valor,
-.fechamento .valor { color: var(--folha); }
+.fechamento .valor { color: var(--inverso-texto); }
 
 .ato h2 { font-size: var(--t-3); max-width: 22ch; margin-bottom: var(--e-3); }
 
@@ -663,7 +817,7 @@ main section { container-type: inline-size; }
 
 .ato-escuro .resultado-bloco .rotulo { color: var(--sobre); }
 
-.ato-escuro .resultado-manchete { color: var(--folha); }
+.ato-escuro .resultado-manchete { color: var(--inverso-texto); }
 
 /* o ato 03 nao divide em colunas: o print manda, e o texto vem embaixo. Limitar a
    largura dele evita uma imagem de 556px de altura so por ser larga. */
@@ -688,7 +842,7 @@ main section { container-type: inline-size; }
 .lista-servicos li:last-child { border-bottom: 1px solid var(--impresso); }
 
 .lista-servicos a {
-  font-family: var(--fonte-rotulo);
+  font-family: var(--fonte);
   font-size: var(--t-1);
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -789,33 +943,33 @@ details[open] summary::after { content: ' −'; }
 
 .lista-perguntas div { padding-bottom: var(--e-4); }
 
-.fechamento { background: var(--grafite); color: var(--sobre); padding-block: var(--e-4); }
+.fechamento { background: var(--inverso); color: var(--sobre); padding-block: var(--e-4); }
 
-.fechamento h2 { color: var(--folha); margin-bottom: var(--e-4); }
+.fechamento h2 { color: var(--inverso-texto); margin-bottom: var(--e-4); }
 
 .fechamento .mono { color: var(--sobre); }
 
 .telefone {
   font-size: var(--t-3);
-  color: var(--folha);
+  color: var(--inverso-texto);
   text-decoration: none;
   letter-spacing: -0.02em;
   display: inline-block;
   padding-block: var(--e-1);
 }
 
-.telefone:hover { color: var(--folha); text-decoration: underline; }
+.telefone:hover { color: var(--inverso-texto); text-decoration: underline; }
 
 .fechamento label { margin-bottom: var(--e-1); }
 
 .fechamento input,
 .fechamento textarea { border-color: var(--sobre); color: var(--grafite); }
 
-.campo-erro { color: var(--folha); font-size: var(--t--1); margin-top: var(--e-1); }
+.campo-erro { color: var(--inverso-texto); font-size: var(--t--1); margin-top: var(--e-1); }
 
 .campo-erro::before { content: '↑ '; color: var(--caneta); }
 
-.saida-manual a { color: var(--folha); }
+.saida-manual a { color: var(--inverso-texto); }
 
 footer { border-top: 1px solid var(--impresso); padding-block: var(--e-4); }
 
@@ -863,41 +1017,64 @@ footer { border-top: 1px solid var(--impresso); padding-block: var(--e-4); }
 
 .rodape-base nav a:hover { color: var(--caneta); }
 
-/* No celular as duas acoes ficam sempre ao alcance do polegar, e por isso o rodape
-   reserva a altura delas. No desktop a barra nao existe. */
-.barra-acao {
+/* O ATALHO
+   Substitui a barra fixa que ocupava a base inteira do celular. Nao e a bolinha verde:
+   e a mesma aresta e o mesmo raio do resto do site, em vidro, porque ele passa por cima
+   de print de case e de bloco escuro e precisa deixar ver o que esta atras.
+   So aparece depois do hero, para nao disputar com o CTA principal, e some quando a
+   secao de contato entra na tela, onde ja existe o formulario e o telefone. */
+.atalho {
   position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  right: max(4vw, 1rem);
+  bottom: calc(max(4vw, 1rem) + env(safe-area-inset-bottom));
   z-index: 2;
   display: flex;
-  background: var(--grafite);
-  padding-bottom: env(safe-area-inset-bottom);
-}
-
-.barra-acao a {
-  flex: 1;
-  display: flex;
   align-items: center;
-  justify-content: center;
   gap: var(--e-2);
-  height: 3.25rem;
-  color: var(--folha);
+  min-height: 2.75rem;
+  min-width: 2.75rem;
+  padding: var(--e-2) var(--e-3);
+  border: 1px solid var(--impresso);
+  border-radius: var(--raio);
+  background: var(--vidro);
+  -webkit-backdrop-filter: blur(var(--vidro-borrao));
+  backdrop-filter: blur(var(--vidro-borrao));
+  color: var(--grafite);
   text-decoration: none;
+  font-size: var(--t--1);
   font-weight: 500;
   white-space: nowrap;
+  /* nasce fora da tela: quem manda mostrar e o JS, e sem JS ele fica visivel de vez */
+  transition: opacity var(--dur-2), translate var(--dur-2), visibility var(--dur-2);
 }
 
-.barra-acao a + a { border-left: 1px solid var(--grafite-2); }
+.atalho svg { width: 1.25rem; height: 1.25rem; flex: none; }
 
-.barra-acao .mono { color: var(--sobre); }
+.atalho:hover { color: var(--caneta); border-color: var(--caneta); }
 
-body { padding-bottom: 3.25rem; }
+/* O rotulo cabe no desktop. No celular fica so o icone, com os 44px de alvo garantidos
+   pelo min-width acima. */
+.atalho span { display: none; }
+
+.atalho[hidden] {
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  translate: 0 0.75rem;
+  pointer-events: none;
+}
+
+/* Sem vidro, o fundo volta a ser opaco: um header ou um atalho translucido por cima de
+   um print de case fica ilegivel se o borrao nao acontecer. */
+@supports not (backdrop-filter: blur(1px)) {
+  header.rolado,
+  .atalho { background: var(--folha); }
+}
 
 @media (min-width: 48em) {
-  body { padding-bottom: 0; }
-  .barra-acao { display: none; }
+  /* No desktop o atalho ganha o rotulo: ha espaco, e um icone sozinho ali obriga a
+     adivinhar. */
+  .atalho span { display: block; }
 
   header nav { gap: var(--e-4); }
   header .botao { display: inline-block; }
@@ -920,22 +1097,46 @@ body { padding-bottom: 3.25rem; }
 
   .lista-servicos p { padding-block: var(--e-2); }
 
-  /* No celular o espaco e curto e 13rem ja e metade da largura da tela. A foto so
-     cresce, e a Ficha so respira, quando ha coluna sobrando para isso. */
-  .ficha { padding-block: var(--e-4) 0; }
+  /* Onde ha coluna sobrando, o numero e o retrato dividem a abertura meio a meio e as
+     bases dos dois alinham na mesma linha. No celular eles se empilham, e e o retrato
+     que vem primeiro: rosto antes de preco, porque a duvida do visitante e quem esta
+     do outro lado antes de quanto custa. */
+  .ficha { padding-block: var(--e-5) var(--e-6); }
 
-  .ficha .botao { margin-bottom: var(--e-3); }
+  .eixo { margin-block: var(--e-3) var(--e-4); }
 
-  .faixa { padding-block: var(--e-4); }
+  .ficha-grade {
+    grid-template-columns: 1fr 1.1fr;
+    gap: var(--e-5);
+    align-items: end;
+  }
 
-  .faixa-grade { grid-template-columns: 76px 1fr auto; gap: var(--e-4); }
+  .ficha-oferta { order: -1; }
 
-  .faixa-fone { grid-column: auto; }
+  .retrato { grid-template-columns: auto 1fr; gap: var(--e-2) var(--e-4); }
 
-  .faixa-fone { text-align: right; }
+  .retrato-fone .telefone { font-size: var(--t-1); }
+
+  /* A foto para de crescer antes de empurrar o botao para fora da primeira tela: em
+     4:5 cada 100px de largura custa 125px de altura, e a altura e o recurso escasso.
+     O limite e de largura, e nao de altura: limitar a altura achataria o retrato. */
+  .retrato img { max-width: 17rem; justify-self: start; }
 
   /* O fundo escuro ja separa do FAQ: 48px de escuro em cima e respiro pago duas vezes. */
   .fechamento { padding-block: var(--e-4) var(--e-5); }
+
+  /* O pin dos compromissos: o titulo fica preso na coluna da esquerda enquanto os tres
+     passam pela direita. Sem as duas colunas o sticky prenderia o titulo por cima da
+     lista, que e exatamente o que ele nao pode fazer. E layout, e nao animacao: vale
+     tambem para quem pediu menos movimento. */
+  .processo .container {
+    display: grid;
+    grid-template-columns: 20rem 1fr;
+    gap: var(--e-5);
+    align-items: start;
+  }
+
+  .processo h2 { position: sticky; top: calc(var(--e-5) + var(--e-4)); margin-bottom: 0; }
 
   .ato h2 { font-size: var(--t-4); }
 
@@ -964,19 +1165,57 @@ body { padding-bottom: 3.25rem; }
   .inicio-8 { grid-column-start: 8; }
   .inicio-9 { grid-column-start: 9; }
 }
+/* MOVIMENTO
+   Quatro momentos, e cada um tem um motivo. Tudo em CSS: parallax, revelacao e o pin
+   dos compromissos rodam no compositor por animation-timeline, fora da main thread.
+   Nao ha GSAP, nao ha ScrollTrigger e nao ha scroll suave por JS -- os tres somariam
+   40 KB para fazer o que o navegador ja faz, e o scroll por JS e o que mais custa INP.
+   Onde animation-timeline nao existe, nada anima e tudo aparece no estado final. */
 
-/* Transicao entre paginas sem uma linha de JS e sem virar SPA. Navegador que nao
-   suporta navega como sempre. */
-@view-transition { navigation: auto; }
+/* 1. A ENTRADA. Um gesto so: o eixo se desenha da esquerda e o preco sobe atras dele.
+   O preco nao anima opacity de proposito -- ele e candidato a maior elemento da
+   primeira tela, e comecar invisivel adiaria o LCP pelo tempo inteiro da animacao. */
+@media (prefers-reduced-motion: no-preference) {
+  .eixo {
+    animation: desenhar-eixo 600ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
 
-header { view-transition-name: cabecalho; }
+  .ficha-oferta > * {
+    animation: subir 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: 120ms;
+  }
 
-/* O print sobe ao entrar na tela. Roda no compositor, fora da main thread: e o
-   oposto do IntersectionObserver com translateY que apagamos na fase 1.
-   Anima a imagem e nao a figura inteira: com o figure em opacity 0.55 o dominio do
-   rotulo ficava translucido e o contraste caia enquanto a animacao rodava. */
+  .numero { animation-name: subir-firme; }
+
+  @keyframes desenhar-eixo {
+    from { scale: 0 1; }
+    to { scale: 1 1; }
+  }
+
+  @keyframes subir {
+    from { opacity: 0; translate: 0 12px; }
+    to { opacity: 1; translate: 0 0; }
+  }
+
+  /* A promessa e o botao entram so subindo: sao texto, e texto a meia opacidade e texto
+     ilegivel pelo tempo da animacao. */
+  .ficha-promessa,
+  .ficha-acao,
+  .retrato-fone { animation-name: subir-firme; }
+
+  @keyframes subir-firme {
+    from { translate: 0 12px; }
+    to { translate: 0 0; }
+  }
+}
+
+/* 2. O HEADER vira vidro ao rolar. Nao ha keyframe: e a classe .rolado, aplicada pelo
+   mesmo listener que ja existia para o fio. */
+
 @media (prefers-reduced-motion: no-preference) {
   @supports (animation-timeline: view()) {
+    /* 3. O PRINT. No celular ele so entra subindo, porque ali a imagem sangra ate a
+       borda e um quadro que corta apagaria a sangria. */
     .ato .anexo img {
       animation: entrar-print linear both;
       animation-timeline: view();
@@ -987,8 +1226,51 @@ header { view-transition-name: cabecalho; }
       from { opacity: 0.55; translate: 0 18px; }
       to { opacity: 1; translate: 0 0; }
     }
+
+    /* 4. OS COMPROMISSOS. O unico bloco da pagina que e sequencia de verdade: o titulo
+       fica preso enquanto os tres itens passam, e cada um chega no seu tempo. E por ser
+       sequencia que este e tambem o unico bloco numerado do site. */
+    .compromissos li {
+      animation: chegar linear both;
+      animation-timeline: view();
+      animation-range: entry 15% cover 40%;
+    }
+
+    /* So translate. Animar a opacidade do texto derruba o contraste enquanto a animacao
+       roda -- o axe mede 1,6:1 no meio do caminho, e quem le devagar le o cinza. */
+    @keyframes chegar {
+      from { translate: 0 18px; }
+      to { translate: 0 0; }
+    }
   }
 }
+
+/* No desktop o print ganha o parallax: a imagem e 4% maior que o quadro e desliza dentro
+   dele. Duas camadas, so transform, e o quadro nunca se mexe. Mais do que 4% comeca a
+   comer o topo do print, que e onde mora o logo do cliente -- e o logo e a prova. */
+@media (min-width: 48em) and (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .ato .anexo { overflow: clip; }
+
+    .ato .anexo img {
+      scale: 1.04;
+      animation: deslizar-print linear both;
+      animation-timeline: view();
+      animation-range: cover;
+    }
+
+    @keyframes deslizar-print {
+      from { translate: 0 -1.8%; }
+      to { translate: 0 1.8%; }
+    }
+  }
+}
+
+/* Transicao entre paginas sem uma linha de JS e sem virar SPA. Navegador que nao
+   suporta navega como sempre. */
+@view-transition { navigation: auto; }
+
+header { view-transition-name: cabecalho; }
 
 /* A pagina nao pula de lado quando um <details> do FAQ abre e cria rolagem. */
 html { scrollbar-gutter: stable; }
@@ -1001,5 +1283,13 @@ html { scrollbar-gutter: stable; }
     animation-duration: 1ms;
     transition-duration: 1ms;
   }
-  .ato .anexo img { animation: none; opacity: 1; translate: none; }
+  .ato .anexo img,
+  .compromissos li,
+  .eixo,
+  .ficha-oferta > * {
+    animation: none;
+    opacity: 1;
+    translate: none;
+    scale: none;
+  }
 }
