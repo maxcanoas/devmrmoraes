@@ -211,11 +211,18 @@ for (const arq of fs.readdirSync(path.join(RAIZ, 'img', 'cases'))) {
   if (!usadas.has('cases/' + arq)) alerta('img/cases/' + arq + ' nao e referenciado por nenhuma pagina');
 }
 
+/* 7a. o vidro tem teto, e nao proibicao. Dois elementos o usam -- o header e o atalho
+   do WhatsApp -- e cada um precisa do par com prefixo para o Safari. Acima disso o site
+   vira sopa de blur e o custo de composicao aparece no celular. */
+const TETO = [
+  [/backdrop-filter/g, 'backdrop-filter', 5],
+];
+
 /* 7. proibicoes verificaveis */
 const PROIBIDO = [
   [/linear-gradient|radial-gradient|conic-gradient/, 'gradiente'],
-  [/backdrop-filter/, 'backdrop-filter'],
-  [/filter:\s*blur/, 'filter: blur'],
+  /* lookbehind: sem ele "backdrop-filter: blur" cai nesta proibicao */
+  [/(?<![-\w])filter:\s*blur/, 'filter: blur'],
   [/transition:\s*all/, 'transition: all'],
   [/!important/, '!important'],
   [/-webkit-text-stroke/, '-webkit-text-stroke'],
@@ -225,7 +232,7 @@ const PROIBIDO = [
   [/[─═]{3}|={6}/, 'comentario-caixa'],
   [/\sstyle="/, 'style inline'],
   /* fronteira de palavra: sem ela "IntersectionObserver" casava com "Inter" */
-  [/\b(?:Bebas Neue|DM Sans|DM Serif|Inter|Poppins|Montserrat|Roboto|Open Sans|Lato|Nunito|Raleway|Playfair|Space Grotesk|Outfit|Sora|Manrope)\b/, 'familia proibida'],
+  [/\b(?:Bebas Neue|DM Sans|DM Serif|Inter|Poppins|Montserrat|Roboto|Open Sans|Lato|Nunito|Raleway|Playfair|Space Grotesk|Outfit|Sora|Manrope|Figtree|Plus Jakarta|Urbanist|Syne|Cabinet Grotesk|Satoshi|General Sans|Clash Display)\b/, 'familia proibida'],
 ];
 const alvos = [...paginas, 'css/style.css', 'js/script.js'];
 for (const rel of alvos) {
