@@ -886,11 +886,17 @@ main section { container-type: inline-size; }
 
 .capa-linha { font-size: var(--t-1); color: var(--grafite-2); max-width: 42ch; }
 
+/* Num case a manchete e o resultado: frase inteira, entao grotesca e nao a mono do
+   numero. E o que a pessoa veio ver, e estava na terceira secao. */
+.capa .resultado-manchete { font-size: clamp(1.75rem, 5.5vw, 2.5rem); max-width: 18ch; }
+
+.capa .resultado-bloco { border-top: 0; padding-top: 0; }
+
 .capa .ficha-acao { max-width: none; margin-top: var(--e-4); }
 
 /* Sem numero, a frase de escopo sobe de corpo e assume a abertura sozinha: e ela que
    responde por que a pessoa esta ali. */
-.capa-grade:not(:has(.numero)) .capa-linha {
+.capa-grade:not(:has(.numero, .resultado-manchete)) .capa-linha {
   font-size: var(--t-2);
   line-height: 1.35;
   color: var(--grafite);
@@ -1169,11 +1175,11 @@ footer { border-top: 1px solid var(--impresso); padding-block: var(--e-4); }
 
   /* Sem numero, quem abre e a frase, e a acao vai para a direita na mesma linha de base.
      Deixar a direita vazia faria a pagina voltar a parecer documento. */
-  .capa-grade:not(:has(.numero)) { grid-template-columns: minmax(0, 1.35fr) auto; align-items: end; }
+  .capa-grade:not(:has(.numero, .resultado-manchete)) { grid-template-columns: minmax(0, 1.35fr) auto; align-items: end; }
 
-  .capa-grade:not(:has(.numero)) .capa-linha { padding-top: 0; }
+  .capa-grade:not(:has(.numero, .resultado-manchete)) .capa-linha { padding-top: 0; }
 
-  .capa-grade:not(:has(.numero)) .ficha-acao { margin-top: 0; justify-self: end; }
+  .capa-grade:not(:has(.numero, .resultado-manchete)) .ficha-acao { margin-top: 0; justify-self: end; }
 
   /* O fundo escuro ja separa do FAQ: 48px de escuro em cima e respiro pago duas vezes. */
   .fechamento { padding-block: var(--e-4) var(--e-5); }
