@@ -153,14 +153,12 @@ function cenaDoCase(cena, preso) {
   const vertical = cena.classList.contains('cena-cima');
   const eixo = vertical ? 'yPercent' : 'xPercent';
   const lado = cena.classList.contains('cena-direita') ? 1 : -1;
-  const varrer = (tl, inicio, dur) => tl
-    .fromTo(mascara, { [eixo]: lado * 100 }, { [eixo]: 0, ease: 'none', duration: dur }, inicio)
-    .fromTo(conteudo, { [eixo]: -lado * 100 }, { [eixo]: 0, ease: 'none', duration: dur }, inicio);
+  const varrer = (tl, inicio, dur, ease) => tl
+    .fromTo(mascara, { [eixo]: lado * 100 }, { [eixo]: 0, ease: ease, duration: dur }, inicio)
+    .fromTo(conteudo, { [eixo]: -lado * 100 }, { [eixo]: 0, ease: ease, duration: dur }, inicio);
 
   if (!preso) {
-    varrer(gsap.timeline({
-      scrollTrigger: { trigger: cena.querySelector('.anexo'), start: 'top 85%', end: 'top 30%', scrub: 0.4 }
-    }), 0, 1);
+    varrer(gsap.timeline({ defaults: { ease: 'power2.out' }, scrollTrigger: { trigger: cena.querySelector('.anexo'), start: 'top 85%', once: true } }), 0, 0.9, 'power2.out');
     return;
   }
 
@@ -174,12 +172,22 @@ function cenaDoCase(cena, preso) {
   const tl = gsap.timeline({
     scrollTrigger: { trigger: cena, start: 'top top', end: '+=110%', pin: palco, scrub: 0.5, anticipatePin: 1, invalidateOnRefresh: true }
   });
-  varrer(tl, 0.2, 0.45);
+  varrer(tl, 0.2, 0.45, 'none');
   if (antes) tl.fromTo(antes, { y: 0 }, { y: () => -altura() * 0.7, ease: 'none', duration: 0.4 }, 0.22);
   if (depois) tl.fromTo(depois, { y: () => altura() }, { y: 0, ease: 'none', duration: 0.4 }, 0.3);
   if (resultado) tl.fromTo(resultado, { scale: 0.94, transformOrigin: 'left top' }, { scale: 1, duration: 0.25 }, 0.72);
   /* o print e 6% maior que o quadro e desliza dentro dele */
   if (img) tl.fromTo(img, { scale: 1.06, yPercent: -2.5 }, { scale: 1.06, yPercent: 2.5, ease: 'none', duration: 1 }, 0);
+}
+
+/* Nas internas o print nao tem palco: a linha so o revela quando ele entra na tela. */
+function revelarAnexos() {
+  document.querySelectorAll('.anexo-mascara').forEach(mascara => {
+    if (mascara.closest('.cena') || !mascara.firstElementChild) return;
+    gsap.timeline({ defaults: { ease: 'power2.out', duration: 0.9 }, scrollTrigger: { trigger: mascara, start: 'top 88%', once: true } })
+      .fromTo(mascara, { xPercent: -100 }, { xPercent: 0 }, 0)
+      .fromTo(mascara.firstElementChild, { xPercent: 100 }, { xPercent: 0 }, 0);
+  });
 }
 
 function acenderServicos() {
@@ -250,6 +258,7 @@ function registrarCenas() {
     if (ctx.conditions.reduzido) return;
     const preso = ctx.conditions.preso;
     document.querySelectorAll('.cena').forEach(cena => cenaDoCase(cena, preso));
+    revelarAnexos();
     acenderServicos();
     entrarCompromissos();
     if (preso) varrerContato();

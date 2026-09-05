@@ -138,7 +138,7 @@
      {
       "@type": "Article",
       "@id": "https://www.devmrmoraes.com.br/artigos/SLUG-DO-ARTIGO/#article",
-      "headline": "TITULO COMPLETO DO ARTIGO — pode ser mais longo que o <title>",
+      "headline": "TITULO COMPLETO DO ARTIGO, pode ser mais longo que o <title>",
       "description": "RESUMO DO ARTIGO. Costuma ser o mesmo texto da meta description.",
       "url": "https://www.devmrmoraes.com.br/artigos/SLUG-DO-ARTIGO/",
       "datePublished": "AAAA-MM-DD",
@@ -155,7 +155,7 @@
        "@type": "WebPage",
        "@id": "https://www.devmrmoraes.com.br/artigos/SLUG-DO-ARTIGO/"
       },
-      "articleSection": "CATEGORIA — ex.: SEO técnico, Sistemas, Automação",
+      "articleSection": "CATEGORIA, por exemplo SEO técnico, Sistemas ou Automação",
       "keywords": [
        "PALAVRA 1",
        "PALAVRA 2",

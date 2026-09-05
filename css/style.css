@@ -686,12 +686,14 @@ main > section:not(.trabalho) { container-type: inline-size; }
   letter-spacing: -0.03em;
   color: var(--texto-2);
   max-width: 14ch;
-  order: 1;
 }
 
-.anexo { order: 2; }
+/* No celular a ordem e antes, print, depois; so dentro da cena. */
+.cena .antes { order: 1; }
 
-.depois { order: 3; }
+.cena .anexo { order: 2; }
+
+.cena .depois { order: 3; }
 
 .depois > * + * { margin-top: var(--e-3); }
 
@@ -865,6 +867,9 @@ main > section:not(.trabalho) { container-type: inline-size; }
   text-transform: uppercase;
   color: var(--acao-texto);
 }
+
+/* O numero da etapa e dado, na cor da acao, como o rotulo de tempo da home. */
+.compromissos > li > .mono { color: var(--acao-texto); font-weight: 700; }
 
 .compromissos p { font-size: var(--t-1); }
 
@@ -1168,7 +1173,9 @@ footer { border-top: 1px solid var(--fio); padding-block: var(--e-4); }
 
 .par-figuras { display: grid; gap: var(--e-4); }
 
-.prosa { max-width: 68ch; }
+/* A coluna de leitura fica na margem esquerda, alinhada com o H1 da capa: cada bloco tem
+   68ch, e o container continua o mesmo do resto da pagina. */
+.prosa > * { max-width: 68ch; }
 
 .prosa > * + * { margin-top: var(--e-3); }
 
@@ -1234,11 +1241,11 @@ footer { border-top: 1px solid var(--fio); padding-block: var(--e-4); }
   /* Sem palco preso (tela baixa, menos movimento, sem JS) o antes fica em cima do depois,
      na coluna de texto, e os dois se leem. So quando o JS prende o palco (.cena-presa) os
      dois ocupam a mesma celula, e e o JS que troca um pelo outro. */
-  .antes { grid-column: 1 / 6; grid-row: 2; font-size: var(--t-3); align-self: end; }
+  .cena .antes { grid-column: 1 / 6; grid-row: 2; font-size: var(--t-3); align-self: end; }
 
-  .depois { grid-column: 1 / 6; grid-row: 3; }
+  .cena .depois { grid-column: 1 / 6; grid-row: 3; }
 
-  .anexo { grid-column: 6 / -1; grid-row: 2 / 4; }
+  .cena .anexo { grid-column: 6 / -1; grid-row: 2 / 4; }
 
   .cena-direita .antes,
   .cena-direita .depois { grid-column: 8 / -1; }
