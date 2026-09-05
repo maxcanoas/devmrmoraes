@@ -1,12 +1,12 @@
 {
-  "name": "DevMrmoraes — Desenvolvimento Web e Sistemas",
-  "short_name": "DevMrmoraes",
-  "description": "Desenvolvimento profissional de sites, sistemas personalizados, apps mobile, chatbots com IA e automação de processos para empresas de todo o Brasil.",
+  "name": "DEVMRMORAES: Desenvolvimento Web e Sistemas",
+  "short_name": "DEVMRMORAES",
+  "description": "Criação de sites, sistemas personalizados, aplicativos mobile e automação de processos para empresas de Canoas, Porto Alegre e todo o Brasil.",
   "start_url": "/",
   "scope": "/",
   "display": "browser",
-  "background_color": "#FFFFFF",
-  "theme_color": "#FFFFFF",
+  "background_color": "#0A0C14",
+  "theme_color": "#0A0C14",
   "lang": "pt-BR",
   "dir": "ltr",
   "categories": [

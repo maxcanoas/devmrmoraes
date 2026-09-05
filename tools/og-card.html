@@ -4,12 +4,10 @@
 <meta charset="utf-8" />
 <link rel="stylesheet" href="../css/style.css" />
 <style>
-  /* Peca de compartilhamento, 1200x630. Usa os tokens e as fontes do site, com a
-     composicao refeita para o formato deitado: a chamada e o retrato dividem a metade
-     de cima, e os cinco carros-chefe ocupam a largura inteira embaixo.
-     Cinco e nao nove: o card e lido a uns 350px de largura dentro do WhatsApp, e nove
-     nomes obrigavam um corpo em que ninguem le de relance. Os outros quatro servicos
-     continuam na home e no rodape. */
+  /* Peca de compartilhamento, 1200x630, na direcao A virada. Usa os tokens e as fontes do
+     site: breu, a chamada em Gabarito, a linha da virada em cobalto, o retrato em preto e
+     branco e os cinco carros-chefe embaixo. Cinco e nao nove: o card e lido a uns 350px
+     de largura dentro do WhatsApp, e nove nomes obrigavam um corpo que ninguem le. */
   html, body { margin: 0; }
   body {
     width: 1200px;
@@ -18,12 +16,14 @@
     display: grid;
     grid-template-rows: auto auto;
     align-content: space-between;
-    padding: 50px 64px 46px;
+    padding: 48px 64px 44px;
     box-sizing: border-box;
+    background: var(--fundo);
+    color: var(--texto);
   }
   .topo {
     display: grid;
-    grid-template-columns: 1fr 240px;
+    grid-template-columns: 1fr 224px;
     gap: 56px;
     align-items: stretch;
   }
@@ -33,51 +33,52 @@
     justify-content: space-between;
   }
   .marca {
-    font-weight: 700;
+    font-family: var(--fonte-display);
+    font-weight: 800;
     font-size: 28px;
-    letter-spacing: -0.03em;
-    color: var(--grafite);
+    letter-spacing: -0.02em;
   }
-  .marca span { color: var(--caneta); }
+  .marca span { color: var(--acao-texto); }
   .chamada {
-    font-size: 47px;
-    font-weight: 700;
-    line-height: 1.07;
+    font-family: var(--fonte-display);
+    font-size: 60px;
+    font-weight: 900;
+    line-height: 0.98;
     letter-spacing: -0.03em;
-    margin: 26px 0 auto;
-    max-width: 19ch;
+    margin: 22px 0 auto;
+    max-width: 14ch;
     text-wrap: balance;
   }
   .onde {
-    font-family: var(--fonte-mono);
-    font-size: 19px;
-    color: var(--grafite-2);
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--texto-2);
     margin-top: 0;
   }
   figure { margin: 0; }
   figure img {
-    width: 240px;
-    height: 300px;
+    width: 224px;
+    height: 280px;
     object-fit: cover;
-    object-position: center 16%;
-    border: 1px solid var(--impresso);
-    border-radius: 2px;
+    object-position: center 18%;
+    border-radius: 3px;
     display: block;
+    filter: grayscale(1) contrast(1.04);
   }
-  .nome { font-family: var(--fonte); font-size: 22px; font-weight: 700; letter-spacing: -0.02em; display: block; margin-top: 12px; }
+  .nome { font-weight: 600; font-size: 20px; display: block; margin-top: 12px; }
   .funcao {
-    font-family: var(--fonte-mono);
-    font-size: 15px;
-    letter-spacing: 0.08em;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--caneta);
+    color: var(--acao-texto);
     display: block;
-    margin-top: 2px;
+    margin-top: 4px;
   }
 
-  /* O fio e o mesmo eixo da home, e aqui ele separa quem eu sou do que eu faco. */
+  /* A linha da virada separa quem eu sou do que eu faco. */
   .servicos {
-    border-top: 3px solid var(--grafite);
+    border-top: 4px solid var(--acao);
     margin-top: 22px;
     padding-top: 18px;
   }
@@ -89,11 +90,22 @@
     column-gap: 56px;
   }
   .servicos li {
+    font-family: var(--fonte-display);
+    font-weight: 700;
     font-size: 27px;
+    letter-spacing: -0.01em;
     line-height: 1.25;
     padding: 6px 0;
     break-inside: avoid;
-    color: var(--grafite);
+  }
+  .servicos li::before {
+    content: '';
+    display: inline-block;
+    width: 0.42em;
+    height: 0.42em;
+    background: var(--resultado);
+    margin-right: 0.45em;
+    vertical-align: 0.1em;
   }
 </style>
 </head>

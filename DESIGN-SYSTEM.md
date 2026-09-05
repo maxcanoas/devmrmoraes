@@ -1,215 +1,225 @@
-# Sistema de design — devmrmoraes.com.br
+# Sistema de design: devmrmoraes.com.br
 
-Direção **O número**, aplicada na home em 03/09/2026. Este documento é o que basta para
-reproduzir o visual nas páginas internas sem reabrir o `index.html`.
+Direção **A virada**, aplicada nas 18 páginas em 05/09/2026. Este documento é o que basta para
+reproduzir o visual numa página nova sem reabrir o `index.html`.
 
-**A tese.** O site é a proposta comercial aberta em cima da mesa, e a primeira coisa que
-se lê é o preço, porque nenhum concorrente publica o dele. O preço em manchete é o único
-lugar onde a página levanta a voz; todo o resto é grotesca em corpo modesto e muito ar.
-Ao aplicar isto numa página interna, a pergunta é sempre: **qual é o número desta página?**
-Na de criação de sites é o preço de entrada; na de SEO é o prazo; num case é o resultado.
-Só um por página, e ele usa `.numero`.
+**A tese.** Todo serviço do site transforma uma situação em outra: a empresa sem site passa a
+existir no Google, o site invisível passa a ser encontrado, o relatório feito à mão sai da
+planilha. A copy já contava cada case assim (situação encontrada, o que eu fiz, resultado). O
+visual conta a mesma história com um elemento só, **a linha da virada**: um traço de 3 px em
+cobalto que separa o antes do depois. Ela se desenha na abertura, varre cada print, sublinha o
+H1 das internas, passa por baixo do botão no hover e empurra o breu para fora da tela de contato.
+
+Um gesto, repetido com sentido, em vez de dez efeitos espalhados.
 
 ---
 
-## Tokens
+## As seis cores
 
-Todos vivem em `:root` no topo de `css/style.css`. **Nunca escreva um hex fora de lá.**
-Os mesmos nomes servem os dois temas: quem pinta é o valor, não o seletor, e por isso
-nenhuma regra do arquivo precisa saber em que tema está.
+| Nome | Hex | Papel |
+|---|---|---|
+| **Breu** | `#0A0C14` | o fundo, preto azulado |
+| **Sombra** | `#141830` | o degrau acima do breu: seção alternada, quadro do print, campo |
+| **Luz** | `#F4F5F9` | texto principal, e o fundo do tema claro |
+| **Névoa** | `#9AA1B8` | texto secundário, e a cor do "antes" |
+| **Cobalto** | `#2A4BFF` | a dominante: a linha, o botão, a ação |
+| **Âmbar** | `#FFB324` | o apoio: só o resultado, a marca dos carros-chefe e a tela de contato |
 
-| Token | Claro | Escuro | Para que serve |
+A cor carrega informação, não decoração: **névoa é o antes, cobalto é a ação, âmbar é o
+resultado.** Cobalto puro dá 3,4:1 sobre breu e por isso só pinta forma e fundo; como texto ele
+sobe para **Cobalto-claro** `#8FA5FF` (8,4:1). Âmbar nunca é texto sobre fundo claro: no tema
+claro o resultado escreve em `#8C5A00` (5,5:1 sobre luz).
+
+### Tokens
+
+Todos vivem em `:root` no topo de `css/style.css` e têm nome de papel, não de cor. É assim que o
+tema claro (`[data-tema='claro']`) troca os valores sem que nenhuma regra precise saber em que
+tema está. **Nunca escreva um hex fora do `:root`.**
+
+| Token | Escuro | Claro | Para que serve |
 |---|---|---|---|
-| `--folha` | `#FFFFFF` | `#0F1216` | fundo da página |
-| `--via-2` | `#EDF0F2` | `#171C22` | fundo de um degrau (bloco alternado) |
-| `--impresso` | `#CFD7DD` | `#2D353D` | o fio de 1px, estrutural |
-| `--grafite` | `#0F1216` | `#F0F2F4` | texto principal |
-| `--grafite-2` | `#565F69` | `#98A1AA` | texto secundário, rótulo |
-| `--caneta` | `#1B3A8C` | `#8AAAF0` | o acento: valor, link, botão, carimbo |
-| `--inverso` | `#0F1216` | `#232931` | fundo do bloco invertido |
-| `--inverso-texto` | `#FFFFFF` | `#FFFFFF` | texto sobre o bloco invertido |
-| `--sobre` | `#C2C8CE` | `#B6BEC7` | secundário dentro do bloco invertido |
-| `--impresso-2` | `#2A2F36` | `#39424C` | fio dentro do bloco invertido |
-| `--caneta-2` | `#7FA6E8` | `#A9C2F7` | acento dentro do bloco invertido |
-| `--vidro` | `rgb(255 255 255 / .72)` | `rgb(15 18 22 / .72)` | fundo do header e do atalho |
+| `--fundo` | Breu | Luz | fundo da página |
+| `--fundo-2` | Sombra | `#E6E8F0` | degrau, quadro, campo |
+| `--fio` | `#262B45` | `#CDD1DE` | o fio de 1px: FAQ, tabela, rodapé, campo |
+| `--texto` | Luz | Breu | texto principal |
+| `--texto-2` | Névoa | `#5B6275` | secundário, rótulo, o antes |
+| `--acao` | Cobalto | Cobalto | a linha, o botão, a forma |
+| `--acao-texto` | Cobalto-claro | Cobalto | link, rótulo de tempo, número de etapa |
+| `--sobre-acao` | branco | branco | texto sobre cobalto |
+| `--resultado` | Âmbar | Âmbar | a linha do resultado, o quadrado do carro-chefe, o fundo do contato |
+| `--resultado-texto` | Âmbar | `#8C5A00` | a manchete de resultado |
+| `--sobre-resultado` | Breu | Breu | texto sobre âmbar |
+| `--vidro` | breu a 74% | luz a 78% | header rolado e atalho |
 
-O acento é **azul de esferográfica**: é o que foi preenchido à mão, não a cor da marca.
-Ele entra em valor, link, botão primário e carimbo. Nunca em fundo de seção, nunca em
-título. No bloco invertido ele reprova contraste e vira `--caneta-2`.
+O site é **escuro por padrão**. O claro é a saída de quem lê no sol: só a escolha "claro" é
+salva em `localStorage` e aplicada pelo script inline do `<head>` antes do primeiro paint.
 
-**No tema escuro o bloco invertido sobe um degrau em vez de descer** (`#232931` sobre
-`#0F1216`), senão sumiria dentro do próprio fundo. A cadência entre os cases se mantém.
+Contrastes medidos: luz/breu 18:1, névoa/breu 7,5:1, cobalto-claro/breu 8,4:1, âmbar/breu e
+breu/âmbar 10,9:1, luz/cobalto 5,8:1. Ao criar um par novo, meça.
 
-Contraste verificado: o par mais fraco de todo o sistema é `--caneta` sobre `--via-2` no
-tema claro, em 9,1:1. Todos os outros passam com folga. Ao criar um par novo, meça.
-
-### Espaçamento e forma
+### Espaço e forma
 
 ```
---e-1 0.25rem   --e-2 0.5rem   --e-3 1rem
---e-4 1.5rem    --e-5 3rem     --e-6 6rem
---raio 2px      --dur 140ms    --dur-2 320ms
+--e-1 0.25rem   --e-2 0.5rem   --e-3 1rem    --e-4 1.5rem
+--e-5 3rem      --e-6 6rem     --e-7 9rem
+--raio 3px      --dur 160ms    --dur-2 400ms   --curva cubic-bezier(0.22, 1, 0.36, 1)
 ```
 
-`--raio: 2px` é deliberado: zero fazia a página parecer impressa, que era a direção
-anterior. Dois pixels tiram isso sem virar cartão arredondado.
+Seção respira `--e-5` no celular e `--e-6` no desktop. Grade de 12 colunas, container 1200px,
+margem `max(5vw, 1.25rem)`, um breakpoint de layout em `48em`; o resto responde por container
+query e clamp.
 
 ---
 
 ## Tipografia
 
 Duas famílias, quatro arquivos `.woff2` em `fonts/`, self-hosted. **Nunca adicionar uma
-terceira**: o gate reprova Google Fonts e o orçamento não comporta.
+terceira**: o gate reprova Google Fonts e o orçamento não comporta. Não há mono: ela era a voz
+do "documento", a direção anterior.
 
-- **Familjen Grotesk** (variável 400–700) — prosa, título, botão. Grotesca escandinava de
-  terminais cortados em ângulo, que lê como texto e não como interface.
-- **IBM Plex Mono** (400–600) — o dado: valor, prazo, domínio, telefone, rótulo. É a
-  tipografia do relatório e da nota fiscal, e no hero ela sobe a corpo de manchete.
-- **Grotesk Substituta** — fallback com métricas casadas (`size-adjust: 93.4%`), medido com
-  fontkit sobre os próprios binários. Sem ele o reflow custa CLS em CPU lenta, que é o
-  aparelho de quem visita este site. Se trocar a fonte de corpo, **remeça**.
+- **Gabarito** (variável 400 a 900, Naipe Foundry, Brasil): a voz de cartaz. H1, H2, título de
+  cena, a frase do antes, o resultado, o nome do serviço na lista, o dado da capa. Pesos 700 a 900,
+  `line-height` de 0.95 a 1.05, `letter-spacing: -0.03em`.
+- **Golos Text** (variável 400 a 900, Paratype): a voz de leitura. Corpo, lista, formulário,
+  rótulo, número. Pesos 400 a 600. Rótulos em caixa alta com `letter-spacing: 0.06em`; números com
+  `tabular-nums`.
+- **Substitutas** com métricas casadas, medidas com fontkit sobre os binários (05/09/2026):
+  Golos é 6,3% mais larga que a Arial (`size-adjust: 106.3%`); Gabarito 900 é 5,6% mais estreita
+  que a Arial Bold (`94.4%`). **As duas levam `font-display: optional`**, e isso não é opcional:
+  o Chrome resolve `local()` por uma tabela de nomes montada de forma assíncrona, e num perfil
+  recém-aberto a busca segurava o texto invisível por até 2,3 s (LCP 4,3 s). Com `optional`, o
+  texto sai em Arial comum se a face local não responde em 100 ms. Se trocar de fonte, remeça.
 
-Só o subset `latin` é baixado na prática; o `latin-ext` existe para o caractere raro.
-Preload de ambas as `latin` em `partials/head-assets.html`.
+Só o subset `latin` é baixado na prática (72 KB pelas duas); o `latin-ext` existe para o caractere
+raro. Preload das duas `latin` em `partials/head-assets.html`.
 
 ### Escala
 
 ```
---t--1  0.8125rem                        rótulo, mono, nota de rodapé
---t-0   1.0625rem                        corpo
---t-1   1.3125rem                        h3, nome no retrato
---t-2   1.625rem                         h3 de case
---t-3   clamp(1.6rem, 5.2vw, 2.125rem)   h2
---t-4   clamp(1.9rem, 6.4vw, 2.875rem)   h1, h2 no desktop
---t-5   clamp(3.25rem, 13vw, 6.5rem)     o preço, e só ele
+--t--1  0.8125rem                          rótulo, legenda, nota
+--t-0   1.0625rem                          corpo
+--t-1   1.25rem                            h3, telefone da abertura, compromisso
+--t-2   1.625rem                           nome de serviço, resultado no celular
+--t-3   clamp(1.75rem, 3.2vw, 2.5rem)      h2, o antes fora do palco, telefone do contato
+--t-4   clamp(2.25rem, 5vw, 4rem)          h2 no desktop, título de cena, o antes no palco
+--t-5   clamp(2.6rem, 6vw, 5rem)           H1
 ```
-
-`--t-5` é reservado ao `.numero`. Se aparecer em dois lugares na mesma página, um dos dois
-está errado.
 
 ---
 
 ## Componentes
 
-Os que a home usa e as internas herdam. Todos já existem em `css/style.css`.
+Todos já existem em `css/style.css`. Antes de inventar um, olhe aqui.
 
 | Classe | O que é |
 |---|---|
-| `.container` | 1200px, `padding-inline: max(5vw, 1.25rem)` |
-| `.grade` | 12 colunas; `.col-3`…`.col-9` e `.inicio-7`…`.inicio-9` só a partir de 48em |
-| `.botao` / `.botao-compacto` / `.botao-claro` | ação; `.botao-claro` é para dentro do bloco invertido |
-| `.campo` | rótulo + valor com fio de 1px. O trilho de rótulos aparece por **container query** (`@container (min-width: 34rem)`), não por media query |
-| `.rotulo` | mono, caixa alta, `0.08em`. Nomeia o campo, nunca responde por ele |
-| `.valor` | mono grande em `--caneta`. O que foi preenchido |
-| `.numero` | o preço em manchete. `--t-5`, `letter-spacing: -0.07em`, `word-spacing: -0.32em` — os dois medidos no navegador; mais apertado que isso o cifrão encosta no 1 |
-| `.eixo` | o fio de 2px sob o H1. **Um por página**, e ele se desenha na entrada |
-| `.retrato` | foto 4:5 + nome + função + cidade |
-| `.carimbo` | `Entregue` / `Em aberto`. O único ornamento, e carrega informação |
-| `.ato` / `.ato-escuro` / `.ato-via-2` | cada case é um ato, com fundo próprio; a troca dá a cadência |
-| `.anexo` | o print com fio e o domínio real acima, em mono |
-| `.resultado-bloco` / `.resultado-manchete` | a frase mais valiosa da página |
-| `.lista-servicos` | nome à esquerda, explicação à direita, fio entre. `.destaque` para os carros-chefe |
-| `.atalho` | o botão flutuante de WhatsApp, em vidro |
-| `.tema` | o botão de tema no header |
+| `.container`, `.grade`, `.col-3`…`.col-9`, `.inicio-7`…`.inicio-9`, `.fluxo` | grade e ritmo |
+| `.virada` / `.eixo` | **a linha da virada** de 3px. Uma por página, sob o H1, e ela se desenha na entrada |
+| `.rotulo` | Golos 600, caixa alta, `0.06em`. Nomeia o campo, nunca responde por ele |
+| `.mono` | dado curto nas internas: Golos 500 com números tabulares |
+| `.campo` | rótulo em cima, resposta embaixo; trilho de 8rem ao lado a partir de 34rem de container |
+| `.botao`, `.botao-compacto`, `.botao-claro` | ação. No hover a linha passa por baixo do rótulo, em âmbar |
+| `.abertura`, `.abertura-grade`, `.indice`, `.indice-lista`, `.chefe`, `.retrato`, `.abertura-acao`, `.fone` | a primeira tela da home |
+| `.cena`, `.cena-esquerda` / `.cena-direita` / `.cena-cima`, `.cena-palco`, `.cena-grade`, `.antes`, `.depois` | um case como cena presa (ver Movimento) |
+| `.anexo`, `.anexo-quadro`, `.anexo-mascara`, `.anexo-rotulo` | o print dentro do quadro que a linha revela |
+| `.resultado` / `.resultado-bloco`, `.resultado-manchete` | a frase mais valiosa da página, em âmbar, com a linha em cima |
+| `.os-cabecalho`, `.carimbo` | cliente e serviço, e o carimbo `Entregue` / `Exercício` |
+| `.lista-servicos`, `.chefe`, `.apagado` | a lista de serviços; o quadrado âmbar marca os carros-chefe; `.apagado` é o JS acendendo os nomes |
+| `.processo`, `.compromissos`, `.quando` | sequência de tempo de verdade, com rótulo (`Antes`, `Na proposta`, `Depois`) ou número de etapa |
+| `.perguntas`, `.lista-perguntas` | FAQ em `<details>`, o único bloco quieto |
+| `.contato` / `.fechamento`, `.contato-varredura` | a tela em âmbar; a varredura é o breu que a linha empurra para fora (só na home) |
+| `.capa`, `.capa-grade`, `.capa-oferta`, `.numero`, `.valor`, `.capa-linha`, `.capa-credito`, `.trilha` | a abertura das internas |
+| `.case`, `.case-invertido`, `.case-texto` | o case fora do palco, print a 62% |
+| `.cenarios`, `.conversa`, `.acoes`, `.lista-pratica`, `.aviso`, `.par-figuras`, `.prosa`, `.lista-artigos` | miolos das internas |
+| `.atalho`, `.tema`, `.pular` | o atalho de WhatsApp em vidro, o botão de tema, o link de pular |
 
 ---
 
 ## Movimento
 
-**Quatro momentos, e cada um tem um motivo.** Tudo em CSS: `animation-timeline: view()` e
-`position: sticky`. Não há GSAP, não há ScrollTrigger e não há scroll suave por JS — os
-três somariam ~40 KB gzip para fazer o que o navegador já faz, e o scroll por JS é o que
-mais custa INP.
+GSAP 3.15 + ScrollTrigger, self-hosted em `js/vendor/` (117 KB brutos, 46 KB gzip), carregados
+por `js/script.js` **depois do evento `load`**, em prioridade baixa e em ordem. Nada da primeira
+tela depende deles. Rolagem nativa, sem Lenis. Só `transform` anima; **texto nunca perde
+opacidade**, porque o axe mede o contraste no meio do caminho.
 
-1. **A entrada do hero** (~600 ms, uma vez). O eixo se desenha da esquerda e a oferta sobe
-   atrás dele. O `.numero` sobe **sem animar opacity**: ele é candidato a maior elemento da
-   primeira tela, e começar invisível adiaria o LCP pelo tempo inteiro da animação.
-2. **O header vira vidro** ao rolar, pela classe `.rolado` que o JS aplica.
-3. **O parallax do print**, só no desktop: a imagem é 4% maior que o quadro e desliza dentro
-   dele. Mais que 4% come o topo do print, que é onde mora o logo do cliente.
-4. **O pin dos compromissos**: o título fica preso na coluna da esquerda enquanto os três
-   passam pela direita. É o único bloco que é sequência de verdade, e por isso o único
-   numerado do site.
+**Tudo nasce no estado final no CSS.** Sem JS, sem vendor ou com `prefers-reduced-motion:
+reduce`, a página é o "depois" inteiro: linha desenhada, print à vista, resultado à vista.
+
+`gsap.matchMedia()` separa três mundos:
+
+| Mundo | Condição | O que acontece |
+|---|---|---|
+| reduzido | `prefers-reduced-motion: reduce` | nada registra |
+| preso | `(min-width: 48em) and (min-height: 43.75em)` | cada `.cena` prende o palco por 110% de rolagem: a linha varre o print, o antes sai por cima, o depois entra por baixo, o resultado carimba; serviços acendem; compromissos entram; o contato é varrido |
+| leve | o resto | sem pin; a linha revela o print uma vez, quando ele entra na tela; serviços acendem; compromissos entram |
+
+A revelação usa dois contêineres com translações opostas (`.anexo-mascara` e o `picture`
+dentro dela), que roda no compositor. Nunca `clip-path` animado por scroll.
+
+A entrada da home é CSS puro, para não depender do vendor: a linha se desenha (600 ms), o
+índice acende em cascata (cor, nunca opacidade), a ação sobe 14 px. O H1 nunca fica escondido:
+ele é o LCP.
 
 ### Regras que não se quebram
 
-- **Nunca animar `opacity` de texto.** O axe mede o contraste no meio do caminho e reprova:
-  um texto a 25% de opacidade dá 1,6:1 enquanto a animação roda. Use só `translate`.
-- Toda `animation` vive dentro de `@media (prefers-reduced-motion: no-preference)`, e o
-  bloco `reduce` no fim do arquivo zera tudo. **O site tem que ficar completo e bonito parado.**
-- Vidro em no máximo **dois elementos** (header e atalho). O gate reprova acima de 5
-  ocorrências de `backdrop-filter` — que são esses dois, cada um com o par `-webkit-`, mais
-  a detecção de suporte. Sempre com fallback opaco via `@supports not`.
-- Um único breakpoint de layout: `48em`. O resto responde por container query ou clamp.
+- Um `.cena` só na home. Nas internas o print revela na entrada e não prende.
+- O palco só prende com 700 px de altura de tela; abaixo disso, ou com menos movimento, o antes
+  fica em cima do depois e os dois se leem.
+- Vidro em no máximo dois elementos (header rolado e atalho). O gate reprova acima de 5
+  `backdrop-filter`.
+- Página pré-renderizada por speculation rules espera `prerenderingchange` antes de medir.
 
 ---
 
-## Como trocar a foto
+## A abertura das páginas internas
 
-O arquivo é `img/maxwell-rigo-moraes.webp`, com `img/maxwell-rigo-moraes.jpg` de fallback.
+Toda capa é **trilha, H1, a linha da virada, e o que a pessoa veio buscar**. Três formas:
 
-- **Proporção 4:5**, mínimo **1200 × 1500 px**. A atual tem 560 × 700 e já fica no limite
-  em tela retina: no desktop ela é exibida com 272 px de largura, o que dá 1,47× de
-  densidade. Com 1200 px de largura sobra folga para qualquer tela.
-- Salve as duas versões com o mesmo nome e a mesma proporção. O `width`/`height` no HTML
-  reserva a altura antes do byte chegar — **atualize os dois** se a proporção mudar, senão
-  o CLS sai de zero.
-- O recorte de exibição é `object-position: center 18%`: o rosto fica no terço superior.
+- **Com número** (`.capa-oferta` + `.numero`): preço ou prazo curto, em Gabarito 800. Criação de
+  sites (`R$ 1.989`), sistemas, Perfil no Google, apps, suporte.
+- **Com resultado** (`.capa-oferta` + `.resultado-manchete`): nos cases, em âmbar.
+- **Tipográfica**: a frase de escopo assume em `--t-2` e o botão vai para a direita na mesma
+  linha de base. SEO, automação, consultoria, listagens, artigos.
 
-**Ao fotografar:**
+**Onde não há dado, não invente um.** O miolo usa `.campo`, `.cenarios`, `.case`, `.processo`
+(a única sequência numerada) e `.prosa`. Toda página fecha em `.fechamento`, em âmbar.
 
-- Enquadramento de meio-corpo, do peito para cima, com o olhar na câmera. O recorte 4:5
-  corta pelos ombros no mobile.
-- Deixe **espaço acima da cabeça** (uns 10% da altura). Sem ele o `object-position` corta
-  o topo do cabelo quando a foto encolhe.
-- Luz vindo de um lado só, suave. Luz frontal chapada apaga o volume do rosto e a foto
-  fica com cara de documento.
-- Fundo neutro e liso, claro ou escuro — **não** precisa recortar. O CSS não depende de
-  fundo removido: a foto entra num quadro com fio de 1px e funciona dos dois jeitos.
-- Evite: camisa com estampa ou listra fina (mói na compressão), fundo com textura forte,
-  e qualquer coisa que peça retoque para ficar apresentável.
+---
+
+## A foto
+
+`img/maxwell-rigo-moraes.webp` com `.jpg` de fallback, 560×700. Inteira, em preto e branco
+(`filter: grayscale(1) contrast(1.04)`), abaixo da linha e ao lado do índice: presente, sem
+cor e sem corte, para não virar a âncora da página. Decisão do Max em 05/09/2026, depois de ver
+a versão cortada pela linha. Se uma foto nova chegar (4:5, mínimo 1200×1500, olhar na câmera,
+espaço acima da cabeça), ela entra no mesmo lugar.
 
 ### O card de compartilhamento
 
-`img/og-image.png` (1200 × 630) é o que aparece quando o link é mandado no WhatsApp.
-Ele é gerado a partir de `tools/og-card.html`, que usa os mesmos tokens e as mesmas
-fontes do site — não é um arquivo de imagem editado à mão.
-
-**Ao trocar a foto, refaça o card.** Sirva o repositório num servidor local, abra
-`tools/og-card.html`, capture em 1200 × 630 sem escala, e comprima com paleta
-(`sharp(...).png({ quality: 90, palette: true })`) — a compressão cai de ~245 KB para
-~100 KB sem diferença visível. **Fique abaixo de 300 KB**: acima disso o WhatsApp
-deixa de mostrar o preview.
-
-**O card não leva o preço, e não leva os nove serviços.** Na home o número é a manchete,
-mas num link que chega pelo WhatsApp o que precisa aparecer é o que ele faz — e apenas os
-**cinco carros-chefe**, em duas colunas embaixo do fio: criação de sites, SEO, sistemas,
-Perfil da Empresa no Google e aplicativos mobile.
-
-A conta é de legibilidade. O card é lido a uns 350 px de largura dentro do aplicativo,
-o que divide todo corpo por três e meio. Com nove nomes eles cabiam em 21 px e ninguém
-lia de relance; com cinco, cabem em 27 px e leem. Os outros quatro serviços continuam na
-home e no rodapé, que é onde há espaço para eles.
-
-O que precisa sobreviver quando o card encolhe: o rosto, a chamada, a marca e os cinco
-nomes. A linha de cidade vira textura, e tudo bem.
+`img/og-image.png` (1200×630) é gerado de `tools/og-card.html`, que usa os tokens e as fontes
+do site: breu, a chamada em Gabarito, a linha em cobalto, o retrato em preto e branco e os cinco
+carros-chefe. Sirva o repositório num servidor local, capture em 1200×630 sem escala e comprima
+com paleta (`sharp(...).png({ quality: 90, palette: true })`). **Fique abaixo de 300 KB**.
 
 ---
 
 ## Orçamento
 
-Medido no Lighthouse mobile, com gzip, em `index.html`.
+Medido em 05/09/2026, Lighthouse mobile, três rodadas seguidas e sozinho (outro Chrome aberto
+em paralelo derruba a nota por disputa de CPU).
 
 | Item | Teto | Hoje |
 |---|---|---|
-| CSS | 45.000 B bruto | 38.780 B (11.497 B gzip) |
-| JS de runtime | — | 6.681 B (2.575 B gzip) |
-| Fontes carregadas | 2 famílias, 4 arquivos | 33.624 B (só os subsets `latin`) |
-| Performance mobile | ≥ 90 | 96 (o antigo, medido lado a lado, dava 82) |
-| LCP | < 2,5 s | 1,66 s (o antigo dava 4,17 s) |
-| CLS | < 0,1 | 0 |
+| CSS bruto | 60.000 B | 36.427 B |
+| `js/script.js` | 12.000 B | 11.404 B |
+| `js/vendor/` somado | 130.000 B | 117.502 B (46 KB gzip, depois do load) |
+| Fontes carregadas | 90 KB | 72 KB |
+| Home completa | 500 KB | 437 KB |
+| Performance mobile | ≥ 90 | 98, 97, 98 |
+| LCP / CLS / TBT | ≤ 2,5 s / 0 / verde | 1,9 s / 0 / 140 a 180 ms |
+| Acessibilidade / Boas práticas / SEO | 100 | 100 / 100 / 100 |
 
-**Se um efeito novo não couber, corte o efeito — não aumente o teto.**
+**Se um efeito novo não couber, corte o efeito, não aumente o teto.**
 
 ---
 
@@ -220,60 +230,27 @@ Medido no Lighthouse mobile, com gzip, em `index.html`.
 - gradiente, `box-shadow`, `filter: blur`, `transition: all`, `!important`,
   `-webkit-text-stroke`, `background-clip: text`, Google Fonts, `style=` inline;
 - mais de 5 ocorrências de `backdrop-filter`;
+- CSS acima de 60.000 B, `js/script.js` acima de 12.000 B, `js/vendor/` acima de 130.000 B;
 - famílias de clichê (Inter, Poppins, DM Sans, Space Grotesk, Satoshi e companhia);
-- âncora que não aterrissa, `href` que não resolve, link `wa.me` sem `data-origem`,
-  mais de um `<h1>`, `<head>` divergindo de `tools/head-referencia.json`, e FAQ que não
-  bate com o `FAQPage` do JSON-LD.
+- âncora que não aterrissa, `href` que não resolve, link `wa.me` sem `data-origem`, mais de um
+  `<h1>`, `<head>` divergindo de `tools/head-referencia.json`, FAQ que não bate com o `FAQPage`.
+
+Página `noindex` (`404.html`, `artigos/_modelo.html`) dispensa canonical, card e JSON-LD.
 
 Ordem de trabalho: editar → `node tools/sync-partials.js` → `node tools/sync-faq.js` →
 `node tools/verificar.js`.
 
 ---
 
-## A abertura das páginas internas
+## O que morreu, e por quê
 
-Aplicado em 03/09/2026 nas 18 internas. Toda abertura é: **trilha, H1, eixo, e o que a
-pessoa veio buscar**. O que varia é a última parte, e existem três formas.
-
-**Com número** (`.capa-oferta` + `.numero`) — quando há um dado curto: preço ou prazo.
-O dado fica à esquerda com o CTA embaixo, e a frase de escopo à direita, começando na
-linha do rótulo. Hoje: criação de sites (R$ 1.989), sistemas (4 a 12 semanas) e Perfil
-no Google (1 dia). **Nenhum desses números foi inventado** — os três já estavam
-publicados e só saíram do meio do texto.
-
-**Com resultado** (`.capa-oferta` + `.resultado-manchete`) — nos cases. O resultado é
-frase inteira, então usa a grotesca e não a mono do número. Ele sai da seção "O
-resultado." e o parágrafo de apoio dela fica: é o mesmo texto em lugares diferentes.
-
-**Tipográfica** — quando não há dado. A frase de escopo assume em corpo maior e o CTA vai
-para a direita, na mesma linha de base. Deixar a direita vazia faz a página voltar a
-parecer documento. Hoje: SEO, automação, apps, consultoria, chatbot, suporte, as duas
-listagens e os artigos.
-
-**Onde não há dado, não invente um.** A página de SEO fica sem número de propósito: ela
-diz que quem promete prazo fixo está chutando, e uma manchete de prazo ali contradiria o
-próprio texto.
-
-### O miolo
-
-O problema do miolo nunca é uma seção, é a sequência delas. Antes da Fase 2 as internas
-tinham seis seções seguidas com o mesmo padding e o mesmo fundo — uma esteira. A seção de
-sequência de cada página ("Como funciona", "Como eu trabalho") virou `section.processo`,
-a mesma dos compromissos da home: fundo de segunda via, título preso à esquerda, passos
-passando pela direita. **São os dois únicos blocos do site que são sequência de verdade**,
-e por isso os dois únicos numerados.
-
-Ao criar página nova, pergunte se ela tem uma seção que é sequência. Se tiver, ela é
-`.processo` e o `<ol>` é `.compromissos`. Se não tiver, não force: invente outra quebra
-de ritmo em vez de fingir uma sequência.
-
-### Regras que valem para qualquer página
-
-1. **Um eixo por página**, logo abaixo do H1. É ele que amarra a interna à home.
-2. **Uma manchete por página.** Se aparecerem duas, uma delas está errada.
-3. Reuse `.campo`, `.rotulo` e `.valor` para qualquer par nome/dado. Não invente
-   componente novo antes de olhar a tabela de componentes.
-4. Blocos invertidos usam `--inverso` de fundo e `--inverso-texto` de texto. **Nunca**
-   `--grafite` e `--folha` fixos: no tema escuro eles invertem e o bloco some.
-5. Se a página ganhar movimento, ele entra na lista dos quatro momentos ou substitui um.
-   Não acumule.
+- **O número** (03/09/2026), **Ordem de serviço** (02/09) e **Documento** (24/08) tratavam o site
+  como um documento de negócio. Provaram rigor, não ofício: o site de quem vende sites é o
+  portfólio em si. O Max diagnosticou visual sem presença, a ideia de documento e o preço em
+  manchete, e pediu colorido e cinético sobre escuro.
+- **O preço em manchete** saiu da home em 05/09/2026, antes do fim da medição de 30 dias. Ele
+  continua público em `criacao-de-sites/` e no FAQ.
+- **O chatbot com IA** saiu do site em 05/09/2026 por decisão do Max. `404.html` recebe quem
+  chega pelo endereço antigo.
+- **A foto cortada pela linha** (metade cinza, metade cobalto) durou uma revisão: o Max preferiu
+  a foto inteira em preto e branco.
