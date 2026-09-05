@@ -254,8 +254,6 @@
   <link rel="preload" as="font" type="font/woff2" href="fonts/gabarito-latin.woff2" crossorigin />
   <link rel="preload" as="font" type="font/woff2" href="fonts/golos-text-latin.woff2" crossorigin />
   <link rel="stylesheet" href="css/style.css" />
-  <script src="js/vendor/gsap.min.js" defer></script>
-  <script src="js/vendor/ScrollTrigger.min.js" defer></script>
   <script src="js/script.js" defer></script>
 
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
@@ -295,53 +293,61 @@
   <!-- /#header -->
 
   <main id="conteudo">
-    <section id="hero" class="ficha">
+    <section id="hero" class="abertura">
       <div class="container">
-        <h1>Sites que trazem cliente e sistemas que tiram trabalho da sua mesa. Canoas e Porto Alegre.</h1>
+        <h1>Sites que trazem cliente e sistemas que tiram trabalho da sua mesa. <span class="h1-onde">Canoas e Porto Alegre.</span></h1>
 
-        <div class="eixo"></div>
-
-        <div id="sobre" class="ficha-grade">
-          <div class="ficha-oferta">
-            <p class="rotulo">Site institucional a partir de</p>
-            <p class="numero">R$ 1.989</p>
-            <p class="ficha-promessa">Você aprova o escopo e o valor por escrito antes de eu começar, e depois disso o preço não muda.</p>
-            <p class="ficha-acao"><a class="botao" href="#contato">Pedir orçamento</a></p>
-            <p class="retrato-fone">
-              <span class="rotulo">Fala comigo agora</span>
-              <a class="telefone mono" href="https://wa.me/5551999608608?text=Ol%C3%A1!%20Cheguei%20agora%20no%20seu%20site.%20Queria%20saber%20se%20voc%C3%AA%20resolve%20o%20meu%20caso%3A%20" target="_blank" rel="noopener noreferrer" data-origem="ficha_telefone">(51) 99960-8608</a>
-            </p>
+        <div class="abertura-grade">
+          <div class="indice">
+            <p class="rotulo">O que eu faço</p>
+            <ul class="indice-lista" role="list">
+              <li class="chefe"><a href="criacao-de-sites/">Criação de sites e landing pages</a></li>
+              <li class="chefe"><a href="seo-para-sites/">SEO e manutenção de sites</a></li>
+              <li class="chefe"><a href="sistemas-personalizados/">Sistemas personalizados</a></li>
+              <li><a href="google-meu-negocio/">Perfil da Empresa no Google</a></li>
+              <li><a href="automacao-de-processos/">Automação de processos</a></li>
+              <li><a href="aplicativos-mobile/">Aplicativos mobile</a></li>
+              <li><a href="consultoria-tecnica/">Consultoria e diagnóstico técnico</a></li>
+              <li><a href="suporte-e-manutencao/">Suporte e evolução contínua</a></li>
+            </ul>
           </div>
 
-          <figure class="retrato">
-            <picture>
-              <source srcset="img/maxwell-rigo-moraes.webp" type="image/webp" />
-              <img src="img/maxwell-rigo-moraes.jpg" width="560" height="700" sizes="(min-width: 48em) 27vw, 55vw" alt="Maxwell Rigo Moraes, o desenvolvedor responsável pelos projetos deste site" fetchpriority="high" />
-            </picture>
-            <figcaption class="retrato-nome">
+          <figure id="sobre" class="retrato">
+            <div class="retrato-quadro">
+              <picture>
+                <source srcset="img/maxwell-rigo-moraes.webp" type="image/webp" />
+                <img class="retrato-antes" src="img/maxwell-rigo-moraes.jpg" width="560" height="700" alt="" aria-hidden="true" />
+              </picture>
+              <picture>
+                <source srcset="img/maxwell-rigo-moraes.webp" type="image/webp" />
+                <img class="retrato-depois" src="img/maxwell-rigo-moraes.jpg" width="560" height="700" alt="Maxwell Rigo Moraes, o desenvolvedor responsável pelos projetos deste site" />
+              </picture>
+            </div>
+            <figcaption>
               <strong>Maxwell Rigo Moraes</strong>
               <span class="rotulo">Desenvolvedor</span>
             </figcaption>
-            <p class="retrato-onde mono">Presencial em Canoas e Porto Alegre · remoto no Brasil</p>
           </figure>
+
+          <p class="abertura-acao">
+            <a class="botao" href="#contato">Pedir orçamento</a>
+            <span class="fone">
+              <span class="rotulo">Fala comigo agora</span>
+              <a class="telefone" href="https://wa.me/5551999608608?text=Ol%C3%A1!%20Cheguei%20agora%20no%20seu%20site.%20Queria%20saber%20se%20voc%C3%AA%20resolve%20o%20meu%20caso%3A%20" target="_blank" rel="noopener noreferrer" data-origem="ficha_telefone">(51) 99960-8608</a>
+            </span>
+          </p>
         </div>
       </div>
     </section>
 
     <section id="portfolio" class="trabalho" aria-label="Trabalhos entregues">
-      <article class="ato">
-        <div class="container">
-          <p class="os-cabecalho"><span class="rotulo">Brucker Printers · Criação de site</span> <span class="carimbo">Entregue</span></p>
-          <h2>A Brucker não existia no Google. Agora existe.</h2>
-          <div class="case">
-            <figure class="anexo">
-              <figcaption class="anexo-rotulo"><span class="rotulo">Anexo</span> <span class="mono">bruckerprinters.com.br</span></figcaption>
-              <picture>
-                <source srcset="img/cases/brucker-printers-site.webp" type="image/webp" />
-                <img src="img/cases/brucker-printers-site.jpg" width="760" height="475" alt="Página inicial do site da Brucker Printers" loading="lazy" decoding="async" />
-              </picture>
-            </figure>
-            <div class="case-texto">
+      <article class="cena cena-esquerda">
+        <div class="cena-palco">
+          <div class="container cena-grade">
+            <p class="os-cabecalho"><span class="rotulo">Brucker Printers · Criação de site</span> <span class="carimbo">Entregue</span></p>
+            <p class="antes">Uma empresa sem site.</p>
+            <div class="depois">
+              <h2>A Brucker não existia no Google. Agora existe.</h2>
               <div class="campo">
                 <p class="rotulo">Situação encontrada</p>
                 <p>Empresa de impressoras sem site nenhum, perdendo contato para concorrente que tinha.</p>
@@ -350,29 +356,34 @@
                 <p class="rotulo">O que eu fiz</p>
                 <p>Site institucional do zero, com a estrutura de SEO montada junto com as páginas, e não remendada depois.</p>
               </div>
-              <div class="resultado-bloco">
+              <div class="resultado">
                 <p class="rotulo">Resultado</p>
                 <p class="resultado-manchete">Primeira página do Google em 30 dias.</p>
               </div>
               <p><a class="link-forte" href="projetos/brucker-printers-site/">Ver o case</a></p>
             </div>
+            <figure class="anexo">
+              <div class="anexo-quadro">
+                <div class="anexo-mascara">
+                  <picture>
+                    <source srcset="img/cases/brucker-printers-site.webp" type="image/webp" />
+                    <img src="img/cases/brucker-printers-site.jpg" width="760" height="475" alt="Página inicial do site da Brucker Printers" loading="lazy" decoding="async" />
+                  </picture>
+                </div>
+              </div>
+              <figcaption class="anexo-rotulo"><span class="rotulo">No ar</span> <span class="mono">bruckerprinters.com.br</span></figcaption>
+            </figure>
           </div>
         </div>
       </article>
 
-      <article class="ato ato-via-2">
-        <div class="container">
-          <p class="os-cabecalho"><span class="rotulo">Braskit Cargas Perigosas · SEO e manutenção</span> <span class="carimbo">Entregue</span></p>
-          <h2>O site da Braskit estava no ar e invisível.</h2>
-          <div class="case case-invertido">
-            <figure class="anexo">
-              <figcaption class="anexo-rotulo"><span class="rotulo">Anexo</span> <span class="mono">braskitcargasperigosas.com.br</span></figcaption>
-              <picture>
-                <source srcset="img/cases/braskit-seo.webp" type="image/webp" />
-                <img src="img/cases/braskit-seo.jpg" width="760" height="475" alt="Página inicial do site da Braskit Cargas Perigosas" loading="lazy" decoding="async" />
-              </picture>
-            </figure>
-            <div class="case-texto">
+      <article class="cena cena-direita">
+        <div class="cena-palco">
+          <div class="container cena-grade">
+            <p class="os-cabecalho"><span class="rotulo">Braskit Cargas Perigosas · SEO e manutenção</span> <span class="carimbo">Entregue</span></p>
+            <p class="antes">Um site no ar e invisível.</p>
+            <div class="depois">
+              <h2>O site da Braskit estava no ar e invisível.</h2>
               <div class="campo">
                 <p class="rotulo">Situação encontrada</p>
                 <p>O site existia, abria normalmente e não aparecia em busca nenhuma.</p>
@@ -381,29 +392,34 @@
                 <p class="rotulo">O que eu fiz</p>
                 <p>Diagnóstico técnico, depois correção de títulos, meta tags, dados estruturados e do que travava o carregamento.</p>
               </div>
-              <div class="resultado-bloco">
+              <div class="resultado">
                 <p class="rotulo">Resultado</p>
                 <p class="resultado-manchete">Site indexado e posicionado no Google.</p>
               </div>
               <p><a class="link-forte" href="projetos/braskit-seo/">Ver o case</a></p>
             </div>
+            <figure class="anexo">
+              <div class="anexo-quadro">
+                <div class="anexo-mascara">
+                  <picture>
+                    <source srcset="img/cases/braskit-seo.webp" type="image/webp" />
+                    <img src="img/cases/braskit-seo.jpg" width="760" height="475" alt="Página inicial do site da Braskit Cargas Perigosas" loading="lazy" decoding="async" />
+                  </picture>
+                </div>
+              </div>
+              <figcaption class="anexo-rotulo"><span class="rotulo">No ar</span> <span class="mono">braskitcargasperigosas.com.br</span></figcaption>
+            </figure>
           </div>
         </div>
       </article>
 
-      <article class="ato ato-escuro ato-largo">
-        <div class="container">
-          <p class="os-cabecalho"><span class="rotulo">Brucker Printers · Sistema sob medida</span> <span class="carimbo">Entregue</span></p>
-          <h2>O relatório mensal da Brucker saiu da planilha.</h2>
-          <figure class="anexo">
-            <figcaption class="anexo-rotulo"><span class="rotulo">Anexo</span> <span class="mono">Sistema interno, uso da equipe</span></figcaption>
-            <picture>
-              <source srcset="img/cases/brucker-sistema-relatorio.webp" type="image/webp" />
-              <img src="img/cases/brucker-sistema-relatorio.jpg" width="760" height="400" alt="Tela de relatório do sistema desenvolvido para a Brucker Printers" loading="lazy" decoding="async" />
-            </picture>
-          </figure>
-          <div class="ato-rodape">
-            <div>
+      <article class="cena cena-cima">
+        <div class="cena-palco">
+          <div class="container cena-grade">
+            <p class="os-cabecalho"><span class="rotulo">Brucker Printers · Sistema sob medida</span> <span class="carimbo">Entregue</span></p>
+            <p class="antes">Um relatório feito à mão, todo mês.</p>
+            <div class="depois">
+              <h2>O relatório mensal da Brucker saiu da planilha.</h2>
               <div class="campo">
                 <p class="rotulo">Situação encontrada</p>
                 <p>Todo mês alguém montava o faturamento à mão numa planilha de Excel.</p>
@@ -412,14 +428,23 @@
                 <p class="rotulo">O que eu fiz</p>
                 <p>Sistema em C# que recebe as leituras dos equipamentos, calcula o custo e exporta em PDF e Excel.</p>
               </div>
-            </div>
-            <div>
-              <div class="resultado-bloco">
+              <div class="resultado">
                 <p class="rotulo">Resultado</p>
                 <p class="resultado-manchete">Relatório mensal saiu da planilha manual.</p>
               </div>
               <p><a class="link-forte" href="projetos/brucker-printers-sistema/">Ver o case</a></p>
             </div>
+            <figure class="anexo">
+              <div class="anexo-quadro">
+                <div class="anexo-mascara">
+                  <picture>
+                    <source srcset="img/cases/brucker-sistema-relatorio.webp" type="image/webp" />
+                    <img src="img/cases/brucker-sistema-relatorio.jpg" width="760" height="400" alt="Tela de relatório do sistema desenvolvido para a Brucker Printers" loading="lazy" decoding="async" />
+                  </picture>
+                </div>
+              </div>
+              <figcaption class="anexo-rotulo"><span class="rotulo">Uso interno</span> <span class="mono">Sistema da equipe, sem endereço público</span></figcaption>
+            </figure>
           </div>
         </div>
       </article>
@@ -433,15 +458,15 @@
       <div class="container">
         <h2>O que eu faço.</h2>
         <ul class="lista-servicos" role="list">
-          <li class="destaque">
-            <a href="criacao-de-sites/">Criação de sites</a>
-            <p>Site do zero, com painel para você editar o conteúdo sem precisar me chamar.</p>
+          <li class="chefe">
+            <a href="criacao-de-sites/">Criação de sites e landing pages</a>
+            <p>Site do zero, com painel para você editar o conteúdo sem precisar me chamar. Landing page quando uma página só resolve: a que recebe quem clica no seu anúncio.</p>
           </li>
-          <li class="destaque">
+          <li class="chefe">
             <a href="seo-para-sites/">SEO e manutenção de sites</a>
             <p>Descubro o que trava a indexação do seu site e corrijo. Ninguém garante primeiro lugar no Google, e quem garante está mentindo.</p>
           </li>
-          <li class="destaque">
+          <li class="chefe">
             <a href="sistemas-personalizados/">Sistemas personalizados</a>
             <p>Controle de estoque, ordem de serviço, cadastro de cliente. No formato que a sua equipe já usa hoje.</p>
           </li>
@@ -462,10 +487,6 @@
             <p>Relatório em português dizendo o que está quebrado e em que ordem consertar. Você pode levar esse relatório para outro dev: ele é seu.</p>
           </li>
           <li>
-            <a href="chatbot-com-ia/">Chatbots e assistentes com IA</a>
-            <p>Atendimento no WhatsApp que responde horário, preço e status de pedido às três da manhã.</p>
-          </li>
-          <li>
             <a href="suporte-e-manutencao/">Suporte e evolução contínua</a>
             <p>Plano mensal de correção de bug, atualização de segurança e as mudanças pequenas que sempre aparecem depois.</p>
           </li>
@@ -478,15 +499,15 @@
         <h2>O que eu assino junto com a proposta.</h2>
         <ol class="compromissos" role="list">
           <li class="campo">
-            <span class="mono">01</span>
+            <span class="quando">Antes</span>
             <p>O escopo é escrito e aprovado por você antes de eu abrir o editor.</p>
           </li>
           <li class="campo">
-            <span class="mono">02</span>
-            <p>O valor vai fechado na proposta, junto com o prazo. Nenhum dos dois muda no meio do caminho.</p>
+            <span class="quando">Na proposta</span>
+            <p>O valor vai fechado, junto com o prazo. Nenhum dos dois muda no meio do caminho.</p>
           </li>
           <li class="campo">
-            <span class="mono">03</span>
+            <span class="quando">Depois</span>
             <p>Trinta dias de suporte inclusos depois da entrega. Erro no que eu fiz, eu corrijo sem cobrar.</p>
           </li>
         </ol>
@@ -525,12 +546,13 @@
       </div>
     </section>
 
-    <section id="contato" class="fechamento">
+    <section id="contato" class="contato">
+      <div class="contato-varredura" aria-hidden="true"></div>
       <div class="container grade">
         <div class="col-5 fechamento-canal fluxo">
-          <p class="os-cabecalho"><span class="rotulo">O próximo</span> <span class="carimbo">Em aberto</span></p>
+          <p class="rotulo">O próximo</p>
           <h2>Me conta o problema. Eu digo se consigo resolver.</h2>
-          <p><a class="telefone valor" href="https://wa.me/5551999608608?text=Ol%C3%A1!%20Li%20o%20site%20e%20quero%20um%20or%C3%A7amento.%20O%20que%20eu%20preciso%20%C3%A9%3A%20" target="_blank" rel="noopener noreferrer" data-origem="fechamento">(51) 99960-8608</a></p>
+          <p><a class="telefone" href="https://wa.me/5551999608608?text=Ol%C3%A1!%20Li%20o%20site%20e%20quero%20um%20or%C3%A7amento.%20O%20que%20eu%20preciso%20%C3%A9%3A%20" target="_blank" rel="noopener noreferrer" data-origem="fechamento">(51) 99960-8608</a></p>
           <p>Toda proposta minha começa assim: você escreve o que precisa e em até 24 horas eu respondo se faz sentido fazer, o que dá trabalho e quanto deve custar. Sem discurso de venda.</p>
           <p class="mono">Canoas RS · presencial em Porto Alegre e Região Metropolitana · remoto no resto do Brasil</p>
         </div>
@@ -544,7 +566,7 @@
             <label class="rotulo" for="campo-pedido">O que você precisa</label>
             <textarea id="campo-pedido" name="pedido" required placeholder="Hoje a gente controla tudo em planilha e já perdemos dado duas vezes."></textarea>
           </div>
-          <button class="botao botao-claro" type="submit">Pedir orçamento</button>
+          <button class="botao" type="submit">Pedir orçamento</button>
           <p class="mono">Ao enviar, abre o WhatsApp com a mensagem pronta.</p>
         </form>
       </div>

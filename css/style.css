@@ -48,6 +48,7 @@
 @font-face {
   font-family: 'Golos Substituta';
   src: local('Arial'), local('Helvetica'), local('Liberation Sans');
+  font-display: swap;
   size-adjust: 106.3%;
   ascent-override: 92.2%;
   descent-override: 20.7%;
@@ -58,6 +59,7 @@
   font-family: 'Gabarito Substituta';
   src: local('Arial Bold'), local('Arial-BoldMT'), local('Helvetica Bold'), local('Liberation Sans Bold');
   font-weight: 400 900;
+  font-display: swap;
   size-adjust: 94.4%;
   ascent-override: 99.6%;
   descent-override: 27.6%;
@@ -556,7 +558,7 @@ main > section:not(.trabalho) { container-type: inline-size; }
 
 .fone { display: flex; flex-direction: column; gap: var(--e-1); }
 
-.fone .telefone { color: var(--texto); font-weight: 600; font-size: var(--t-1); }
+.fone .telefone { color: var(--texto); font-weight: 600; font-size: var(--t-1); padding-block: var(--e-2); }
 
 .telefone {
   text-decoration: none;
@@ -578,8 +580,9 @@ main > section:not(.trabalho) { container-type: inline-size; }
 }
 
 .indice-lista a {
-  display: inline-block;
-  padding-block: var(--e-2);
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
   text-decoration: none;
   font-weight: 500;
 }
@@ -851,7 +854,11 @@ main > section:not(.trabalho) { container-type: inline-size; }
   text-decoration: none;
   display: block;
   padding: var(--e-3) 0 var(--e-2);
+  transition: color var(--dur-2);
 }
+
+/* O JS apaga os nomes e acende um a um quando entram na tela. Cor, nunca opacidade. */
+.lista-servicos .apagado a { color: var(--texto-2); }
 
 .lista-servicos .chefe a { font-size: var(--t-3); }
 
@@ -888,20 +895,18 @@ main > section:not(.trabalho) { container-type: inline-size; }
   padding-block: var(--e-5);
 }
 
-.contato::before,
-.fechamento::before {
-  content: '';
+.contato > *,
+.fechamento > * { position: relative; z-index: 2; }
+
+.contato-varredura {
   position: absolute;
   inset: 0;
   background: var(--fundo);
   border-left: 3px solid var(--acao);
   transform: translateX(101%);
   pointer-events: none;
-  z-index: 1;
+  z-index: 3;
 }
-
-.contato > *,
-.fechamento > * { position: relative; z-index: 2; }
 
 .contato h2,
 .fechamento h2 { color: inherit; margin-bottom: var(--e-4); max-width: 16ch; font-size: var(--t-4); }
@@ -920,7 +925,8 @@ main > section:not(.trabalho) { container-type: inline-size; }
 .fechamento .telefone {
   font-family: var(--fonte-display);
   font-weight: 800;
-  font-size: var(--t-4);
+  font-size: var(--t-3);
+  white-space: nowrap;
   letter-spacing: -0.03em;
   color: inherit;
   line-height: 1;
@@ -1219,7 +1225,8 @@ footer { border-top: 1px solid var(--fio); padding-block: var(--e-4); }
 
   .indice { grid-column: 1 / 9; grid-row: 1; }
 
-  .indice-lista { grid-template-columns: 1fr 1fr; margin-top: var(--e-3); }
+  /* Duas colunas preenchidas de cima para baixo: os tres carros-chefe ficam juntos. */
+  .indice-lista { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(4, auto); grid-auto-flow: column; margin-top: var(--e-3); }
 
   .abertura-acao { grid-column: 1 / 9; grid-row: 2; }
 
@@ -1237,10 +1244,14 @@ footer { border-top: 1px solid var(--fio); padding-block: var(--e-4); }
 
   .os-cabecalho { grid-column: 1 / -1; grid-row: 1; align-self: start; }
 
-  .antes,
-  .depois { grid-column: 1 / 6; grid-row: 2; }
+  /* Sem palco preso (tela baixa, menos movimento, sem JS) o antes fica em cima do depois,
+     na coluna de texto, e os dois se leem. So quando o JS prende o palco (.cena-presa) os
+     dois ocupam a mesma celula, e e o JS que troca um pelo outro. */
+  .antes { grid-column: 1 / 6; grid-row: 2; font-size: var(--t-3); align-self: end; }
 
-  .anexo { grid-column: 6 / -1; grid-row: 2; }
+  .depois { grid-column: 1 / 6; grid-row: 3; }
+
+  .anexo { grid-column: 6 / -1; grid-row: 2 / 4; }
 
   .cena-direita .antes,
   .cena-direita .depois { grid-column: 8 / -1; }
@@ -1249,10 +1260,19 @@ footer { border-top: 1px solid var(--fio); padding-block: var(--e-4); }
 
   .cena-cima .anexo { grid-column: 1 / 9; grid-row: 2; }
 
-  .cena-cima .antes,
-  .cena-cima .depois { grid-column: 1 / 8; grid-row: 3; }
+  .cena-cima .antes { grid-column: 1 / 8; grid-row: 3; }
+
+  .cena-cima .depois { grid-column: 1 / 8; grid-row: 4; }
 
   .cena-cima .cena-grade { align-items: start; }
+
+  .cena-presa .antes,
+  .cena-presa .depois { grid-row: 2 / 4; align-self: center; }
+
+  .cena-presa .antes { font-size: var(--t-4); }
+
+  .cena-presa.cena-cima .antes,
+  .cena-presa.cena-cima .depois { grid-row: 3; }
 
   .depois h2 { font-size: var(--t-4); }
 
@@ -1268,7 +1288,7 @@ footer { border-top: 1px solid var(--fio); padding-block: var(--e-4); }
   }
 
   .servicos h2,
-  .processo h2 { position: sticky; top: calc(var(--e-5) + var(--e-4)); margin-bottom: 0; }
+  .processo h2 { position: sticky; top: calc(var(--e-6) + var(--e-2)); margin-bottom: 0; }
 
   .lista-servicos li {
     display: grid;

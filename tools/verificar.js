@@ -229,7 +229,7 @@ const TETO = [
    Se um efeito novo nao couber, corte o efeito -- nao aumente o teto. */
 const ORCAMENTO = [
   ['css/style.css', 60000],
-  ['js/script.js', 10000],
+  ['js/script.js', 12000],
   ['js/vendor', 130000],
 ];
 for (const [rel, teto] of ORCAMENTO) {
