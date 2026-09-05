@@ -524,8 +524,7 @@ main > section:not(.trabalho) { container-type: inline-size; }
   margin-top: var(--e-3);
 }
 
-/* A grade abaixo da linha. A linha e o ::before: sobre o retrato (z-index 1), para
-   atravessa-lo em vez de passar por tras. */
+/* A grade abaixo da linha. A linha e o ::before da grade. */
 .abertura-grade {
   position: relative;
   display: grid;
@@ -543,11 +542,9 @@ main > section:not(.trabalho) { container-type: inline-size; }
   height: 3px;
   background: var(--acao);
   transform-origin: left center;
-  z-index: 1;
 }
 
-/* No celular o retrato sobe por cima da linha ao lado do botao; o H1 reserva o espaco. */
-.abertura h1 { margin-bottom: calc(0.525 * var(--retrato-largura) + var(--e-3)); }
+.abertura h1 { margin-bottom: var(--e-4); }
 
 .abertura-acao {
   grid-column: 1;
@@ -604,39 +601,29 @@ main > section:not(.trabalho) { container-type: inline-size; }
   vertical-align: 0.1em;
 }
 
-/* O RETRATO. Duas copias da mesma foto, cortadas na altura da linha: em cima cinza, o
-   antes; embaixo luminosidade sobre cobalto, o depois. A foto vira mais uma coisa que a
-   linha atravessa, e nao a ancora da pagina. */
+/* O RETRATO. Inteiro, em preto e branco, abaixo da linha e ao lado do indice: presente,
+   sem cor e sem corte, para nao virar a ancora da pagina. Decisao do Max em 05/09/2026,
+   depois de ver a versao cortada pela linha. */
 .retrato {
-  position: relative;
-  z-index: 0;
   grid-column: 2;
   grid-row: 1;
   width: var(--retrato-largura);
-  margin-top: calc(-0.525 * var(--retrato-largura));
 }
 
 .retrato-quadro {
-  position: relative;
   aspect-ratio: 4 / 5;
-  background: var(--acao);
-  isolation: isolate;
   overflow: hidden;
   border-radius: var(--raio);
+  background: var(--fundo-2);
 }
 
 .retrato-quadro img {
-  position: absolute;
-  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 18%;
+  filter: grayscale(1) contrast(1.04);
 }
-
-.retrato-antes { clip-path: inset(0 0 58% 0); filter: grayscale(1); }
-
-.retrato-depois { clip-path: inset(42% 0 0 0); filter: grayscale(1) contrast(1.08); mix-blend-mode: luminosity; }
 
 .retrato figcaption { padding-top: var(--e-2); }
 
@@ -1217,10 +1204,6 @@ footer { border-top: 1px solid var(--fio); padding-block: var(--e-4); }
 
   .abertura { padding-block: var(--e-5) var(--e-6); --retrato-largura: 15rem; }
 
-  /* O retrato mora na coluna da direita, fora da coluna do H1: o H1 nao precisa mais
-     reservar a metade de cima da foto. */
-  .abertura h1 { margin-bottom: var(--e-4); }
-
   .abertura-grade {
     grid-template-columns: repeat(12, 1fr);
     gap: var(--e-5) var(--e-4);
@@ -1362,8 +1345,6 @@ footer { border-top: 1px solid var(--fio); padding-block: var(--e-4); }
   .indice-lista li:nth-child(7) { animation-delay: 780ms; }
   .indice-lista li:nth-child(8) { animation-delay: 840ms; }
 
-  .retrato-depois { animation: revelar 700ms var(--curva) 500ms both; }
-
   .abertura-acao > *,
   .capa-grade > * { animation: subir 520ms var(--curva) 300ms both; }
 
@@ -1375,11 +1356,6 @@ footer { border-top: 1px solid var(--fio); padding-block: var(--e-4); }
   @keyframes acender {
     from { color: var(--texto-2); }
     to { color: var(--texto); }
-  }
-
-  @keyframes revelar {
-    from { clip-path: inset(100% 0 0 0); }
-    to { clip-path: inset(42% 0 0 0); }
   }
 
   @keyframes subir {
