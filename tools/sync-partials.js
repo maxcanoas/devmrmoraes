@@ -29,7 +29,7 @@ function listar(dir, base = '') {
 
 const PASTAS_SERVICO = new Set(['criacao-de-sites', 'seo-para-sites', 'google-meu-negocio',
   'sistemas-personalizados', 'automacao-de-processos', 'aplicativos-mobile',
-  'consultoria-tecnica', 'chatbot-com-ia', 'suporte-e-manutencao']);
+  'consultoria-tecnica', 'suporte-e-manutencao']);
 
 /* A chave e hierarquica de proposito: um case da 'projetos/braskit-seo', que casa como
    ancestral de 'projetos' e vira aria-current="true" em vez de "page" -- a pagina do case

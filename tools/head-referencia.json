@@ -528,124 +528,6 @@
    }
   ]
  },
- "chatbot-com-ia/index.html": {
-  "title": "Chatbot com IA para WhatsApp e Site | Canoas, RS",
-  "description": "Chatbots com inteligência artificial para WhatsApp e site, integrados ao seu sistema. Para empresas de Canoas, Porto Alegre e todo o Brasil.",
-  "canonical": "https://www.devmrmoraes.com.br/chatbot-com-ia/",
-  "og:title": "Chatbot com IA para WhatsApp e Site | Canoas, RS",
-  "og:description": "Chatbots com IA para WhatsApp e site, integrados ao seu sistema. Para empresas de Canoas, Porto Alegre e todo o Brasil.",
-  "og:url": "https://www.devmrmoraes.com.br/chatbot-com-ia/",
-  "og:image": "https://www.devmrmoraes.com.br/img/og-image.png",
-  "og:type": "website",
-  "twitter:title": "Chatbot com IA para WhatsApp e Site | Canoas, RS",
-  "twitter:description": "Chatbots com IA para WhatsApp e site em empresas de Canoas, Porto Alegre e todo o Brasil.",
-  "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
-  "geo.region": "BR-RS",
-  "geo.placename": "Canoas, Rio Grande do Sul",
-  "jsonLd": [
-   {
-    "@context": "https://schema.org",
-    "@graph": [
-     {
-      "@type": "Service",
-      "serviceType": "Chatbot com Inteligência Artificial",
-      "name": "Chatbots e Assistentes com Inteligência Artificial",
-      "description": "Desenvolvimento de chatbots e assistentes com inteligência artificial para WhatsApp e sites, com respostas em linguagem natural e integração aos sistemas da empresa.",
-      "url": "https://www.devmrmoraes.com.br/chatbot-com-ia/",
-      "provider": {
-       "@id": "https://www.devmrmoraes.com.br/#business"
-      },
-      "areaServed": [
-       {
-        "@type": "City",
-        "name": "Canoas"
-       },
-       {
-        "@type": "City",
-        "name": "Porto Alegre"
-       }
-      ]
-     },
-     {
-      "@type": "FAQPage",
-      "mainEntity": [
-       {
-        "@type": "Question",
-        "name": "O cliente vai perceber que está falando com um robô?",
-        "acceptedAnswer": {
-         "@type": "Answer",
-         "text": "Vai, e deve mesmo. O assistente se identifica logo na primeira mensagem. O que faz diferença não é esconder o robô, é ele resolver o problema rápido e passar para uma pessoa sem enrolação quando não conseguir."
-        }
-       },
-       {
-        "@type": "Question",
-        "name": "E se a IA inventar uma resposta errada?",
-        "acceptedAnswer": {
-         "@type": "Answer",
-         "text": "O assistente responde a partir da base de conhecimento da sua empresa, não do conhecimento geral do modelo. Assuntos sensíveis, como preço fora de tabela, prazo de entrega e condição contratual, ficam bloqueados e vão direto para um atendente."
-        }
-       },
-       {
-        "@type": "Question",
-        "name": "Preciso do WhatsApp Business API?",
-        "acceptedAnswer": {
-         "@type": "Answer",
-         "text": "Para chatbot em WhatsApp, sim. A versão comum do aplicativo não permite automação oficial, e soluções que contornam isso correm risco de bloqueio do número. A API oficial tem custo por conversa e exige verificação da empresa."
-        }
-       },
-       {
-        "@type": "Question",
-        "name": "Isso substitui minha equipe de atendimento?",
-        "acceptedAnswer": {
-         "@type": "Answer",
-         "text": "Não. O assistente absorve o volume repetitivo e entrega para a equipe as conversas que exigem julgamento, negociação ou empatia. Na prática, quem atende passa a lidar com menos mensagem e com mensagem melhor."
-        }
-       },
-       {
-        "@type": "Question",
-        "name": "Meus dados vão para uma empresa de fora?",
-        "acceptedAnswer": {
-         "@type": "Answer",
-         "text": "Quando o assistente usa um modelo de IA hospedado por terceiro, as mensagens passam por esse serviço. Definimos no início do projeto que dados podem trafegar e quais precisam ficar de fora, e a política de privacidade da empresa precisa refletir isso."
-        }
-       }
-      ]
-     },
-     {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-       {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Início",
-        "item": "https://www.devmrmoraes.com.br/"
-       },
-       {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Serviços",
-        "item": "https://www.devmrmoraes.com.br/#servicos"
-       },
-       {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "Chatbot com IA",
-        "item": "https://www.devmrmoraes.com.br/chatbot-com-ia/"
-       }
-      ]
-     },
-     {
-      "@type": "WebPage",
-      "name": "Chatbot com Inteligência Artificial para Empresas",
-      "url": "https://www.devmrmoraes.com.br/chatbot-com-ia/",
-      "isPartOf": {
-       "@id": "https://www.devmrmoraes.com.br/#website"
-      }
-     }
-    ]
-   }
-  ]
- },
  "consultoria-tecnica/index.html": {
   "title": "Consultoria e Diagnóstico Técnico de Sites | Canoas",
   "description": "Diagnóstico técnico de sites e sistemas para empresas de Canoas e Porto Alegre. Você recebe um relatório com o que está errado e em que ordem resolver.",
@@ -1038,7 +920,7 @@
       "@type": "ProfessionalService",
       "@id": "https://www.devmrmoraes.com.br/#business",
       "name": "DEVMRMORAES: Desenvolvimento Web e Sistemas",
-      "description": "Criação de sites, sistemas personalizados, aplicativos mobile, chatbots com IA e automação de processos para empresas de Canoas, Porto Alegre e região. Atendimento remoto em todo o Brasil.",
+      "description": "Criação de sites, sistemas personalizados, aplicativos mobile e automação de processos para empresas de Canoas, Porto Alegre e região. Atendimento remoto em todo o Brasil.",
       "url": "https://www.devmrmoraes.com.br",
       "image": "https://www.devmrmoraes.com.br/img/og-image.png",
       "priceRange": "$$",
@@ -1065,7 +947,6 @@
        "Perfil da Empresa no Google",
        "Automação de Processos",
        "Consultoria Técnica",
-       "Chatbots e Assistentes com IA",
        "Suporte e Manutenção de Software"
       ],
       "areaServed": [
@@ -1119,14 +1000,6 @@
          "@type": "Offer",
          "itemOffered": {
           "@type": "Service",
-          "name": "Chatbots e Assistentes com IA",
-          "description": "Chatbots inteligentes para WhatsApp e sites com integração a sistemas empresariais."
-         }
-        },
-        {
-         "@type": "Offer",
-         "itemOffered": {
-          "@type": "Service",
           "name": "Perfil da Empresa no Google",
           "description": "Criação, correção e manutenção do Perfil da Empresa no Google, o antigo Google Meu Negócio, para empresas que dependem de busca local."
          }
@@ -1162,8 +1035,7 @@
        "SEO",
        "Desenvolvimento Web",
        "Desenvolvimento Mobile",
-       "Automação",
-       "Inteligência Artificial"
+       "Automação"
       ],
       "worksFor": {
        "@id": "https://www.devmrmoraes.com.br/#business"

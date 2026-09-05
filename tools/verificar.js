@@ -72,25 +72,31 @@ for (const [rel, html] of fonte) {
   }
 }
 
-/* 4. o <head> continua carregando o que precisa carregar */
+/* 4. o <head> continua carregando o que precisa carregar. Pagina noindex (o 404, o modelo
+   de artigo) nao precisa de canonical, de card nem de JSON-LD: ela nao existe para o Google. */
+const NOINDEX = /<meta name="robots" content="[^"]*noindex/;
 const OBRIGATORIOS = [
   [/<title>[^<]{10,}<\/title>/, 'title'],
   [/<meta name="description" content="[^"]{40,}"/, 'meta description'],
+  [/<link rel="manifest"/, 'manifest'],
+  [/<link rel="icon"/, 'favicon'],
+  [/gtag\/js\?id=G-19XH630KZE/, 'gtag script'],
+  [/gtag\('config', 'G-19XH630KZE'\)/, 'gtag config'],
+];
+const OBRIGATORIOS_INDEXAVEL = [
   [/<link rel="canonical" href="https:\/\/www\.devmrmoraes\.com\.br/, 'canonical'],
   [/<meta property="og:title"/, 'og:title'],
   [/<meta property="og:url"/, 'og:url'],
   [/<meta property="og:image"/, 'og:image'],
   [/<meta name="twitter:card"/, 'twitter:card'],
   [/<meta name="geo\.region" content="BR-RS"/, 'geo.region'],
-  [/<link rel="manifest"/, 'manifest'],
-  [/<link rel="icon"/, 'favicon'],
-  [/gtag\/js\?id=G-19XH630KZE/, 'gtag script'],
-  [/gtag\('config', 'G-19XH630KZE'\)/, 'gtag config'],
 ];
 for (const [rel, html] of fonte) {
+  const indexavel = !NOINDEX.test(html);
   for (const [re, nome] of OBRIGATORIOS) if (!re.test(html)) reprova(rel + ': falta ' + nome);
+  if (indexavel) for (const [re, nome] of OBRIGATORIOS_INDEXAVEL) if (!re.test(html)) reprova(rel + ': falta ' + nome);
   const ld = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
-  if (!ld.length) reprova(rel + ': falta JSON-LD');
+  if (!ld.length && indexavel) reprova(rel + ': falta JSON-LD');
   ld.forEach((m, i) => {
     try { JSON.parse(m[1]); } catch (e) { reprova(rel + ': JSON-LD #' + (i + 1) + ' invalido: ' + e.message); }
   });
@@ -217,6 +223,28 @@ for (const arq of fs.readdirSync(path.join(RAIZ, 'img', 'cases'))) {
 const TETO = [
   [/backdrop-filter/g, 'backdrop-filter', 5],
 ];
+
+/* 7b. orcamento em bytes brutos. O CSS subiu de 45.000 para 60.000 na direcao A virada
+   (05/09/2026); o JS proprio e o vendor (GSAP + ScrollTrigger) ganharam teto proprio.
+   Se um efeito novo nao couber, corte o efeito -- nao aumente o teto. */
+const ORCAMENTO = [
+  ['css/style.css', 60000],
+  ['js/script.js', 10000],
+  ['js/vendor', 130000],
+];
+for (const [rel, teto] of ORCAMENTO) {
+  const abs = path.join(RAIZ, rel);
+  if (!fs.existsSync(abs)) { reprova(rel + ': nao existe'); continue; }
+  const bytes = fs.statSync(abs).isDirectory()
+    ? fs.readdirSync(abs).filter(a => a.endsWith('.js')).reduce((n, a) => n + fs.statSync(path.join(abs, a)).size, 0)
+    : fs.statSync(abs).size;
+  if (bytes > teto) reprova(rel + ': ' + bytes + ' B, teto ' + teto);
+}
+for (const [re, nome, teto] of TETO) {
+  const css = fs.readFileSync(path.join(RAIZ, 'css/style.css'), 'utf8');
+  const n = (css.match(re) || []).length;
+  if (n > teto) reprova('css/style.css: ' + n + 'x ' + nome + ', teto ' + teto);
+}
 
 /* 7. proibicoes verificaveis */
 const PROIBIDO = [

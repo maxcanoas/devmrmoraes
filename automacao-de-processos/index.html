@@ -126,10 +126,10 @@
 
   <!-- #assets -->
   <script>
-    /* Antes do primeiro paint, senao a pagina pisca no tema errado. O try/catch e para
-       navegador com armazenamento bloqueado, onde localStorage lanca em vez de voltar
-       vazio -- sem ele o site inteiro deixaria de pintar. */
-    try { var t = localStorage.getItem('tema'); if (t === 'claro' || t === 'escuro') document.documentElement.dataset.tema = t; } catch (e) {}
+    /* O site e escuro por padrao. So a escolha "claro" e aplicada antes do primeiro paint,
+       senao a pagina pisca no tema errado. O try/catch e para navegador com armazenamento
+       bloqueado, onde localStorage lanca em vez de voltar vazio. */
+    try { if (localStorage.getItem('tema') === 'claro') document.documentElement.dataset.tema = 'claro'; } catch (e) {}
   </script>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-19XH630KZE"></script>
@@ -144,18 +144,19 @@
   {"prerender":[{"where":{"href_matches":"/*"},"eagerness":"moderate"}]}
   </script>
 
-  <link rel="preload" as="font" type="font/woff2" href="../fonts/familjen-grotesk-latin.woff2" crossorigin />
-  <link rel="preload" as="font" type="font/woff2" href="../fonts/ibm-plex-mono-latin.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="../fonts/gabarito-latin.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="../fonts/golos-text-latin.woff2" crossorigin />
   <link rel="stylesheet" href="../css/style.css" />
+  <script src="../js/vendor/gsap.min.js" defer></script>
+  <script src="../js/vendor/ScrollTrigger.min.js" defer></script>
   <script src="../js/script.js" defer></script>
 
   <link rel="icon" href="../img/favicon.svg" type="image/svg+xml" />
   <link rel="manifest" href="../manifest.json" />
-  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#0F1216" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#0A0C14" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <meta name="apple-mobile-web-app-title" content="DEVMRMORAES" />
   <!-- /#assets -->
 </head>
@@ -174,7 +175,7 @@
         <li><a href="../artigos/">Artigos</a></li>
       </ul>
 
-      <button class="tema" type="button" data-tema-botao aria-label="Mudar para o tema escuro">
+      <button class="tema" type="button" data-tema-botao aria-label="Mudar para o tema claro">
         <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
           <circle cx="10" cy="10" r="7.25" fill="none" stroke="currentColor" stroke-width="1.5" />
           <path d="M10 2.75a7.25 7.25 0 0 0 0 14.5z" fill="currentColor" />
@@ -343,7 +344,6 @@
           <li><a href="../automacao-de-processos/" aria-current="page">Automação de processos</a></li>
           <li><a href="../aplicativos-mobile/">Aplicativos mobile</a></li>
           <li><a href="../consultoria-tecnica/">Consultoria e diagnóstico técnico</a></li>
-          <li><a href="../chatbot-com-ia/">Chatbots e assistentes com IA</a></li>
           <li><a href="../suporte-e-manutencao/">Suporte e evolução contínua</a></li>
         </ul>
       </nav>

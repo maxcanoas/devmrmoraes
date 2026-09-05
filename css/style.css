@@ -1,36 +1,10 @@
-/* Duas vozes. A Familjen Grotesk e a prosa e o titulo: uma grotesca escandinava de
-   terminais cortados em angulo, que le como texto e nao como interface. A IBM Plex Mono
-   e o dado -- valor, prazo, dominio, rotulo -- e no hero ela sobe a corpo de manchete,
-   porque o preco e a informacao que a pessoa veio buscar. */
+/* A VIRADA. Duas familias: a Gabarito (Naipe Foundry, Brasil) e a voz de cartaz -- H1,
+   titulo de cena, a frase do antes, o resultado. A Golos Text (Paratype) e a voz de leitura
+   -- corpo, lista, formulario, rotulo, numero. Nao ha mono: ela era a voz do documento. */
 @font-face {
-  font-family: 'Familjen Grotesk';
-  src: url('../fonts/familjen-grotesk-latin.woff2') format('woff2');
-  font-weight: 400 700;
-  font-style: normal;
-  font-display: swap;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
-    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
-    U+FEFF, U+FFFD;
-}
-
-/* Portugues cabe inteiro no subset latin. Este so baixa se a pagina usar um caractere
-   fora dele, o que na pratica nao acontece. */
-@font-face {
-  font-family: 'Familjen Grotesk';
-  src: url('../fonts/familjen-grotesk-latin-ext.woff2') format('woff2');
-  font-weight: 400 700;
-  font-style: normal;
-  font-display: swap;
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
-    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0,
-    U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-
-@font-face {
-  font-family: 'IBM Plex Mono';
-  src: url('../fonts/ibm-plex-mono-latin.woff2') format('woff2');
-  font-weight: 400 600;
-  font-style: normal;
+  font-family: 'Gabarito';
+  src: url('../fonts/gabarito-latin.woff2') format('woff2');
+  font-weight: 400 900;
   font-display: swap;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
     U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
@@ -38,68 +12,89 @@
 }
 
 @font-face {
-  font-family: 'IBM Plex Mono';
-  src: url('../fonts/ibm-plex-mono-latin-ext.woff2') format('woff2');
-  font-weight: 400 600;
-  font-style: normal;
+  font-family: 'Gabarito';
+  src: url('../fonts/gabarito-latin-ext.woff2') format('woff2');
+  font-weight: 400 900;
   font-display: swap;
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
     U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0,
     U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
-/* Fallback com a largura casada. Sem isto o texto pinta com a fonte do sistema, troca
-   quando a real chega, e o reflow custa CLS em CPU lenta -- que e o aparelho do visitante
-   deste site. A Familjen e 6,6% mais estreita que a Arial: numeros medidos com fontkit
-   sobre os proprios binarios, e nao chutados. A mono nao precisa de substituta: ela nao
-   pinta paragrafo, e onde ela aparece o texto e curto. */
 @font-face {
-  font-family: 'Grotesk Substituta';
+  font-family: 'Golos Text';
+  src: url('../fonts/golos-text-latin.woff2') format('woff2');
+  font-weight: 400 900;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Golos Text';
+  src: url('../fonts/golos-text-latin-ext.woff2') format('woff2');
+  font-weight: 400 900;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0,
+    U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Substitutas com a largura casada, medidas com fontkit sobre os binarios variaveis
+   (05/09/2026). Sem isto o texto pinta em Arial, troca quando a fonte chega, e o reflow
+   custa CLS em CPU lenta. A Golos e 6,3% mais larga que a Arial; a Gabarito 900 e 5,6%
+   mais estreita que a Arial Bold. Se trocar de fonte, remeca. */
+@font-face {
+  font-family: 'Golos Substituta';
   src: local('Arial'), local('Helvetica'), local('Liberation Sans');
-  size-adjust: 93.4%;
-  ascent-override: 109.7%;
-  descent-override: 24.1%;
+  size-adjust: 106.3%;
+  ascent-override: 92.2%;
+  descent-override: 20.7%;
   line-gap-override: 0%;
 }
 
-/* A folha branca, a segunda via e o fio. Os nomes vem da direcao anterior e ficam:
-   folha continua sendo o fundo e grafite continua sendo o texto nos dois temas, o que
-   deixa as 17 paginas internas herdarem o tema escuro sem tocar numa linha delas. */
+@font-face {
+  font-family: 'Gabarito Substituta';
+  src: local('Arial Bold'), local('Arial-BoldMT'), local('Helvetica Bold'), local('Liberation Sans Bold');
+  font-weight: 400 900;
+  size-adjust: 94.4%;
+  ascent-override: 99.6%;
+  descent-override: 27.6%;
+  line-gap-override: 0%;
+}
+
+/* SEIS CORES. Breu e o fundo, Sombra o degrau, Luz o texto, Nevoa o secundario e o antes,
+   Cobalto a acao, Ambar o resultado. Os tokens tem nome de papel, nao de cor: e assim que o
+   tema claro troca os valores sem que nenhuma regra abaixo precise saber em que tema esta. */
 :root {
-  color-scheme: light;
+  color-scheme: dark;
 
-  --folha: #FFFFFF;
-  --via-2: #EDF0F2;
-  --impresso: #CFD7DD;
+  --fundo: #0A0C14;
+  --fundo-2: #141830;
+  --fio: #262B45;
+  --texto: #F4F5F9;
+  --texto-2: #9AA1B8;
 
-  --grafite: #0F1216;
-  --grafite-2: #565F69;
+  /* Cobalto puro da 3,4:1 sobre breu: serve para forma e fundo. Como texto ele sobe. */
+  --acao: #2A4BFF;
+  --acao-texto: #8FA5FF;
+  --sobre-acao: #FFFFFF;
 
-  /* Azul de esferografica: e o que foi preenchido a mao, e nao a cor da marca. Entra em
-     valor, link, botao primario e carimbo -- nunca em fundo de secao, nunca em titulo. */
-  --caneta: #1B3A8C;
+  --resultado: #FFB324;
+  --resultado-texto: #FFB324;
+  --sobre-resultado: #0A0C14;
 
-  /* O bloco invertido: o verso do documento. No tema claro ele e quase preto; no escuro
-     ele sobe um degrau em vez de descer, senao sumiria dentro do proprio fundo. */
-  --inverso: #0F1216;
-  --inverso-texto: #FFFFFF;
-  --sobre: #C2C8CE;
-  --impresso-2: #2A2F36;
-  --caneta-2: #7FA6E8;
-
-  /* O vidro do header e do botao flutuante. Cor da folha com transparencia, para o blur
-     ter o que borrar quando passa por cima de um print ou de um bloco escuro. */
-  --vidro: rgb(255 255 255 / 0.72);
+  --vidro: rgb(10 12 20 / 0.74);
   --vidro-borrao: 12px;
 
   --t--1: 0.8125rem;
   --t-0: 1.0625rem;
-  --t-1: 1.3125rem;
+  --t-1: 1.25rem;
   --t-2: 1.625rem;
-  --t-3: clamp(1.6rem, 5.2vw, 2.125rem);
-  --t-4: clamp(1.9rem, 6.4vw, 2.875rem);
-  /* o preco do hero, e so ele */
-  --t-5: clamp(3.25rem, 13vw, 6.5rem);
+  --t-3: clamp(1.75rem, 3.2vw, 2.5rem);
+  --t-4: clamp(2.25rem, 5vw, 4rem);
+  --t-5: clamp(2.6rem, 6vw, 5rem);
 
   --e-1: 0.25rem;
   --e-2: 0.5rem;
@@ -107,66 +102,34 @@
   --e-4: 1.5rem;
   --e-5: 3rem;
   --e-6: 6rem;
+  --e-7: 9rem;
 
-  --raio: 2px;
-  --dur: 140ms;
-  --dur-2: 320ms;
+  --raio: 3px;
+  --dur: 160ms;
+  --dur-2: 400ms;
+  --curva: cubic-bezier(0.22, 1, 0.36, 1);
 
-  --fonte: 'Familjen Grotesk', 'Grotesk Substituta', system-ui, sans-serif;
-  --fonte-mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
-  /* o rotulo passou a ser mono: a voz que nomeia o campo e a mesma que escreve o dado,
-     so que menor e em caixa alta. Uma familia a menos para baixar. */
-  --fonte-rotulo: var(--fonte-mono);
+  --fonte-display: 'Gabarito', 'Gabarito Substituta', Arial, sans-serif;
+  --fonte-texto: 'Golos Text', 'Golos Substituta', Arial, sans-serif;
 }
 
-/* O tema escuro vive nos mesmos nomes. Quem pinta e o valor, nao o seletor: por isso
-   nenhuma regra abaixo precisa saber em que tema esta. */
-[data-tema='escuro'] {
-  color-scheme: dark;
+/* O tema claro e a saida para quem le no sol. Ambar continua fundo com texto breu; como
+   texto sobre luz ele reprova, entao o resultado escreve num ambar queimado (5,5:1). */
+[data-tema='claro'] {
+  color-scheme: light;
 
-  --folha: #0F1216;
-  --via-2: #171C22;
-  --impresso: #2D353D;
+  --fundo: #F4F5F9;
+  --fundo-2: #E6E8F0;
+  --fio: #CDD1DE;
+  --texto: #0A0C14;
+  --texto-2: #5B6275;
 
-  --grafite: #F0F2F4;
-  --grafite-2: #98A1AA;
+  --acao-texto: #2A4BFF;
 
-  --caneta: #8AAAF0;
+  --resultado-texto: #8C5A00;
 
-  --inverso: #232931;
-  --inverso-texto: #FFFFFF;
-  --sobre: #B6BEC7;
-  --impresso-2: #39424C;
-  --caneta-2: #A9C2F7;
-
-  --vidro: rgb(15 18 22 / 0.72);
+  --vidro: rgb(244 245 249 / 0.78);
 }
-
-/* Sem escolha salva, o tema segue o sistema. O :not() deixa a escolha explicita vencer:
-   quem clicou em claro continua no claro mesmo com o sistema no escuro. */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-tema='claro']) {
-    color-scheme: dark;
-
-    --folha: #0F1216;
-    --via-2: #171C22;
-    --impresso: #2D353D;
-
-    --grafite: #F0F2F4;
-    --grafite-2: #98A1AA;
-
-    --caneta: #8AAAF0;
-
-    --inverso: #232931;
-    --inverso-texto: #FFFFFF;
-    --sobre: #B6BEC7;
-    --impresso-2: #39424C;
-    --caneta-2: #A9C2F7;
-
-    --vidro: rgb(15 18 22 / 0.72);
-  }
-}
-
 
 *,
 *::before,
@@ -176,25 +139,27 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
   -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--folha);
-  color: var(--grafite);
-  font-family: var(--fonte);
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: var(--fonte-texto);
   font-size: var(--t-0);
   font-weight: 400;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
 }
 
+::selection { background: var(--acao); color: var(--sobre-acao); }
+
 img,
 svg,
 video { display: block; max-width: 100%; }
 
-/* o <source> sem display:none vira item de grid e ocupa uma celula */
-picture { display: contents; }
+picture { display: block; }
 
 source { display: none; }
 
@@ -210,16 +175,17 @@ select {
 }
 
 h1, h2, h3, h4 {
-  font-family: var(--fonte);
-  font-weight: 700;
-  line-height: 1.08;
+  font-family: var(--fonte-display);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
   text-wrap: balance;
 }
 
-h1 { font-size: var(--t-4); letter-spacing: -0.025em; }
-h2 { font-size: var(--t-3); letter-spacing: -0.01em; }
-h3 { font-size: var(--t-1); }
-h4 { font-size: var(--t-0); }
+h1 { font-size: var(--t-5); font-weight: 900; }
+h2 { font-size: var(--t-3); }
+h3 { font-family: var(--fonte-texto); font-weight: 600; font-size: var(--t-1); line-height: 1.2; letter-spacing: -0.01em; }
+h4 { font-family: var(--fonte-texto); font-weight: 600; font-size: var(--t-0); line-height: 1.3; letter-spacing: 0; }
 
 p, li { text-wrap: pretty; }
 
@@ -227,33 +193,22 @@ p { max-width: 68ch; }
 
 small { font-size: var(--t--1); }
 
-strong { font-weight: 700; }
+strong { font-weight: 600; }
 
 a { color: inherit; }
 
-a:hover { color: var(--caneta); }
-
-/* --caneta sobre --grafite da 1,73:1: dentro do bloco escuro o hover deixaria o link
-   menos legivel do que antes de ser apontado. */
-.ato-escuro a:hover,
-.fechamento a:hover,
-
+a:hover { color: var(--acao-texto); }
 
 ul[role='list'],
 ol[role='list'] { list-style: none; padding: 0; }
 
-hr {
-  border: 0;
-  border-top: 1px solid var(--impresso);
-}
+hr { border: 0; border-top: 1px solid var(--fio); }
 
-/* --impresso da 1,42:1 sobre branco: serve de fio estrutural, mas reprova WCAG 1.4.11
-   como limite de um controle. Campo de formulario usa --grafite-2, que da 8,1:1. */
 input,
 textarea,
 select {
-  background: var(--folha);
-  border: 1px solid var(--grafite-2);
+  background: var(--fundo-2);
+  border: 1px solid var(--texto-2);
   padding: var(--e-2) var(--e-3);
   width: 100%;
 }
@@ -264,24 +219,25 @@ button { background: none; border: 0; cursor: pointer; }
 
 label { display: block; }
 
-details { border-top: 1px solid var(--impresso); }
+details { border-top: 1px solid var(--fio); }
 
 summary {
   cursor: pointer;
   list-style: none;
   padding-block: var(--e-3);
+  font-size: var(--t-1);
+  font-weight: 500;
 }
 
 summary::-webkit-details-marker { display: none; }
 
+summary::after { content: ' +'; color: var(--acao-texto); }
+
+details[open] summary::after { content: ' \2212'; }
+
 figure { margin: 0; }
 
-figcaption {
-  font-family: var(--fonte-mono);
-  font-size: var(--t--1);
-  color: var(--grafite-2);
-  padding-top: var(--e-2);
-}
+figcaption { font-size: var(--t--1); color: var(--texto-2); padding-top: var(--e-2); }
 
 address { font-style: normal; }
 
@@ -289,31 +245,33 @@ table { border-collapse: collapse; width: 100%; }
 
 th, td {
   text-align: left;
-  border-bottom: 1px solid var(--impresso);
+  border-bottom: 1px solid var(--fio);
   padding: var(--e-2) var(--e-3) var(--e-2) 0;
+  vertical-align: top;
 }
 
 th { font-weight: 500; }
 
-/* URL de dominio nao tem espaco onde quebrar, e estica a tabela alem da tela. */
-td { font-family: var(--fonte-mono); font-size: var(--t--1); overflow-wrap: anywhere; }
+td { font-size: var(--t--1); overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
 
-/* Link em celula de tabela nao esta em frase corrida: precisa dos 44px de alvo. */
 td a { display: inline-block; padding-block: var(--e-3); }
+
+code, kbd {
+  font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  font-size: 0.9em;
+  background: var(--fundo-2);
+  border: 1px solid var(--fio);
+  border-radius: var(--raio);
+  padding: 0 var(--e-1);
+}
 
 /* Header e fixo: sem isto toda ancora do site aterrissa por baixo dele. */
 [id] { scroll-margin-top: var(--e-6); }
 
 :focus-visible {
-  outline: 2px solid var(--caneta);
+  outline: 2px solid var(--acao-texto);
   outline-offset: 2px;
 }
-
-/* --caneta sobre --grafite da 1,9:1: no bloco escuro o anel de foco some. Aqui ele
-   troca para o azul claro, que da 7,3:1. */
-.ato-escuro :focus-visible,
-.fechamento :focus-visible,
-
 
 a,
 button,
@@ -324,6 +282,7 @@ select {
   transition: color var(--dur), border-color var(--dur), background-color var(--dur);
 }
 
+/* UTILITARIOS */
 .container {
   width: 100%;
   max-width: 1200px;
@@ -343,87 +302,26 @@ select {
 
 .fluxo-largo > * + * { margin-top: var(--e-4); }
 
-.mono { font-family: var(--fonte-mono); font-size: var(--t--1); }
-
-/* O rotulo pre-impresso do formulario. Condensada, caixa alta, pequena: e a voz que
-   nomeia o campo, nunca a que responde por ele. */
+/* O rotulo nomeia o campo, nunca responde por ele. */
 .rotulo {
-  font-family: var(--fonte-rotulo);
+  font-family: var(--fonte-texto);
   font-size: var(--t--1);
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--grafite-2);
+  color: var(--texto-2);
 }
 
-/* O que foi preenchido. Grande de proposito: o dono de empresa veio buscar o numero, e
-   ate agora ele estava em 14px ao lado de um fio. */
-.valor {
-  font-family: var(--fonte-mono);
-  font-size: var(--t-3);
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-  color: var(--caneta);
-}
-
-/* O trilho de rotulos. E ele que faz cada bloco ler como campo de formulario, e e ele
-   que passa a ser a constante da composicao -- antes a constante era o titulo grande a
-   esquerda, cinco secoes seguidas.
-   A base e bloco, e nao grid: campo sem rotulo carrega frase corrida, e um <code> ou um
-   link no meio dela viraria item de grid e quebraria a frase em tres linhas. */
-.campo {
-  padding-block: var(--e-3);
-  border-top: 1px solid var(--impresso);
-}
-
-.campo > * + * { margin-top: var(--e-1); }
-
-.campo:last-child { border-bottom: 1px solid var(--impresso); }
-
-.campo > :last-child { max-width: 60ch; }
-
-/* Container query, e nao media query: o campo responde a largura que a coluna lhe da.
-   Assim o mesmo componente serve o hero, a coluna estreita de um case e a pagina de
-   servico sem uma lista de excecoes. 7rem porque a maior palavra de rotulo mede 92px. */
-@container (min-width: 34rem) {
-  .campo:has(> :where(.rotulo, .mono)) {
-    display: grid;
-    grid-template-columns: 7rem 1fr;
-    column-gap: var(--e-4);
-    align-items: baseline;
-  }
-
-  .campo:has(> :where(.rotulo, .mono)) > * { margin-top: 0; }
-
-  /* O trilho de 7rem foi medido para o maior rotulo do site. Onde ele carrega so o
-     numero da etapa, sobram 90px de vazio entre o numero e o titulo. */
-  .compromissos .campo { grid-template-columns: 3.5rem 1fr; }
-}
-
-/* O numero da etapa e dado, nao rotulo: por isso mono, e nao Archivo Narrow. */
-.campo > .mono:first-child { color: var(--caneta); }
-
-.campo h3 { margin-bottom: var(--e-1); }
-
-.campo h3 + p { color: var(--grafite-2); }
-
-/* Encerrada ou em aberto: o unico ornamento da pagina, e ele carrega informacao. */
-.carimbo {
-  font-family: var(--fonte-rotulo);
+/* .mono sobrevive nas internas como "dado curto": mesma voz do texto, numeros tabulares. */
+.mono {
   font-size: var(--t--1);
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--caneta);
-  border: 2px solid var(--caneta);
-  padding: var(--e-1) var(--e-2);
-  align-self: start;
-  white-space: nowrap;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
 }
 
 .medida { max-width: 68ch; }
 
-.silencio { color: var(--grafite-2); }
+.silencio { color: var(--texto-2); }
 
 .vis-oculto {
   position: absolute;
@@ -438,24 +336,35 @@ select {
   position: absolute;
   left: var(--e-3);
   top: -4rem;
-  z-index: 3;
-  background: var(--inverso);
-  color: var(--inverso-texto);
+  z-index: 4;
+  background: var(--acao);
+  color: var(--sobre-acao);
   padding: var(--e-3);
 }
 
-.pular:focus { top: var(--e-2); color: var(--inverso-texto); }
+.pular:focus { top: var(--e-2); color: var(--sobre-acao); }
 
+/* A LINHA DA VIRADA. Um traco de 3px em cobalto que separa o antes do depois. E o unico
+   divisor grosso do site; os fios de 1px ficam para o FAQ, a tabela e o rodape. */
+.virada,
+.eixo {
+  height: 3px;
+  background: var(--acao);
+  margin-block: var(--e-3) var(--e-4);
+  transform-origin: left center;
+}
+
+/* HEADER. Transparente sobre a abertura, vidro depois que a pagina rola. */
 header {
   position: sticky;
   top: 0;
-  z-index: 2;
-  background: var(--folha);
+  z-index: 3;
+  background: transparent;
   border-bottom: 1px solid transparent;
 }
 
 header.rolado {
-  border-bottom-color: var(--impresso);
+  border-bottom-color: var(--fio);
   background: var(--vidro);
   -webkit-backdrop-filter: blur(var(--vidro-borrao));
   backdrop-filter: blur(var(--vidro-borrao));
@@ -472,22 +381,25 @@ header nav {
 }
 
 .logo {
-  font-weight: 700;
+  font-family: var(--fonte-display);
+  font-weight: 800;
+  font-size: var(--t-1);
+  letter-spacing: -0.02em;
   min-height: 2.75rem;
   display: flex;
   align-items: center;
-  letter-spacing: -0.03em;
   text-decoration: none;
   padding-block: var(--e-2);
 }
 
-.logo span { color: var(--caneta); }
+.logo span { color: var(--acao-texto); }
 
 header ul {
   display: flex;
   gap: var(--e-3);
   margin-left: auto;
   font-size: var(--t--1);
+  font-weight: 500;
 }
 
 header ul a {
@@ -496,14 +408,10 @@ header ul a {
   text-decoration: none;
 }
 
-/* No celular o botao do header sairia da tela, e seria redundante: a barra fixa
-   de baixo ja tem WhatsApp e Ligar, mais perto do polegar. */
 header .botao { display: none; }
 
-header [aria-current] { color: var(--caneta); }
+header [aria-current] { color: var(--acao-texto); }
 
-/* Abaixo de 24em nao existe corpo de texto legivel que caiba a logo, os tres links e o
-   botao de tema na mesma linha: os links descem, em vez de virar menu escondido. */
 @media (max-width: 23.999em) {
   header nav { flex-wrap: wrap; row-gap: 0; }
 
@@ -512,20 +420,18 @@ header [aria-current] { color: var(--caneta); }
     width: 100%;
     margin-left: 0;
     justify-content: space-between;
-    border-top: 1px solid var(--impresso);
+    border-top: 1px solid var(--fio);
   }
 }
 
-/* O botao de tema. Um circulo meio preenchido, e nao o par sol/lua: o mesmo desenho
-   serve os dois estados, e a troca e ele girando meia volta -- que e a animacao curta
-   inteira, sem um segundo icone para carregar. */
+/* O botao de tema: um circulo meio preenchido que gira meia volta. */
 .tema {
   display: grid;
   place-items: center;
   width: 2.75rem;
   height: 2.75rem;
   flex: none;
-  color: var(--grafite-2);
+  color: var(--texto-2);
 }
 
 .tema svg {
@@ -534,185 +440,365 @@ header [aria-current] { color: var(--caneta); }
   transition: rotate var(--dur-2), color var(--dur);
 }
 
-.tema:hover { color: var(--caneta); }
+.tema:hover { color: var(--acao-texto); }
 
-[data-tema='escuro'] .tema svg { rotate: 180deg; }
+[data-tema='claro'] .tema svg { rotate: 180deg; }
 
+/* BOTAO. No hover a linha da virada passa por baixo do rotulo. */
 .botao {
+  position: relative;
   display: inline-block;
-  background: var(--caneta);
-  color: var(--folha);
+  overflow: hidden;
+  background: var(--acao);
+  color: var(--sobre-acao);
   text-decoration: none;
   font-weight: 500;
   padding: var(--e-3) var(--e-4);
   min-height: 2.75rem;
-  border: 1px solid var(--caneta);
-}
-
-.botao:hover { background: var(--grafite); border-color: var(--grafite); color: var(--folha); }
-
-.botao-compacto { padding: var(--e-2) var(--e-3); min-height: 2.5rem; }
-
-/* Dentro do bloco escuro o acento da 2,95:1 e reprova. Papel sobre tinta da 16,5:1. */
-.botao-claro { background: var(--inverso-texto); border-color: var(--inverso-texto); color: var(--inverso); }
-
-.botao-claro:hover { background: var(--inverso-texto); border-color: var(--inverso-texto); color: var(--inverso); }
-
-/* Ritmo vertical: no celular ninguem quer 96px de respiro entre secoes, entao a base
-   e --e-5 e so a prova volta a respirar no desktop. */
-section { padding-block: var(--e-5); }
-
-section + section { border-top: 1px solid var(--impresso); }
-
-/* lista respira menos que prova: o ritmo vertical e proposital, nao uniforme */
-.servicos,
-.processo,
-.perguntas { padding-block: var(--e-4); }
-
-.trabalho { padding-block: 0; border-top: 0; }
-
-/* Tres brancos seguidos apagavam a cadencia: as condicoes voltam para a segunda via. */
-.processo { background: var(--via-2); border-top-color: var(--via-2); }
-
-.trabalho .ver-tudo { margin-top: var(--e-4); }
-
-section h2 { max-width: 26ch; margin-bottom: var(--e-3); }
-
-/* A ABERTURA
-   O preco e a manchete. Nenhum concorrente dele publica o dele, e o dono de empresa que
-   chega aqui veio buscar exatamente esse numero -- ate agora ele estava em 17px no meio
-   de um paragrafo. Acima dele o H1 diz o que e, e o fio fecha a declaracao: e o unico
-   fio estrutural da pagina inteira, e por isso ele pode ser grosso e pode se desenhar. */
-.ficha { padding-block: var(--e-2) var(--e-5); }
-
-.ficha h1 { max-width: 26ch; }
-
-/* O eixo. Tudo abaixo dele pende dele. 2px porque um fio de 1px aqui viraria o fio de
-   1px de todo o resto, e este e o unico que carrega peso de composicao. */
-.eixo {
-  height: 2px;
-  background: var(--grafite);
-  margin-block: var(--e-2) var(--e-3);
-  transform-origin: left center;
-}
-
-/* row-gap maior que column-gap: no celular a cidade em mono encosta no rotulo do preco,
-   que tambem e mono, e as duas linhas cinzas viram uma so mancha. */
-.ficha-grade { display: grid; gap: var(--e-4) var(--e-2); }
-
-.ficha-oferta > * + * { margin-top: var(--e-3); }
-
-.ficha-oferta .rotulo { margin-bottom: calc(-1 * var(--e-2)); }
-
-/* O numero. Mono, porque ele sai de uma tabela e nao de um anuncio: e o mesmo tipo do
-   relatorio e da nota fiscal, so que em corpo de manchete. O tabular-nums trava a
-   largura dos algarismos para o numero nao dancar quando a fonte real chega. */
-.numero {
-  font-family: var(--fonte-mono);
-  font-size: var(--t-5);
-  font-weight: 600;
-  line-height: 0.92;
-  letter-spacing: -0.07em;
-  font-variant-numeric: tabular-nums;
-  /* A mono e de largura fixa: em corpo de manchete ela abre buracos entre o cifrao e o
-     numero. Os dois valores foram achados medindo no navegador, e nao no escuro -- mais
-     apertado que isto o cifrao encosta no 1. */
-  word-spacing: -0.32em;
-  color: var(--caneta);
-  max-width: none;
-}
-
-.ficha-promessa { max-width: 44ch; }
-
-.ficha-acao { max-width: none; margin-top: var(--e-3); }
-
-/* O RETRATO
-   O numero e o rosto da pagina; o rosto e a assinatura embaixo dele. Sem tratamento de
-   cor: assim a mesma regra serve a foto atual, de fundo neutro, e a que vier recortada.
-   O aspect-ratio no proprio img reserva a altura antes do byte chegar -- e o que segura
-   o CLS em zero quando a foto e o maior elemento da primeira tela. */
-/* No celular o rosto vem antes do preco: a primeira duvida de quem chega e quem esta do
-   outro lado, e so depois quanto custa. Foto e nome dividem a primeira linha; cidade e
-   telefone atravessam as duas colunas, porque o numero em mono nao cabe em meia linha
-   sem quebrar no meio. */
-.retrato {
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: var(--e-2) var(--e-3);
-  align-items: end;
-  order: -1;
-}
-
-.retrato-onde { grid-column: 1 / -1; }
-
-.retrato-onde { color: var(--grafite-2); max-width: none; }
-
-.retrato img {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: center 18%;
-  border: 1px solid var(--impresso);
+  border: 1px solid var(--acao);
   border-radius: var(--raio);
 }
 
-.retrato-nome { padding-top: 0; align-self: end; }
-
-.retrato-nome > * + * { margin-top: var(--e-2); }
-
-.retrato-nome strong {
-  display: block;
-  font-family: var(--fonte);
-  font-size: var(--t-1);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  color: var(--grafite);
+.botao::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 3px;
+  background: var(--resultado);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--dur-2) var(--curva);
 }
 
-.retrato-nome .rotulo { display: block; color: var(--caneta); }
+.botao:hover { color: var(--sobre-acao); }
 
+.botao:hover::after,
+.botao:focus-visible::after { transform: scaleX(1); }
 
+.botao-compacto { padding: var(--e-2) var(--e-3); min-height: 2.5rem; }
 
-/* Fecha a oferta: quem nao quer preencher formulario nenhum chama direto. */
-.retrato-fone { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--e-1) var(--e-3); max-width: none; }
+.botao-claro { background: var(--texto); border-color: var(--texto); color: var(--fundo); }
 
-.retrato-fone .telefone { color: var(--grafite); white-space: nowrap; }
+.botao-claro:hover { color: var(--fundo); }
 
-.retrato-fone .telefone:hover { color: var(--caneta); }
+.link-forte {
+  display: inline-block;
+  font-weight: 500;
+  text-underline-offset: 0.25em;
+  text-decoration-color: var(--acao-texto);
+  padding-block: var(--e-3);
+}
 
-.case { padding-bottom: var(--e-5); }
+/* RITMO. A base e --e-5 e so o desktop volta a respirar em --e-6. */
+section { padding-block: var(--e-5); }
 
-.case:last-of-type { padding-bottom: var(--e-4); }
+section h2 { max-width: 24ch; margin-bottom: var(--e-4); }
 
-/* A secao e o container; o case responde ao espaco que ela lhe da, e nao ao viewport.
-   Assim o mesmo componente serve a home, a pagina de servico e projetos.html sem
-   duplicar breakpoint. 62fr/34fr com gutter de 48px num container de 1200 da 744px. */
-main section { container-type: inline-size; }
+/* Container query no que precisa dela. A secao de trabalho fica de fora de proposito: a
+   contencao de layout viraria bloco de contencao do pin, e o palco preso deixaria de
+   prender. */
+main > section:not(.trabalho) { container-type: inline-size; }
 
-@container (min-width: 46rem) {
-  .case {
+/* A ABERTURA. O H1 e a maior coisa da tela e nunca fica escondido: e o LCP. A linha se
+   desenha embaixo dele, o indice acende em cascata e a foto revela a metade de baixo. */
+.abertura { padding-block: var(--e-3) var(--e-5); --retrato-largura: min(35cqi, 10rem); }
+
+.abertura-onde { margin-bottom: var(--e-3); }
+
+.abertura h1 { max-width: 15ch; }
+
+.h1-onde {
+  display: block;
+  font-family: var(--fonte-texto);
+  font-weight: 500;
+  font-size: var(--t-1);
+  letter-spacing: 0;
+  line-height: 1.3;
+  color: var(--texto-2);
+  margin-top: var(--e-3);
+}
+
+/* A grade abaixo da linha. A linha e o ::before: sobre o retrato (z-index 1), para
+   atravessa-lo em vez de passar por tras. */
+.abertura-grade {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--e-4) var(--e-4);
+  padding-top: var(--e-4);
+}
+
+.abertura-grade::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--acao);
+  transform-origin: left center;
+  z-index: 1;
+}
+
+/* No celular o retrato sobe por cima da linha ao lado do botao; o H1 reserva o espaco. */
+.abertura h1 { margin-bottom: calc(0.525 * var(--retrato-largura) + var(--e-3)); }
+
+.abertura-acao {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: end;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--e-3) var(--e-4);
+  max-width: none;
+}
+
+.fone { display: flex; flex-direction: column; gap: var(--e-1); }
+
+.fone .telefone { color: var(--texto); font-weight: 600; font-size: var(--t-1); }
+
+.telefone {
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  display: inline-block;
+  padding-block: var(--e-1);
+  font-variant-numeric: tabular-nums;
+}
+
+.telefone:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+
+.indice { grid-column: 1 / -1; grid-row: 2; }
+
+.indice-lista {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--e-1) var(--e-4);
+  margin-top: var(--e-2);
+}
+
+.indice-lista a {
+  display: inline-block;
+  padding-block: var(--e-2);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.indice-lista .chefe a { font-family: var(--fonte-display); font-weight: 700; font-size: var(--t-1); letter-spacing: -0.01em; }
+
+/* O quadrado ambar marca os tres carros-chefe. Carrega informacao, nao e enfeite. */
+.chefe a::before {
+  content: '';
+  display: inline-block;
+  width: 0.45em;
+  height: 0.45em;
+  background: var(--resultado);
+  margin-right: 0.45em;
+  vertical-align: 0.1em;
+}
+
+/* O RETRATO. Duas copias da mesma foto, cortadas na altura da linha: em cima cinza, o
+   antes; embaixo luminosidade sobre cobalto, o depois. A foto vira mais uma coisa que a
+   linha atravessa, e nao a ancora da pagina. */
+.retrato {
+  position: relative;
+  z-index: 0;
+  grid-column: 2;
+  grid-row: 1;
+  width: var(--retrato-largura);
+  margin-top: calc(-0.525 * var(--retrato-largura));
+}
+
+.retrato-quadro {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  background: var(--acao);
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: var(--raio);
+}
+
+.retrato-quadro img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+}
+
+.retrato-antes { clip-path: inset(0 0 58% 0); filter: grayscale(1); }
+
+.retrato-depois { clip-path: inset(42% 0 0 0); filter: grayscale(1) contrast(1.08); mix-blend-mode: luminosity; }
+
+.retrato figcaption { padding-top: var(--e-2); }
+
+.retrato figcaption strong {
+  display: block;
+  color: var(--texto);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.retrato figcaption .rotulo { display: block; color: var(--acao-texto); margin-top: var(--e-1); }
+
+/* AS CENAS. Cada case e um palco de uma tela. A frase do antes ocupa o lugar do depois;
+   quando a linha varre o print, o antes sai por cima e o depois entra por baixo. Tudo que
+   o JS anima nasce aqui no estado final: sem JS, a pagina e o "depois" inteiro. */
+.trabalho { padding-block: 0; }
+
+.cena { position: relative; }
+
+.cena + .cena { border-top: 1px solid var(--fio); }
+
+.cena-palco {
+  display: grid;
+  align-content: center;
+  overflow: clip;
+  padding-block: var(--e-5);
+}
+
+.cena-grade { display: grid; gap: var(--e-4); }
+
+.os-cabecalho {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-2) var(--e-4);
+  justify-content: space-between;
+  align-items: baseline;
+  color: var(--texto-2);
+  border-bottom: 1px solid var(--fio);
+  padding-bottom: var(--e-2);
+  max-width: none;
+}
+
+.carimbo {
+  font-size: var(--t--1);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--acao-texto);
+  border: 2px solid var(--acao-texto);
+  border-radius: var(--raio);
+  padding: var(--e-1) var(--e-2);
+  white-space: nowrap;
+}
+
+.antes {
+  font-family: var(--fonte-display);
+  font-weight: 800;
+  font-size: var(--t-4);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  color: var(--texto-2);
+  max-width: 14ch;
+  order: 1;
+}
+
+.anexo { order: 2; }
+
+.depois { order: 3; }
+
+.depois > * + * { margin-top: var(--e-3); }
+
+.depois h2 { font-size: var(--t-3); max-width: 18ch; margin-bottom: var(--e-4); }
+
+.depois > .campo { margin-top: 0; }
+
+/* Campo: rotulo em cima, resposta embaixo; trilho ao lado quando a coluna deixa. */
+.campo {
+  padding-block: var(--e-3);
+  border-top: 1px solid var(--fio);
+}
+
+.campo > * + * { margin-top: var(--e-1); }
+
+.campo:last-child { border-bottom: 1px solid var(--fio); }
+
+.campo > :last-child { max-width: 60ch; }
+
+.campo h3 { margin-bottom: var(--e-1); }
+
+.campo h3 + p { color: var(--texto-2); }
+
+@container (min-width: 34rem) {
+  .campo:has(> :where(.rotulo, .mono, .quando)) {
     display: grid;
-    grid-template-columns: 66fr 34fr;
-    gap: var(--e-5);
-    align-items: start;
+    grid-template-columns: 8rem 1fr;
+    column-gap: var(--e-4);
+    align-items: baseline;
   }
 
-  .case-invertido { grid-template-columns: 34fr 66fr; }
+  .campo:has(> :where(.rotulo, .mono, .quando)) > * { margin-top: 0; }
 }
 
-/* O print nao e uma janela: e o anexo da OS. Fio de 1px em volta e o dominio real logo
-   acima, em mono -- que continua provando que o site esta no ar sem pedir emprestada a
-   barra de titulo de outro sistema operacional. */
-.anexo { margin-bottom: var(--e-4); }
+/* O RESULTADO. A frase mais valiosa da pagina, em ambar, com a linha em cima. */
+.resultado,
+.resultado-bloco {
+  position: relative;
+  padding-top: var(--e-3);
+  border-top: 0;
+}
+
+.resultado::before,
+.resultado-bloco::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--resultado);
+  transform-origin: left center;
+}
+
+.resultado .rotulo,
+.resultado-bloco .rotulo { color: var(--resultado-texto); }
+
+.resultado-manchete {
+  font-family: var(--fonte-display);
+  font-weight: 800;
+  font-size: var(--t-2);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: var(--resultado-texto);
+  margin-top: var(--e-2);
+  max-width: 18ch;
+}
+
+/* O ANEXO. O print dentro de um quadro que corta. A mascara e o conteudo se movem em
+   sentidos opostos e o print parece ficar parado enquanto a linha o descobre. */
+.anexo-quadro {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--raio);
+  background: var(--fundo-2);
+}
+
+.anexo-mascara { position: relative; overflow: hidden; }
+
+.anexo-mascara::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 3px;
+  background: var(--acao);
+}
+
+.cena-direita .anexo-mascara::after { right: auto; left: 0; }
+
+.cena-cima .anexo-mascara::after { top: auto; right: 0; left: 0; bottom: 0; width: auto; height: 3px; }
+
+.anexo img { width: 100%; }
 
 .anexo-rotulo {
   display: flex;
   gap: var(--e-2) var(--e-3);
   align-items: baseline;
-  color: var(--grafite-2);
-  border-bottom: 1px solid var(--impresso);
-  padding: 0 0 var(--e-2);
-  margin-bottom: var(--e-2);
+  color: var(--texto-2);
+  padding-top: var(--e-2);
 }
 
 .anexo-rotulo .mono {
@@ -722,310 +808,174 @@ main section { container-type: inline-size; }
   white-space: nowrap;
 }
 
-.anexo img { width: 100%; border: 1px solid var(--impresso); }
-
-/* No celular o anexo sangra ate a borda: e o ativo mais importante da pagina e nao tem
-   por que respeitar a margem do texto. */
+/* No celular o print sangra ate a borda: e o ativo mais importante da pagina. */
 @media (max-width: 47.999em) {
-  .anexo img {
+  .cena .anexo-quadro,
+  .case .anexo-quadro,
+  .case > .anexo > picture {
     margin-inline: calc(-1 * max(5vw, 1.25rem));
-    width: calc(100% + 2 * max(5vw, 1.25rem));
-    max-width: none;
-    border-inline: 0;
+    border-radius: 0;
   }
-
-  .par-figuras .anexo img { margin-inline: 0; width: 100%; border-inline: 1px solid var(--impresso); }
 }
 
-/* Faz do texto do case um container, para o campo ali dentro responder a esta coluna e
-   nao a da secao: com 340px o trilho deixaria 200px de texto. */
-.case-texto { container-type: inline-size; }
+.ver-tudo { border-top: 1px solid var(--fio); padding-top: var(--e-3); }
 
-.case-texto > * + * { margin-top: var(--e-3); }
+/* SERVICOS. Uma linha por servico, a linha inteira e o alvo. No hover a virada percorre
+   a borda de cima. Os carros-chefe sao maiores e levam o quadrado ambar. */
+.lista-servicos li { position: relative; border-top: 1px solid var(--fio); }
 
-/* Campos vizinhos encostam: o fio de um fecha o outro, como em formulario impresso. */
-.case-texto > .campo,
-.ato-rodape .campo { margin-top: 0; }
+.lista-servicos li:last-child { border-bottom: 1px solid var(--fio); }
 
-.case-texto .mono { color: var(--grafite-2); }
-
-.case-texto h3 { font-size: var(--t-2); max-width: 24ch; }
-
-/* Cada case e um ato: fundo e composicao proprios. A troca entre eles da a cadencia. */
-.ato {
-  position: relative;
-  overflow: clip;
-  padding-block: var(--e-4) var(--e-5);
-  border-top: 1px solid var(--impresso);
+.lista-servicos li::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--acao);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--dur-2) var(--curva);
 }
 
-.ato-escuro {
-  background: var(--inverso);
-  color: var(--sobre);
-  border-top-color: var(--inverso);
-}
-
-.ato-escuro h2 { color: var(--inverso-texto); }
-
-.ato-escuro strong { color: var(--inverso-texto); }
-
-.ato-escuro .carimbo,
-.fechamento .carimbo { color: var(--caneta-2); border-color: var(--caneta-2); }
-
-.ato-escuro .anexo img { border-color: var(--impresso-2); }
-
-.ato-escuro .anexo-rotulo { border-bottom-color: var(--impresso-2); }
-
-.ato-via-2 { background: var(--via-2); border-top-color: var(--via-2); }
-
-.os-cabecalho {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--e-2) var(--e-4);
-  justify-content: space-between;
-  color: var(--caneta);
-  border-bottom: 1px solid var(--impresso);
-  padding: 0 0 var(--e-2);
-  margin-bottom: var(--e-3);
-}
-
-.ato-escuro .os-cabecalho { border-bottom-color: var(--impresso-2); color: var(--sobre); }
-
-/* --grafite-2 sobre fundo escuro da 2,2:1. No ato escuro o secundario e --sobre. */
-.ato-escuro .rotulo,
-.fechamento .rotulo,
-.ato-escuro figcaption { color: var(--sobre); }
-
-/* Sobre fundo escuro o valor vira branco: 17,8:1, e ele e o dado que a pessoa veio ler. */
-.ato-escuro .valor,
-.fechamento .valor { color: var(--inverso-texto); }
-
-.ato h2 { font-size: var(--t-3); max-width: 22ch; margin-bottom: var(--e-3); }
-
-/* O resultado e a frase mais valiosa da pagina. Estava em 14px ao lado de um fio. */
-.resultado-bloco { border-top: 2px solid var(--caneta); padding-top: var(--e-2); }
-
-.resultado-bloco + p { margin-top: var(--e-3); }
-
-.resultado-bloco .rotulo { color: var(--caneta); }
-
-.resultado-manchete {
-  font-size: var(--t-2);
-  font-weight: 700;
-  line-height: 1.12;
-  letter-spacing: -0.02em;
-  color: var(--grafite);
-}
-
-.ato-escuro .resultado-bloco { border-top-color: var(--sobre); }
-
-.ato-escuro .resultado-bloco .rotulo { color: var(--sobre); }
-
-.ato-escuro .resultado-manchete { color: var(--inverso-texto); }
-
-/* o ato 03 nao divide em colunas: o print manda, e o texto vem embaixo. Limitar a
-   largura dele evita uma imagem de 556px de altura so por ser larga. */
-.ato-largo .anexo { max-width: 46rem; }
-
-.ato-rodape { display: grid; gap: var(--e-4); margin-top: var(--e-4); }
-
-.ato-rodape > div > * + * { margin-top: var(--e-3); }
-
-.link-forte {
-  display: inline-block;
-  font-weight: 500;
-  text-underline-offset: 0.25em;
-  padding-block: var(--e-3);
-}
-
-.ver-tudo { border-top: 1px solid var(--impresso); }
-
-
-.lista-servicos li { border-top: 1px solid var(--impresso); }
-
-.lista-servicos li:last-child { border-bottom: 1px solid var(--impresso); }
+.lista-servicos li:hover::before,
+.lista-servicos li:focus-within::before { transform: scaleX(1); }
 
 .lista-servicos a {
-  font-family: var(--fonte);
-  font-size: var(--t-1);
+  font-family: var(--fonte-display);
+  font-size: var(--t-2);
   font-weight: 700;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
   text-decoration: none;
   display: block;
   padding: var(--e-3) 0 var(--e-2);
 }
 
-.lista-servicos .destaque a { font-size: var(--t-2); }
+.lista-servicos .chefe a { font-size: var(--t-3); }
 
-.lista-servicos p { color: var(--grafite-2); padding-bottom: var(--e-2); }
+.lista-servicos p { color: var(--texto-2); padding-bottom: var(--e-3); }
+
+/* COMPROMISSOS. Sequencia de tempo de verdade: antes, na proposta, depois. */
+.processo { background: var(--fundo-2); }
+
+.compromissos .quando {
+  font-size: var(--t--1);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--acao-texto);
+}
 
 .compromissos p { font-size: var(--t-1); }
 
-/* A ABERTURA DAS INTERNAS
-   Mesma logica da home: o titulo declara, o eixo fecha a declaracao, e abaixo dele fica
-   o dado que a pessoa veio buscar. A diferenca e que aqui o dado varia por pagina -- na
-   de criacao de sites e o preco, e onde nao houver dado a coluna da direita assume
-   sozinha e a abertura vira tipografica. */
-.capa { padding-block: var(--e-3) var(--e-5); }
+.compromissos .campo:last-child { border-bottom: 0; }
 
-.capa h1 { margin-block: var(--e-3) 0; max-width: 26ch; }
-
-.capa .eixo { margin-block: var(--e-3); }
-
-.capa-grade { display: grid; gap: var(--e-4); }
-
-.capa-oferta > * + * { margin-top: var(--e-3); }
-
-.capa-oferta .rotulo { margin-bottom: calc(-1 * var(--e-2)); }
-
-/* O numero da pagina interna e menor que o da home: la ele divide a primeira tela com
-   o retrato, aqui ele divide com a frase de escopo, que precisa continuar legivel. */
-/* O piso e 2,5rem e nao 2,75: o maior valor do site, "4 a 12 semanas", quebrava em
-   duas linhas numa tela de 320px por quatro pixels. */
-.capa .numero { font-size: clamp(2.5rem, 10vw, 4.5rem); }
-
-.capa-linha { font-size: var(--t-1); color: var(--grafite-2); max-width: 42ch; }
-
-/* Num case a manchete e o resultado: frase inteira, entao grotesca e nao a mono do
-   numero. E o que a pessoa veio ver, e estava na terceira secao. */
-.capa .resultado-manchete { font-size: clamp(1.75rem, 5.5vw, 2.5rem); max-width: 18ch; }
-
-.capa .resultado-bloco { border-top: 0; padding-top: 0; }
-
-/* Num artigo o resumo abre e o credito fica ao lado: sao duas informacoes de peso
-   diferente, e empilhar as duas em cinza faria uma mancha so. */
-.capa-credito { color: var(--grafite-2); max-width: none; }
-
-.capa .ficha-acao { max-width: none; margin-top: var(--e-4); }
-
-/* Sem numero, a frase de escopo sobe de corpo e assume a abertura sozinha: e ela que
-   responde por que a pessoa esta ali. */
-.capa-grade:not(:has(.numero, .resultado-manchete)) .capa-linha {
-  font-size: var(--t-2);
-  line-height: 1.35;
-  color: var(--grafite);
-  max-width: 30ch;
-}
-
-.trilha { color: var(--grafite-2); }
-
-.trilha a { display: inline-block; text-decoration: none; padding-block: var(--e-3); }
-
-.trilha [aria-current] { color: var(--grafite); }
-
-.cenarios { display: grid; gap: var(--e-4); }
-
-.cenarios article { border-top: 1px solid var(--impresso); padding-top: var(--e-3); }
-
-.cenarios h3 { margin-bottom: var(--e-1); }
-
-.cenarios p { color: var(--grafite-2); }
-
-/* Dialogo como transcricao, e nao como app de chat: quem fala em mono na margem,
-   a fala ao lado. Sem balao, sem avatar, sem canto arredondado. */
-.conversa dt { border-top: 1px solid var(--impresso); padding-top: var(--e-3); color: var(--grafite-2); }
-
-.conversa dd { margin: 0; padding-bottom: var(--e-3); }
-
-.acoes { display: flex; flex-wrap: wrap; gap: var(--e-4); align-items: baseline; }
-
-/* Exercicio nao ocupa o mesmo espaco de trabalho pago: sem print, uma linha cada,
-   e o nome no mesmo corpo de um paragrafo em vez do corpo de um titulo de case. */
-.lista-pratica h3 { font-size: var(--t-0); margin-bottom: var(--e-1); }
-
-
-.lista-pratica .acoes { margin-top: var(--e-2); }
-
-/* O aviso de ficticio precisa ser lido antes do resto, e por isso e a unica caixa
-   do site com fundo proprio. */
-.aviso { border: 1px solid var(--caneta); padding: var(--e-4); margin-top: var(--e-4); max-width: 60ch; }
-
-.aviso .mono { color: var(--caneta); margin-bottom: var(--e-2); }
-
-.par-figuras { display: grid; gap: var(--e-4); }
-
-/* Coluna de leitura. h2, h3 e p ja estao estilizados nos elementos: aqui so entra a
-   medida e o ritmo entre eles. */
-.prosa { max-width: 68ch; }
-
-.prosa > * + * { margin-top: var(--e-3); }
-
-.prosa h2 { font-size: var(--t-2); margin-top: var(--e-5); }
-
-.prosa h3 { color: var(--caneta); margin-top: var(--e-4); }
-
-.prosa a { text-underline-offset: 0.2em; }
-
-code, kbd {
-  font-family: var(--fonte-mono);
-  font-size: 0.9em;
-  background: var(--via-2);
-  border: 1px solid var(--impresso);
-  padding: 0 var(--e-1);
-}
-
-.lista-artigos li { border-top: 1px solid var(--impresso); padding-block: var(--e-4); }
-
-.lista-artigos li:last-child { border-bottom: 1px solid var(--impresso); }
-
-.lista-artigos .mono { color: var(--grafite-2); }
-
-.lista-artigos h2 { font-size: var(--t-2); max-width: 30ch; margin-block: var(--e-2); }
-
-.lista-artigos h2 a { text-decoration: none; }
-
-.lista-artigos > li > p:last-child { color: var(--grafite-2); }
-
-.lista-perguntas details:last-child { border-bottom: 1px solid var(--impresso); }
-
-summary { font-size: var(--t-1); font-weight: 500; }
-
-summary::after { content: ' +'; color: var(--caneta); }
-
-details[open] summary::after { content: ' −'; }
+/* PERGUNTAS. O unico bloco quieto da pagina. */
+.lista-perguntas details:last-child { border-bottom: 1px solid var(--fio); }
 
 .lista-perguntas div { padding-bottom: var(--e-4); }
 
-.fechamento { background: var(--inverso); color: var(--sobre); padding-block: var(--e-4); }
-
-.fechamento h2 { color: var(--inverso-texto); margin-bottom: var(--e-4); }
-
-.fechamento .mono { color: var(--sobre); }
-
-.telefone {
-  font-size: var(--t-3);
-  color: var(--inverso-texto);
-  text-decoration: none;
-  letter-spacing: -0.02em;
-  display: inline-block;
-  padding-block: var(--e-1);
+/* CONTATO. A unica tela em ambar. O ::before e o breu que a linha empurra para fora
+   quando a secao entra; sem JS ele ja nasce fora da tela. */
+.contato,
+.fechamento {
+  position: relative;
+  overflow: clip;
+  background: var(--resultado);
+  color: var(--sobre-resultado);
+  padding-block: var(--e-5);
 }
 
-.telefone:hover { color: var(--inverso-texto); text-decoration: underline; }
+.contato::before,
+.fechamento::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--fundo);
+  border-left: 3px solid var(--acao);
+  transform: translateX(101%);
+  pointer-events: none;
+  z-index: 1;
+}
 
+.contato > *,
+.fechamento > * { position: relative; z-index: 2; }
+
+.contato h2,
+.fechamento h2 { color: inherit; margin-bottom: var(--e-4); max-width: 16ch; font-size: var(--t-4); }
+
+.contato .rotulo,
+.fechamento .rotulo,
+.contato .mono,
+.fechamento .mono,
+.contato .silencio,
+.fechamento .silencio { color: rgb(10 12 20 / 0.72); }
+
+.contato a:hover,
+.fechamento a:hover { color: inherit; }
+
+.contato .telefone,
+.fechamento .telefone {
+  font-family: var(--fonte-display);
+  font-weight: 800;
+  font-size: var(--t-4);
+  letter-spacing: -0.03em;
+  color: inherit;
+  line-height: 1;
+}
+
+.contato .link-forte,
+.fechamento .link-forte { text-decoration-color: currentColor; }
+
+.contato label,
 .fechamento label { margin-bottom: var(--e-1); }
 
+.contato input,
 .fechamento input,
-.fechamento textarea { border-color: var(--sobre); color: var(--grafite); }
+.contato textarea,
+.fechamento textarea {
+  background: rgb(255 255 255 / 0.42);
+  border-color: var(--sobre-resultado);
+  color: var(--sobre-resultado);
+}
 
-.campo-erro { color: var(--inverso-texto); font-size: var(--t--1); margin-top: var(--e-1); }
+.contato ::placeholder,
+.fechamento ::placeholder { color: rgb(10 12 20 / 0.62); }
 
-.campo-erro::before { content: '↑ '; color: var(--caneta); }
+.contato :focus-visible,
+.fechamento :focus-visible { outline-color: var(--sobre-resultado); }
 
-.saida-manual a { color: var(--inverso-texto); }
+.contato .botao,
+.fechamento .botao,
+.contato .botao-claro,
+.fechamento .botao-claro { background: var(--sobre-resultado); border-color: var(--sobre-resultado); color: var(--resultado); }
 
-footer { border-top: 1px solid var(--impresso); padding-block: var(--e-4); }
+.contato .botao:hover,
+.fechamento .botao:hover { color: var(--resultado); }
+
+.contato .botao::after,
+.fechamento .botao::after { background: var(--sobre-acao); }
+
+.campo-erro { font-size: var(--t--1); font-weight: 500; margin-top: var(--e-1); }
+
+.campo-erro::before { content: '\2191 '; }
+
+.saida-manual a { color: inherit; }
+
+/* RODAPE */
+footer { border-top: 1px solid var(--fio); padding-block: var(--e-4); }
 
 .rodape-topo { display: grid; gap: var(--e-5); padding-bottom: var(--e-4); }
 
-.rodape-topo address { font-size: var(--t--1); color: var(--grafite-2); max-width: 42ch; }
+.rodape-topo address { font-size: var(--t--1); color: var(--texto-2); max-width: 42ch; }
 
-.rodape-topo address strong { color: var(--grafite); }
+.rodape-topo address strong { color: var(--texto); }
 
-/* O telefone do rodape media 126x18: fora de frase corrida, alvo de toque precisa de 44. */
 .rodape-topo address a { display: inline-block; padding-block: var(--e-3); }
 
-.rodape-topo nav p { color: var(--grafite-2); margin-bottom: var(--e-3); }
+.rodape-topo nav p { color: var(--texto-2); margin-bottom: var(--e-3); }
 
 .rodape-topo nav ul { columns: 2; column-gap: var(--e-4); }
 
@@ -1042,11 +992,11 @@ footer { border-top: 1px solid var(--impresso); padding-block: var(--e-4); }
   gap: var(--e-3);
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid var(--impresso);
+  border-top: 1px solid var(--fio);
   padding-top: var(--e-3);
 }
 
-.rodape-base p { color: var(--grafite-2); }
+.rodape-base p { color: var(--texto-2); }
 
 .rodape-base nav { display: flex; gap: var(--e-3); }
 
@@ -1055,48 +1005,40 @@ footer { border-top: 1px solid var(--impresso); padding-block: var(--e-4); }
   place-items: center;
   width: 2.75rem;
   height: 2.75rem;
-  color: var(--grafite-2);
+  color: var(--texto-2);
 }
 
-.rodape-base nav a:hover { color: var(--caneta); }
+.rodape-base nav a:hover { color: var(--acao-texto); }
 
-/* O ATALHO
-   Substitui a barra fixa que ocupava a base inteira do celular. Nao e a bolinha verde:
-   e a mesma aresta e o mesmo raio do resto do site, em vidro, porque ele passa por cima
-   de print de case e de bloco escuro e precisa deixar ver o que esta atras.
-   So aparece depois do hero, para nao disputar com o CTA principal, e some quando a
-   secao de contato entra na tela, onde ja existe o formulario e o telefone. */
+/* O ATALHO de WhatsApp. So entre a abertura e o contato, em vidro. */
 .atalho {
   position: fixed;
   right: max(4vw, 1rem);
   bottom: calc(max(4vw, 1rem) + env(safe-area-inset-bottom));
-  z-index: 2;
+  z-index: 3;
   display: flex;
   align-items: center;
   gap: var(--e-2);
   min-height: 2.75rem;
   min-width: 2.75rem;
   padding: var(--e-2) var(--e-3);
-  border: 1px solid var(--impresso);
+  border: 1px solid var(--fio);
   border-radius: var(--raio);
   background: var(--vidro);
   -webkit-backdrop-filter: blur(var(--vidro-borrao));
   backdrop-filter: blur(var(--vidro-borrao));
-  color: var(--grafite);
+  color: var(--texto);
   text-decoration: none;
   font-size: var(--t--1);
   font-weight: 500;
   white-space: nowrap;
-  /* nasce fora da tela: quem manda mostrar e o JS, e sem JS ele fica visivel de vez */
   transition: opacity var(--dur-2), translate var(--dur-2), visibility var(--dur-2);
 }
 
 .atalho svg { width: 1.25rem; height: 1.25rem; flex: none; }
 
-.atalho:hover { color: var(--caneta); border-color: var(--caneta); }
+.atalho:hover { color: var(--acao-texto); border-color: var(--acao-texto); }
 
-/* O rotulo cabe no desktop. No celular fica so o icone, com os 44px de alvo garantidos
-   pelo min-width acima. */
 .atalho span { display: none; }
 
 .atalho[hidden] {
@@ -1107,16 +1049,154 @@ footer { border-top: 1px solid var(--impresso); padding-block: var(--e-4); }
   pointer-events: none;
 }
 
-/* Sem vidro, o fundo volta a ser opaco: um header ou um atalho translucido por cima de
-   um print de case fica ilegivel se o borrao nao acontecer. */
 @supports not (backdrop-filter: blur(1px)) {
   header.rolado,
-  .atalho { background: var(--folha); }
+  .atalho { background: var(--fundo); }
 }
 
+/* AS INTERNAS. Toda capa e trilha, H1, a linha da virada e o que a pessoa veio buscar. */
+.capa { padding-block: var(--e-3) var(--e-5); }
+
+.capa h1 { margin-block: var(--e-3) 0; max-width: 18ch; }
+
+.capa .eixo,
+.capa .virada { margin-block: var(--e-4); }
+
+.capa-grade { display: grid; gap: var(--e-4); }
+
+.capa-oferta > * + * { margin-top: var(--e-3); }
+
+.capa-oferta .rotulo { margin-bottom: calc(-1 * var(--e-2)); }
+
+/* O dado da capa: preco ou prazo, em Gabarito, na cor do texto. */
+.numero {
+  font-family: var(--fonte-display);
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+  color: var(--texto);
+  max-width: none;
+}
+
+.valor {
+  font-family: var(--fonte-display);
+  font-size: var(--t-3);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--acao-texto);
+}
+
+.capa-linha { font-size: var(--t-1); color: var(--texto-2); max-width: 42ch; }
+
+.capa .resultado-manchete { font-size: clamp(1.75rem, 5.5vw, 2.5rem); }
+
+.capa .resultado-bloco { padding-top: 0; }
+
+.capa .resultado-bloco::before { display: none; }
+
+.capa-credito { color: var(--texto-2); max-width: none; }
+
+.capa .ficha-acao,
+.ficha-acao { max-width: none; margin-top: var(--e-4); }
+
+.capa-grade:not(:has(.numero, .resultado-manchete)) .capa-linha {
+  font-size: var(--t-2);
+  line-height: 1.3;
+  color: var(--texto);
+  max-width: 30ch;
+}
+
+.trilha { color: var(--texto-2); font-size: var(--t--1); font-weight: 500; }
+
+.trilha a { display: inline-block; text-decoration: none; padding-block: var(--e-3); }
+
+.trilha [aria-current] { color: var(--texto); }
+
+.cenarios { display: grid; gap: var(--e-4); }
+
+.cenarios article { border-top: 1px solid var(--fio); padding-top: var(--e-3); }
+
+.cenarios h3 { margin-bottom: var(--e-1); }
+
+.cenarios p { color: var(--texto-2); }
+
+/* O case fora do palco: nas internas ele nao prende, so revela na entrada. */
+.case { padding-bottom: var(--e-5); }
+
+.case:last-of-type { padding-bottom: var(--e-4); }
+
+@container (min-width: 46rem) {
+  .case {
+    display: grid;
+    grid-template-columns: 62fr 38fr;
+    gap: var(--e-5);
+    align-items: start;
+  }
+
+  .case-invertido { grid-template-columns: 38fr 62fr; }
+
+  .case-invertido .anexo { order: 2; }
+}
+
+.case-texto { container-type: inline-size; }
+
+.case-texto > * + * { margin-top: var(--e-3); }
+
+.case-texto > .campo { margin-top: 0; }
+
+.case-texto .mono { color: var(--texto-2); }
+
+.case-texto h3 { font-family: var(--fonte-display); font-weight: 800; font-size: var(--t-2); letter-spacing: -0.03em; line-height: 1.02; max-width: 20ch; }
+
+.case .anexo { margin-bottom: var(--e-4); }
+
+.case .anexo img { border-radius: var(--raio); }
+
+.conversa dt { border-top: 1px solid var(--fio); padding-top: var(--e-3); color: var(--texto-2); font-weight: 500; }
+
+.conversa dd { margin: 0; padding-bottom: var(--e-3); }
+
+.acoes { display: flex; flex-wrap: wrap; gap: var(--e-4); align-items: baseline; }
+
+.lista-pratica h3 { font-size: var(--t-0); margin-bottom: var(--e-1); }
+
+.lista-pratica .acoes { margin-top: var(--e-2); }
+
+.aviso { border: 1px solid var(--acao-texto); border-radius: var(--raio); padding: var(--e-4); margin-top: var(--e-4); max-width: 60ch; }
+
+.aviso .mono { color: var(--acao-texto); margin-bottom: var(--e-2); }
+
+.par-figuras { display: grid; gap: var(--e-4); }
+
+.prosa { max-width: 68ch; }
+
+.prosa > * + * { margin-top: var(--e-3); }
+
+.prosa h2 { font-size: var(--t-2); margin-top: var(--e-5); max-width: none; margin-bottom: 0; }
+
+.prosa h3 { color: var(--acao-texto); margin-top: var(--e-4); }
+
+.prosa a { text-underline-offset: 0.2em; text-decoration-color: var(--acao-texto); }
+
+.lista-artigos li { border-top: 1px solid var(--fio); padding-block: var(--e-4); }
+
+.lista-artigos li:last-child { border-bottom: 1px solid var(--fio); }
+
+.lista-artigos .mono { color: var(--texto-2); }
+
+.lista-artigos h2 { font-size: var(--t-2); max-width: 30ch; margin-block: var(--e-2); }
+
+.lista-artigos h2 a { text-decoration: none; }
+
+.lista-artigos > li > p:last-child { color: var(--texto-2); }
+
+/* DESKTOP: um breakpoint so. */
 @media (min-width: 48em) {
-  /* No desktop o atalho ganha o rotulo: ha espaco, e um icone sozinho ali obriga a
-     adivinhar. */
+  section { padding-block: var(--e-6); }
+
   .atalho span { display: block; }
 
   header nav { gap: var(--e-4); }
@@ -1125,79 +1205,61 @@ footer { border-top: 1px solid var(--impresso); padding-block: var(--e-4); }
 
   section h2 { font-size: var(--t-4); }
 
-  .case-invertido .anexo { order: 2; }
+  .abertura { padding-block: var(--e-5) var(--e-6); --retrato-largura: 15rem; }
 
-  .anexo { margin-bottom: 0; }
+  /* O retrato mora na coluna da direita, fora da coluna do H1: o H1 nao precisa mais
+     reservar a metade de cima da foto. */
+  .abertura h1 { margin-bottom: var(--e-4); }
 
-  /* Nome a esquerda, explicacao a direita: a lista fica com a metade da altura que
-     teria empilhada, e a linha inteira vira alvo de toque. */
-  .lista-servicos li {
-    display: grid;
-    grid-template-columns: 22rem 1fr;
+  .abertura-grade {
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--e-5) var(--e-4);
+    padding-top: var(--e-4);
+  }
+
+  .indice { grid-column: 1 / 9; grid-row: 1; }
+
+  .indice-lista { grid-template-columns: 1fr 1fr; margin-top: var(--e-3); }
+
+  .abertura-acao { grid-column: 1 / 9; grid-row: 2; }
+
+  .retrato { grid-column: 10 / 13; grid-row: 1 / 3; }
+
+  /* O palco: uma tela por case, o texto de um lado e o print do outro. Antes e depois
+     ocupam a mesma celula: quem troca e o JS, e sem JS fica o depois. */
+  .cena-palco { min-height: 100svh; }
+
+  .cena-grade {
+    grid-template-columns: repeat(12, 1fr);
     gap: var(--e-4);
-    align-items: baseline;
+    align-items: center;
   }
 
-  .lista-servicos p { padding-block: var(--e-2); }
+  .os-cabecalho { grid-column: 1 / -1; grid-row: 1; align-self: start; }
 
-  /* Onde ha coluna sobrando, o numero e o retrato dividem a abertura meio a meio e as
-     bases dos dois alinham na mesma linha. No celular eles se empilham, e e o retrato
-     que vem primeiro: rosto antes de preco, porque a duvida do visitante e quem esta
-     do outro lado antes de quanto custa. */
-  .ficha { padding-block: var(--e-5) var(--e-6); }
+  .antes,
+  .depois { grid-column: 1 / 6; grid-row: 2; }
 
-  .eixo { margin-block: var(--e-3) var(--e-4); }
+  .anexo { grid-column: 6 / -1; grid-row: 2; }
 
-  .ficha-grade {
-    grid-template-columns: 1fr 1.1fr;
-    gap: var(--e-5);
-    align-items: end;
-  }
+  .cena-direita .antes,
+  .cena-direita .depois { grid-column: 8 / -1; }
 
-  .ficha-oferta { order: -1; }
+  .cena-direita .anexo { grid-column: 1 / 8; }
 
-  .retrato { grid-template-columns: auto 1fr; gap: var(--e-2) var(--e-4); }
+  .cena-cima .anexo { grid-column: 1 / 9; grid-row: 2; }
 
-  .retrato-fone .telefone { font-size: var(--t-1); }
+  .cena-cima .antes,
+  .cena-cima .depois { grid-column: 1 / 8; grid-row: 3; }
 
-  /* A foto para de crescer antes de empurrar o botao para fora da primeira tela: em
-     4:5 cada 100px de largura custa 125px de altura, e a altura e o recurso escasso.
-     O limite e de largura, e nao de altura: limitar a altura achataria o retrato. */
-  .retrato img { max-width: 17rem; justify-self: start; }
+  .cena-cima .cena-grade { align-items: start; }
 
-  /* Onde ha coluna sobrando, o dado e o escopo dividem a abertura, como o preco e o
-     retrato dividem na home. As bases alinham no mesmo fio de base. */
-  .capa { padding-block: var(--e-4) var(--e-6); }
+  .depois h2 { font-size: var(--t-4); }
 
-  /* Com numero, a frase de escopo comeca na linha do rotulo: alinhar pela base a
-     deixaria boiando no fundo da coluna, longe do dado que ela explica. */
-  .capa-grade { grid-template-columns: 1fr 1fr; gap: var(--e-5); align-items: start; }
+  .resultado-manchete { font-size: var(--t-3); }
 
-  .capa .eixo { margin-block: var(--e-4); }
-
-  .capa-grade .capa-linha { padding-top: var(--e-2); }
-
-  /* Sem numero, quem abre e a frase, e a acao vai para a direita na mesma linha de base.
-     Deixar a direita vazia faria a pagina voltar a parecer documento. */
-  .capa-grade:not(:has(.numero, .resultado-manchete)) { grid-template-columns: minmax(0, 1.35fr) auto; align-items: end; }
-
-  .capa-grade:not(:has(.numero, .resultado-manchete)) .capa-linha { padding-top: 0; }
-
-  .capa-grade:not(:has(.numero, .resultado-manchete)) .ficha-acao { margin-top: 0; justify-self: end; }
-
-  /* No artigo o credito acompanha a primeira linha do resumo, e nao a ultima: alinhado
-     pela base ele boiava a seis linhas de distancia do texto que ele credita. */
-  .capa-grade:has(.capa-credito) { align-items: start; }
-
-  .capa-credito { padding-top: var(--e-2); text-align: right; }
-
-  /* O fundo escuro ja separa do FAQ: 48px de escuro em cima e respiro pago duas vezes. */
-  .fechamento { padding-block: var(--e-4) var(--e-5); }
-
-  /* O pin dos compromissos: o titulo fica preso na coluna da esquerda enquanto os tres
-     passam pela direita. Sem as duas colunas o sticky prenderia o titulo por cima da
-     lista, que e exatamente o que ele nao pode fazer. E layout, e nao animacao: vale
-     tambem para quem pediu menos movimento. */
+  /* Servicos: nome a esquerda, explicacao a direita, titulo preso enquanto passam. */
+  .servicos .container,
   .processo .container {
     display: grid;
     grid-template-columns: 20rem 1fr;
@@ -1205,13 +1267,36 @@ footer { border-top: 1px solid var(--impresso); padding-block: var(--e-4); }
     align-items: start;
   }
 
+  .servicos h2,
   .processo h2 { position: sticky; top: calc(var(--e-5) + var(--e-4)); margin-bottom: 0; }
 
-  .ato h2 { font-size: var(--t-4); }
+  .lista-servicos li {
+    display: grid;
+    grid-template-columns: 22rem 1fr;
+    gap: var(--e-4);
+    align-items: baseline;
+  }
 
-  .ato-rodape { grid-template-columns: 1fr 1fr; gap: var(--e-5); }
+  .lista-servicos p { padding-block: var(--e-3); }
 
-  .resultado-manchete { font-size: var(--t-3); }
+  .contato,
+  .fechamento { padding-block: var(--e-6); }
+
+  .capa { padding-block: var(--e-4) var(--e-6); }
+
+  .capa-grade { grid-template-columns: 1fr 1fr; gap: var(--e-5); align-items: start; }
+
+  .capa-grade .capa-linha { padding-top: var(--e-2); }
+
+  .capa-grade:not(:has(.numero, .resultado-manchete)) { grid-template-columns: minmax(0, 1.35fr) auto; align-items: end; }
+
+  .capa-grade:not(:has(.numero, .resultado-manchete)) .capa-linha { padding-top: 0; }
+
+  .capa-grade:not(:has(.numero, .resultado-manchete)) .ficha-acao { margin-top: 0; justify-self: end; }
+
+  .capa-grade:has(.capa-credito) { align-items: start; }
+
+  .capa-credito { padding-top: var(--e-2); text-align: right; }
 
   .valor { font-size: var(--t-4); }
 
@@ -1221,8 +1306,6 @@ footer { border-top: 1px solid var(--impresso); padding-block: var(--e-4); }
 
   .rodape-topo { grid-template-columns: 1fr 1fr; }
 
-  /* span vai no grid-column-END: usar o atalho grid-column apagaria o start
-     declarado por .inicio-*, e o elemento encolheria para uma coluna. */
   .col-3 { grid-column-end: span 3; }
   .col-4 { grid-column-end: span 4; }
   .col-5 { grid-column-end: span 5; }
@@ -1234,131 +1317,65 @@ footer { border-top: 1px solid var(--impresso); padding-block: var(--e-4); }
   .inicio-8 { grid-column-start: 8; }
   .inicio-9 { grid-column-start: 9; }
 }
-/* MOVIMENTO
-   Quatro momentos, e cada um tem um motivo. Tudo em CSS: parallax, revelacao e o pin
-   dos compromissos rodam no compositor por animation-timeline, fora da main thread.
-   Nao ha GSAP, nao ha ScrollTrigger e nao ha scroll suave por JS -- os tres somariam
-   40 KB para fazer o que o navegador ja faz, e o scroll por JS e o que mais custa INP.
-   Onde animation-timeline nao existe, nada anima e tudo aparece no estado final. */
 
-/* 1. A ENTRADA. Um gesto so: o eixo se desenha da esquerda e o preco sobe atras dele.
-   O preco nao anima opacity de proposito -- ele e candidato a maior elemento da
-   primeira tela, e comecar invisivel adiaria o LCP pelo tempo inteiro da animacao. */
+/* MOVIMENTO DE ENTRADA. So a abertura anima em CSS, para nao depender do vendor na
+   primeira tela. As cenas de rolagem sao do GSAP, em js/script.js, e nascem no estado
+   final. Nada aqui anima a opacidade de um texto: o axe mede o contraste no meio do
+   caminho e quem le devagar le o cinza. */
 @media (prefers-reduced-motion: no-preference) {
-  .eixo {
-    animation: desenhar-eixo 600ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  .abertura-grade::before,
+  .capa .virada,
+  .capa .eixo { animation: virar 600ms var(--curva) 120ms both; }
+
+  .indice-lista li { color: var(--texto-2); animation: acender var(--dur-2) both; }
+
+  .indice-lista li:nth-child(1) { animation-delay: 420ms; }
+  .indice-lista li:nth-child(2) { animation-delay: 480ms; }
+  .indice-lista li:nth-child(3) { animation-delay: 540ms; }
+  .indice-lista li:nth-child(4) { animation-delay: 600ms; }
+  .indice-lista li:nth-child(5) { animation-delay: 660ms; }
+  .indice-lista li:nth-child(6) { animation-delay: 720ms; }
+  .indice-lista li:nth-child(7) { animation-delay: 780ms; }
+  .indice-lista li:nth-child(8) { animation-delay: 840ms; }
+
+  .retrato-depois { animation: revelar 700ms var(--curva) 500ms both; }
+
+  .abertura-acao > *,
+  .capa-grade > * { animation: subir 520ms var(--curva) 300ms both; }
+
+  @keyframes virar {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
   }
 
-  .ficha-oferta > * {
-    animation: subir 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
-    animation-delay: 120ms;
+  @keyframes acender {
+    from { color: var(--texto-2); }
+    to { color: var(--texto); }
   }
 
-  .numero { animation-name: subir-firme; }
-
-  @keyframes desenhar-eixo {
-    from { scale: 0 1; }
-    to { scale: 1 1; }
+  @keyframes revelar {
+    from { clip-path: inset(100% 0 0 0); }
+    to { clip-path: inset(42% 0 0 0); }
   }
 
   @keyframes subir {
-    from { opacity: 0; translate: 0 12px; }
-    to { opacity: 1; translate: 0 0; }
-  }
-
-  /* A promessa e o botao entram so subindo: sao texto, e texto a meia opacidade e texto
-     ilegivel pelo tempo da animacao. */
-  .ficha-promessa,
-  .ficha-acao,
-  .retrato-fone { animation-name: subir-firme; }
-
-  @keyframes subir-firme {
-    from { translate: 0 12px; }
+    from { translate: 0 14px; }
     to { translate: 0 0; }
   }
 }
 
-/* 2. O HEADER vira vidro ao rolar. Nao ha keyframe: e a classe .rolado, aplicada pelo
-   mesmo listener que ja existia para o fio. */
-
-@media (prefers-reduced-motion: no-preference) {
-  @supports (animation-timeline: view()) {
-    /* 3. O PRINT. No celular ele so entra subindo, porque ali a imagem sangra ate a
-       borda e um quadro que corta apagaria a sangria. */
-    .ato .anexo img {
-      animation: entrar-print linear both;
-      animation-timeline: view();
-      animation-range: entry 10% cover 32%;
-    }
-
-    @keyframes entrar-print {
-      from { opacity: 0.55; translate: 0 18px; }
-      to { opacity: 1; translate: 0 0; }
-    }
-
-    /* 4. OS COMPROMISSOS. O unico bloco da pagina que e sequencia de verdade: o titulo
-       fica preso enquanto os tres itens passam, e cada um chega no seu tempo. E por ser
-       sequencia que este e tambem o unico bloco numerado do site. */
-    .compromissos li {
-      animation: chegar linear both;
-      animation-timeline: view();
-      animation-range: entry 15% cover 40%;
-    }
-
-    /* So translate. Animar a opacidade do texto derruba o contraste enquanto a animacao
-       roda -- o axe mede 1,6:1 no meio do caminho, e quem le devagar le o cinza. */
-    @keyframes chegar {
-      from { translate: 0 18px; }
-      to { translate: 0 0; }
-    }
-  }
-}
-
-/* No desktop o print ganha o parallax: a imagem e 4% maior que o quadro e desliza dentro
-   dele. Duas camadas, so transform, e o quadro nunca se mexe. Mais do que 4% comeca a
-   comer o topo do print, que e onde mora o logo do cliente -- e o logo e a prova. */
-@media (min-width: 48em) and (prefers-reduced-motion: no-preference) {
-  @supports (animation-timeline: view()) {
-    .ato .anexo { overflow: clip; }
-
-    .ato .anexo img {
-      scale: 1.04;
-      animation: deslizar-print linear both;
-      animation-timeline: view();
-      animation-range: cover;
-    }
-
-    @keyframes deslizar-print {
-      from { translate: 0 -1.8%; }
-      to { translate: 0 1.8%; }
-    }
-  }
-}
-
-/* Transicao entre paginas sem uma linha de JS e sem virar SPA. Navegador que nao
-   suporta navega como sempre. */
-@view-transition { navigation: auto; }
-
-header { view-transition-name: cabecalho; }
-
-/* A pagina nao pula de lado quando um <details> do FAQ abre e cria rolagem. */
-html { scrollbar-gutter: stable; }
-
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+
   *,
   *::before,
   *::after {
     animation-duration: 1ms;
     transition-duration: 1ms;
   }
-  .ato .anexo img,
-  .compromissos li,
-  .eixo,
-  .ficha-oferta > * {
-    animation: none;
-    opacity: 1;
-    translate: none;
-    scale: none;
-  }
 }
+
+/* Transicao entre paginas sem JS e sem virar SPA. */
+@view-transition { navigation: auto; }
+
+header { view-transition-name: cabecalho; }

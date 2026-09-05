@@ -1,0 +1,12 @@
+Bibliotecas de terceiros servidas pelo proprio site, sem CDN.
+
+gsap.min.js           -- GSAP 3.15.0, nucleo.
+ScrollTrigger.min.js  -- GSAP 3.15.0, plugin ScrollTrigger.
+
+  Autor: GreenSock (Webflow). Licenca: GSAP Standard "no charge" license,
+  https://gsap.com/standard-license -- desde 2025 a biblioteca inteira e gratuita para
+  qualquer uso, inclusive comercial. Obtidos do pacote npm `gsap@3.15.0` (dist/), sem
+  modificacao. Medidos em 05/09/2026: 72.927 B + 44.575 B brutos, 28.284 B + 18.004 B gzip.
+
+Os dois entram com <script defer> antes de js/script.js, que so registra as cenas se
+window.gsap existir. Sem eles a pagina nasce no estado final e continua inteira.
