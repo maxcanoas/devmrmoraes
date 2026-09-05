@@ -88,7 +88,9 @@ do "documento", a direção anterior.
   que a Arial Bold (`94.4%`). **As duas levam `font-display: optional`**, e isso não é opcional:
   o Chrome resolve `local()` por uma tabela de nomes montada de forma assíncrona, e num perfil
   recém-aberto a busca segurava o texto invisível por até 2,3 s (LCP 4,3 s). Com `optional`, o
-  texto sai em Arial comum se a face local não responde em 100 ms. Se trocar de fonte, remeça.
+  texto sai em Arial comum se a face local não responde em 100 ms. A trava só se reproduz dentro
+  do Lighthouse no Windows (1 em cada 4 ou 5 rodadas); em 24 rodadas de Chrome novo com CPU 4x
+  ela não aconteceu, então as substitutas ficam. Se trocar de fonte, remeça.
 
 Só o subset `latin` é baixado na prática (72 KB pelas duas); o `latin-ext` existe para o caractere
 raro. Preload das duas `latin` em `partials/head-assets.html`.
