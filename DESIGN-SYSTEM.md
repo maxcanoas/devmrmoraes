@@ -134,6 +134,7 @@ Todos já existem em `css/style.css`. Antes de inventar um, olhe aqui.
 | `.case`, `.case-invertido`, `.case-texto` | o case fora do palco, print a 62% |
 | `.cenarios`, `.conversa`, `.acoes`, `.lista-pratica`, `.aviso`, `.par-figuras`, `.prosa`, `.lista-artigos` | miolos das internas |
 | `.atalho`, `.tema`, `.pular` | o atalho de WhatsApp em vidro, o botão de tema, o link de pular |
+| `.oferta`, `.oferta-acoes`, `.oferta-nao` | o `<dialog>` da oferta de saída, na home e nos 8 serviços (ver Oferta de saída) |
 
 ---
 
@@ -205,6 +206,35 @@ com paleta (`sharp(...).png({ quality: 90, palette: true })`). **Fique abaixo de
 
 ---
 
+## A oferta de saída
+
+Publicada em 06/09/2026. O ponteiro sobe para fechar a aba e o `<dialog>` da oferta aparece:
+**10% de desconto no valor final** para quem pedir orçamento. Não é uma direção nova, é um
+componente — a mesma linha da virada, as mesmas três cores no mesmo papel.
+
+- **Onde:** só na home e nos 8 serviços. O bloco `<!-- #oferta -->` de `tools/sync-partials.js`
+  só existe nessas 9 páginas; nas outras 10 o `<dialog>` **não é impresso no HTML**. Para ligar
+  ou desligar numa página, é o par de marcadores que entra ou sai.
+- **Quem vê:** desktop com mouse (`(hover:hover) and (pointer:fine)`), uma vez por sessão, e
+  só a partir de 5 s de página. Nunca no celular.
+- **Por que `<dialog>` nativo:** ESC, foco preso, `inert` atrás e devolução do foco saem de
+  graça; escritos à mão não caberiam no teto do JS. `<form method="dialog">` fecha o "Agora
+  não" sem uma linha, e `closedby="any"` dá o clique-fora.
+- **Sem vidro.** O teto de 5 já é do header e do atalho. O véu é o token `--veu`, breu chapado
+  nos dois temas — no claro, um véu branco não separaria nada.
+- **Nunca declarar `display` no `.oferta`**: o diálogo fechado precisa continuar `display:none`,
+  senão aparece no fim de toda página.
+- **Medição:** `oferta_vista` na abertura; o clique já cai no `contato_whatsapp` de sempre, com
+  `origem: oferta_saida`. A mensagem pronta carrega o código **SITE10**.
+- **O desconto não tem prazo declarado.** Como `criacao-de-sites/` publica R$ 1.989, o preço
+  efetivo dessa página é R$ 1.790,10 para quem viu a oferta.
+
+Se um dia o modal pesar demais no tom do site, o recuo barato é `show()` no lugar de
+`showModal()`: vira faixa no canto, o scroll-lock e o `::backdrop` deixam de ser necessários e
+o JS encolhe.
+
+---
+
 ## Orçamento
 
 Medido em 05/09/2026, Lighthouse mobile, três rodadas seguidas e sozinho (outro Chrome aberto
@@ -212,8 +242,8 @@ em paralelo derruba a nota por disputa de CPU).
 
 | Item | Teto | Hoje |
 |---|---|---|
-| CSS bruto | 60.000 B | 36.427 B |
-| `js/script.js` | 12.000 B | 11.404 B |
+| CSS bruto | 60.000 B | 38.136 B |
+| `js/script.js` | 12.500 B | 12.347 B |
 | `js/vendor/` somado | 130.000 B | 117.502 B (46 KB gzip, depois do load) |
 | Fontes carregadas | 90 KB | 72 KB |
 | Home completa | 500 KB | 437 KB |
@@ -221,7 +251,8 @@ em paralelo derruba a nota por disputa de CPU).
 | LCP / CLS / TBT | ≤ 2,5 s / 0 / verde | 1,9 s / 0 / 140 a 180 ms |
 | Acessibilidade / Boas práticas / SEO | 100 | 100 / 100 / 100 |
 
-**Se um efeito novo não couber, corte o efeito, não aumente o teto.**
+**Se um efeito novo não couber, corte o efeito, não aumente o teto.** Exceção única até aqui:
+o teto do JS foi de 12.000 para 12.500 B em 06/09/2026, para a oferta de saída caber.
 
 ---
 
@@ -232,7 +263,7 @@ em paralelo derruba a nota por disputa de CPU).
 - gradiente, `box-shadow`, `filter: blur`, `transition: all`, `!important`,
   `-webkit-text-stroke`, `background-clip: text`, Google Fonts, `style=` inline;
 - mais de 5 ocorrências de `backdrop-filter`;
-- CSS acima de 60.000 B, `js/script.js` acima de 12.000 B, `js/vendor/` acima de 130.000 B;
+- CSS acima de 60.000 B, `js/script.js` acima de 12.500 B, `js/vendor/` acima de 130.000 B;
 - famílias de clichê (Inter, Poppins, DM Sans, Space Grotesk, Satoshi e companhia);
 - âncora que não aterrissa, `href` que não resolve, link `wa.me` sem `data-origem`, mais de um
   `<h1>`, `<head>` divergindo de `tools/head-referencia.json`, FAQ que não bate com o `FAQPage`.

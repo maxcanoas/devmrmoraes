@@ -94,6 +94,9 @@
   --vidro: rgb(10 12 20 / 0.74);
   --vidro-borrao: 12px;
 
+  /* o veu do modal e breu nos dois temas: no claro, um veu branco nao separaria nada */
+  --veu: rgb(10 12 20 / 0.82);
+
   --t--1: 0.8125rem;
   --t-0: 1.0625rem;
   --t-1: 1.25rem;
@@ -135,6 +138,7 @@
   --resultado-texto: #8C5A00;
 
   --vidro: rgb(244 245 249 / 0.78);
+  --veu: rgb(10 12 20 / 0.58);
 }
 
 *,
@@ -1056,6 +1060,50 @@ footer { border-top: 1px solid var(--fio); padding-block: var(--e-4); }
   .atalho { background: var(--fundo); }
 }
 
+/* A OFERTA DE SAIDA. O <dialog> nativo cuida do ESC, do foco preso, do inert atras e da
+   devolucao do foco -- nada disso custa JS. Sem vidro: o teto de 5 ja e do header e do
+   atalho, e aqui o breu chapado le melhor. Nunca declarar display no .oferta: o dialogo
+   fechado precisa continuar display:none, senao aparece no fim de toda pagina. */
+.oferta {
+  width: min(34rem, 92vw);
+  margin: auto;
+  padding: var(--e-5) var(--e-4);
+  border: 1px solid var(--fio);
+  border-radius: var(--raio);
+  background: var(--fundo-2);
+  color: var(--texto);
+}
+
+.oferta::backdrop { background: var(--veu); }
+
+.oferta .rotulo { color: var(--acao-texto); }
+
+.oferta h2 { font-size: var(--t-2); }
+
+.oferta p:not(.rotulo) { color: var(--texto-2); max-width: 44ch; }
+
+.oferta-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--e-3);
+  margin-top: var(--e-4);
+}
+
+/* A recusa nao compete com a acao: nevoa, sem borda, ate a pessoa mirar nela. */
+.oferta-nao {
+  min-height: 2.75rem;
+  padding: var(--e-2) var(--e-3);
+  border: 1px solid transparent;
+  color: var(--texto-2);
+  font-size: var(--t--1);
+}
+
+.oferta-nao:hover { color: var(--texto); border-color: var(--fio); }
+
+/* O fundo nao rola atras do modal. O html ja reserva a calha da barra, entao nada salta. */
+html:has(dialog[open]) { overflow: hidden; }
+
 /* AS INTERNAS. Toda capa e trilha, H1, a linha da virada e o que a pessoa veio buscar. */
 .capa { padding-block: var(--e-3) var(--e-5); }
 
@@ -1354,6 +1402,11 @@ footer { border-top: 1px solid var(--fio); padding-block: var(--e-4); }
 
   .abertura-acao > *,
   .capa-grade > * { animation: subir 520ms var(--curva) 300ms both; }
+
+  /* o mesmo gesto do site: o painel sobe e a linha da virada se desenha */
+  .oferta[open] { animation: subir var(--dur-2) var(--curva) both; }
+
+  .oferta[open] .virada { animation: virar var(--dur-2) var(--curva) 120ms both; }
 
   @keyframes virar {
     from { transform: scaleX(0); }

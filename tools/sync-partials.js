@@ -1,12 +1,12 @@
 'use strict';
-/* Injeta partials/{head-assets,header,footer}.html entre marcadores nos .html do repositorio.
+/* Injeta partials/{head-assets,header,footer,oferta}.html entre marcadores nos .html do repositorio.
    Node puro, sem dependencia, sem flag.  Uso: node tools/sync-partials.js */
 
 const fs = require('fs');
 const path = require('path');
 
 const RAIZ = path.resolve(__dirname, '..');
-const BLOCOS = { assets: 'head-assets.html', header: 'header.html', footer: 'footer.html' };
+const BLOCOS = { assets: 'head-assets.html', header: 'header.html', footer: 'footer.html', oferta: 'oferta.html' };
 const IGNORAR = new Set(['.git', 'node_modules', 'tools', 'partials', 'img', 'css', 'js', 'fonts']);
 
 /* referencia visual da fase 6, fora do site */
@@ -62,7 +62,8 @@ function renderizar(fonte, raiz, chave) {
     .replace(/\{\{ativo-classe:([^}]+)\}\}/g, (_, alvo) => grau(alvo) ? ' ativo' : '');
 }
 
-/* null  = par ausente: pagina ainda nao migrada, segue o baile.
+/* null  = par ausente: bloco que nao entra nesta pagina. E o caso do #oferta, que so mora
+   na home e nos 8 servicos; as outras seguem o baile sem ele.
    throw = par pela metade, duplicado ou invertido: aborta antes de escrever qualquer coisa. */
 function localizar(texto, nome, rel) {
   const abre = [...texto.matchAll(new RegExp('<!--\\s*#' + nome + '\\s*-->', 'g'))];

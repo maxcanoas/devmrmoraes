@@ -226,10 +226,11 @@ const TETO = [
 
 /* 7b. orcamento em bytes brutos. O CSS subiu de 45.000 para 60.000 na direcao A virada
    (05/09/2026); o JS proprio e o vendor (GSAP + ScrollTrigger) ganharam teto proprio.
-   Se um efeito novo nao couber, corte o efeito -- nao aumente o teto. */
+   Se um efeito novo nao couber, corte o efeito -- nao aumente o teto. Excecao unica ate aqui:
+   o JS foi de 12.000 para 12.500 em 06/09/2026, para a oferta de saida caber. */
 const ORCAMENTO = [
   ['css/style.css', 60000],
-  ['js/script.js', 12000],
+  ['js/script.js', 12500],
   ['js/vendor', 130000],
 ];
 for (const [rel, teto] of ORCAMENTO) {

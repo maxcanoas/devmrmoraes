@@ -141,6 +141,25 @@ function configurarFormulario() {
   });
 }
 
+/* A OFERTA DE SAIDA. Uma vez por sessao, so onde o <dialog> existe e so em quem tem mouse:
+   esconder o dialogo por CSS nao impediria o showModal de prender o foco no invisivel.
+   relatedTarget nulo = o ponteiro saiu do documento; clientY ate 10 pega a saida rapida. */
+function configurarOferta() {
+  const oferta = document.querySelector('dialog');
+  if (!oferta || !matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+
+  const sair = e => {
+    if (e.relatedTarget || e.clientY > 10) return;
+    removeEventListener('mouseout', sair);
+    try { if (sessionStorage.oferta) return; sessionStorage.oferta = 1; } catch (err) {}
+    oferta.showModal();
+    if (typeof gtag === 'function') gtag('event', 'oferta_vista', { pagina: location.pathname });
+  };
+
+  /* os 5 s evitam o pop-up que aparece antes de a pessoa ter lido qualquer coisa */
+  setTimeout(() => addEventListener('mouseout', sair), 5000);
+}
+
 /* AS CENAS. Tudo nasce no estado final no CSS: sem GSAP ou com menos movimento, a pagina e
    o depois inteiro. Tres mundos: reduzido (nada), preso (desktop alto: pin) e leve (o resto).
    So transform anima; texto nunca perde opacidade. */
@@ -280,7 +299,7 @@ function iniciar() {
   if (document.prerendering) document.addEventListener('prerenderingchange', cenas, { once: true });
   else cenas();
 
-  const depois = () => { configurarAtalho(); marcarAno(); };
+  const depois = () => { configurarAtalho(); marcarAno(); configurarOferta(); };
   if (typeof requestIdleCallback === 'function') requestIdleCallback(depois, { timeout: 2000 });
   else setTimeout(depois, 200);
 }
