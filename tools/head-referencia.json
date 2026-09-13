@@ -1106,15 +1106,15 @@
  },
  "projetos.html": {
   "title": "Portfólio de Projetos: Sites, Sistemas e SEO | DEVMRMORAES",
-  "description": "Projetos entregues para clientes de Canoas e Porto Alegre: site criado do zero, SEO técnico em site existente e sistema desktop em C# para relatórios.",
+  "description": "Projetos entregues para clientes de Canoas e Porto Alegre: site criado do zero, SEO técnico, sistema em C# e app de chamados para Android e iOS.",
   "canonical": "https://www.devmrmoraes.com.br/projetos.html",
   "og:title": "Portfólio de Projetos: Sites, Sistemas e SEO | DEVMRMORAES",
-  "og:description": "Projetos entregues para clientes: site criado do zero, SEO técnico em site existente e sistema desktop em C# para relatórios mensais.",
+  "og:description": "Projetos entregues para clientes: site criado do zero, SEO técnico, sistema em C# para relatórios e app de chamados para Android e iOS.",
   "og:url": "https://www.devmrmoraes.com.br/projetos.html",
   "og:image": "https://www.devmrmoraes.com.br/img/og-image.png",
   "og:type": "website",
   "twitter:title": "Portfólio de Projetos: Sites, Sistemas e SEO | DEVMRMORAES",
-  "twitter:description": "Site criado do zero, SEO técnico e sistema em C#: os projetos entregues para clientes.",
+  "twitter:description": "Site do zero, SEO técnico, sistema em C# e app Android e iOS: os projetos entregues para clientes.",
   "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
   "geo.region": "BR-RS",
   "geo.placename": "Canoas, Rio Grande do Sul",
@@ -1123,7 +1123,7 @@
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Portfólio de Projetos DEVMRMORAES",
-    "description": "Projetos de criação de sites, SEO técnico e sistemas entregues para clientes, seguidos dos projetos de prática, identificados como tal",
+    "description": "Projetos de criação de sites, SEO técnico, sistemas e aplicativo mobile entregues para clientes, seguidos dos projetos de prática, identificados como tal",
     "url": "https://www.devmrmoraes.com.br/projetos.html",
     "isPartOf": {
      "@id": "https://www.devmrmoraes.com.br/#website"
@@ -1225,6 +1225,86 @@
       "@type": "WebPage",
       "name": "Case: SEO técnico na Braskit Cargas Perigosas",
       "url": "https://www.devmrmoraes.com.br/projetos/braskit-seo/",
+      "isPartOf": {
+       "@id": "https://www.devmrmoraes.com.br/#website"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "projetos/brucker-chamados/index.html": {
+  "title": "Case: App de Chamados para Android e iOS | DEVMRMORAES",
+  "description": "Chamado técnico que chegava por telefone e WhatsApp virou um app Android e iOS, com técnico escolhido pelo administrador e prazo em horas úteis.",
+  "canonical": "https://www.devmrmoraes.com.br/projetos/brucker-chamados/",
+  "og:title": "Case: App de Chamados para Android e iOS | DEVMRMORAES",
+  "og:description": "App Android e iOS de chamados técnicos para a Brucker Printers: o cliente abre, o administrador designa o técnico e o prazo conta em horas úteis.",
+  "og:url": "https://www.devmrmoraes.com.br/projetos/brucker-chamados/",
+  "og:image": "https://www.devmrmoraes.com.br/img/og-image.png",
+  "og:type": "article",
+  "twitter:title": "Case: App de Chamados para Android e iOS | DEVMRMORAES",
+  "twitter:description": "Chamado por telefone e WhatsApp substituído por um app Android e iOS.",
+  "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+  "geo.region": "BR-RS",
+  "geo.placename": "Canoas, Rio Grande do Sul",
+  "jsonLd": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CreativeWork",
+      "@id": "https://www.devmrmoraes.com.br/projetos/brucker-chamados/#case",
+      "name": "Brucker Printers: aplicativo de chamados",
+      "description": "Aplicativo Android e iOS em React Native para chamados técnicos de impressoras: o cliente abre o chamado com fotos, o administrador designa o técnico, o prazo conta em horas úteis e o atendimento fecha com relatório em PDF. Com API em Node.js, banco Supabase e painel web.",
+      "url": "https://www.devmrmoraes.com.br/projetos/brucker-chamados/",
+      "creator": {
+       "@id": "https://www.devmrmoraes.com.br/#person"
+      },
+      "provider": {
+       "@id": "https://www.devmrmoraes.com.br/#business"
+      },
+      "inLanguage": "pt-BR",
+      "genre": "Aplicativos Mobile",
+      "keywords": [
+       "React Native",
+       "Expo",
+       "Node.js",
+       "Supabase",
+       "Aplicativo Android e iOS"
+      ],
+      "about": {
+       "@type": "Organization",
+       "name": "Brucker Printers",
+       "url": "https://bruckerprinters.com.br"
+      }
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Início",
+        "item": "https://www.devmrmoraes.com.br/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Projetos",
+        "item": "https://www.devmrmoraes.com.br/projetos.html"
+       },
+       {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Brucker Printers: aplicativo de chamados",
+        "item": "https://www.devmrmoraes.com.br/projetos/brucker-chamados/"
+       }
+      ]
+     },
+     {
+      "@type": "WebPage",
+      "name": "Case: aplicativo de chamados",
+      "url": "https://www.devmrmoraes.com.br/projetos/brucker-chamados/",
       "isPartOf": {
        "@id": "https://www.devmrmoraes.com.br/#website"
       }
