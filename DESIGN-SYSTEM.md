@@ -126,7 +126,7 @@ Todos já existem em `css/style.css`. Antes de inventar um, olhe aqui.
 | `.anexo`, `.anexo-quadro`, `.anexo-mascara`, `.anexo-rotulo` | o print dentro do quadro que a linha revela |
 | `.resultado` / `.resultado-bloco`, `.resultado-manchete` | a frase mais valiosa da página, em âmbar, com a linha em cima |
 | `.os-cabecalho`, `.carimbo` | cliente e serviço, e o carimbo `Entregue` / `Exercício` |
-| `.lista-servicos`, `.chefe`, `.apagado` | a lista de serviços; o quadrado âmbar marca os carros-chefe; `.apagado` é o JS acendendo os nomes |
+| `.lista-servicos`, `.chefe`, `.apagado` | a lista de serviços; o quadrado âmbar marca os quatro carros-chefe (sites, SEO, sistemas e Perfil da Empresa no Google, este desde 14/09/2026); `.apagado` é o JS acendendo os nomes |
 | `.processo`, `.compromissos`, `.quando` | sequência de tempo de verdade, com rótulo (`Antes`, `Na proposta`, `Depois`) ou número de etapa |
 | `.perguntas`, `.lista-perguntas` | FAQ em `<details>`, o único bloco quieto |
 | `.contato` / `.fechamento`, `.contato-varredura` | a tela em âmbar; a varredura é o breu que a linha empurra para fora (só na home) |

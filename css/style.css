@@ -594,7 +594,7 @@ main > section:not(.trabalho) { container-type: inline-size; }
 
 .indice-lista .chefe a { font-family: var(--fonte-display); font-weight: 700; font-size: var(--t-1); letter-spacing: -0.01em; }
 
-/* O quadrado ambar marca os tres carros-chefe. Carrega informacao, nao e enfeite. */
+/* O quadrado ambar marca os quatro carros-chefe. Carrega informacao, nao e enfeite. */
 .chefe a::before {
   content: '';
   display: inline-block;
@@ -1267,7 +1267,7 @@ html:has(dialog[open]) { overflow: hidden; }
 
   .indice { grid-column: 1 / 9; grid-row: 1; }
 
-  /* Duas colunas preenchidas de cima para baixo: os tres carros-chefe ficam juntos. */
+  /* Duas colunas preenchidas de cima para baixo: os quatro carros-chefe ficam juntos. */
   .indice-lista { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(4, auto); grid-auto-flow: column; margin-top: var(--e-3); }
 
   .abertura-acao { grid-column: 1 / 9; grid-row: 2; }
