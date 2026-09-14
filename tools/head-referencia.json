@@ -757,16 +757,16 @@
   ]
  },
  "google-meu-negocio/index.html": {
-  "title": "Google Meu Negócio em Canoas e Porto Alegre",
-  "description": "Criação, correção e manutenção de Perfil da Empresa no Google para empresas de Canoas, Porto Alegre e região. Você aprova escopo e valor antes de eu começar.",
+  "title": "Google Meu Negócio em Canoas e Porto Alegre: criação e gestão",
+  "description": "Criação, correção e gestão de Perfil da Empresa no Google em Canoas e Porto Alegre. Veja dois perfis que eu refiz, com o antes, o depois e a posição na busca.",
   "canonical": "https://www.devmrmoraes.com.br/google-meu-negocio/",
-  "og:title": "Google Meu Negócio em Canoas e Porto Alegre",
-  "og:description": "Criação, correção e manutenção de Perfil da Empresa no Google para empresas de Canoas, Porto Alegre e região.",
+  "og:title": "Google Meu Negócio em Canoas e Porto Alegre: criação e gestão",
+  "og:description": "Criação, correção e gestão de Perfil da Empresa no Google em Canoas e Porto Alegre, com dois casos reais de antes e depois.",
   "og:url": "https://www.devmrmoraes.com.br/google-meu-negocio/",
   "og:image": "https://www.devmrmoraes.com.br/img/og-image.png",
   "og:type": "website",
-  "twitter:title": "Google Meu Negócio em Canoas e Porto Alegre",
-  "twitter:description": "Criação, correção e manutenção de Perfil da Empresa no Google para empresas de Canoas, Porto Alegre e região.",
+  "twitter:title": "Google Meu Negócio em Canoas e Porto Alegre: criação e gestão",
+  "twitter:description": "Criação, correção e gestão de Perfil da Empresa no Google em Canoas e Porto Alegre, com dois casos reais de antes e depois.",
   "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
   "geo.region": "BR-RS",
   "geo.placename": "Canoas, Rio Grande do Sul",
@@ -803,6 +803,14 @@
         "acceptedAnswer": {
          "@type": "Answer",
          "text": "A criação leva um dia. O que demora é a verificação do Google, que costuma levar de alguns dias a duas semanas, dependendo do método que ele exigir. Enquanto não verifica, o perfil existe mas não aparece para quem procura. Esse prazo é do Google e eu não tenho como acelerar."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Você garante primeiro lugar no Google Maps?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Não, e quem garante está mentindo. O que eu garanto é o perfil completo, correto e cuidado todo mês. A Braskit aparece em primeiro numa busca de nicho em Canoas; a Teria café está em sexto numa busca disputada, na frente de cestarias com muito mais avaliações. Posição muda com o lugar de onde a pessoa pesquisa, o aparelho e o histórico dela, e por isso eu meço todo mês, com print e data."
         }
        },
        {
@@ -1105,16 +1113,16 @@
   ]
  },
  "projetos.html": {
-  "title": "Portfólio de Projetos: Sites, Sistemas e SEO | DEVMRMORAES",
-  "description": "Projetos entregues para clientes de Canoas e Porto Alegre: site criado do zero, SEO técnico, sistema em C# e app de chamados para Android e iOS.",
+  "title": "Portfólio: Sites, Sistemas, SEO e Google Meu Negócio | DEVMRMORAES",
+  "description": "Projetos entregues para clientes de Canoas e Porto Alegre: site do zero, SEO técnico, sistema em C#, app de chamados e dois perfis no Google refeitos.",
   "canonical": "https://www.devmrmoraes.com.br/projetos.html",
-  "og:title": "Portfólio de Projetos: Sites, Sistemas e SEO | DEVMRMORAES",
-  "og:description": "Projetos entregues para clientes: site criado do zero, SEO técnico, sistema em C# para relatórios e app de chamados para Android e iOS.",
+  "og:title": "Portfólio: Sites, Sistemas, SEO e Google Meu Negócio | DEVMRMORAES",
+  "og:description": "Projetos entregues para clientes: site do zero, SEO técnico, sistema em C#, app Android e iOS e dois perfis do Google refeitos, com antes e depois.",
   "og:url": "https://www.devmrmoraes.com.br/projetos.html",
   "og:image": "https://www.devmrmoraes.com.br/img/og-image.png",
   "og:type": "website",
-  "twitter:title": "Portfólio de Projetos: Sites, Sistemas e SEO | DEVMRMORAES",
-  "twitter:description": "Site do zero, SEO técnico, sistema em C# e app Android e iOS: os projetos entregues para clientes.",
+  "twitter:title": "Portfólio: Sites, Sistemas, SEO e Google Meu Negócio | DEVMRMORAES",
+  "twitter:description": "Site do zero, SEO técnico, sistema em C#, app Android e iOS e perfis no Google: os projetos entregues para clientes.",
   "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
   "geo.region": "BR-RS",
   "geo.placename": "Canoas, Rio Grande do Sul",
@@ -1123,7 +1131,7 @@
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Portfólio de Projetos DEVMRMORAES",
-    "description": "Projetos de criação de sites, SEO técnico, sistemas e aplicativo mobile entregues para clientes, seguidos dos projetos de prática, identificados como tal",
+    "description": "Projetos de criação de sites, SEO técnico, sistemas, aplicativo mobile e Perfil da Empresa no Google entregues para clientes, seguidos dos projetos de prática, identificados como tal",
     "url": "https://www.devmrmoraes.com.br/projetos.html",
     "isPartOf": {
      "@id": "https://www.devmrmoraes.com.br/#website"
@@ -1151,6 +1159,94 @@
       }
      ]
     }
+   }
+  ]
+ },
+ "projetos/braskit-google-meu-negocio/index.html": {
+  "title": "Case: Google Meu Negócio da Braskit, em Canoas | DEVMRMORAES",
+  "description": "O perfil da Braskit no Google tinha bairro errado, descrição em branco e nenhum produto. Refeito campo a campo, aparece em 1º lugar na busca em Canoas.",
+  "canonical": "https://www.devmrmoraes.com.br/projetos/braskit-google-meu-negocio/",
+  "og:title": "Case: Google Meu Negócio da Braskit, em Canoas | DEVMRMORAES",
+  "og:description": "Perfil da Braskit no Google refeito campo a campo: bairro, descrição, catálogo em 8 categorias e avaliações respondidas. 1º lugar na busca em Canoas.",
+  "og:url": "https://www.devmrmoraes.com.br/projetos/braskit-google-meu-negocio/",
+  "og:image": "https://www.devmrmoraes.com.br/img/og-image.png",
+  "og:type": "article",
+  "twitter:title": "Case: Google Meu Negócio da Braskit, em Canoas | DEVMRMORAES",
+  "twitter:description": "Perfil no Google refeito campo a campo, em 1º lugar na busca em Canoas.",
+  "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+  "geo.region": "BR-RS",
+  "geo.placename": "Canoas, Rio Grande do Sul",
+  "jsonLd": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CreativeWork",
+      "@id": "https://www.devmrmoraes.com.br/projetos/braskit-google-meu-negocio/#case",
+      "name": "Braskit: Perfil da Empresa no Google",
+      "description": "Correção e manutenção do Perfil da Empresa no Google, o antigo Google Meu Negócio, da Braskit Kit para Cargas Perigosas, em Canoas: bairro do endereço, descrição, data de abertura, horários e feriados, formas de pagamento e serviços, catálogo de produtos em 8 categorias, resposta a cada avaliação e posts aprovados pelos proprietários.",
+      "url": "https://www.devmrmoraes.com.br/projetos/braskit-google-meu-negocio/",
+      "image": "https://www.devmrmoraes.com.br/img/cases/braskit-perfil-google-grande.jpg",
+      "creator": {
+       "@id": "https://www.devmrmoraes.com.br/#person"
+      },
+      "provider": {
+       "@id": "https://www.devmrmoraes.com.br/#business"
+      },
+      "inLanguage": "pt-BR",
+      "genre": "Perfil da Empresa no Google",
+      "keywords": [
+       "Google Meu Negócio",
+       "Perfil da Empresa no Google",
+       "SEO local",
+       "Google Maps",
+       "Canoas"
+      ],
+      "about": {
+       "@type": "LocalBusiness",
+       "name": "Braskit Kit para Cargas Perigosas",
+       "url": "https://braskitcargasperigosas.com.br/",
+       "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "R. Uruguai, 317",
+        "addressLocality": "Canoas",
+        "addressRegion": "RS",
+        "addressCountry": "BR"
+       }
+      }
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Início",
+        "item": "https://www.devmrmoraes.com.br/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Projetos",
+        "item": "https://www.devmrmoraes.com.br/projetos.html"
+       },
+       {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Braskit: Perfil da Empresa no Google",
+        "item": "https://www.devmrmoraes.com.br/projetos/braskit-google-meu-negocio/"
+       }
+      ]
+     },
+     {
+      "@type": "WebPage",
+      "name": "Case: Google Meu Negócio da Braskit, em Canoas",
+      "url": "https://www.devmrmoraes.com.br/projetos/braskit-google-meu-negocio/",
+      "isPartOf": {
+       "@id": "https://www.devmrmoraes.com.br/#website"
+      }
+     }
+    ]
    }
   ]
  },
@@ -1539,6 +1635,93 @@
       "@type": "WebPage",
       "name": "Case fictício: site portfólio de fotografia",
       "url": "https://www.devmrmoraes.com.br/projetos/camila-duarte-fotografia/",
+      "isPartOf": {
+       "@id": "https://www.devmrmoraes.com.br/#website"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "projetos/teria-cafe-google-meu-negocio/index.html": {
+  "title": "Case: Google Meu Negócio de uma cestaria de Canoas | DEVMRMORAES",
+  "description": "Cestaria de Canoas sem loja, com a categoria do perfil travada pelo Google. Caso contestado e resolvido: nota 5,0 e 6º lugar numa busca disputada.",
+  "canonical": "https://www.devmrmoraes.com.br/projetos/teria-cafe-google-meu-negocio/",
+  "og:title": "Case: Google Meu Negócio de uma cestaria de Canoas | DEVMRMORAES",
+  "og:description": "Perfil no Google de uma cestaria de Canoas: categoria destravada junto ao Google, horário real e cartão com QR Code na cesta. Nota 5,0 em 28 avaliações.",
+  "og:url": "https://www.devmrmoraes.com.br/projetos/teria-cafe-google-meu-negocio/",
+  "og:image": "https://www.devmrmoraes.com.br/img/og-image.png",
+  "og:type": "article",
+  "twitter:title": "Case: Google Meu Negócio de uma cestaria de Canoas | DEVMRMORAES",
+  "twitter:description": "Categoria destravada junto ao Google, nota 5,0 e 6º lugar numa busca disputada em Canoas.",
+  "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+  "geo.region": "BR-RS",
+  "geo.placename": "Canoas, Rio Grande do Sul",
+  "jsonLd": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CreativeWork",
+      "@id": "https://www.devmrmoraes.com.br/projetos/teria-cafe-google-meu-negocio/#case",
+      "name": "Teria café? Da Manhã!: Perfil da Empresa no Google",
+      "description": "Correção e manutenção do Perfil da Empresa no Google, o antigo Google Meu Negócio, de uma cestaria de café da manhã sem loja em Canoas: edição de categoria recusada pelo Google contestada e resolvida, horário de atendimento real, descrição com o prazo dos pedidos, cartão com QR Code para pedir avaliação e resposta a cada avaliação.",
+      "url": "https://www.devmrmoraes.com.br/projetos/teria-cafe-google-meu-negocio/",
+      "image": "https://www.devmrmoraes.com.br/img/cases/teria-cafe-perfil-google-grande.jpg",
+      "creator": {
+       "@id": "https://www.devmrmoraes.com.br/#person"
+      },
+      "provider": {
+       "@id": "https://www.devmrmoraes.com.br/#business"
+      },
+      "inLanguage": "pt-BR",
+      "genre": "Perfil da Empresa no Google",
+      "keywords": [
+       "Google Meu Negócio",
+       "Perfil da Empresa no Google",
+       "SEO local",
+       "Negócio com área de atendimento",
+       "Canoas"
+      ],
+      "about": {
+       "@type": "LocalBusiness",
+       "name": "Teria café? Da Manhã!",
+       "areaServed": {
+        "@type": "City",
+        "name": "Canoas"
+       },
+       "sameAs": [
+        "https://www.instagram.com/teriacafedamanha"
+       ]
+      }
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Início",
+        "item": "https://www.devmrmoraes.com.br/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Projetos",
+        "item": "https://www.devmrmoraes.com.br/projetos.html"
+       },
+       {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Teria café? Da Manhã!: Perfil da Empresa no Google",
+        "item": "https://www.devmrmoraes.com.br/projetos/teria-cafe-google-meu-negocio/"
+       }
+      ]
+     },
+     {
+      "@type": "WebPage",
+      "name": "Case: Google Meu Negócio de uma cestaria de Canoas",
+      "url": "https://www.devmrmoraes.com.br/projetos/teria-cafe-google-meu-negocio/",
       "isPartOf": {
        "@id": "https://www.devmrmoraes.com.br/#website"
       }
