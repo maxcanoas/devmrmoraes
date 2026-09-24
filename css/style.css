@@ -422,7 +422,7 @@ header .botao { display: none; }
 
 header [aria-current] { color: var(--acao-texto); }
 
-@media (max-width: 23.999em) {
+@media (max-width: 29.999em) {
   header nav { flex-wrap: wrap; row-gap: 0; }
 
   header ul {
